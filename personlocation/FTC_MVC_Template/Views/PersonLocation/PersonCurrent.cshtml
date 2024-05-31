@@ -1,0 +1,278 @@
+﻿@{
+    ViewBag.Title = "PersonCurrent";
+    Layout = "~/Views/Shared/_LayoutForMESNoMenu.cshtml";
+}
+
+<div class="map-container">
+    <div class="info-box">
+
+    </div>
+    <div class="navbar-button">收合</div>
+    <div id="map"></div>
+</div>
+
+<style>
+    .map-container {
+        display: flex;
+        position: relative;
+    }
+
+
+
+    .navbar-button {
+        position: absolute;
+        left: 30%;
+        top: 10%;
+        background-color: #5e66d9;
+        z-index: 500;
+        width: 40px;
+        border: 1px solid;
+        border-radius: 0 10px 10px 0;
+        height: 60px;
+        writing-mode: vertical-lr;
+        padding: 1rem;
+        align-content: center;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+    }
+
+    .info-box {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 500;
+        border: 1px solid #eeeeee;
+        background-color: #ffffff;
+        width: 30%;
+        height: 97vh;
+    }
+
+    .info-box-tab {
+        background-color: #5e66d9;
+        padding: 1rem;
+    }
+
+    #map {
+        width: 100%;
+        height: 97vh;
+    }
+</style>
+
+
+@*引用區*@
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+      integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+        integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
+<script src="https://unpkg.com/leaflet-rotate@0.2.2/dist/leaflet-rotate-src.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/iso8601-js-period@0.2.1/iso8601.min.js"></script>
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/leaflet-timedimension@1.1.1/dist/leaflet.timedimension.min.js"></script>
+
+
+@*axios*@
+<script type="text/javascript" src="https://unpkg.com/axios@1.2.1/dist/axios.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wicket/1.3.8/wicket.js"></script>
+<script src="~/Scripts/PersonLocation/leaflet-sidebar.js"></script>
+
+
+<link rel="stylesheet" href="@Url.Content("~/Content/personLocation/leaflet_timeDimension.css")" />
+
+
+
+@*axios*@
+<script type="text/javascript" src="https://unpkg.com/axios@1.2.1/dist/axios.min.js"></script>
+
+
+<script>
+    var map;
+    const personLocationUrl = "/api/apiPersonLocation";
+    let collespBar = true;
+
+    // 執行
+    $(document).ready(function () {
+        QueryString.Initial();
+
+        // 初始化地圖
+        initialMap();
+
+        NavBarSilder(collespBar);
+
+        // 取得圖徵
+        getFeatures();
+
+        // 人員基礎資料
+        showInfoBox("N000183926")
+    })
+
+    // 初始化地圖
+    function initialMap() {
+        map = L.map('map', {
+            zoom: 17,
+            rotate: true,
+            rotateControl: false,
+            zoomControl: false,
+            bearing: 0,
+            fullscreenControl: true,
+            timeDimensionControl: true,
+            timeDimensionControlOptions: {
+                timeSliderDragUpdate: true,
+                loopButton: true,
+                autoPlay: true,
+                playerOptions: {
+                    transitionTime: 1000,
+                    loop: true
+                }
+            },
+            timeDimension: true,
+            center: [25.05747, 121.55099],
+        });
+
+        // 設定底圖
+        var mapLayers = {
+            '中文': L.tileLayer('https://wmts.nlsc.gov.tw/wmts/EMAP98/default/GoogleMapsCompatible/{z}/{y}/{x}', {
+                attribution: '&copy; <a href="https://www.tgos.tw/tgos/web/tgos_home.aspx">TGOS</a>'
+            }),
+            '英文': L.tileLayer('https://wmts.nlsc.gov.tw/wmts/EMAP97/default/GoogleMapsCompatible/{z}/{y}/{x}', {
+                attribution: '&copy; <a href="https://www.tgos.tw/tgos/web/tgos_home.aspx">TGOS</a>'
+            }),
+            '衛星': L.tileLayer('https://wmts.nlsc.gov.tw/wmts/PHOTO_MIX/default/GoogleMapsCompatible/{z}/{y}/{x}', {
+                attribution: '&copy; <a href="https://www.tgos.tw/tgos/web/tgos_home.aspx">TGOS</a>'
+            }),
+            'OSM': L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            })
+        };
+        //mapLayers['OSM'].addTo(map); // 使用中文地圖作為預設
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 18,
+            id: 'mapbox/streets-v11',
+            tileSize: 512,
+            zoomOffset: -1,
+            accessToken: 'pk.eyJ1IjoibWFraWZpIiwiYSI6ImNrb2xtaThiODAwMzQydHBvODF2eGF3b2gifQ.R0Ps3-ylf29uGUoKkfsMKw' // 換成你自己的 Mapbox Access Token
+        }).addTo(map);
+
+
+        L.control.layers(mapLayers).addTo(map); // 加入地圖切換控制項
+        // 旋轉控制
+        var rotateOptions = {
+            closeOnZeroBearing: false,
+            position: 'topright',
+        }
+        var rotate = L.control.rotate(rotateOptions);
+        rotate.addTo(map)
+
+        // zoom control options
+        var zoomOptions = {
+            zoomInText: '+',
+            zoomOutText: '-',
+            position: "topright"
+        };
+        var zoom = L.control.zoom(zoomOptions);   // Creating zoom control
+        zoom.addTo(map);   // Adding zoom control to the map
+
+        //side bar control
+        //var sidebar = L.control.sidebar('sidebar').addTo(map);
+
+        // scale
+        var scale = L.control.scale({
+            position: "bottomright"
+        }); // Creating scale control
+        scale.addTo(map); // Adding scale control to the map
+    }
+
+    // 收合點擊事件
+    const NavBarSilder = (bol) => {
+        const map = document.getElementById("map");
+        const sidebar = document.querySelector(".info-box");
+        const button = document.querySelector(".navbar-button");
+        const mapContent = document.querySelector("#map");
+
+        if (!bol) {
+            sidebar.style.width = "0px";
+        }
+        button.addEventListener('click', e => {
+            e.preventDefault();
+            if (collespBar) {
+                sidebar.style.width = "0px";
+                sidebar.style.display = "none";
+                button.style.left = "0px";
+                button.textContent = "展開";
+                collespBar = false;
+            } else {
+                sidebar.style.width = "30%";
+                sidebar.style.display = "block"
+                button.style.left = "30%";
+                button.textContent = "收合";
+                collespBar = true;
+            }
+        })
+    }
+
+
+    // 取得圖徵
+    const getFeatures = () => {
+        let workArea = L.geoJson();
+        let warningArea = L.geoJson();
+        let featureGroup = L.featureGroup([workArea, warningArea]).addTo(map);
+        axios.post(`${personLocationUrl}/GetPolygon`, {})
+            .then((res) => {
+                if (res.status === 200 && res.data.length !== 0) {
+                    console.log(res.data);
+                    res.data.forEach((item) => {
+                        const ID = item.PolygonID;
+                        const name = item.PolygonName;
+                        const AreaID = item.AreaID;
+                        const wkt_geom = item.WKTGeometry;
+
+                        const wkt = new Wkt.Wkt();
+                        wkt.read(wkt_geom);
+                        const feature = {
+                            "type": "Feature",
+                            "properties": {
+                                "id": ID,
+                                "name": name,
+                                "areaID": AreaID
+                            },
+                            "geometry": wkt.toJson()
+                        };
+                        workArea.addData(feature);
+                    })
+                }
+
+                //map.fitBounds(workArea.getBounds());
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+            .then(function () {
+                // always executed
+                const featureItem = document.querySelector(".leaflet-interactive")
+                featureItem.style.pointerEvents = "none";
+            });
+    }
+
+    // 呈現info-box 資料
+    function showInfoBox(id) {
+        const InfoBox = document.querySelector('.info-box');
+        InfoBox.innerHTML = `
+        <div class="info-box-tab">
+            <p>人員資訊</p>
+            <div></div>
+        </div>
+        <div class="info-box-tab">
+            <p>異常紀錄</p>
+            <div></div>
+        </div>
+        <div class="info-box-tab">
+            <p>進出紀錄</p>
+            <div></div>
+        </div>
+        `
+    }
+</script>

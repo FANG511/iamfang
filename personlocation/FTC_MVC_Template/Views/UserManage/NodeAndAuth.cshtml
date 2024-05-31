@@ -1,0 +1,597 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_LayoutForMESNoMenu.cshtml";
+}
+
+<!DOCTYPE html>
+<style>
+    .Validate {
+        /*        opacity: 0.5;*/
+        /*background-color: palevioletred;
+        border-radius: 2.0rem;*/
+        color: red;
+    }
+    /*過濾控件*/
+    .FilterLabel {
+        /*width: 90px;*/
+    }
+
+    .FilterControl {
+        width: 100%;
+    }
+</style>
+<html>
+<head>
+</head>
+<body>
+    <h4>@ViewBag.Title</h4>
+    <div class="form-horizontal" style="margin-left: 20px">
+        <div class="form-group my_text row">
+            <div id="FilterArea" class="box box-warning box-solid" style="border-color:lightgrey;display:none">
+                <div class="box-header with-border">
+                    <h3 class="box-title" data-i18n="UserManage.Text.Filter"></h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div id="FilterBody" class="box-body row form-group">
+                    <div class="col-md-3">
+                        <div class="col-md-6 k-info-colored" for="filter_NODETEXT">
+                            <label class="FilterLabel" data-i18n="UserManage.Text.NODETEXT"></label>
+                        </div>
+                        <div class="col-md-6">
+                            <input id="filter_NODETEXT" class="k-textbox FilterControl" />
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="col-md-5 k-info-colored" for="filter_PARENTID">
+                            <label class="FilterLabel" data-i18n="UserManage.Text.PARENTID"></label>
+                        </div>
+                        <div class="col-md-7">
+                            <input id="filter_PARENTID" class="k-textbox FilterControl" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="grid" style="width: 100% ;"></div>
+        </div>
+    </div>
+
+    @*初始化區*@
+    <script>
+        const vi18n_Name = 'UserManage.Text';
+        const vi18n_BackEnd = 'UserManage.BackEnd';
+
+        var oi18nLanguAuto;
+        var vObj;
+        var WebApiUrl_Area_Com = '../api/UserManageApi';
+
+        $(document).ready(function () {
+            QueryString.Initial();
+
+            vObj = new getObject();
+            vObj.CheckDB();
+            vObj.Initial();
+
+            oi18nLanguAuto = new i18nLanguAuto();
+            oi18nLanguAuto.Initial();
+
+            DefineBtn();
+            DefineGrid();
+            DefineGridButton();
+
+            MyKendoTooltip('.k-grid-btnUpdateDbScheme', null, i18n.t(vi18n_Name + '.btnUpdateDbSchemeEXPLAIN'));
+        })
+
+    </script>
+
+    @*API區 Ajax有關*@
+    <script>
+
+        //設定初始值 Lot 物件，Field name直接對應 拋過來的屬性名稱
+        function getObject() {
+
+            var PList = [];
+            var Authid = [];
+            var Target = [
+                {
+                    "VALUE": ""
+                },
+                {
+                    "VALUE": "mainFrame"
+                },
+            ];
+
+            this.CheckDB = function (bShowAlert) {
+                //檢查公用表是否存在
+                $.ajax({
+                    url: WebApiUrl_Area_Com + "/CheckComdb",
+                    type: 'Post',
+                    dataType: 'json',
+                    async: false,
+                    data: oDataModels,
+                    success: function success(ResultData) {
+                        if (bShowAlert) {
+                            //alert(ResultData.ReturnMessage);
+                            notification.show({
+                                message: ResultData.ReturnMessage
+                            }, "success");
+                        }
+                    },
+                    error: function error(ResultData) {
+                        alert(ResultData.ReturnMessage);
+                    }
+                });
+            }
+
+            this.Initial = function () {
+
+                oDataModels["Function"] = {
+                    NODEID: ""
+                };
+
+                //抓全部點位清單，所有點位都可能是父節點
+                $.ajax({
+                    url: WebApiUrl_Area_Com + "/R_COMM_FUNCTIONLIST",
+                    type: 'Post',
+                    dataType: 'json',
+                    async: false,
+                    data: oDataModels,
+                    success: function success(ResultData) {
+                        PList = ResultData;
+                        //做 中文_NODE
+                        PList.forEach(function (e) {
+                            e['ShowName'] = e.NODETEXT + '_' + e.NODEID;
+                        });
+                        PList.push({
+                            "ShowName": "",
+                            "NODEID": "",
+                            "NODETEXT": "",
+                        });
+                    },
+                    error: function error(e) {
+                        alert(ResultData.ReturnMessage);
+                    }
+                });
+
+                $.ajax({
+                    url: WebApiUrl_Area_Com + "/R_COMM_NODEFUNCTION",
+                    type: 'Post',
+                    dataType: 'json',
+                    async: false,
+                    data: oDataModels,
+                    success: function success(ResultData) {
+                        Authid = ResultData;
+                    },
+                    error: function error(e) {
+                        alert(ResultData.ReturnMessage);
+                    }
+                });
+
+            };
+
+            //取得 Array
+            this.getPList = function () {
+                if (PList.length > 0)
+                    return PList;
+                else
+                    return [];
+            }
+
+            //取得 Array
+            this.getAuthid = function () {
+                if (Authid.length > 0)
+                    return Authid;
+                else
+                    return [];
+            }
+
+            //取得 Array
+            this.getTarget = function () {
+                if (Target.length > 0)
+                    return Target;
+                else
+                    return [];
+            }
+        }
+
+        function GridDataSource() {
+
+            var datasource = new kendo.data.DataSource({
+                transport: {
+                    read: {
+                        url: WebApiUrl_Area_Com + "/R_COMM_FUNCTIONLIST",
+                        type: "Post",
+                        dataType: "json",
+                        async: false
+                    },
+                    update: {
+                        url: WebApiUrl_Area_Com + "/U_COMM_FUNCTIONLIST",
+                        type: "Post",
+                        dataType: "json",
+                        async: false
+                    },
+                    destroy: {
+                        url: WebApiUrl_Area_Com + "/D_COMM_FUNCTIONLIST",
+                        type: "Post",
+                        dataType: "json",
+                        async: false
+                    },
+                    create: {
+                        url: WebApiUrl_Area_Com + "/C_COMM_FUNCTIONLIST",
+                        type: "Post",
+                        dataType: "json",
+                        async: false
+                    },
+                    parameterMap: function (options, operation) {
+                        if (operation !== "read" && options) {
+                            oDataModels["Function"] = options;
+                            oDataModels["Auths"] = options.Auths;
+                            return oDataModels;
+                        }
+                        else {
+                            //Read
+                            oDataModels["Function"] = {
+                                NODEID: ""
+                            };
+                            return oDataModels;
+                        }
+                    }
+                },
+                requestEnd: function (e) {//新刪修完成後更新頁面資料
+                    var type = e.type;
+
+                    if (type != 'read') {
+
+                        //alert(oi18nLanguAuto.translate(e.response.ReturnMessage, vi18n_BackEnd));
+                        notification.show({
+                            message: oi18nLanguAuto.translate(e.response.ReturnMessage, vi18n_BackEnd)
+                        }, "success")
+                        $('#grid').data("kendoGrid").dataSource.read();
+                        vObj.Initial();
+                    }
+                    else {
+                        //var gList = e.response.groupBy('PARENTID');
+                        //console.log(gList);
+                    }
+
+                },
+                //batch: true,
+                pageSize: 17,
+                schema: {
+                    model: {
+                        id: "NODEID",
+                        fields: {
+                            NODEID: { validation: { required: true } },
+                            NODESEQUENCE: { type: "number", validation: { required: true } },
+                            PARENTID: {},
+                            IFRAMEHEIGHT: { type: "number" },
+                            ISEXPANDED: { type: "boolean" },
+                            ISLEAFNODE: { type: "boolean" },
+                            ISREFERENCE: { type: "boolean" },
+                        }
+                    }
+                },
+                sort: [
+                    { field: "NODESEQUENCE", dir: "asc" },
+                ],
+                group: [
+                    {
+                        field: "PGROUP",
+                    },
+                ],
+            });
+
+            return datasource;
+        }
+    </script>
+
+    @*邏輯區*@
+    <script>
+        function btnQuery_Click() {
+            var FilterArray = [];
+
+            if ($('#filter_NODETEXT').val() != '')
+                FilterArray.push({ field: 'NODETEXT', operator: "contains", value: $('#filter_NODETEXT').val() })
+            if ($('#filter_PARENTID').val() != '')
+                FilterArray.push({ field: 'PARENTID', operator: "contains", value: $('#filter_PARENTID').val() })
+
+            if (FilterArray.length > 0)
+                $("#grid").data("kendoGrid").dataSource.filter(FilterArray);
+            else
+                $("#grid").data("kendoGrid").dataSource.filter({});
+
+            $('#grid').data('kendoGrid').dataSource.read();
+            vObj.Initial();
+        }
+
+        function btnAdmlte_Click() {
+            //var url = 'https://adminlte.io/themes/AdminLTE/pages/UI/icons.html';
+            var url = 'https://fontawesome.com/v4.7.0/icons/';
+
+            window.open(url);
+        }
+
+        //調整table欄位到與最新版本相符
+        function btnUpdateDbScheme_Click() {
+            vObj.CheckDB(true);
+        }
+    </script>
+
+    @*定義區 Kendo物件等*@
+    <script>
+
+        function DefineBtn() {
+
+        }
+
+        function DefineGridButton() {
+            $('.k-grid-btnAdmlte').click(btnAdmlte_Click);
+            $('.k-grid-btnQuery').click(btnQuery_Click);
+            $('.k-grid-btnUpdateDbScheme').click(btnUpdateDbScheme_Click);
+        }
+
+        function DefineGrid() {
+            var dsGrid;
+
+            dsGrid = GridDataSource();
+
+            $("#grid").kendoGrid({
+                dataSource: dsGrid,
+                autoBind: true,//初始資料顯示
+                excel: {//輸出excel 設定
+                    fileName: "基礎資料"
+                },
+                save: function (e) {
+                    var sMsg = "";
+
+                    //檢查資料 不能為空
+                    if (e.container.find("input[name=NODEID]").val() != '' && vObj["PopupMode"] != 1) {
+                        var allnode = vObj.getPList();
+                        var Data = [];
+
+                        Data = allnode.filter(function (x) {
+                            return x.NODEID == e.model.NODEID;
+                        });
+
+                        if (Data.length > 0) {
+                            e.container.find("label[for='NODEID']").parent('div').addClass('Validate');
+                            sMsg += 'NODEID' + ' ' + i18n.t(vi18n_Name + ".Duplicate") + "\r\n";
+                        }
+                    }
+
+                    if (sMsg != "") {
+                        //alert(sMsg);
+                        notification.show({
+                            message: sMsg
+                        }, "success")
+                        e.preventDefault();
+                    };
+
+                },
+                edit: function (e) {
+                    KendoGridMultipleLayoutForm(2, 7);
+
+                    e.container.find("input[name=NODEID]").mask('AAAAAAAAAAA');
+                    e.container.find("input[name=NODESEQUENCE]").mask('99999999');
+
+                    MyKendoTooltip(e.container.find("label[for=NODEID]"), null, i18n.t(vi18n_Name + '.NODEID_EXPLAIN'));
+                    MyKendoTooltip(e.container.find("label[for=NODETEXT]"), null, i18n.t(vi18n_Name + '.NODETEXT_EXPLAIN'));
+                    MyKendoTooltip(e.container.find("label[for=PARENTID]"), null, i18n.t(vi18n_Name + '.PARENTID_EXPLAIN'));
+                    MyKendoTooltip(e.container.find("label[for=NODESEQUENCE]"), null, i18n.t(vi18n_Name + '.NODESEQUENCE_EXPLAIN'));
+                    MyKendoTooltip(e.container.find("label[for=NODEURL]"), null, i18n.t(vi18n_Name + '.NODEURL_EXPLAIN'));
+                    MyKendoTooltip(e.container.find("label[for=NODEIMAGE]"), null, i18n.t(vi18n_Name + '.NODEIMAGE_EXPLAIN'));
+                    MyKendoTooltip(e.container.find("label[for=Auths]"), null, i18n.t(vi18n_Name + '.Auths_EXPLAIN'));
+                    MyKendoTooltip(e.container.find("label[for=IFRAMEHEIGHT]"), null, i18n.t(vi18n_Name + '.IFRAMEHEIGHT_EXPLAIN'));
+
+
+                    if (e.model.isNew() && !e.model.dirty) {
+
+                        e.model.set("IFRAMEHEIGHT", '');
+
+                        //預設空白
+                        e.container.find("input[name=PARENTID]").data('kendoDropDownList').value("");
+
+                        vObj["PopupMode"] = 0;
+                    }
+                    else {
+                        //編輯鎖Key
+                        e.container.find("input[name=NODEID]").attr('disabled', 'disabled');
+
+                        vObj["PopupMode"] = 1;
+                    }
+                },
+                toolbar:
+                    [
+                        //{
+                        //    name: 'btnQuery',
+                        //    text: i18n.t('ButtonCommon.Query'),
+                        //    className: 'btn btn_primary',
+                        //    iconClass: 'fa fa-search'
+                        //},
+                        {
+                            name: 'create',
+                            text: i18n.t('ButtonCommon.Add'),
+                            //click: function (e) {
+                            //    // do stuff
+                            // }
+                        },
+                        //{
+                        //    name: 'btnAdmlte',
+                        //    text: i18n.t(vi18n_Name +'.btnAdmlte'),
+                        //    className: 'btn btn_primary',
+                        //    iconClass: 'k-icon k-i-link-horizontal'
+                        //},
+                        //{
+                        //    name: 'btnUpdateDbScheme',
+                        //    text: i18n.t(vi18n_Name + '.btnUpdateDbScheme'),
+                        //    className: 'btn btn_secondary',
+                        //    iconClass: 'fa fa-database '
+                        //},
+                    ],
+                pageable: true,
+                selectable: 'row',
+                persistSelection: true,
+                filterable: true,
+                scrollable: true,
+                height: 550,
+                noRecords: {
+                    template: i18n.t('UserManage.NoData')
+                },
+                columns: [
+                    {
+
+                        command: [
+                            {
+                                name: "edit",
+                                template: "<a class='crud crud_edit k-grid-edit'><i class='fa fa-pencil'></i></a>&nbsp",
+                            },
+                            {
+                                name: 'destroy',
+                                text: '刪除',
+                                template: "<a class='crud crud_delete k-grid-delete'><i class='fa fa-trash'></i></a>"
+                            },
+                        ],
+                        itle: "", width: "100px", headerAttributes: { style: "text-align: center" }, attributes: { style: "text-align: center" }
+                    },
+                    { field: "NODEID", title: i18n.t(vi18n_Name + '.NODEID'), width: "70px", headerAttributes: { style: "text-align: center" }, attributes: { style: "text-align: center" } },
+                    { field: "NODETEXT", title: i18n.t(vi18n_Name + '.NODETEXT'), width: "100px", headerAttributes: { style: "text-align: center" }, attributes: { style: "text-align: center" } },
+                    { field: "PARENTID", title: i18n.t(vi18n_Name + '.PARENTID'), editor: PFunEditor, width: "70px", headerAttributes: { style: "text-align: center" }, attributes: { style: "text-align: center" } },
+                    { field: "NODESEQUENCE", title: i18n.t(vi18n_Name + '.NODESEQUENCE'), width: "70px", headerAttributes: { style: "text-align: center" }, attributes: { style: "text-align: center" } },
+                    { field: "NODEURL", title: i18n.t(vi18n_Name + '.NODEURL'), editor: TextAreaEditor, hidden: true, width: "70px", headerAttributes: { style: "text-align: center" }, attributes: { style: "text-align: center;" } },
+                    { field: "NODETARGET", title: i18n.t(vi18n_Name + '.NODETARGET'), editor: TargetEditor, width: "70px", headerAttributes: { style: "text-align: center" }, attributes: { style: "text-align: center" } },
+                    { field: "DESCRIPTION", title: i18n.t(vi18n_Name + '.DESCRIPTION'), editor: TextAreaEditor, hidden: true, width: "70px", headerAttributes: { style: "text-align: center" }, attributes: { style: "text-align: center" } },
+                    { field: "NODEIMAGE", title: i18n.t(vi18n_Name + '.NODEIMAGE'), hidden: true, width: "70px", headerAttributes: { style: "text-align: center" }, attributes: { style: "text-align: center" } },
+                    { field: "NODEEXPANDIMAGE", title: i18n.t(vi18n_Name + '.NODEEXPANDIMAGE'), hidden: true, width: "70px", headerAttributes: { style: "text-align: center" }, attributes: { style: "text-align: center" } },
+                    { field: "ISEXPANDED", title: i18n.t(vi18n_Name + '.ISEXPANDED'), editor: SwitchEditor, width: "70px", headerAttributes: { style: "text-align: center" }, attributes: { style: "text-align: center" } },
+                    { field: "ISLEAFNODE", title: i18n.t(vi18n_Name + '.ISLEAFNODE'), editor: SwitchEditor, width: "70px", headerAttributes: { style: "text-align: center" }, attributes: { style: "text-align: center" } },
+                    { field: "Auths", title: i18n.t(vi18n_Name + '.Auths'), hidden: true, editor: AuthEditor, width: "70px", headerAttributes: { style: "text-align: center" }, attributes: { style: "text-align: center" } },
+                    { field: "IFRAMEHEIGHT", title: i18n.t(vi18n_Name + '.IFRAMEHEIGHT'), hidden: true, width: "70px", headerAttributes: { style: "text-align: center" }, attributes: { style: "text-align: center" } },
+                    { field: "ISREFERENCE", title: i18n.t(vi18n_Name + '.ISREFERENCE'), editor: SwitchEditor, hidden: true, width: "70px", headerAttributes: { style: "text-align: center" }, attributes: { style: "text-align: center" } },
+                ],
+
+                dataBound: function (e) {
+                    //自動調整寬度
+                    for (var i = 0; i < this.columns.length; i++) {
+                        this.autoFitColumn(i);
+                    }
+                },
+
+                editable: {
+                    mode: "popup",
+                    window: {
+                        position: {
+                            top: '20px',
+                            left: "10%"
+                        }
+                    }
+                },
+            });
+
+        }
+
+        //開關
+        function SwitchEditor(container, options) {
+            $('<input name ="' + options.field + '" data-bind="value:' + options.field + '" type="text"/>')
+                .appendTo(container)
+                .kendoSwitch({
+                    messages: {
+                        checked: "True",
+                        unchecked: "False"
+                    },
+                    width: "70px"
+                });
+        }
+
+        //文字編輯
+        function TextAreaEditor(container, options) {
+            $('<textarea  name ="' + options.field + '" data-bind="value:' + options.field + '"  style="height:90px"  type="text"/>')
+                .appendTo(container);
+        }
+
+        //父節點
+        function PFunEditor(container, options) {
+            $('<input name ="' + options.field + '" data-bind="value:' + options.field + '" type="text"/>')
+                .appendTo(container)
+                .kendoDropDownList({
+                    suggest: true,
+                    filter: "contains",
+                    autoWidth: true,
+                    dataSource: vObj.getPList(),
+                    dataTextField: "ShowName",
+                    dataValueField: "NODEID",
+                    select: function (e) {
+                        //kendo 2021 目前沒問題
+                        //debugger
+                        //var aSplit = e.item.text().split('_');
+                        //if (aSplit.length > 1)
+                        //    options.model.set(options.field, aSplit[1]);
+                        //else
+                        //    options.model.set(options.field, '');
+                    },
+                });
+        }
+
+        //Node對象
+        function TargetEditor(container, options) {
+            $('<input name ="' + options.field + '" data-bind="value:' + options.field + '" type="text"/>')
+                .appendTo(container)
+                .kendoDropDownList({
+                    suggest: true,
+                    filter: "contains",
+                    autoWidth: true,
+                    dataSource: vObj.getTarget(),
+                    dataTextField: "VALUE",
+                    dataValueField: "VALUE",
+                    select: function (e) {
+                        options.model.set(options.field, e.item.text());
+                    },
+                });
+        }
+
+        //設定額外權限
+        function AuthEditor(container, options) {
+            $('<input name ="' + options.field + '" data-bind="value:' + options.field + '" type="text" style="width:200px;"/>')
+                .appendTo(container)
+                .kendoMultiSelect({
+                    autoClose: false,
+                    autoWidth: true,
+                    dataSource: vObj.getAuthid(),
+                    dataTextField: "AUTHTEXT",
+                    dataValueField: "AUTHID",
+                });
+        }
+
+        //kendoTooltip 提示畫面, sJSelector jqury 選擇器 ; sChildSelector 子選擇器
+        function MyKendoTooltip(sJSelector, sChildSelector, sContent) {
+
+            var oConfig = {
+                //filter: sSelector,
+                //content: sContent,
+                animation: {
+                    close: {
+                        effects: "fade:out",
+                        //duration: 1000
+                    },
+                    open: {
+                        effects: "fade:in",
+                        //duration: 1000
+                    }
+                },
+            }
+
+            if (sChildSelector)
+                oConfig.filter = sChildSelector;
+
+            if (sContent)
+                oConfig.content = sContent;
+
+            $(sJSelector).kendoTooltip(oConfig);
+        }
+
+    </script>
+</body>
+</html>
+

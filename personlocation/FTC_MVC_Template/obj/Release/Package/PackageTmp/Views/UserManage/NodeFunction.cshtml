@@ -1,0 +1,279 @@
+﻿
+@{    
+    Layout = "~/Views/Shared/_LayoutForMESNoMenu.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <style>
+    </style>
+</head>
+<body>
+    <div class="form-horizontal" style="margin-left: 20px">
+        <div class="form-group my_text row">
+            <div id="grid" style="width: 100%"></div>
+        </div>
+    </div>
+    @*初始化區*@
+    <script>
+        const vi18n_Name = 'UserManage.Text';
+        const vi18n_BackEnd = 'UserManage.BackEnd';
+
+        var oi18nLanguAuto;
+        var WebApiUrl_Area_Com = '../api/UserManageApi';
+
+        $(document).ready(function () {
+            QueryString.Initial();
+
+            oi18nLanguAuto = new i18nLanguAuto();
+            oi18nLanguAuto.Initial();
+
+            DefineGrid();
+            DefineGridButton();
+            MyKendoTooltip('.k-grid-btnUpdateDbScheme', null, i18n.t(vi18n_Name + '.btnUpdateDbSchemeEXPLAIN'));
+        })
+
+    </script>
+
+    @*API區 Ajax有關*@
+    <script>
+        function GridDataSource() {
+
+            var datasource = new kendo.data.DataSource({
+                transport: {
+                    read: {
+                        url: WebApiUrl_Area_Com + "/R_COMM_NODEFUNCTION",
+                        type: "Post",
+                        dataType: "json",
+                        async: false
+                    },
+                    update: {
+                        url: WebApiUrl_Area_Com + "/U_COMM_NODEFUNCTION",
+                        type: "Post",
+                        dataType: "json",
+                        async: false
+                    },
+                    destroy: {
+                        url: WebApiUrl_Area_Com + "/D_COMM_NODEFUNCTION",
+                        type: "Post",
+                        dataType: "json",
+                        async: false
+                    },
+                    create: {
+                        url: WebApiUrl_Area_Com + "/C_COMM_NODEFUNCTION",
+                        type: "Post",
+                        dataType: "json",
+                        async: false
+                    },
+                    parameterMap: function (options, operation) {
+                        if (operation !== "read" && options) {
+                            return options;
+                        }
+                        else {
+                            return oDataModels;
+                        }
+                    }
+                },
+                requestEnd: function (e) {//新刪修完成後更新頁面資料
+                    var type = e.type;
+
+                    if (type != 'read') {
+
+                        alert(oi18nLanguAuto.translate(e.response.ReturnMessage, vi18n_BackEnd));
+
+                        $("#grid").data("kendoGrid").dataSource.read();
+                    }
+                },
+                //batch: true,
+                pageSize: 12,
+                schema: {
+                    model: {
+                        id: "AUTHID",
+                        fields: {
+                            AUTHID: {type: 'number'},
+                            AUTHTEXT: { validation: { required: true }},
+                            OBJECTCLASS: { validation: { required: true }},
+                        }
+                    }
+                },
+                sort: [
+                    { field: "AUTHID", dir: "asc" },
+                ],
+            });
+
+            return datasource;
+        }
+
+        //調整table欄位到與最新版本相符
+        function btnUpdateDbScheme_Click() {
+            
+            $.ajax({
+                url: WebApiUrl_Area_Com + "/CheckComdb",
+                type: 'Post',
+                dataType: 'json',
+                async: false,
+                data: {                    
+                },
+                success: function success(ResultData) {
+                    alert(ResultData.ReturnMessage);
+                },
+                error: function error(ResultData) {
+                    alert(ResultData.ReturnMessage);
+                }
+            });
+        }
+    </script>
+
+    @*邏輯區*@
+    <script>
+        function btnQuery_Click() {
+            $('#grid').data('kendoGrid').dataSource.read();
+        }
+
+        //取得全部資料(不理會分群)，若是進grid edit event 也會抓到新增的
+        function getGridData(sGridName) {
+            return data = $("#" + sGridName).data("kendoGrid").dataSource.data();
+        }
+    </script>
+
+    @*定義區 Kendo物件等*@
+    <script>
+        function DefineGrid() {
+            var dsGrid;
+
+            dsGrid = GridDataSource();
+
+            $("#grid").kendoGrid({
+                dataSource: dsGrid,
+                autoBind: true,//初始資料顯示
+                excel: {//輸出excel 設定
+                    fileName: i18n.t('UserManage.ExcelDataExport')
+                },
+                edit: function (e) {
+                   
+                    e.container.find("input[name=AUTHID]").data('kendoNumericTextBox').enable(false);;
+
+                    if (e.model.isNew() && !e.model.dirty) {
+
+                        const AUTHID = Number(getGridData('grid').length) ;
+
+                        //設定流水號
+                        e.model.set("AUTHID", AUTHID);
+
+                    }
+                },
+                toolbar:
+                    [
+                        {
+                            name: 'btnQuery',
+                            text: i18n.t('ButtonCommon.Query'),
+                            className: 'btn btn_primary',
+                            iconClass: 'fa fa-search'
+                        },
+                        {
+                            name: 'create',
+                            text: i18n.t('ButtonCommon.Add'),
+                        },
+                        {
+                            name: 'btnUpdateDbScheme',
+                            text: i18n.t(vi18n_Name + '.btnUpdateDbScheme'),
+                            className: 'btn btn_secondary',
+                            iconClass: 'fa fa-database '
+                        },
+                        //{
+                        //    name: 'cancel',
+                        //    text: i18n.t('ButtonCommon.Cancel'),
+                        //},
+                    ],
+                pageable: true,
+                filterable: true,
+                selectable: 'row',
+                persistSelection:true,
+                scrollable: true,
+                height: 650,
+                noRecords: {
+                    template: i18n.t('UserManage.NoData')
+                },
+                columns: [
+                    {
+
+                        command: [
+                            {
+                                name: "edit",
+                                template: "<a class='crud crud_edit k-grid-edit'><i class='fa fa-pencil'></i></a>&nbsp",
+                            },
+                            {
+                                name: 'destroy',                                
+                                template: "<a class='crud crud_delete k-grid-delete'><i class='fa fa-trash'></i></a>"
+                            },
+                        ],
+                        itle: "", width: "100px", headerAttributes: { style: "text-align: center" }, attributes: { style: "text-align: center" }
+                    },
+                    { field: "AUTHID", title: i18n.t(vi18n_Name + '.AUTHID'), width: "10%", headerAttributes: { style: "text-align: center" }, attributes: { style: "text-align: center" } },
+                    { field: "AUTHTEXT", title: i18n.t(vi18n_Name + '.AUTHTEXT'), width: "30%", headerAttributes: { style: "text-align: center" }, attributes: { style: "text-align: center" } },
+                    { field: "OBJECTCLASS", editor: TextAreaEditor, title: i18n.t(vi18n_Name + '.OBJECTCLASS'), width: "30%", headerAttributes: { style: "text-align: center" }, attributes: { style: "text-align: center" } },
+                ],
+
+                dataBound: function (e) {
+                    //自動調整寬度
+                    for (var i = 0; i < this.columns.length; i++) {
+                        this.autoFitColumn(i);
+                    }
+                },
+
+                editable: {
+                    mode: "popup",
+                    window: {
+                        position: {
+                            top: '20px',
+                            left: "30%"
+                        }
+                    }
+                },
+            });
+
+        }
+
+        function DefineGridButton() {            
+            $('.k-grid-btnQuery').click(btnQuery_Click);
+            $('.k-grid-btnUpdateDbScheme').click(btnUpdateDbScheme_Click);            
+        }
+
+        //文字編輯
+        function TextAreaEditor(container, options) {
+            $('<textarea  name ="' + options.field + '" data-bind="value:' + options.field + '"  style="height:90px"  type="text"/>')
+                .appendTo(container);
+        }
+
+        //kendoTooltip 提示畫面, sJSelector jqury 選擇器 ; sChildSelector 子選擇器
+        function MyKendoTooltip(sJSelector, sChildSelector, sContent) {
+
+            var oConfig = {
+                //filter: sSelector,
+                //content: sContent,
+                animation: {
+                    close: {
+                        effects: "fade:out",
+                        //duration: 1000
+                    },
+                    open: {
+                        effects: "fade:in",
+                        //duration: 1000
+                    }
+                },
+            }
+
+            if (sChildSelector)
+                oConfig.filter = sChildSelector;
+
+            if (sContent)
+                oConfig.content = sContent;
+
+            $(sJSelector).kendoTooltip(oConfig);
+        }
+    </script>
+</body>
+</html>
+

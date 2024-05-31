@@ -1,0 +1,16 @@
+{
+  "FtcCommon": {
+    "CompanyID": "公司編號",
+    "FactoryID": "工廠編號",
+    "MODIFYUSER": "修改人員",
+    "LOTID": "工單編號",
+    "EQPID": "機台編號"
+  },
+  "ButtonCommon": {
+    "Add": "新增A",
+    "Modify": "修改B",
+    "Delete": "刪除",
+    "Refresh": "更新",
+    "Detail": "細項資料A"
+  }
+}

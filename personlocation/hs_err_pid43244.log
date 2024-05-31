@@ -1,0 +1,619 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 262160 bytes for Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (./src/hotspot/share/memory/arena.cpp:197), pid=43244, tid=13568
+#
+# JRE version: OpenJDK Runtime Environment Zulu11.45+27-CA (11.0.10+9) (build 11.0.10+9-LTS)
+# Java VM: OpenJDK 64-Bit Server VM Zulu11.45+27-CA (11.0.10+9-LTS, mixed mode, tiered, compressed oops, parallel gc, windows-amd64)
+# Core dump will be written. Default location: D:\XD5300\FTC_MVC_Template\hs_err_pid43244.mdmp
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Djava.awt.headless=true -Dcom.sun.management.jmxremote=true -XX:+UseParallelGC -XX:SoftRefLRUPolicyMSPerMB=3000 --illegal-access=permit --add-exports=jdk.management/com.sun.management.internal=ALL-UNNAMED --add-exports=jdk.scripting.nashorn/jdk.nashorn.internal.runtime=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.util.regex=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/javax.crypto=ALL-UNNAMED --add-opens=java.management/sun.management=ALL-UNNAMED -Dwin32.LocalAppdata=C:\Users\XD5300\AppData\Local -Ddotnet.install.dir=C:\Windows\Microsoft.NET\Framework64\ -Ddotnet.sdk.v11.install.dir= -Ddotnet.sdk.v20.install.dir= -Ddotnet.sdk.v3x.install.dir= -Ddotnet.v30.referenceAssemblies=C:\Program Files\Reference Assemblies\Microsoft\Framework\v3.0\ -Ddotnet.v35.referenceAssemblies=C:\Program Files\Reference Assemblies\Microsoft\Framework\v3.5\ -Dvs.140.dotnet.clr.version=v4.0.30319 -Dcom.fortify.sca.env.include=C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\cppwinrt -Dcom.fortify.sca.env.exesearchpath=D:\XD5300\FTC_MVC_Template;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\VC\VCPackages;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\TestWindow;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\TeamFoundation\Team Explorer;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\bin\Roslyn;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Team Tools\Performance Tools;C:\Program Files (x86)\Microsoft Visual Studio\Shared\Common\VSPerfCollectionTools\vs2019\;C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\FSharp\Tools;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\Tools\devinit;C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86;C:\Program Files (x86)\Windows Kits\10\bin\x86;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\\MSBuild\Current\Bin;C:\Windows\Microsoft.NET\Framework\v4.0.30319;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\Tools\;C:\Program Files\Fortify\Fortify_SCA_and_Apps_20.2.0\bin;C:\Program Files\Fortify\Fortify_SCA_and_Apps_21.2.3\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\WINDOWS\system32\config\systemprofile\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\XD5300\AppData\Local\Microsoft\WindowsApps;;C:\Program Files (x86)\Microsoft Visual Stu-Dcom.fortify.sca.ProjectRoot=E:/Fortify -Dstdout.isatty=false -Dstderr.isatty=false -Dcom.fortify.sca.PID=43244 -Xmx30922850304 -Dcom.fortify.TotalPhysicalMemory=34358722560 -Xss16M -Dcom.fortify.sca.JVMArgs=-XX:+UseParallelGC -XX:SoftRefLRUPolicyMSPerMB=3000 --illegal-access=permit --add-exports=jdk.management/com.sun.management.internal=ALL-UNNAMED --add-exports=jdk.scripting.nashorn/jdk.nashorn.internal.runtime=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.util.regex=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/javax.crypto=ALL-UNNAMED --add-opens=java.management/sun.management=ALL-UNNAMED -Xmx30922850304 -Xss16M sourceanalyzer -Djava.awt.headless=true -Dcom.sun.management.jmxremote=true -XX:+UseParallelGC -XX:SoftRefLRUPolicyMSPerMB=3000 --illegal-access=permit --add-exports=jdk.management/com.sun.management.internal=ALL-UNNAMED --add-exports=jdk.scripting.nashorn/jdk.nashorn.internal.runtime=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.util.regex=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/javax.crypto=ALL-UNNAMED --add-opens=java.management/sun.management=ALL-UNNAMED -Dwin32.LocalAppdata=C:\Users\XD5300\AppData\Local -Ddotnet.install.dir=C:\Windows\Microsoft.NET\Framework64\ -Ddotnet.sdk.v11.install.dir= -Ddotnet.sdk.v20.install.dir= -Ddotnet.sdk.v3x.install.dir= -Ddotnet.v30.referenceAssemblies=C:\Program Files\Reference Assemblies\Microsoft\Framework\v3.0\ -Ddotnet.v35.referenceAssemblies=C:\Program Files\Reference Assemblies\Microsoft\Framework\v3.5\ -Dvs.140.dotnet.clr.version=v4.0.30319 -Dcom.fortify.sca.env.include=C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\cppwinrt -Dcom.fortify.sca.env.exesearchpath=D:\XD5300\FTC_MVC_Template;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\VC\VCPackages;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\TestWindow;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\TeamFoundation\Team Explorer;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\bin\Roslyn;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Team Tools\Performance Tools;C:\Program Files (x86)\Microsoft Visual Studio\Shared\Common\VSPerfCollectionTools\vs2019\;C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\FSharp\Tools;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\Tools\devinit;C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86;C:\Program Files (x86)\Windows Kits\10\bin\x86;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\\MSBuild\Current\Bin;C:\Windows\Microsoft.NET\Framework\v4.0.30319;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\Tools\;C:\Program Files\Fortify\Fortify_SCA_and_Apps_20.2.0\bin;C:\Program Files\Fortify\Fortify_SCA_and_Apps_21.2.3\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\WINDOWS\system32\config\systemprofile\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\XD5300\AppData\Local\Microsoft\WindowsApps;;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\VC\Linux\bin\ConnectionManagerExe -Dcom.fortify.sca.ProjectRoot=E:/Fortify -Dstdout.isatty=false -Dstderr.isatty=false -Dcom.fortify.sca.PID=43244 -Xmx30922850304 -Dcom.fortify.TotalPhysicalMemory=34358722560 -Xss16M -Dcom.fortify.sca.JVMArgs=-XX:+UseParallelGC -XX:SoftRefLRUPolicyMSPerMB=3000 --illegal-access=permit --add-exports=jdk.management/com.sun.management.internal=ALL-UNNAMED --add-exports=jdk.scripting.nashorn/jdk.nashorn.internal.runtime=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.util.regex=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/javax.crypto=ALL-UNNAMED --add-opens=java.management/sun.management=ALL-UNNAMED -Xmx30922850304 -Xss16M -Djava.class.path=C:\Program Files\Fortify\Fortify_SCA_and_Apps_21.2.3\Core\lib\exe\sca-exe.jar -machine-output -b FTC_MES_MVC.sln -scan -f C:\Users\XD5300\AppData\Local\Fortify\VS16.0-21.2.3\FTC_MES_MVC\Scan-FTC_MES_MVC.sln.fpr
+
+Host: Intel(R) Xeon(R) Gold 6242 CPU @ 2.80GHz, 8 cores, 31G,  Windows Server 2019 , 64 bit Build 17763 (10.0.17763.3287)
+Time: Mon Dec 19 17:38:31 2022 ¢Dx¢D_?D¡PCRE?! elapsed time: 1275.833145 seconds (0d 0h 21m 15s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000020aff503000):  JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=13568, stack(0x000000e16aa00000,0x000000e16ab00000)]
+
+
+Current CompileTask:
+C2:1275834 29281       4       com.fortify.sca.analyzer.dataflow.pushdown.StackCESKMachinery::specialCallFunCallHelper (580 bytes)
+
+Stack: [0x000000e16aa00000,0x000000e16ab00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x5f59fa]
+V  [jvm.dll+0x77f60e]
+V  [jvm.dll+0x780cdf]
+V  [jvm.dll+0x7813a3]
+V  [jvm.dll+0x246988]
+V  [jvm.dll+0xbe90c]
+V  [jvm.dll+0xbea7d]
+V  [jvm.dll+0x5d4c88]
+V  [jvm.dll+0x86d1c]
+V  [jvm.dll+0x58a7c8]
+V  [jvm.dll+0x58904e]
+V  [jvm.dll+0x2000e7]
+V  [jvm.dll+0x1ff42f]
+V  [jvm.dll+0x18491c]
+V  [jvm.dll+0x20e957]
+V  [jvm.dll+0x20cb3b]
+V  [jvm.dll+0x743919]
+V  [jvm.dll+0x73c994]
+V  [jvm.dll+0x5f4876]
+C  [ucrtbase.dll+0x2268a]
+C  [KERNEL32.DLL+0x17974]
+C  [ntdll.dll+0x5a371]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x0000020adf4c59a0, length=27, elements={
+0x0000020af8514000, 0x0000020af8274000, 0x0000020af827d800, 0x0000020af829b800,
+0x0000020af829c800, 0x0000020aff501800, 0x0000020aff503000, 0x0000020aff509800,
+0x0000020aff50d000, 0x0000020aff607000, 0x0000020ad63dc000, 0x0000020ad6616000,
+0x0000020ad65f5000, 0x0000020ad6627000, 0x0000020ad71df800, 0x0000020ad95e6800,
+0x0000020ada475000, 0x0000020ad9e87000, 0x0000020ad8222800, 0x0000020ad8225800,
+0x0000020ad8226800, 0x0000020ad8223000, 0x0000020ad8224000, 0x0000020ad8229800,
+0x0000020ad822e800, 0x0000020ad822a800, 0x0000020ad822c000
+}
+
+Java Threads: ( => current thread )
+  0x0000020af8514000 JavaThread "main" [_thread_blocked, id=43916, stack(0x000000e165400000,0x000000e165500000)]
+  0x0000020af8274000 JavaThread "Reference Handler" daemon [_thread_blocked, id=43272, stack(0x000000e165a00000,0x000000e166a00000)]
+  0x0000020af827d800 JavaThread "Finalizer" daemon [_thread_blocked, id=35408, stack(0x000000e166a00000,0x000000e167a00000)]
+  0x0000020af829b800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=48000, stack(0x000000e167a00000,0x000000e168a00000)]
+  0x0000020af829c800 JavaThread "Attach Listener" daemon [_thread_blocked, id=29820, stack(0x000000e168a00000,0x000000e169a00000)]
+  0x0000020aff501800 JavaThread "Service Thread" daemon [_thread_blocked, id=37416, stack(0x000000e169a00000,0x000000e16aa00000)]
+=>0x0000020aff503000 JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=13568, stack(0x000000e16aa00000,0x000000e16ab00000)]
+  0x0000020aff509800 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=38784, stack(0x000000e16ab00000,0x000000e16ac00000)]
+  0x0000020aff50d000 JavaThread "Sweeper thread" daemon [_thread_blocked, id=34304, stack(0x000000e16ac00000,0x000000e16bc00000)]
+  0x0000020aff607000 JavaThread "Common-Cleaner" daemon [_thread_blocked, id=34444, stack(0x000000e16bc00000,0x000000e16cc00000)]
+  0x0000020ad63dc000 JavaThread "RMI TCP Accept-0" daemon [_thread_in_native, id=16084, stack(0x000000e16cd00000,0x000000e16dd00000)]
+  0x0000020ad6616000 JavaThread "sourceanalyzer" [_thread_blocked, id=37128, stack(0x000000e16df00000,0x000000e16ef00000)]
+  0x0000020ad65f5000 JavaThread "Stream Monitor [out] " daemon [_thread_blocked, id=2260, stack(0x000000e16f600000,0x000000e170600000)]
+  0x0000020ad6627000 JavaThread "Stream Monitor [err] " daemon [_thread_blocked, id=30328, stack(0x000000e170600000,0x000000e171600000)]
+  0x0000020ad71df800 JavaThread "progress display" daemon [_thread_blocked, id=26056, stack(0x000000e171600000,0x000000e172600000)]
+  0x0000020ad95e6800 JavaThread "ScanMonitor" daemon [_thread_blocked, id=16628, stack(0x000000e172600000,0x000000e173600000)]
+  0x0000020ada475000 JavaThread "AsynchronousNstSerializer" daemon [_thread_in_Java, id=38976, stack(0x000000e173600000,0x000000e174600000)]
+  0x0000020ad9e87000 JavaThread "AsynchronousNctSerializer" daemon [_thread_blocked, id=26800, stack(0x000000e174600000,0x000000e175600000)]
+  0x0000020ad8222800 JavaThread "watchdog timer" daemon [_thread_blocked, id=41568, stack(0x000000e100000000,0x000000e101000000)]
+  0x0000020ad8225800 JavaThread "HOAv3.Iterate-thread-1" [_thread_in_native, id=8936, stack(0x000000e101000000,0x000000e102000000)]
+  0x0000020ad8226800 JavaThread "HOAv3.Iterate-thread-2" [_thread_in_native, id=29196, stack(0x000000e102000000,0x000000e103000000)]
+  0x0000020ad8223000 JavaThread "HOAv3.Iterate-thread-3" [_thread_in_Java, id=37124, stack(0x000000e103000000,0x000000e104000000)]
+  0x0000020ad8224000 JavaThread "HOAv3.Iterate-thread-4" [_thread_in_Java, id=34296, stack(0x000000e104000000,0x000000e105000000)]
+  0x0000020ad8229800 JavaThread "HOAv3.Iterate-thread-5" [_thread_in_Java, id=47072, stack(0x000000e105000000,0x000000e106000000)]
+  0x0000020ad822e800 JavaThread "HOAv3.Iterate-thread-6" [_thread_in_Java, id=37612, stack(0x000000e106000000,0x000000e107000000)]
+  0x0000020ad822a800 JavaThread "HOAv3.Iterate-thread-7" [_thread_in_Java, id=10552, stack(0x000000e107000000,0x000000e108000000)]
+  0x0000020ad822c000 JavaThread "HOAv3.Iterate-thread-8" [_thread_in_Java, id=31420, stack(0x000000e108000000,0x000000e109000000)]
+
+Other Threads:
+  0x0000020af81f0800 VMThread "VM Thread" [stack: 0x000000e165900000,0x000000e165a00000] [id=37052]
+  0x0000020ad63f6000 WatcherThread [stack: 0x000000e16dd00000,0x000000e16de00000] [id=20436]
+  0x0000020af852f800 GCTaskThread "ParGC Thread#0" [stack: 0x000000e165800000,0x000000e165900000] [id=23240]
+  0x0000020ad672c800 GCTaskThread "ParGC Thread#1" [stack: 0x000000e16ef00000,0x000000e16f000000] [id=16088]
+  0x0000020ad6679000 GCTaskThread "ParGC Thread#2" [stack: 0x000000e16f000000,0x000000e16f100000] [id=2784]
+  0x0000020ad6682800 GCTaskThread "ParGC Thread#3" [stack: 0x000000e16f100000,0x000000e16f200000] [id=41152]
+  0x0000020ad6b5a800 GCTaskThread "ParGC Thread#4" [stack: 0x000000e16f200000,0x000000e16f300000] [id=36608]
+  0x0000020ad6b5b800 GCTaskThread "ParGC Thread#5" [stack: 0x000000e16f300000,0x000000e16f400000] [id=24844]
+  0x0000020ad7042800 GCTaskThread "ParGC Thread#6" [stack: 0x000000e16f400000,0x000000e16f500000] [id=39176]
+  0x0000020ad7043000 GCTaskThread "ParGC Thread#7" [stack: 0x000000e16f500000,0x000000e16f600000] [id=10424]
+
+Threads with active compile tasks:
+C2 CompilerThread01275981 29281       4       com.fortify.sca.analyzer.dataflow.pushdown.StackCESKMachinery::specialCallFunCallHelper (580 bytes)
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap address: 0x00000000ccc00000, size: 29492 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+Narrow klass base: 0x0000000800000000, Narrow klass shift: 0
+Compressed class space size: 1073741824 Address: 0x0000000800000000
+
+Heap:
+ PSYoungGen      total 8052224K, used 968570K [0x0000000599980000, 0x00000007f7980000, 0x0000000800000000)
+  eden space 7488512K, 9% used [0x0000000599980000,0x00000005c36736f0,0x0000000762a80000)
+  from space 563712K, 50% used [0x0000000762a80000,0x0000000773f6b2a0,0x0000000785100000)
+  to   space 1220096K, 0% used [0x00000007ad200000,0x00000007ad200000,0x00000007f7980000)
+ ParOldGen       total 7743488K, used 6294373K [0x00000000ccc00000, 0x00000002a5600000, 0x0000000599980000)
+  object space 7743488K, 81% used [0x00000000ccc00000,0x000000024ced96e0,0x00000002a5600000)
+ Metaspace       used 116015K, capacity 126608K, committed 126704K, reserved 1161216K
+  class space    used 12273K, capacity 14944K, committed 14976K, reserved 1048576K
+
+Card table byte_map: [0x0000020af8570000,0x0000020afbf10000] _byte_map_base: 0x0000020af7f0a000
+
+Marking Bits: (ParMarkBitMap*) 0x00007ffdb1e0c340
+ Begin Bits: [0x0000020a978a0000, 0x0000020ab4570000)
+ End Bits:   [0x0000020ab4570000, 0x0000020ad1240000)
+
+Polling page: 0x0000020af60a0000
+
+Metaspace:
+
+Usage:
+  Non-class:    109.05 MB capacity,   101.31 MB ( 93%) used,     7.15 MB (  7%) free+waste,   600.63 KB ( <1%) overhead. 
+      Class:     14.59 MB capacity,    11.99 MB ( 82%) used,     2.31 MB ( 16%) free+waste,   300.31 KB (  2%) overhead. 
+       Both:    123.64 MB capacity,   113.30 MB ( 92%) used,     9.46 MB (  8%) free+waste,   900.94 KB ( <1%) overhead. 
+
+Virtual space:
+  Non-class space:      110.00 MB reserved,     109.11 MB (>99%) committed 
+      Class space:        1.00 GB reserved,      14.63 MB (  1%) committed 
+             Both:        1.11 GB reserved,     123.73 MB ( 11%) committed 
+
+Chunk freelists:
+   Non-Class:  0 bytes
+       Class:  0 bytes
+        Both:  0 bytes
+
+MaxMetaspaceSize: 17179869184.00 GB
+CompressedClassSpaceSize: 1.00 GB
+
+CodeHeap 'non-profiled nmethods': size=120000Kb used=29990Kb max_used=30816Kb free=90009Kb
+ bounds [0x0000020a90370000, 0x0000020a92190000, 0x0000020a978a0000]
+CodeHeap 'profiled nmethods': size=120000Kb used=37395Kb max_used=39146Kb free=82604Kb
+ bounds [0x0000020a88e40000, 0x0000020a8b5a0000, 0x0000020a90370000]
+CodeHeap 'non-nmethods': size=5760Kb used=1396Kb max_used=1551Kb free=4363Kb
+ bounds [0x0000020a888a0000, 0x0000020a88b10000, 0x0000020a88e40000]
+ total_blobs=19803 nmethods=18981 adapters=732
+ compilation: enabled
+              stopped_count=0, restarted_count=0
+ full_count=0
+
+Compilation events (20 events):
+Event: 1242.422 Thread 0x0000020aff509800 nmethod 29272 0x0000020a898a3210 code [0x0000020a898a3480, 0x0000020a898a4378]
+Event: 1242.422 Thread 0x0000020aff509800 29271   !   3       com.fortify.frontend.parser.javascript.ast.JavaScriptParser::jj_2_59 (34 bytes)
+Event: 1242.422 Thread 0x0000020aff509800 nmethod 29271 0x0000020a895f2a10 code [0x0000020a895f2bc0, 0x0000020a895f2dc8]
+Event: 1242.856 Thread 0x0000020aff503000 29273       4       com.fortify.frontend.nodes.STAllocation::accept (9 bytes)
+Event: 1242.856 Thread 0x0000020aff503000 nmethod 29273 0x0000020a91501a90 code [0x0000020a91501c20, 0x0000020a91501cb8]
+Event: 1248.377 Thread 0x0000020aff503000 29274       4       com.fortify.sca.analyzer.preproc.SSAUtil::getReachingDefinitions (229 bytes)
+Event: 1248.439 Thread 0x0000020aff503000 nmethod 29274 0x0000020a9171e690 code [0x0000020a9171eae0, 0x0000020a91721450]
+Event: 1255.320 Thread 0x0000020aff509800 29275  s    3       com.fortify.sca.analyzer.structural.NstConstruct::clearChildrenCache (6 bytes)
+Event: 1255.320 Thread 0x0000020aff509800 nmethod 29275 0x0000020a89642a90 code [0x0000020a89642c40, 0x0000020a89642ed8]
+Event: 1256.118 Thread 0x0000020aff503000 29276       4       com.fortify.sca.nst.nodes.NSTLocation::getResolvedTypes (293 bytes)
+Event: 1256.220 Thread 0x0000020aff503000 nmethod 29276 0x0000020a9197bc90 code [0x0000020a9197c000, 0x0000020a9197df88]
+Event: 1256.612 Thread 0x0000020aff509800 29277       3       com.fortify.sca.nst.nodes.NSTCallStmt::replaceChild (39 bytes)
+Event: 1256.612 Thread 0x0000020aff509800 nmethod 29277 0x0000020a897d3210 code [0x0000020a897d3440, 0x0000020a897d3d88]
+Event: 1259.815 Thread 0x0000020aff509800 29278       3       com.ergy.fset.FHashSet::with (308 bytes)
+Event: 1259.818 Thread 0x0000020aff509800 nmethod 29278 0x0000020a89f31a90 code [0x0000020a89f31f20, 0x0000020a89f35528]
+Event: 1259.849 Thread 0x0000020aff503000 29279       4       com.ergy.fset.FHashSet::with (308 bytes)
+Event: 1260.041 Thread 0x0000020aff503000 nmethod 29279 0x0000020a91bc2990 code [0x0000020a91bc2e40, 0x0000020a91bc7028]
+Event: 1263.159 Thread 0x0000020aff503000 29280   !   4       com.fortify.sca.nst.nodes.NSTBlock::insertChildAfter (66 bytes)
+Event: 1263.171 Thread 0x0000020aff503000 nmethod 29280 0x0000020a9157e110 code [0x0000020a9157e300, 0x0000020a9157f078]
+Event: 1275.519 Thread 0x0000020aff503000 29281       4       com.fortify.sca.analyzer.dataflow.pushdown.StackCESKMachinery::specialCallFunCallHelper (580 bytes)
+
+GC Heap History (20 events):
+Event: 1213.345 GC heap before
+{Heap before GC invocations=159 (full 19):
+ PSYoungGen      total 8932864K, used 8271936K [0x0000000599980000, 0x00000007f5a00000, 0x0000000800000000)
+  eden space 8012288K, 100% used [0x0000000599980000,0x0000000782a00000,0x0000000782a00000)
+  from space 920576K, 28% used [0x00000007bd700000,0x00000007cd490010,0x00000007f5a00000)
+  to   space 942080K, 0% used [0x0000000782a00000,0x0000000782a00000,0x00000007bc200000)
+ ParOldGen       total 6294528K, used 5332219K [0x00000000ccc00000, 0x000000024cf00000, 0x0000000599980000)
+  object space 6294528K, 84% used [0x00000000ccc00000,0x000000021233ec60,0x000000024cf00000)
+ Metaspace       used 115994K, capacity 126608K, committed 126704K, reserved 1161216K
+  class space    used 12273K, capacity 14944K, committed 14976K, reserved 1048576K
+}
+Event: 1213.533 GC heap after
+{Heap after GC invocations=159 (full 19):
+ PSYoungGen      total 8954368K, used 392672K [0x0000000599980000, 0x00000007fdc00000, 0x0000000800000000)
+  eden space 8012288K, 0% used [0x0000000599980000,0x0000000599980000,0x0000000782a00000)
+  from space 942080K, 41% used [0x0000000782a00000,0x000000079a978010,0x00000007bc200000)
+  to   space 912896K, 0% used [0x00000007c6080000,0x00000007c6080000,0x00000007fdc00000)
+ ParOldGen       total 6294528K, used 5332219K [0x00000000ccc00000, 0x000000024cf00000, 0x0000000599980000)
+  object space 6294528K, 84% used [0x00000000ccc00000,0x000000021233ec60,0x000000024cf00000)
+ Metaspace       used 115994K, capacity 126608K, committed 126704K, reserved 1161216K
+  class space    used 12273K, capacity 14944K, committed 14976K, reserved 1048576K
+}
+Event: 1220.549 GC heap before
+{Heap before GC invocations=160 (full 19):
+ PSYoungGen      total 8954368K, used 8404960K [0x0000000599980000, 0x00000007fdc00000, 0x0000000800000000)
+  eden space 8012288K, 100% used [0x0000000599980000,0x0000000782a00000,0x0000000782a00000)
+  from space 942080K, 41% used [0x0000000782a00000,0x000000079a978010,0x00000007bc200000)
+  to   space 912896K, 0% used [0x00000007c6080000,0x00000007c6080000,0x00000007fdc00000)
+ ParOldGen       total 6294528K, used 5332219K [0x00000000ccc00000, 0x000000024cf00000, 0x0000000599980000)
+  object space 6294528K, 84% used [0x00000000ccc00000,0x000000021233ec60,0x000000024cf00000)
+ Metaspace       used 115994K, capacity 126608K, committed 126704K, reserved 1161216K
+  class space    used 12273K, capacity 14944K, committed 14976K, reserved 1048576K
+}
+Event: 1220.763 GC heap after
+{Heap after GC invocations=160 (full 19):
+ PSYoungGen      total 9104896K, used 501408K [0x0000000599980000, 0x00000007ffa80000, 0x0000000800000000)
+  eden space 8192000K, 0% used [0x0000000599980000,0x0000000599980000,0x000000078d980000)
+  from space 912896K, 54% used [0x00000007c6080000,0x00000007e4a28010,0x00000007fdc00000)
+  to   space 924672K, 0% used [0x000000078d980000,0x000000078d980000,0x00000007c6080000)
+ ParOldGen       total 6294528K, used 5332219K [0x00000000ccc00000, 0x000000024cf00000, 0x0000000599980000)
+  object space 6294528K, 84% used [0x00000000ccc00000,0x000000021233ec60,0x000000024cf00000)
+ Metaspace       used 115994K, capacity 126608K, committed 126704K, reserved 1161216K
+  class space    used 12273K, capacity 14944K, committed 14976K, reserved 1048576K
+}
+Event: 1227.093 GC heap before
+{Heap before GC invocations=161 (full 19):
+ PSYoungGen      total 9104896K, used 8693408K [0x0000000599980000, 0x00000007ffa80000, 0x0000000800000000)
+  eden space 8192000K, 100% used [0x0000000599980000,0x000000078d980000,0x000000078d980000)
+  from space 912896K, 54% used [0x00000007c6080000,0x00000007e4a28010,0x00000007fdc00000)
+  to   space 924672K, 0% used [0x000000078d980000,0x000000078d980000,0x00000007c6080000)
+ ParOldGen       total 6294528K, used 5332219K [0x00000000ccc00000, 0x000000024cf00000, 0x0000000599980000)
+  object space 6294528K, 84% used [0x00000000ccc00000,0x000000021233ec60,0x000000024cf00000)
+ Metaspace       used 115994K, capacity 126608K, committed 126704K, reserved 1161216K
+  class space    used 12273K, capacity 14944K, committed 14976K, reserved 1048576K
+}
+Event: 1227.310 GC heap after
+{Heap after GC invocations=161 (full 19):
+ PSYoungGen      total 8813568K, used 621312K [0x0000000599980000, 0x0000000800000000, 0x0000000800000000)
+  eden space 8192000K, 0% used [0x0000000599980000,0x0000000599980000,0x000000078d980000)
+  from space 621568K, 99% used [0x000000078d980000,0x00000007b3840020,0x00000007b3880000)
+  to   space 974336K, 0% used [0x00000007c4880000,0x00000007c4880000,0x0000000800000000)
+ ParOldGen       total 6294528K, used 5332219K [0x00000000ccc00000, 0x000000024cf00000, 0x0000000599980000)
+  object space 6294528K, 84% used [0x00000000ccc00000,0x000000021233ec60,0x000000024cf00000)
+ Metaspace       used 115994K, capacity 126608K, committed 126704K, reserved 1161216K
+  class space    used 12273K, capacity 14944K, committed 14976K, reserved 1048576K
+}
+Event: 1233.187 GC heap before
+{Heap before GC invocations=162 (full 19):
+ PSYoungGen      total 8813568K, used 8813312K [0x0000000599980000, 0x0000000800000000, 0x0000000800000000)
+  eden space 8192000K, 100% used [0x0000000599980000,0x000000078d980000,0x000000078d980000)
+  from space 621568K, 99% used [0x000000078d980000,0x00000007b3840020,0x00000007b3880000)
+  to   space 974336K, 0% used [0x00000007c4880000,0x00000007c4880000,0x0000000800000000)
+ ParOldGen       total 6294528K, used 5332219K [0x00000000ccc00000, 0x000000024cf00000, 0x0000000599980000)
+  object space 6294528K, 84% used [0x00000000ccc00000,0x000000021233ec60,0x000000024cf00000)
+ Metaspace       used 115994K, capacity 126608K, committed 126704K, reserved 1161216K
+  class space    used 12273K, capacity 14944K, committed 14976K, reserved 1048576K
+}
+Event: 1233.489 GC heap after
+{Heap after GC invocations=162 (full 19):
+ PSYoungGen      total 8927232K, used 745248K [0x0000000599980000, 0x0000000800000000, 0x0000000800000000)
+  eden space 7952896K, 0% used [0x0000000599980000,0x0000000599980000,0x000000077f000000)
+  from space 974336K, 76% used [0x00000007c4880000,0x00000007f2048020,0x0000000800000000)
+  to   space 1056768K, 0% used [0x000000077f000000,0x000000077f000000,0x00000007bf800000)
+ ParOldGen       total 6294528K, used 5332219K [0x00000000ccc00000, 0x000000024cf00000, 0x0000000599980000)
+  object space 6294528K, 84% used [0x00000000ccc00000,0x000000021233ec60,0x000000024cf00000)
+ Metaspace       used 115994K, capacity 126608K, committed 126704K, reserved 1161216K
+  class space    used 12273K, capacity 14944K, committed 14976K, reserved 1048576K
+}
+Event: 1239.185 GC heap before
+{Heap before GC invocations=163 (full 19):
+ PSYoungGen      total 8927232K, used 8698144K [0x0000000599980000, 0x0000000800000000, 0x0000000800000000)
+  eden space 7952896K, 100% used [0x0000000599980000,0x000000077f000000,0x000000077f000000)
+  from space 974336K, 76% used [0x00000007c4880000,0x00000007f2048020,0x0000000800000000)
+  to   space 1056768K, 0% used [0x000000077f000000,0x000000077f000000,0x00000007bf800000)
+ ParOldGen       total 6294528K, used 5332219K [0x00000000ccc00000, 0x000000024cf00000, 0x0000000599980000)
+  object space 6294528K, 84% used [0x00000000ccc00000,0x000000021233ec60,0x000000024cf00000)
+ Metaspace       used 115994K, capacity 126608K, committed 126704K, reserved 1161216K
+  class space    used 12273K, capacity 14944K, committed 14976K, reserved 1048576K
+}
+Event: 1239.501 GC heap after
+{Heap after GC invocations=163 (full 19):
+ PSYoungGen      total 8817664K, used 864400K [0x0000000599980000, 0x0000000800000000, 0x0000000800000000)
+  eden space 7952896K, 0% used [0x0000000599980000,0x0000000599980000,0x000000077f000000)
+  from space 864768K, 99% used [0x000000077f000000,0x00000007b3c24140,0x00000007b3c80000)
+  to   space 1164288K, 0% used [0x00000007b8f00000,0x00000007b8f00000,0x0000000800000000)
+ ParOldGen       total 6294528K, used 5332219K [0x00000000ccc00000, 0x000000024cf00000, 0x0000000599980000)
+  object space 6294528K, 84% used [0x00000000ccc00000,0x000000021233ec60,0x000000024cf00000)
+ Metaspace       used 115994K, capacity 126608K, committed 126704K, reserved 1161216K
+  class space    used 12273K, capacity 14944K, committed 14976K, reserved 1048576K
+}
+Event: 1245.297 GC heap before
+{Heap before GC invocations=164 (full 19):
+ PSYoungGen      total 8817664K, used 8817296K [0x0000000599980000, 0x0000000800000000, 0x0000000800000000)
+  eden space 7952896K, 100% used [0x0000000599980000,0x000000077f000000,0x000000077f000000)
+  from space 864768K, 99% used [0x000000077f000000,0x00000007b3c24140,0x00000007b3c80000)
+  to   space 1164288K, 0% used [0x00000007b8f00000,0x00000007b8f00000,0x0000000800000000)
+ ParOldGen       total 6294528K, used 5332219K [0x00000000ccc00000, 0x000000024cf00000, 0x0000000599980000)
+  object space 6294528K, 84% used [0x00000000ccc00000,0x000000021233ec60,0x000000024cf00000)
+ Metaspace       used 116015K, capacity 126608K, committed 126704K, reserved 1161216K
+  class space    used 12273K, capacity 14944K, committed 14976K, reserved 1048576K
+}
+Event: 1245.677 GC heap after
+{Heap after GC invocations=164 (full 19):
+ PSYoungGen      total 8752640K, used 838080K [0x0000000599980000, 0x0000000800000000, 0x0000000800000000)
+  eden space 7588352K, 0% used [0x0000000599980000,0x0000000599980000,0x0000000768c00000)
+  from space 1164288K, 71% used [0x00000007b8f00000,0x00000007ec170010,0x0000000800000000)
+  to   space 1239040K, 0% used [0x0000000768c00000,0x0000000768c00000,0x00000007b4600000)
+ ParOldGen       total 6294528K, used 5464061K [0x00000000ccc00000, 0x000000024cf00000, 0x0000000599980000)
+  object space 6294528K, 86% used [0x00000000ccc00000,0x000000021a3ff558,0x000000024cf00000)
+ Metaspace       used 116015K, capacity 126608K, committed 126704K, reserved 1161216K
+  class space    used 12273K, capacity 14944K, committed 14976K, reserved 1048576K
+}
+Event: 1250.963 GC heap before
+{Heap before GC invocations=165 (full 19):
+ PSYoungGen      total 8752640K, used 8426432K [0x0000000599980000, 0x0000000800000000, 0x0000000800000000)
+  eden space 7588352K, 100% used [0x0000000599980000,0x0000000768c00000,0x0000000768c00000)
+  from space 1164288K, 71% used [0x00000007b8f00000,0x00000007ec170010,0x0000000800000000)
+  to   space 1239040K, 0% used [0x0000000768c00000,0x0000000768c00000,0x00000007b4600000)
+ ParOldGen       total 6294528K, used 5464061K [0x00000000ccc00000, 0x000000024cf00000, 0x0000000599980000)
+  object space 6294528K, 86% used [0x00000000ccc00000,0x000000021a3ff558,0x000000024cf00000)
+ Metaspace       used 116015K, capacity 126608K, committed 126704K, reserved 1161216K
+  class space    used 12273K, capacity 14944K, committed 14976K, reserved 1048576K
+}
+Event: 1251.340 GC heap after
+{Heap after GC invocations=165 (full 19):
+ PSYoungGen      total 8422400K, used 833888K [0x0000000599980000, 0x0000000800000000, 0x0000000800000000)
+  eden space 7588352K, 0% used [0x0000000599980000,0x0000000599980000,0x0000000768c00000)
+  from space 834048K, 99% used [0x0000000768c00000,0x000000079ba58010,0x000000079ba80000)
+  to   space 1293824K, 0% used [0x00000007b1080000,0x00000007b1080000,0x0000000800000000)
+ ParOldGen       total 6294528K, used 5583093K [0x00000000ccc00000, 0x000000024cf00000, 0x0000000599980000)
+  object space 6294528K, 88% used [0x00000000ccc00000,0x000000022183d5b8,0x000000024cf00000)
+ Metaspace       used 116015K, capacity 126608K, committed 126704K, reserved 1161216K
+  class space    used 12273K, capacity 14944K, committed 14976K, reserved 1048576K
+}
+Event: 1257.740 GC heap before
+{Heap before GC invocations=166 (full 19):
+ PSYoungGen      total 8422400K, used 8422240K [0x0000000599980000, 0x0000000800000000, 0x0000000800000000)
+  eden space 7588352K, 100% used [0x0000000599980000,0x0000000768c00000,0x0000000768c00000)
+  from space 834048K, 99% used [0x0000000768c00000,0x000000079ba58010,0x000000079ba80000)
+  to   space 1293824K, 0% used [0x00000007b1080000,0x00000007b1080000,0x0000000800000000)
+ ParOldGen       total 6294528K, used 5583093K [0x00000000ccc00000, 0x000000024cf00000, 0x0000000599980000)
+  object space 6294528K, 88% used [0x00000000ccc00000,0x000000022183d5b8,0x000000024cf00000)
+ Metaspace       used 116015K, capacity 126608K, committed 126704K, reserved 1161216K
+  class space    used 12273K, capacity 14944K, committed 14976K, reserved 1048576K
+}
+Event: 1258.176 GC heap after
+{Heap after GC invocations=166 (full 19):
+ PSYoungGen      total 8782336K, used 700320K [0x0000000599980000, 0x0000000800000000, 0x0000000800000000)
+  eden space 7488512K, 0% used [0x0000000599980000,0x0000000599980000,0x0000000762a80000)
+  from space 1293824K, 54% used [0x00000007b1080000,0x00000007dbc68010,0x0000000800000000)
+  to   space 1284096K, 0% used [0x0000000762a80000,0x0000000762a80000,0x00000007b1080000)
+ ParOldGen       total 6294528K, used 5824377K [0x00000000ccc00000, 0x000000024cf00000, 0x0000000599980000)
+  object space 6294528K, 92% used [0x00000000ccc00000,0x00000002303de6c8,0x000000024cf00000)
+ Metaspace       used 116015K, capacity 126608K, committed 126704K, reserved 1161216K
+  class space    used 12273K, capacity 14944K, committed 14976K, reserved 1048576K
+}
+Event: 1264.268 GC heap before
+{Heap before GC invocations=167 (full 19):
+ PSYoungGen      total 8782336K, used 8188832K [0x0000000599980000, 0x0000000800000000, 0x0000000800000000)
+  eden space 7488512K, 100% used [0x0000000599980000,0x0000000762a80000,0x0000000762a80000)
+  from space 1293824K, 54% used [0x00000007b1080000,0x00000007dbc68010,0x0000000800000000)
+  to   space 1284096K, 0% used [0x0000000762a80000,0x0000000762a80000,0x00000007b1080000)
+ ParOldGen       total 6294528K, used 5824377K [0x00000000ccc00000, 0x000000024cf00000, 0x0000000599980000)
+  object space 6294528K, 92% used [0x00000000ccc00000,0x00000002303de6c8,0x000000024cf00000)
+ Metaspace       used 116015K, capacity 126608K, committed 126704K, reserved 1161216K
+  class space    used 12273K, capacity 14944K, committed 14976K, reserved 1048576K
+}
+Event: 1264.664 GC heap after
+{Heap after GC invocations=167 (full 19):
+ PSYoungGen      total 8052224K, used 563296K [0x0000000599980000, 0x00000007f7980000, 0x0000000800000000)
+  eden space 7488512K, 0% used [0x0000000599980000,0x0000000599980000,0x0000000762a80000)
+  from space 563712K, 99% used [0x0000000762a80000,0x0000000785098120,0x0000000785100000)
+  to   space 1220096K, 0% used [0x00000007ad200000,0x00000007ad200000,0x00000007f7980000)
+ ParOldGen       total 6294528K, used 6068334K [0x00000000ccc00000, 0x000000024cf00000, 0x0000000599980000)
+  object space 6294528K, 96% used [0x00000000ccc00000,0x000000023f21b878,0x000000024cf00000)
+ Metaspace       used 116015K, capacity 126608K, committed 126704K, reserved 1161216K
+  class space    used 12273K, capacity 14944K, committed 14976K, reserved 1048576K
+}
+Event: 1264.664 GC heap before
+{Heap before GC invocations=168 (full 20):
+ PSYoungGen      total 8052224K, used 563296K [0x0000000599980000, 0x00000007f7980000, 0x0000000800000000)
+  eden space 7488512K, 0% used [0x0000000599980000,0x0000000599980000,0x0000000762a80000)
+  from space 563712K, 99% used [0x0000000762a80000,0x0000000785098120,0x0000000785100000)
+  to   space 1220096K, 0% used [0x00000007ad200000,0x00000007ad200000,0x00000007f7980000)
+ ParOldGen       total 6294528K, used 6068334K [0x00000000ccc00000, 0x000000024cf00000, 0x0000000599980000)
+  object space 6294528K, 96% used [0x00000000ccc00000,0x000000023f21b878,0x000000024cf00000)
+ Metaspace       used 116015K, capacity 126608K, committed 126704K, reserved 1161216K
+  class space    used 12273K, capacity 14944K, committed 14976K, reserved 1048576K
+}
+Event: 1275.281 GC heap after
+{Heap after GC invocations=168 (full 20):
+ PSYoungGen      total 8052224K, used 283564K [0x0000000599980000, 0x00000007f7980000, 0x0000000800000000)
+  eden space 7488512K, 0% used [0x0000000599980000,0x0000000599980000,0x0000000762a80000)
+  from space 563712K, 50% used [0x0000000762a80000,0x0000000773f6b2a0,0x0000000785100000)
+  to   space 1220096K, 0% used [0x00000007ad200000,0x00000007ad200000,0x00000007f7980000)
+ ParOldGen       total 7743488K, used 6294373K [0x00000000ccc00000, 0x00000002a5600000, 0x0000000599980000)
+  object space 7743488K, 81% used [0x00000000ccc00000,0x000000024ced96e0,0x00000002a5600000)
+ Metaspace       used 116015K, capacity 126608K, committed 126704K, reserved 1161216K
+  class space    used 12273K, capacity 14944K, committed 14976K, reserved 1048576K
+}
+
+Deoptimization events (20 events):
+Event: 1224.073 Thread 0x0000020ad822a800 DEOPT PACKING pc=0x0000020a919ed310 sp=0x000000e107ffe310
+Event: 1224.073 Thread 0x0000020ad822a800 DEOPT UNPACKING pc=0x0000020a888a83af sp=0x000000e107ffe2b0 mode 2
+Event: 1226.624 Thread 0x0000020ad8229800 Uncommon trap: trap_request=0xffffff4d fr.pc=0x0000020a91413a64 relative=0x00000000000006c4
+Event: 1226.624 Thread 0x0000020ad8229800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000020a91413a64 method=com.fortify.sca.analyzer.dataflow.pushdown.StackCESKMachinery$LocalVAddr.hashCode()I @ 4 c2
+Event: 1226.624 Thread 0x0000020ad8229800 DEOPT PACKING pc=0x0000020a91413a64 sp=0x000000e105ffe130
+Event: 1226.624 Thread 0x0000020ad8229800 DEOPT UNPACKING pc=0x0000020a888a83af sp=0x000000e105ffe078 mode 2
+Event: 1227.629 Thread 0x0000020ad8224000 Uncommon trap: trap_request=0xffffff4d fr.pc=0x0000020a91d2f1a4 relative=0x0000000000000304
+Event: 1227.629 Thread 0x0000020ad8224000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000020a91d2f1a4 method=com.ergy.fset.FTreeList.equals(Ljava/lang/Object;Ljava/lang/Object;)Z @ 21 c2
+Event: 1227.629 Thread 0x0000020ad8224000 DEOPT PACKING pc=0x0000020a91d2f1a4 sp=0x000000e104ffe610
+Event: 1227.629 Thread 0x0000020ad8224000 DEOPT UNPACKING pc=0x0000020a888a83af sp=0x000000e104ffe4b0 mode 2
+Event: 1227.629 Thread 0x0000020ad8224000 Uncommon trap: trap_request=0xffffff4d fr.pc=0x0000020a91d309d0 relative=0x0000000000000290
+Event: 1227.629 Thread 0x0000020ad8224000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000020a91d309d0 method=com.ergy.fset.FTreeList.equals(Ljava/lang/Object;Ljava/lang/Object;)Z @ 21 c2
+Event: 1227.629 Thread 0x0000020ad8224000 DEOPT PACKING pc=0x0000020a91d309d0 sp=0x000000e104ffe590
+Event: 1227.629 Thread 0x0000020ad8224000 DEOPT UNPACKING pc=0x0000020a888a83af sp=0x000000e104ffe4a0 mode 2
+Event: 1241.204 Thread 0x0000020ad822e800 DEOPT PACKING pc=0x0000020a89a19dba sp=0x000000e106ffe210
+Event: 1241.204 Thread 0x0000020ad822e800 DEOPT UNPACKING pc=0x0000020a888c895e sp=0x000000e106ffd618 mode 0
+Event: 1259.811 Thread 0x0000020ad8224000 Uncommon trap: trap_request=0xffffff4d fr.pc=0x0000020a9108e480 relative=0x0000000000003240
+Event: 1259.811 Thread 0x0000020ad8224000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000020a9108e480 method=com.ergy.fset.FHashSet.with(Ljava/lang/Object;Ljava/lang/Object;I)Ljava/lang/Object; @ 105 c2
+Event: 1259.811 Thread 0x0000020ad8224000 DEOPT PACKING pc=0x0000020a9108e480 sp=0x000000e104ffde70
+Event: 1259.811 Thread 0x0000020ad8224000 DEOPT UNPACKING pc=0x0000020a888a83af sp=0x000000e104ffde48 mode 2
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (20 events):
+Event: 727.925 Thread 0x0000020ad6616000 Exception <a 'java/lang/NoSuchMethodError'{0x00000006ce66ac88}: 'void java.lang.invoke.DirectMethodHandle$Holder.invokeSpecial(java.lang.Object, java.lang.Object, int)'> (0x00000006ce66ac88) thrown at [./src/hotspot/share/interpreter/linkResolver.cpp, line 773]
+Event: 807.085 Thread 0x0000020ad6616000 Implicit null exception at 0x0000020a91caf736 to 0x0000020a91cb1b80
+Event: 948.462 Thread 0x0000020ad6616000 Implicit null exception at 0x0000020a91cd70ef to 0x0000020a91cd792c
+Event: 948.725 Thread 0x0000020ad6616000 Implicit null exception at 0x0000020a9095d473 to 0x0000020a9095d4b9
+Event: 948.726 Thread 0x0000020ad6616000 Implicit null exception at 0x0000020a91ceb66d to 0x0000020a91cedb24
+Event: 949.439 Thread 0x0000020ad822e800 Implicit null exception at 0x0000020a91d665d6 to 0x0000020a91d672e0
+Event: 951.926 Thread 0x0000020ad8231000 Implicit null exception at 0x0000020a91dcae90 to 0x0000020a91dd0650
+Event: 953.122 Thread 0x0000020ad8226800 Implicit null exception at 0x0000020a90de6855 to 0x0000020a90de72ac
+Event: 953.462 Thread 0x0000020ad8226800 Implicit null exception at 0x0000020a91c3a88f to 0x0000020a91c3e738
+Event: 961.805 Thread 0x0000020ad822c000 Implicit null exception at 0x0000020a90c61025 to 0x0000020a90c61a80
+Event: 988.395 Thread 0x0000020ad8224000 Implicit null exception at 0x0000020a91ee5c39 to 0x0000020a91ee8ba4
+Event: 989.808 Thread 0x0000020ad8224000 Implicit null exception at 0x0000020a90486b50 to 0x0000020a90486b8c
+Event: 990.545 Thread 0x0000020ad822a800 Exception <a 'java/lang/NoSuchMethodError'{0x000000059e72f970}: 'java.lang.Object java.lang.invoke.DirectMethodHandle$Holder.invokeStatic(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, int)'> (0x000000059e72f970) thrown at [./src/hotspot/share/interpreter/linkResolver.cpp, line 773]
+Event: 990.568 Thread 0x0000020ad822a800 Exception <a 'java/lang/NoSuchMethodError'{0x000000059e7973d8}: 'java.lang.Object java.lang.invoke.Invokers$Holder.linkToTargetMethod(java.lang.Object, java.lang.Object, int, java.lang.Object, java.lang.Object, java.lang.Object)'> (0x000000059e7973d8) thrown at [./src/hotspot/share/interpreter/linkResolver.cpp, line 773]
+Event: 990.770 Thread 0x0000020ad822a800 Implicit null exception at 0x0000020a91065154 to 0x0000020a910651f8
+Event: 997.671 Thread 0x0000020ad8229800 Implicit null exception at 0x0000020a91157bf5 to 0x0000020a91158fd4
+Event: 997.671 Thread 0x0000020ad822c000 Implicit null exception at 0x0000020a91157bf5 to 0x0000020a91158fd4
+Event: 1131.364 Thread 0x0000020ad8226800 Implicit null exception at 0x0000020a916cf880 to 0x0000020a916cf968
+Event: 1131.364 Thread 0x0000020ad8226800 Implicit null exception at 0x0000020a9170284e to 0x0000020a91702d6c
+Event: 1224.073 Thread 0x0000020ad822a800 Implicit null exception at 0x0000020a91f85abb to 0x0000020a91f86190
+
+Events (20 events):
+Event: 1228.004 Executing VM operation: BulkRevokeBias
+Event: 1228.005 Executing VM operation: BulkRevokeBias done
+Event: 1233.187 Executing VM operation: ParallelGCFailedAllocation
+Event: 1233.489 Executing VM operation: ParallelGCFailedAllocation done
+Event: 1239.185 Executing VM operation: ParallelGCFailedAllocation
+Event: 1239.501 Executing VM operation: ParallelGCFailedAllocation done
+Event: 1245.297 Executing VM operation: ParallelGCFailedAllocation
+Event: 1245.677 Executing VM operation: ParallelGCFailedAllocation done
+Event: 1248.110 Executing VM operation: RevokeBias
+Event: 1248.110 Executing VM operation: RevokeBias done
+Event: 1248.278 Executing VM operation: BulkRevokeBias
+Event: 1248.279 Executing VM operation: BulkRevokeBias done
+Event: 1250.963 Executing VM operation: ParallelGCFailedAllocation
+Event: 1251.340 Executing VM operation: ParallelGCFailedAllocation done
+Event: 1257.739 Executing VM operation: ParallelGCFailedAllocation
+Event: 1258.177 Executing VM operation: ParallelGCFailedAllocation done
+Event: 1264.268 Executing VM operation: ParallelGCFailedAllocation
+Event: 1275.281 Executing VM operation: ParallelGCFailedAllocation done
+Event: 1275.281 Executing VM operation: FindDeadlocks
+Event: 1275.281 Executing VM operation: FindDeadlocks done
+
+
+Dynamic libraries:
+0x00007ff7f4f60000 - 0x00007ff7f4fe4000 	C:\Program Files\Fortify\Fortify_SCA_and_Apps_21.2.3\bin\sourceanalyzer.exe
+0x00007ffe0ed50000 - 0x00007ffe0ef3e000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffe0d200000 - 0x00007ffe0d2b3000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffe0b380000 - 0x00007ffe0b61d000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x0000000066570000 - 0x0000000066603000 	C:\WINDOWS\System32\SYSFER.DLL
+0x00007ffe0c2e0000 - 0x00007ffe0c387000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffe0cb80000 - 0x00007ffe0cc1e000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffe0c8b0000 - 0x00007ffe0c94f000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffe0e870000 - 0x00007ffe0e98d000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffe0d2c0000 - 0x00007ffe0e7b8000 	C:\WINDOWS\System32\SHELL32.dll
+0x00007ffe0bf10000 - 0x00007ffe0bf5a000 	C:\WINDOWS\System32\cfgmgr32.dll
+0x00007ffe0b620000 - 0x00007ffe0b71a000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffe0e7c0000 - 0x00007ffe0e867000 	C:\WINDOWS\System32\shcore.dll
+0x00007ffe0bf80000 - 0x00007ffe0c2ab000 	C:\WINDOWS\System32\combase.dll
+0x00007ffe0af30000 - 0x00007ffe0afb2000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffe0b720000 - 0x00007ffe0be69000 	C:\WINDOWS\System32\windows.storage.dll
+0x00007ffe0ade0000 - 0x00007ffe0ae80000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffe0adb0000 - 0x00007ffe0add3000 	C:\WINDOWS\System32\profapi.dll
+0x00007ffe0ad30000 - 0x00007ffe0ad8d000 	C:\WINDOWS\System32\powrprof.dll
+0x00007ffe0eb90000 - 0x00007ffe0ebe2000 	C:\WINDOWS\System32\shlwapi.dll
+0x00007ffe0eb60000 - 0x00007ffe0eb89000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffe0b1e0000 - 0x00007ffe0b380000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffe0c3f0000 - 0x00007ffe0c588000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffe0bf60000 - 0x00007ffe0bf80000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffe0ad10000 - 0x00007ffe0ad21000 	C:\WINDOWS\System32\kernel.appcore.dll
+0x00007ffe0b1c0000 - 0x00007ffe0b1db000 	C:\WINDOWS\System32\cryptsp.dll
+0x00007ffe0eb50000 - 0x00007ffe0eb58000 	C:\WINDOWS\System32\psapi.dll
+0x00007ffe0c2b0000 - 0x00007ffe0c2de000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffdb1380000 - 0x00007ffdb1ec9000 	C:\Program Files\Fortify\Fortify_SCA_and_Apps_21.2.3\jre\bin\server\jvm.dll
+0x00007ffdfbbf0000 - 0x00007ffdfbbf9000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffe0caf0000 - 0x00007ffe0cb5d000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffe079e0000 - 0x00007ffe07a04000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffdfe2d0000 - 0x00007ffdfe2da000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffde9e10000 - 0x00007ffde9e25000 	C:\Program Files\Fortify\Fortify_SCA_and_Apps_21.2.3\jre\bin\VCRUNTIME140.dll
+0x00007ffe079b0000 - 0x00007ffe079dd000 	C:\WINDOWS\SYSTEM32\WINMMBASE.dll
+0x00007ffde9cc0000 - 0x00007ffde9cd0000 	C:\Program Files\Fortify\Fortify_SCA_and_Apps_21.2.3\jre\bin\verify.dll
+0x00007ffe05da0000 - 0x00007ffe05f8d000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ffe048c0000 - 0x00007ffe048ea000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ffdc2140000 - 0x00007ffdc2168000 	C:\Program Files\Fortify\Fortify_SCA_and_Apps_21.2.3\jre\bin\java.dll
+0x00007ffde9080000 - 0x00007ffde908a000 	C:\Program Files\Fortify\Fortify_SCA_and_Apps_21.2.3\jre\bin\jimage.dll
+0x00007ffdbfb40000 - 0x00007ffdbfb57000 	C:\Program Files\Fortify\Fortify_SCA_and_Apps_21.2.3\jre\bin\zip.dll
+0x00007ffdbfb20000 - 0x00007ffdbfb39000 	C:\Program Files\Fortify\Fortify_SCA_and_Apps_21.2.3\jre\bin\net.dll
+0x00007ffe02850000 - 0x00007ffe0294f000 	C:\WINDOWS\SYSTEM32\WINHTTP.dll
+0x00007ffe0a500000 - 0x00007ffe0a567000 	C:\WINDOWS\system32\mswsock.dll
+0x00007ffdbfb00000 - 0x00007ffdbfb12000 	C:\Program Files\Fortify\Fortify_SCA_and_Apps_21.2.3\jre\bin\nio.dll
+0x00007ffe0a260000 - 0x00007ffe0a326000 	C:\WINDOWS\SYSTEM32\DNSAPI.dll
+0x00007ffe0eb40000 - 0x00007ffe0eb48000 	C:\WINDOWS\System32\NSI.dll
+0x00007ffe0a210000 - 0x00007ffe0a24d000 	C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL
+0x00007ffe03090000 - 0x00007ffe0309a000 	C:\Windows\System32\rasadhlp.dll
+0x00007ffe04580000 - 0x00007ffe045f9000 	C:\WINDOWS\System32\fwpuclnt.dll
+0x00007ffe0bee0000 - 0x00007ffe0bf06000 	C:\WINDOWS\System32\bcrypt.dll
+0x00007ffde1820000 - 0x00007ffde1829000 	C:\Program Files\Fortify\Fortify_SCA_and_Apps_21.2.3\jre\bin\management.dll
+0x00007ffde1790000 - 0x00007ffde179b000 	C:\Program Files\Fortify\Fortify_SCA_and_Apps_21.2.3\jre\bin\management_ext.dll
+0x00007ffe0a080000 - 0x00007ffe0a0b3000 	C:\WINDOWS\system32\rsaenh.dll
+0x00007ffe0ac10000 - 0x00007ffe0ac39000 	C:\WINDOWS\SYSTEM32\USERENV.dll
+0x00007ffe0a6d0000 - 0x00007ffe0a6dc000 	C:\WINDOWS\SYSTEM32\CRYPTBASE.dll
+0x00007ffe04270000 - 0x00007ffe04286000 	C:\WINDOWS\SYSTEM32\dhcpcsvc6.DLL
+0x00007ffe04230000 - 0x00007ffe0424c000 	C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL
+0x00007ffdfee40000 - 0x00007ffdfee56000 	C:\WINDOWS\system32\napinsp.dll
+0x00007ffdfee60000 - 0x00007ffdfee6e000 	C:\WINDOWS\System32\winrnr.dll
+0x00007ffe06530000 - 0x00007ffe0654b000 	C:\WINDOWS\system32\NLAapi.dll
+0x00007ffdff780000 - 0x00007ffdff795000 	C:\WINDOWS\system32\wshbth.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Fortify\Fortify_SCA_and_Apps_21.2.3\bin;C:\WINDOWS\SYSTEM32;C:\Program Files\Fortify\Fortify_SCA_and_Apps_21.2.3\jre\bin\server;C:\Program Files\Fortify\Fortify_SCA_and_Apps_21.2.3\jre\bin
+
+VM Arguments:
+jvm_args: -Djava.awt.headless=true -Dcom.sun.management.jmxremote=true -XX:+UseParallelGC -XX:SoftRefLRUPolicyMSPerMB=3000 --illegal-access=permit --add-exports=jdk.management/com.sun.management.internal=ALL-UNNAMED --add-exports=jdk.scripting.nashorn/jdk.nashorn.internal.runtime=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.util.regex=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/javax.crypto=ALL-UNNAMED --add-opens=java.management/sun.management=ALL-UNNAMED -Dwin32.LocalAppdata=C:\Users\XD5300\AppData\Local -Ddotnet.install.dir=C:\Windows\Microsoft.NET\Framework64\ -Ddotnet.sdk.v11.install.dir= -Ddotnet.sdk.v20.install.dir= -Ddotnet.sdk.v3x.install.dir= -Ddotnet.v30.referenceAssemblies=C:\Program Files\Reference Assemblies\Microsoft\Framework\v3.0\ -Ddotnet.v35.referenceAssemblies=C:\Program Files\Reference Assemblies\Microsoft\Framework\v3.5\ -Dvs.140.dotnet.clr.version=v4.0.30319 -Dcom.fortify.sca.env.include=C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\cppwinrt -Dcom.fortify.sca.env.exesearchpath=D:\XD5300\FTC_MVC_Template;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\VC\VCPackages;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\TestWindow;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\TeamFoundation\Team Explorer;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\bin\Roslyn;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Team Tools\Performance Tools;C:\Program Files (x86)\Microsoft Visual Studio\Shared\Common\VSPerfCollectionTools\vs2019\;C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\FSharp\Tools;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\Tools\devinit;C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86;C:\Program Files (x86)\Windows Kits\10\bin\x86;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\\MSBuild\Current\Bin;C:\Windows\Microsoft.NET\Framework\v4.0.30319;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\Tools\;C:\Program Files\Fortify\Fortify_SCA_and_Apps_20.2.0\bin;C:\Program Files\Fortify\Fortify_SCA_and_Apps_21.2.3\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\WINDOWS\system32\config\systemprofile\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\XD5300\AppData\Local\Microsoft\WindowsApps;;C:\Program Files (x86)\Microsoft Visual Stu-Dcom.fortify.sca.ProjectRoot=E:/Fortify -Dstdout.isatty=false -Dstderr.isatty=false -Dcom.fortify.sca.PID=43244 -Xmx30922850304 -Dcom.fortify.TotalPhysicalMemory=34358722560 -Xss16M -Dcom.fortify.sca.JVMArgs=-XX:+UseParallelGC -XX:SoftRefLRUPolicyMSPerMB=3000 --illegal-access=permit --add-exports=jdk.management/com.sun.management.internal=ALL-UNNAMED --add-exports=jdk.scripting.nashorn/jdk.nashorn.internal.runtime=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.util.regex=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/javax.crypto=ALL-UNNAMED --add-opens=java.management/sun.management=ALL-UNNAMED -Xmx30922850304 -Xss16M 
+java_command: sourceanalyzer -Djava.awt.headless=true -Dcom.sun.management.jmxremote=true -XX:+UseParallelGC -XX:SoftRefLRUPolicyMSPerMB=3000 --illegal-access=permit --add-exports=jdk.management/com.sun.management.internal=ALL-UNNAMED --add-exports=jdk.scripting.nashorn/jdk.nashorn.internal.runtime=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.util.regex=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/javax.crypto=ALL-UNNAMED --add-opens=java.management/sun.management=ALL-UNNAMED -Dwin32.LocalAppdata=C:\Users\XD5300\AppData\Local -Ddotnet.install.dir=C:\Windows\Microsoft.NET\Framework64\ -Ddotnet.sdk.v11.install.dir= -Ddotnet.sdk.v20.install.dir= -Ddotnet.sdk.v3x.install.dir= -Ddotnet.v30.referenceAssemblies=C:\Program Files\Reference Assemblies\Microsoft\Framework\v3.0\ -Ddotnet.v35.referenceAssemblies=C:\Program Files\Reference Assemblies\Microsoft\Framework\v3.5\ -Dvs.140.dotnet.clr.version=v4.0.30319 -Dcom.fortify.sca.env.include=C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt;C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\cppwinrt -Dcom.fortify.sca.env.exesearchpath=D:\XD5300\FTC_MVC_Template;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\VC\VCPackages;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\TestWindow;C:\Program Files (x86)\Microsoft Visual Studio\2019
+java_class_path (initial): C:\Program Files\Fortify\Fortify_SCA_and_Apps_21.2.3\Core\lib\exe\sca-exe.jar
+Launcher Type: generic
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+   size_t InitialHeapSize                          = 536870912                                 {product} {ergonomic}
+     bool ManagementServer                         = true                                      {product} {command line}
+   size_t MaxHeapSize                              = 30924603392                               {product} {command line, ergonomic}
+   size_t MaxNewSize                               = 10308026368                               {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 524288                                    {product} {ergonomic}
+   size_t NewSize                                  = 178782208                                 {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5836300                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122910970                              {pd product} {ergonomic}
+   size_t OldSize                                  = 358088704                                 {product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122910970                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     intx SoftRefLRUPolicyMSPerMB                  = 3000                                      {product} {command line}
+     intx ThreadStackSize                          = 16384                                  {pd product} {command line}
+     bool UseCompressedClassPointers               = true                                 {lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                                 {lp64_product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+     bool UseParallelGC                            = true                                      {product} {command line}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+PATH=C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\VC\VCPackages;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\TestWindow;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\TeamFoundation\Team Explorer;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\bin\Roslyn;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Team Tools\Performance Tools;C:\Program Files (x86)\Microsoft Visual Studio\Shared\Common\VSPerfCollectionTools\vs2019\;C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\FSharp\Tools;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\Tools\devinit;C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86;C:\Program Files (x86)\Windows Kits\10\bin\x86;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\\MSBuild\Current\Bin;C:\Windows\Microsoft.NET\Framework\v4.0.30319;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\Tools\;C:\Program Files\Fortify\Fortify_SCA_and_Apps_20.2.0\bin;C:\Program Files\Fortify\Fortify_SCA_and_Apps_21.2.3\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\WINDOWS\system32\config\systemprofile\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\XD5300\AppData\Local\Microsoft\WindowsApps;;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\VC\Linux\bin\ConnectionManagerE
+USERNAME=XD5300
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 85 Stepping 7, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows Server 2019 , 64 bit Build 17763 (10.0.17763.3287)
+OS uptime: 11 days 22:34 hours
+VMWare virtualization detected
+
+CPU:total 8 (initial active 8) (1 cores per cpu, 1 threads per core) family 6 model 85 stepping 7 microcode 0x5003005, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, tsc, tscinvbit, bmi1, bmi2, adx, evex, fma
+
+Memory: 4k page, system-wide physical 32767M (2075M free)
+TotalPageFile size 42936M (AvailPageFile size 34M)
+current process WorkingSet (physical memory assigned to process): 16690M, peak: 16690M
+current process commit charge ("private bytes"): 18695M, peak: 18818M
+
+vm_info: OpenJDK 64-Bit Server VM (11.0.10+9-LTS) for windows-amd64 JRE (Zulu11.45+27-CA) (11.0.10+9-LTS), built on Dec 30 2020 12:49:09 by "zulu_re" with MS VC++ 15.9 (VS2017)
+
+END.

@@ -1,0 +1,132 @@
+2024-05-02 09:42:04.0499 | [7] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/OrderDetail/OrderHighcharts","status":"LogOff"}
+2024-05-02 09:42:04.6855 | [7] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.6523946
+2024-05-02 09:42:20.0180 | [5] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"model":{"UserId":"admin","Password":"123456","ComFacID":"台化油品部儲運處-台北-","RememberMe":false,"Language":null},"returnUrl":"/OrderDetail/OrderHighcharts"}
+2024-05-02 09:42:20.2001 | [5] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.241504
+2024-05-02 09:42:20.2150 | [7] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-05-02 09:42:20.2292 | [7] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0150595
+2024-05-02 09:42:20.4019 | [7] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-05-02 09:42:20.4388 | [7] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.0385907
+2024-05-02 09:42:20.4777 | [7] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-05-02 09:42:20.4777 | [7] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0043979
+2024-05-02 09:42:21.8752 | [5] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-05-02 09:42:21.8752 | [5] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0041649
+2024-05-02 09:42:23.4298 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-05-02 09:42:23.4617 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0327776
+2024-05-02 09:42:23.6420 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-05-02 09:42:23.6720 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0624499
+2024-05-02 09:42:29.8358 | [5] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-05-02 09:42:29.8358 | [5] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0048284
+2024-05-02 09:42:30.9781 | [9] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-05-02 09:42:30.9781 | [9] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0661482
+2024-05-02 09:42:31.1437 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-05-02 09:42:31.1482 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.070144
+2024-05-02 09:48:12.9785 | [24] | INFO | FuctionName=PersonData.PersonData | Start | IP=::1 | parametersInfo={}
+2024-05-02 09:48:12.9895 | [24] | INFO | FuctionName=PersonData.PersonData | End | IP=::1 | ExpendTime=0.0155699
+2024-05-02 09:48:23.2692 | [17] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-05-02 09:48:23.2692 | [17] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0764147
+2024-05-02 09:48:23.5329 | [17] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=
+2024-05-02 09:48:23.6191 | [17] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.0863761
+2024-05-02 11:09:48.9249 | [49] | INFO | FuctionName=PersonLocation.AlarmRecord | Start | IP=::1 | parametersInfo={}
+2024-05-02 11:09:48.9388 | [49] | INFO | FuctionName=PersonLocation.AlarmRecord | End | IP=::1 | ExpendTime=0.0202857
+2024-05-02 11:09:54.1333 | [57] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/PersonLocation/AlarmSetting?NodeId=N401&CompanyID=%E5%8F%B0%E5%8C%96%E6%B2%B9%E5%93%81%E9%83%A8%E5%84%B2%E9%81%8B%E8%99%95&FactoryID=%E5%8F%B0%E5%8C%97&MODIFYUSER=ADMIN&Lng=","status":"LogOff"}
+2024-05-02 11:09:54.5504 | [57] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.4182321
+2024-05-02 11:09:56.2796 | [57] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-05-02 11:09:56.3085 | [57] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1048615
+2024-05-02 11:09:56.4350 | [49] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=
+2024-05-02 11:09:56.6481 | [49] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=0.2131805
+2024-05-02 11:09:56.6651 | [49] | INFO | FuctionName=apiPersonLocation.GetDeviceInfo | Message=
+2024-05-02 11:09:56.7571 | [49] | INFO | FuctionName=apiPersonLocation.GetDeviceInfo | Message=ExpendTime=0.3057097
+2024-05-02 11:09:56.8159 | [55] | INFO | FuctionName=apiPersonLocation.GetAlarmRecord | Message=DeviceID=&UserID=&AlarmID=
+2024-05-02 11:09:56.9318 | [55] | INFO | FuctionName=apiPersonLocation.GetAlarmRecord | Message=ExpendTime=0.4217481
+2024-05-02 11:09:56.9318 | [49] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":null,"status":null}
+2024-05-02 11:09:56.9517 | [49] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.0168069
+2024-05-02 11:10:04.2161 | [49] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"model":{"UserId":"admin","Password":"123456","ComFacID":"台化油品部儲運處-台北-","RememberMe":false,"Language":null},"returnUrl":null}
+2024-05-02 11:10:04.2449 | [49] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.0315104
+2024-05-02 11:10:04.2449 | [55] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-05-02 11:10:04.3449 | [55] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0857355
+2024-05-02 11:10:04.3449 | [55] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-05-02 11:10:04.4270 | [55] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.0751607
+2024-05-02 11:10:04.4340 | [55] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-05-02 11:10:04.4340 | [55] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0036472
+2024-05-02 11:10:05.3832 | [62] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-05-02 11:10:05.3852 | [62] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0039602
+2024-05-02 11:10:06.9383 | [55] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-05-02 11:10:06.9503 | [55] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1167293
+2024-05-02 11:10:07.1049 | [49] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-05-02 11:10:07.1049 | [49] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1213585
+2024-05-02 11:10:09.2823 | [57] | INFO | FuctionName=PersonLocation.CurrentMonitor | Start | IP=::1 | parametersInfo={}
+2024-05-02 11:10:09.2823 | [57] | INFO | FuctionName=PersonLocation.CurrentMonitor | End | IP=::1 | ExpendTime=0.0065232
+2024-05-02 11:10:10.6137 | [49] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-05-02 11:10:10.6137 | [49] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1261456
+2024-05-02 11:10:12.6444 | [57] | INFO | FuctionName=PersonLocation.HistoryMonitor | Start | IP=::1 | parametersInfo={}
+2024-05-02 11:10:12.6444 | [57] | INFO | FuctionName=PersonLocation.HistoryMonitor | End | IP=::1 | ExpendTime=0.0049689
+2024-05-02 11:10:14.0556 | [49] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-05-02 11:10:14.0596 | [49] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1300902
+2024-05-02 11:10:15.7456 | [49] | INFO | FuctionName=PersonLocation.AlarmRecord | Start | IP=::1 | parametersInfo={}
+2024-05-02 11:10:15.7456 | [49] | INFO | FuctionName=PersonLocation.AlarmRecord | End | IP=::1 | ExpendTime=0.0038229
+2024-05-02 11:10:17.0714 | [62] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-05-02 11:10:17.0754 | [62] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1340456
+2024-05-02 11:10:17.1587 | [49] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=
+2024-05-02 11:10:17.1587 | [49] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=0.4249523
+2024-05-02 11:10:17.1738 | [57] | INFO | FuctionName=apiPersonLocation.GetDeviceInfo | Message=
+2024-05-02 11:10:17.1738 | [57] | INFO | FuctionName=apiPersonLocation.GetDeviceInfo | Message=ExpendTime=0.428125
+2024-05-02 11:10:17.3015 | [55] | INFO | FuctionName=apiPersonLocation.GetAlarmRecord | Message=DeviceID=&UserID=&AlarmID=
+2024-05-02 11:10:17.3088 | [55] | INFO | FuctionName=apiPersonLocation.GetAlarmRecord | Message=ExpendTime=0.4357345
+2024-05-02 11:10:19.8620 | [55] | INFO | FuctionName=PersonLocation.AlarmMessage | Start | IP=::1 | parametersInfo={}
+2024-05-02 11:10:19.8620 | [55] | INFO | FuctionName=PersonLocation.AlarmMessage | End | IP=::1 | ExpendTime=0.006972
+2024-05-02 11:10:21.1217 | [49] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-05-02 11:10:21.1217 | [49] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1398006
+2024-05-02 11:10:21.2593 | [57] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=
+2024-05-02 11:10:21.2643 | [57] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=0.4407155
+2024-05-02 11:10:21.2793 | [57] | INFO | FuctionName=apiPersonLocation.GetDeviceInfo | Message=
+2024-05-02 11:10:21.2793 | [57] | INFO | FuctionName=apiPersonLocation.GetDeviceInfo | Message=ExpendTime=0.4452493
+2024-05-02 11:10:21.3711 | [57] | INFO | FuctionName=apiPersonLocation.GetAlarmMsg | Message=DeviceID=&PersonID=&AlarmID=
+2024-05-02 11:10:21.4269 | [57] | INFO | FuctionName=apiPersonLocation.GetAlarmMsg | Message=ExpendTime=0.5006466
+2024-05-02 11:10:40.5948 | [57] | INFO | FuctionName=PersonLocation.GeoPolygon | Start | IP=::1 | parametersInfo={}
+2024-05-02 11:10:40.5948 | [57] | INFO | FuctionName=PersonLocation.GeoPolygon | End | IP=::1 | ExpendTime=0.0034449
+2024-05-02 11:10:42.6152 | [59] | INFO | FuctionName=PersonLocation.AreaInfo | Start | IP=::1 | parametersInfo={}
+2024-05-02 11:10:42.6152 | [59] | INFO | FuctionName=PersonLocation.AreaInfo | End | IP=::1 | ExpendTime=0.0036426
+2024-05-02 11:10:44.0324 | [57] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-05-02 11:10:44.0324 | [57] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.144384
+2024-05-02 11:10:44.0942 | [59] | INFO | FuctionName=apiPersonLocation.GetPolygon | Message={}
+2024-05-02 11:10:44.0942 | [61] | INFO | FuctionName=apiPersonLocation.GetArea | Message={}
+2024-05-02 11:10:44.0942 | [57] | INFO | FuctionName=apiPersonLocation.GetArea | Message={}
+2024-05-02 11:10:44.1124 | [61] | INFO | FuctionName=apiPersonLocation.GetArea | Message=ExpendTime=0.5188229
+2024-05-02 11:10:44.1124 | [57] | INFO | FuctionName=apiPersonLocation.GetArea | Message=ExpendTime=0.5188229
+2024-05-02 11:10:44.1980 | [61] | INFO | FuctionName=apiPersonLocation.GetArea | Message=AreaName=&Category=
+2024-05-02 11:10:44.2050 | [61] | INFO | FuctionName=apiPersonLocation.GetArea | Message=ExpendTime=0.5257011
+2024-05-02 11:10:44.2279 | [66] | INFO | FuctionName=apiPersonLocation.GetPolygon | Message={}
+2024-05-02 11:10:47.0593 | [66] | INFO | FuctionName=apiPersonLocation.GetPolygon | Message=ExpendTime=3.3579015
+2024-05-02 11:10:47.0593 | [59] | INFO | FuctionName=apiPersonLocation.GetPolygon | Message=ExpendTime=3.3579015
+2024-05-02 11:10:49.6080 | [59] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-05-02 11:10:49.6080 | [59] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0048678
+2024-05-02 11:10:52.0545 | [57] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-05-02 11:10:52.0615 | [57] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1512297
+2024-05-02 11:10:52.1523 | [57] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-05-02 11:10:52.1523 | [57] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1570844
+2024-05-02 11:10:52.5977 | [59] | INFO | FuctionName=UserManage.Roles | Start | IP=::1 | parametersInfo={}
+2024-05-02 11:10:52.6565 | [59] | INFO | FuctionName=UserManage.Roles | End | IP=::1 | ExpendTime=0.0596634
+2024-05-02 11:10:54.1904 | [57] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-05-02 11:10:54.1904 | [57] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.161087
+2024-05-02 11:10:54.2473 | [59] | INFO | FuctionName=UserManageApi.CheckComdb | Message=CompanyID=%E5%8F%B0%E5%8C%96%E6%B2%B9%E5%93%81%E9%83%A8%E5%84%B2%E9%81%8B%E8%99%95&FactoryID=%E5%8F%B0%E5%8C%97&MODIFYUSER=ADMIN&Lng=
+2024-05-02 11:10:54.7768 | [59] | INFO | FuctionName=UserManageApi.CheckComdb | Message=ExpendTime=0.6906522
+2024-05-02 11:10:54.8127 | [71] | INFO | FuctionName=UserManageApi.R_COMM_ROLENODE_HAS_AUTH | Message=NODEID=
+2024-05-02 11:10:54.8440 | [71] | INFO | FuctionName=UserManageApi.R_COMM_ROLENODE_HAS_AUTH | Message=ExpendTime=0.7222338
+2024-05-02 11:10:54.8669 | [59] | INFO | FuctionName=UserManageApi.R_COMM_NODE_HAS_CONTROL | Message=NODEID=
+2024-05-02 11:10:54.8799 | [59] | INFO | FuctionName=UserManageApi.R_COMM_NODE_HAS_CONTROL | Message=ExpendTime=0.7349211
+2024-05-02 11:10:54.9258 | [57] | INFO | FuctionName=UserManageApi.getRoles | Message=
+2024-05-02 11:10:54.9437 | [57] | INFO | FuctionName=UserManageApi.getRoles | Message=ExpendTime=0.7531325
+2024-05-02 11:10:57.6163 | [61] | INFO | FuctionName=UserManage.UserHasRoles | Start | IP=::1 | parametersInfo={}
+2024-05-02 11:10:57.6163 | [61] | INFO | FuctionName=UserManage.UserHasRoles | End | IP=::1 | ExpendTime=0.0038577
+2024-05-02 11:10:59.0645 | [59] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-05-02 11:10:59.0645 | [59] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.7601773
+2024-05-02 11:10:59.1642 | [57] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-05-02 11:10:59.1682 | [57] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.7641714
+2024-05-02 11:10:59.1682 | [57] | INFO | FuctionName=UserManageApi.getRoles | Message=
+2024-05-02 11:10:59.1851 | [57] | INFO | FuctionName=UserManageApi.getRoles | Message=ExpendTime=0.767877
+2024-05-02 11:10:59.2041 | [57] | INFO | FuctionName=UserManageApi.getUserHasRoles | Message=USERID=
+2024-05-02 11:10:59.2041 | [57] | INFO | FuctionName=UserManageApi.getUserHasRoles | Message=ExpendTime=0.7772737
+2024-05-02 11:10:59.2929 | [57] | INFO | FuctionName=UserManageApi.getUserHasRoles | Message=CompanyID=%E5%8F%B0%E5%8C%96%E6%B2%B9%E5%93%81%E9%83%A8%E5%84%B2%E9%81%8B%E8%99%95&FactoryID=%E5%8F%B0%E5%8C%97&MODIFYUSER=ADMIN&Lng=&COMM_USER_HAS_ROLES=
+2024-05-02 11:10:59.2929 | [57] | INFO | FuctionName=UserManageApi.getUserHasRoles | Message=ExpendTime=0.7825426
+2024-05-02 11:10:59.3328 | [60] | INFO | FuctionName=UserManageApi.R_PageControl | Message=NODEID=N904&MODIFYUSER=ADMIN
+2024-05-02 11:10:59.3537 | [60] | INFO | FuctionName=UserManageApi.R_PageControl | Message=ExpendTime=0.8043875

@@ -1,0 +1,26 @@
+﻿
+@{
+    if (System.Configuration.ConfigurationManager.AppSettings["FtcMesAuthentication"] == "true")
+    {
+        string ControllerName = Convert.ToString(HttpContext.Current.Request.RequestContext.RouteData.Values["Controller"]);
+        bool bRef = false;
+        //Ref表示外部參考，如果此參數為1，表示不需要Layout，只須單純顯示該Url功能
+        if (Request.QueryString["Ref"] != null)
+        {
+            bRef = Request.QueryString["Ref"].ToString() == "1" ? true : false;
+        }
+        if ((System.Configuration.ConfigurationManager.AppSettings["Iframe"] == "true" && ControllerName.ToUpper() != "HOME") || bRef)
+        {
+            Layout = null;
+        }
+        else
+        {
+            Layout = "~/Views/Shared/_Layout.cshtml";
+        }
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_LayoutForMES.cshtml";
+    }
+
+}

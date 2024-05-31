@@ -1,0 +1,366 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/sitecss")
+    @Styles.Render("~/Content/kendo/Css")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/kendo/Script")
+    @{ var culture = Session["Language"] != null ? Session["Language"].ToString() : "zh-TW"; }
+    <script src="@Url.Content("~/Scripts/kendo/cultures/kendo.culture." + culture + ".min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo/messages/kendo.messages." + culture + ".min.js")"></script>
+    <script type="text/javascript">
+        var CompanyID = "";
+        var FactoryID = "";
+        var MODIFYUSER = "";
+        var LOTID = "";
+        var EQPID = "";
+        var Lng = "";
+        //var siteRoot = "..";  使用IIS Default sit
+        var siteRoot = "..";
+        var WebApiUrl_Eqp = siteRoot + "/api/MESApiEqp";
+        var WebApiUrl_Edc = siteRoot + "/api/MESApiEdc";
+        var WebApiUrl_Eap = siteRoot + "/api/MESApiEap";
+        var WebApiUrl_Wip = siteRoot + "/api/MESApiWip";
+        var WebApiUrl_Prp = siteRoot + "/api/MESApiPrp";
+        var WebApiUrl_Tool = siteRoot + "/api/MESApiTool";
+        var WebApiUrl_Qc = siteRoot + "/api/MESApiQc";
+        var WebApiUrl_ManageTool = siteRoot + "/api/MESApiManageTool";
+        var WebApiUrl_AFApiTool = siteRoot + "/api/AFApiTool";
+        var oDataModels = {};
+        //多國語系
+
+        //get value from url
+        QueryString = {
+            data: {},
+            Initial: function () {
+
+
+
+                var aPairs, aTmp;
+                var queryString = new String(window.location.search);
+                queryString = queryString.substr(1, queryString.length);
+                aPairs = queryString.split("&");
+                for (var i = 0; i < aPairs.length; i++) {
+                    aTmp = aPairs[i].split("=");
+                    this.data[aTmp[0]] = aTmp[1];
+                }
+                //GetDefaultValue
+                CompanyID = QueryString.GetValue('CompanyID');
+                FactoryID = QueryString.GetValue('FactoryID');
+                MODIFYUSER = QueryString.GetValue('MODIFYUSER');
+                LOTID = QueryString.GetValue('LOTID');
+                EQPID = QueryString.GetValue('EQPID');
+                Lng = QueryString.GetValue('Lng');
+                if (CompanyID == "undefined") {
+                    CompanyID = "2";
+                }
+                if (FactoryID == "undefined") {
+                    FactoryID = "B100";
+                }
+                if (MODIFYUSER == "undefined") {
+                    MODIFYUSER = "bochi";
+                }
+                if (LOTID == "undefined") {
+                    LOTID = "";
+                }
+                if (EQPID == "undefined") {
+                    EQPID = "";
+                }
+                if (Lng == "undefined") {
+                    Lng = "zh-TW";
+                }
+                oDataModels["CompanyID"] = CompanyID;
+                oDataModels["FactoryID"] = FactoryID;
+                oDataModels["MODIFYUSER"] = MODIFYUSER;
+                oDataModels["LOTID"] = LOTID;
+                oDataModels["EQPID"] = EQPID;
+
+                i18n.init({
+                    resGetPath: '../Content/language/translation.__lng__.json',
+                    getAsync: false,//是否异步调用语言包
+                    lng: Lng,
+                    fallbackLng: Lng
+                }, function (t) {
+                    // i18n est maintenant initialisé
+                    $('body').i18n();
+                });
+                kendo.culture(Lng);
+            },
+            GetValue: function (key) {
+                return decodeURIComponent(this.data[key]);
+            }
+        };
+        function DispatchLot(CompanyID, FactoryID, LOTID, EQPID, MODIFYUSER, PassRule) {
+            if (PassRule == null) {
+                PassRule = "";
+            }
+            $.ajax({
+                url: siteRoot + "/api/MESApiWip/DispatchLot",
+                type: 'Post',
+                dataType: 'json',
+                data: {
+                    CompanyID: CompanyID,
+                    FactoryID: FactoryID,
+                    LOTID: LOTID,
+                    EQPID: EQPID,
+                    MODIFYUSER: MODIFYUSER,
+                    PassRule: PassRule
+                },
+                beforeSend: function () {
+                },
+                complete: function () {
+                },
+                success: function (ResultData) {
+                    alert(ResultData.ReturnMessage);
+                    $("#btnQuery").trigger("click");
+                },
+                error: function (e) {
+                    alert('資料量太大，請減少選取項目');
+                }
+            })
+        }
+        function PassRule() {
+            if (LOTID != null) {
+                DispatchLot(CompanyID, FactoryID, LOTID, EQPID, MODIFYUSER, "Y");
+            }
+            else {
+                alert("請選擇批號");
+            }
+        }
+        $(document).ajaxStart(function () {
+            $.blockUI({ message: '處理中' });
+        }).ajaxStop($.unblockUI);
+        function escapeHtml(string) {
+            var entityMap = {
+                "&": "&amp;",
+                "<": "&lt;",
+                ">": "&gt;",
+                '"': '&quot;',
+                "'": '&#39;',
+                "/": '&#x2F;'
+            };
+            return String(string).replace(/[&<>"'\/]/g, function (s) {
+                return entityMap[s];
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="navbar navbar-fixed-top navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="">
+                    @*<img alt="台塑網 MES System" height="15px" src="~/Content/images/efpg_logo64.png">*@
+                    FTCMES
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+
+                <ul class=" nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">共用模組 <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("資料庫定義說明", "FtcMesTableSchemaDescription", "MESTool", new { Type = "" }, null)</li>
+                            <li>@Html.ActionLink("資料庫差異說明", "FtcMesTableSchemaDiff", "MESTool", new { Type = "" }, null)</li>
+                            <li>@Html.ActionLink("ComDB執行Script", "DBRunSqlScript", "MESManageTool", new { CompanyID = "2", FactoryID = "3500", DB = "ComTable" }, null)</li>
+                            <li>@Html.ActionLink("MesDB執行Script", "DBRunSqlScript", "MESManageTool", new { CompanyID = "2", FactoryID = "3500", DB = "MesTable" }, null)</li>
+                            <li><a href="/FTCMESAPI/swagger/ui/index" target="_blank">API 說明</a></li>
+                            <li>@Html.ActionLink("傳送訊息", "FtcSendMessage", "MESTool", new { Type = "" }, null)</li>
+                            <li>@Html.ActionLink("傳送訊息報表", "FtcSendMessageReport", "MESTool", new { Type = "" }, null)</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class=" nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">AF操作介面 <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("傳送人員基礎建檔", "FtcEmpModify", "MESTool", new { CompanyID = "2", FactoryID = "3600" }, null)</li>
+                            <li>@Html.ActionLink("傳送人員群組基礎建檔", "FtcSendMessageGroupModify", "MESTool", new { CompanyID = "2", FactoryID = "3600" }, null)</li>
+                            <li>@Html.ActionLink("AF警報設定", "FtcAFAlertDefine", "AFTool", new { CompanyID = "2", FactoryID = "3600", LinkAF = "Y" }, null)</li>
+                            <li>@Html.ActionLink("AF警報類別建檔", "FtcAFAlarmCategoryDefine", "AFTool", new { CompanyID = "2", FactoryID = "3600" }, null)</li>
+                            <li>@Html.ActionLink("AF警報歷史報表", "FtcAFAlarmReport", "AFTool", new { CompanyID = "2", FactoryID = "3600" }, null)</li>
+                            <li>@Html.ActionLink("AF警報歷史Top10報表", "FtcAFAlarmTop10Report", "AFTool", new { CompanyID = "2", FactoryID = "3600" }, null)</li>
+                            <li>@Html.ActionLink("AF警報一覽表", "FtcAFAlarmCurrentReport", "AFTool", new { CompanyID = "2", FactoryID = "3600" }, null)</li>
+                            <li>@Html.ActionLink("AF品檢項目建檔", "FtcAFQitemDefine", "AFTool", new { CompanyID = "2", FactoryID = "3600" }, null)</li>
+                            <li>@Html.ActionLink("修復單項目建檔", "FtcMISRepairDefine", "Repair", new { area = "MISRepairMag", CompanyID = "2", FactoryID = "SLSL1", LinkAF = "Y" }, null)</li>
+                            <li>@Html.ActionLink("修復單自動開立查詢", "Repair", "Repair", new { area = "MISRepairMag", CompanyID = "2", FactoryID = "SLSL1" }, null)</li>
+                            <li>@Html.ActionLink("故障類別統計分析", "RovkKd", "Repair", new { area = "MISRepairMag", CompanyID = "2", FactoryID = "SLSL1" }, null)</li>
+                            <li>@Html.ActionLink("修復費用統計", "RepairCost", "Repair", new { area = "MISRepairMag", CompanyID = "2", FactoryID = "SLSL1" }, null)</li>
+                            <li>@Html.ActionLink("結案數量統計", "EndDatSearch", "Repair", new { area = "MISRepairMag", CompanyID = "2", FactoryID = "SLSL1" }, null)</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class=" nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">南亞嘉義一廠操作介面 <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("南亞嘉義一廠生產順序表", "FtcMIS_ProductionOrderList", "MESClientTool", new { CompanyID = "2", FactoryID = "JIRPB", GroupByCol = "機號", ViewName = "vMIS_ProductionOrderList" }, null)</li>
+                            <li>@Html.ActionLink("南亞嘉義一廠生產狀態及規格", "ProdStatus", "NYPVC_MES_Client", new { area = "NYPVC", CompanyID = "2", FactoryID = "JIRPB", EQPTYPE = "ExtruderEP", ShowBellerRecipe = "Y", ProductID = "MediumPVC_PD", TMPLID = "Extruder" }, null)</li>
+                            <li>@Html.ActionLink("每日(月)再生料統計表", "FRPBPA01", "NYPVC_MES_Client", new { area = "NYPVC", CompanyID = "2", FactoryID = "JIRPB" }, null)</li>
+                            <li>@Html.ActionLink("機台再生料原因月統計表", "FRPBPA02", "NYPVC_MES_Client", new { area = "NYPVC", CompanyID = "2", FactoryID = "JIRPB" }, null)</li>
+                            <li>@Html.ActionLink("生產狀況監視", "FRPBPA03", "NYPVC_MES_Client", new { area = "NYPVC", CompanyID = "2", FactoryID = "JIRPB" }, null)</li>
+                            <li>@Html.ActionLink("生產排班建檔", "FRPBPA04", "NYPVC_MES_Client", new { area = "NYPVC", CompanyID = "2", FactoryID = "JIRPB" }, null)</li>
+                            <li>@Html.ActionLink("生產班報表", "FRPBPA05", "NYPVC_MES_Client", new { area = "NYPVC", CompanyID = "2", FactoryID = "JIRPB" }, null)</li>
+                            <li>@Html.ActionLink("生產月報表", "FRPBPA06", "NYPVC_MES_Client", new { area = "NYPVC", CompanyID = "2", FactoryID = "JIRPB" }, null)</li>
+                            <li>@Html.ActionLink("生產明細表", "FRPBPA07", "NYPVC_MES_Client", new { area = "NYPVC", CompanyID = "2", FactoryID = "JIRPB" }, null)</li>
+                            <li>@Html.ActionLink("重量曲線圖", "FRPBPA08", "NYPVC_MES_Client", new { area = "NYPVC", CompanyID = "2", FactoryID = "JIRPB" }, null)</li>
+                            <li>@Html.ActionLink("生產異常表", "FRPBPA09", "NYPVC_MES_Client", new { area = "NYPVC", CompanyID = "2", FactoryID = "JIRPB" }, null)</li>
+                            <li>@Html.ActionLink("人員資料", "FRPBPA10", "NYPVC_MES_Client", new { area = "NYPVC", CompanyID = "2", FactoryID = "JIRPB" }, null)</li>
+                            <li>@Html.ActionLink("品檢不良率統計表", "FRPBPA11", "NYPVC_MES_Client", new { area = "NYPVC", CompanyID = "2", FactoryID = "JIRPB" }, null)</li>
+                            <li>@Html.ActionLink("品質不良統計表", "FRPBPA12", "NYPVC_MES_Client", new { area = "NYPVC", CompanyID = "2", FactoryID = "JIRPB" }, null)</li>
+                            <li>@Html.ActionLink("主機真空孔檢查紀錄表", "FRPBPA13", "NYPVC_MES_Client", new { area = "NYPVC", CompanyID = "2", FactoryID = "JIRPB" }, null)</li>
+                            <li>@Html.ActionLink("硬管重量管制表", "FRPBPA14", "NYPVC_MES_Client", new { area = "NYPVC", CompanyID = "2", FactoryID = "JIRPB" }, null)</li>
+                            <li>@Html.ActionLink("扭力管制表", "FRPBPA15", "NYPVC_MES_Client", new { area = "NYPVC", CompanyID = "2", FactoryID = "JIRPB" }, null)</li>
+                            <li>@Html.ActionLink("押出機生產狀態總攬", "FRPBPA16", "NYPVC_MES_Client", new { area = "NYPVC", CompanyID = "2", FactoryID = "JIRPB" }, null)</li>
+                            <li>@Html.ActionLink("生產單", "FRPBPA17", "NYPVC_MES_Client", new { area = "NYPVC", CompanyID = "2", FactoryID = "JIRPB" }, null)</li>
+                            <li>@Html.ActionLink("LED看板顯示設定", "FRPBPA18", "NYPVC_MES_Client", new { area = "NYPVC", CompanyID = "2", FactoryID = "JIRPB" }, null)</li>
+                            <li>@Html.ActionLink("異常訊息歷史查詢", "FRPBPA19", "NYPVC_MES_Client", new { area = "NYPVC", CompanyID = "2", FactoryID = "JIRPB" }, null)</li>
+                            <li>@Html.ActionLink("生產單上傳", "FRPBPA20", "NYPVC_MES_Client", new { area = "NYPVC", CompanyID = "2", FactoryID = "JIRPB" }, null)</li>
+                            <li>@Html.ActionLink("LED看板顯示設定", "FRPBPA21", "NYPVC_MES_Client", new { area = "NYPVC", CompanyID = "2", FactoryID = "JIRPB" }, null)</li>
+                            <li>@Html.ActionLink("FRPBPA22", "FRPBPA22", "NYPVC_MES_Client", new { area = "NYPVC", CompanyID = "2", FactoryID = "JIRPB" }, null)</li>
+                            <li>@Html.ActionLink("押出機標準加熱電流查詢", "FRPBPA23", "NYPVC_MES_Client", new { area = "NYPVC", CompanyID = "2", FactoryID = "JIRPB" }, null)</li>
+                            <li>@Html.ActionLink("押出機操作記錄", "FRPBPA30", "NYPVC_MES_Client", new { area = "NYPVC", CompanyID = "2", FactoryID = "JIRPB" }, null)</li>
+                            <li>@Html.ActionLink("管件課-生產順序表", "FRPBPA31", "NYPVC_MES_Client", new { area = "NYPVC", CompanyID = "2", FactoryID = "XMINJ" }, null)</li>
+                            <li>@Html.ActionLink("管件課-生產基準檔", "FRPBPA32", "NYPVC_MES_Client", new { area = "NYPVC", CompanyID = "2", FactoryID = "XMINJ" }, null)</li>
+                            <li>@Html.ActionLink("管件課-生產變更生產規格", "ProdStatusINJ", "NYPVC_MES_Client", new { area = "NYPVC", CompanyID = "2", FactoryID = "XMINJ", EQPTYPE = "InjectionEP" }, null)</li>
+                            <li>@Html.ActionLink("管件課-生產單", "FRPBPA33", "NYPVC_MES_Client", new { area = "NYPVC", CompanyID = "2", FactoryID = "XMINJ", }, null)</li>
+                            <li>@Html.ActionLink("品質不良統計表(廈門)", "FRPBPA34", "NYPVC_MES_Client", new { area = "NYPVC", CompanyID = "2", FactoryID = "XMINJ", }, null)</li>
+                            <li>@Html.ActionLink("押出机成品资料建档", "FRPBPA25", "NYPVC_MES_Client", new { area = "NYPVC", CompanyID = "2", FactoryID = "JIRPB" }, null)</li>
+
+                        </ul>
+                    </li>
+                </ul>
+                <ul class=" nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">現場操作介面 <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("建立批號", "CreateLot", "MESClientTool", new { Type = "" }, null)</li>
+                            <li>@Html.ActionLink("批號查詢", "LotQuery", "MESClientTool", new { Type = "" }, null)</li>
+                            <li>@Html.ActionLink("批號操作", "LotView", "MESClientTool", new { Type = "" }, null)</li>
+                            <li>@Html.ActionLink("機台操作", "EQPView", "MESClientTool", new { EQPID = "D101", LOTTYPE = "SemiLot" }, null)</li>
+                            <li>@Html.ActionLink("南亞嘉義一廠生產順序表", "FtcMIS_ProductionOrderList", "MESClientTool", new { CompanyID = "2", FactoryID = "JIRPB", GroupByCol = "機號", ViewName = "vMIS_ProductionOrderList" }, null)</li>
+                            <li>@Html.ActionLink("南亞嘉義一廠生產狀態及規格", "ProdStatus", "NYPVC_MES_Client", new { area = "NYPVC", CompanyID = "2", FactoryID = "JIRPB" }, null)</li>
+                            <li>@Html.ActionLink("SPC01", "FtcMesSPC", "MESClientTool", new { CompanyID = "2", FactoryID = "JIRPB", PROCESS = "ExtruderEP", STYLEID = "1" }, null)</li>
+                            <li>@Html.ActionLink("SPC02", "FtcMesSPC", "MESClientTool", new { CompanyID = "2", FactoryID = "JIRPB", PROCESS = "ExtruderEP", STYLEID = "2" }, null)</li>
+                            <li>@Html.ActionLink("SPC03", "FtcMesSPC", "MESClientTool", new { CompanyID = "2", FactoryID = "JIRPB", PROCESS = "ExtruderEP", STYLEID = "3" }, null)</li>
+                            <li>@Html.ActionLink("SPC04", "FtcMesSPC", "MESClientTool", new { CompanyID = "2", FactoryID = "JIRPB", PROCESS = "ExtruderEP", STYLEID = "4" }, null)</li>
+                            <li>@Html.ActionLink("SPC05", "FtcMesSPC", "MESClientTool", new { CompanyID = "2", FactoryID = "JIRPB", PROCESS = "ExtruderEP", STYLEID = "5" }, null)</li>
+                            <li>@Html.ActionLink("SPC06", "FtcMesSPC", "MESClientTool", new { CompanyID = "2", FactoryID = "JIRPB", PROCESS = "ExtruderEP", STYLEID = "6" }, null)</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class=" nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">EDC操作介面 <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("EDC範本建立", "FtcMesTmplTypeCreate", "MESClientTool", new { Type = "" }, null)</li>
+                            <li>@Html.ActionLink("EDC 規格查詢", "FtcMesFACTORDATA", "MESClientTool", new { Type = "" }, null)</li>
+                            <li>@Html.ActionLink("EDC 紀錄查詢(需要代TMPLID=ExtOPRec)", "FtcEdcReport", "MESClientTool", new { TMPLID = "ExtOPRec" }, null)</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class=" nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">PRP操作介面 <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("Rule建立", "StepRule", "MESManageTool", new { Type = "" }, null)</li>
+                            <li>@Html.ActionLink("EDC屬性建立", "EdcAttrDefine", "MESManageTool", new { Type = "" }, null)</li>
+                            <li>@Html.ActionLink("批號顯示欄位設定", "DisplayLotColDefine", "MESManageTool", new { Type = "" }, null)</li>
+                            <li>@Html.ActionLink("設備連線類別設定", "ChannelDefine", "MESManageToolEap", new { Type = "" }, null)</li>
+                            <li>@Html.ActionLink("設備連線點位設定", "TagDefine", "MESManageToolEap", new { CHANNELID = "JI" }, null)</li>
+                            <li>@Html.ActionLink("設備連線EDC對應點位設定", "EdcTagDefine", "MESManageToolEap", new { CompanyID = "2", FactoryID = "JIRPB" }, null)</li>
+                            <li>@Html.ActionLink("設備連線資料保存設定", "KeepDefine", "MESManageToolEap", new { Type = "" }, null)</li>
+                            @*<li>@Html.ActionLink("設備連線資料保存對應點位設定", "KeepTagDefine", "MESManageToolEap", new { Type = "" }, null)</li>*@
+                            <li>@Html.ActionLink("EDC屬性下拉連結設定", "EdcAttrMapValues", "MESManageTool", new { Type = "" }, null)</li>
+                            <li>@Html.ActionLink("批次報表生成設定", "ScheduleReportDefine", "MESManageTool", new { Type = "" }, null)</li>
+                            <li>@Html.ActionLink("批次報表對應傳送群組", "ScheduleReportGroup", "MESManageTool", new { Type = "" }, null)</li>
+                            <li>@Html.ActionLink("RtpmsFAMSDeFine", "RtpmsFAMSDeFine", "MESManageTool", new { Type = "" }, null)</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class=" nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">配方及投料操作介面<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("EDC要因設定", "EdcFactor", "MESManageTool", new { CompanyID = "2", FactoryID = "3500" }, null)</li>
+                            <li>@Html.ActionLink("EDC項目設定", "EdcItem", "MESManageTool", new { CompanyID = "2", FactoryID = "3500" }, null)</li>
+                            <li>@Html.ActionLink("EDC規格建立", "EdcFactorData", "MESManageTool", new { CompanyID = "2", FactoryID = "3500" }, null)</li>
+                            <li>@Html.ActionLink("EDC範本建立", "FtcMesTmplTypeCreate", "MESClientTool", new { CompanyID = "2", FactoryID = "3500" }, null)</li>
+                            <li>@Html.ActionLink("EDC規格建立(xls)", "FtcMesFACTORDATA", "MESClientTool", new { CompanyID = "2", FactoryID = "3500", TMPLID = "Copper", EDCMode = "GET" }, null)</li>
+                            <li>@Html.ActionLink("QRCode範本建立", "BarcodePrinterTemplate", "MESManageTool", new { CompanyID = "2", FactoryID = "3500" }, null)</li>
+                            <li>@Html.ActionLink("QRCode列印工作查詢", "BarcodePrinterJob", "MESManageTool", new { CompanyID = "2", FactoryID = "3500" }, null)</li>
+                            <li>@Html.ActionLink("配料計畫建立", "FtcMesMaterialPlan", "MESClientTool", new { CompanyID = "2", FactoryID = "3500", MODE = "GET", MergeBarCode = "Y", FACTORDATAIDTITEL = "配方卡號", EAPTAGID = "磅秤A", TMPLID = "RF-WOP-N" }, null)</li>
+                            <li>@Html.ActionLink("投料作業", "FtcMesMaterialPlan", "MESClientTool", new { CompanyID = "2", FactoryID = "3500", MODE = "SET", FACTORDATAIDTITEL = "配方卡號", SHOWQRCODE = "Y", ALLIN = "N" }, null)</li>
+                            <li>@Html.ActionLink("投料作業(手機)", "FtcMesMaterialPlanForMobile", "MESClientTool", new { CompanyID = "2", FactoryID = "3500", MODE = "SET", FACTORDATAIDTITEL = "配方卡號", SHOWQRCODE = "Y", ALLIN = "", CusWebApi= "/api/MESApiTool/TestCusWebApi" }, null)</li>
+                            <li>@Html.ActionLink("投料作業報表", "FtcMesMaterialReport", "MESClientTool", new { CompanyID = "2", FactoryID = "3500", MODE = "REPORT_SET", FACTORDATAIDTITEL = "配方卡號" }, null)</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class=" nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">PRP基礎資料建檔<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("Product", "Product", "MESManageTool", new { CompanyID = "02", FactoryID = "028U" }, null)</li>
+                            <li>@Html.ActionLink("ProductAttribute", "ProductAttribute", "MESManageTool", new { CompanyID = "02", FactoryID = "028U" }, null)</li>
+                            <li>@Html.ActionLink("LOT Type", "LOTType", "MESManageTool", new { CompanyID = "02", FactoryID = "028U" }, null)</li>
+                            <li>@Html.ActionLink("LOTAttribute", "LOTAttribute", "MESManageTool", new { CompanyID = "02", FactoryID = "028U" }, null)</li>
+                            <li>@Html.ActionLink("ProcessPlan", "ProcessPlan", "MESManageTool", new { CompanyID = "02", FactoryID = "028U" }, null)</li>
+                            <li>@Html.ActionLink("PlanAttribute", "PlanAttribute", "MESManageTool", new { CompanyID = "02", FactoryID = "028U" }, null)</li>
+                            <li>@Html.ActionLink("Step", "Step", "MESManageTool", new { CompanyID = "02", FactoryID = "028U" }, null)</li>
+                            <li>@Html.ActionLink("StepAttribute", "StepAttribute", "MESManageTool", new { CompanyID = "02", FactoryID = "028U" }, null)</li>
+                            <li>@Html.ActionLink("StepRule", "StepRule", "MESManageTool", new { CompanyID = "02", FactoryID = "028U" }, null)</li>
+                            <li>@Html.ActionLink("StepGroup", "StepGroup", "MESManageTool", new { CompanyID = "02", FactoryID = "028U" }, null)</li>
+                            <li>@Html.ActionLink("EQP", "EQP", "MESManageTool", new { CompanyID = "02", FactoryID = "028U" }, null)</li>
+                            <li>@Html.ActionLink("EQPAttribute", "EQPAttribute", "MESManageTool", new { CompanyID = "02", FactoryID = "028U" }, null)</li>
+                            <li>@Html.ActionLink("EQPType", "EQPType", "MESManageTool", new { CompanyID = "02", FactoryID = "028U" }, null)</li>
+                            <li>@Html.ActionLink("EQPGroup", "EQPGroup", "MESManageTool", new { CompanyID = "02", FactoryID = "028U" }, null)</li>
+                            <li>@Html.ActionLink("EQPStatus", "EQPStatus", "MESManageTool", new { CompanyID = "02", FactoryID = "028U" }, null)</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class=" nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">檢驗操作介面<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("QC要因設定", "QCFactor", "MESManageTool", new { CompanyID = "2", FactoryID = "331C" }, null)</li>
+                            <li>@Html.ActionLink("QC要因下拉設定", "QCItemList", "MESManageTool", new { CompanyID = "2", FactoryID = "331C", TargetType = "QC", Target = "FACTOR", OrderBy = "ListName", ListNameColName = "要因代號", ItemNameColName = "下拉選項", ItemValueVisible = "false" }, null)</li>
+                            <li>@Html.ActionLink("QC檢驗大類設定", "QCItemList", "MESManageTool", new { CompanyID = "2", FactoryID = "331C", TargetType = "QC", Target = "MITEM", OrderBy = "ListName", ListNameColName = "檢驗種類", ItemNameColName = "檢驗大類名稱", ItemValueVisible = "false" }, null)</li>
+                            <li>@Html.ActionLink("IQC檢驗項目設定", "QCItem", "MESManageTool", new { CompanyID = "2", FactoryID = "331C", FACTORID = "IQC" }, null)</li>
+                            <li>@Html.ActionLink("IQC檢驗範本設定", "QCPlan", "MESManageTool", new { CompanyID = "2", FactoryID = "331C", FACTORID = "IQC" }, null)</li>
+                            <li>@Html.ActionLink("IQC檢驗單開立", "QCINSPECTION", "MESManageTool", new { CompanyID = "2", FactoryID = "331C", FACTORID = "IQC" }, null)</li>
+                            <li>@Html.ActionLink("IQC檢驗單作業", "QCINSPECTIONJOB", "MESManageTool", new { CompanyID = "2", FactoryID = "331C", FACTORID = "IQC" }, null)</li>
+                            <li>@Html.ActionLink("IQC歷史資料", "QCINSPECTIONHISTORY", "MESManageTool", new { CompanyID = "2", FactoryID = "331C", FACTORID = "IQC" }, null)</li>
+                            <li>@Html.ActionLink("IPQC檢驗項目設定", "QCItem", "MESManageTool", new { CompanyID = "2", FactoryID = "331C", FACTORID = "IPQC" }, null)</li>
+                            <li>@Html.ActionLink("IPQC檢驗範本設定", "QCPlan", "MESManageTool", new { CompanyID = "2", FactoryID = "331C", FACTORID = "IPQC" }, null)</li>
+                            <li>@Html.ActionLink("IPQC檢驗單開立", "QCINSPECTION", "MESManageTool", new { CompanyID = "2", FactoryID = "331C", FACTORID = "IPQC" }, null)</li>
+                            <li>@Html.ActionLink("IPQC檢驗單作業", "QCINSPECTIONJOB", "MESManageTool", new { CompanyID = "2", FactoryID = "331C", FACTORID = "IPQC" }, null)</li>
+                            <li>@Html.ActionLink("IPQC歷史資料", "QCINSPECTIONHISTORY", "MESManageTool", new { CompanyID = "2", FactoryID = "331C", FACTORID = "IPQC" }, null)</li>
+                            <li>@Html.ActionLink("歷史資料總覽", "QCINSPECTIONHISTORYTOTAL", "MESManageTool", new { CompanyID = "2", FactoryID = "331C" }, null)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - FTC MES 應用程式(ver:1.0.0.2)</p>
+        </footer>
+    </div>
+</body>
+</html>

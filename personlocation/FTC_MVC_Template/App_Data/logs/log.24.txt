@@ -1,0 +1,118 @@
+2023-04-10 08:55:18.2373 | [7] | INFO | FuctionName=Account.Login | Start | IP=127.0.0.1 | parametersInfo={"returnUrl":"/","status":"LogOff"}
+2023-04-10 08:55:18.5428 | [7] | INFO | FuctionName=Account.Login | End | IP=127.0.0.1 | ExpendTime=0.388644
+2023-04-10 08:58:31.0861 | [10] | INFO | FuctionName=Account.Login | Start | IP=127.0.0.1 | parametersInfo={"model":{"UserId":"ADMIN","Password":"123456","ComFacID":"台化油品部儲運處-台北-","RememberMe":false,"Language":null},"returnUrl":"/"}
+2023-04-10 08:58:31.1371 | [10] | INFO | FuctionName=Account.Login | End | IP=127.0.0.1 | ExpendTime=0.0659983
+2023-04-10 08:58:31.1599 | [6] | INFO | FuctionName=Home.Index | Start | IP=127.0.0.1 | parametersInfo={}
+2023-04-10 08:58:31.1738 | [6] | INFO | FuctionName=Home.Index | End | IP=127.0.0.1 | ExpendTime=0.0146593
+2023-04-10 08:58:35.7848 | [6] | INFO | FuctionName=Home._Menu | Start | IP=127.0.0.1 | parametersInfo={}
+2023-04-10 08:58:35.8102 | [6] | INFO | FuctionName=Home._Menu | End | IP=127.0.0.1 | ExpendTime=0.0248959
+2023-04-10 08:58:35.8374 | [6] | INFO | FuctionName=Home._ChangePassword | Start | IP=127.0.0.1 | parametersInfo={}
+2023-04-10 08:58:35.8374 | [6] | INFO | FuctionName=Home._ChangePassword | End | IP=127.0.0.1 | ExpendTime=0.0035886
+2023-04-10 08:58:36.1373 | [7] | INFO | FuctionName=UserManage.CommUser | Start | IP=127.0.0.1 | parametersInfo={}
+2023-04-10 08:58:36.1529 | [7] | INFO | FuctionName=UserManage.CommUser | End | IP=127.0.0.1 | ExpendTime=0.0053818
+2023-04-10 08:58:38.0024 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=
+2023-04-10 08:58:38.0430 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0408332
+2023-04-10 08:58:38.1922 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=
+2023-04-10 08:58:38.1922 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0474745
+2023-04-10 08:58:50.7142 | [7] | INFO | FuctionName=PersonLocation.PersonBind | Start | IP=127.0.0.1 | parametersInfo={}
+2023-04-10 08:58:50.7142 | [7] | INFO | FuctionName=PersonLocation.PersonBind | End | IP=127.0.0.1 | ExpendTime=0.0031509
+2023-04-10 08:58:55.9057 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=
+2023-04-10 08:58:55.9057 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0539628
+2023-04-10 08:58:55.9922 | [7] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=PersonId=&Name=&CompanyId=
+2023-04-10 08:58:55.9922 | [6] | INFO | FuctionName=apiPersonLocation.GetCompany | Message=PersonId=&Name=&CompanyId=
+2023-04-10 08:58:56.0073 | [6] | INFO | FuctionName=apiPersonLocation.GetCompany | Message=ExpendTime=0.013674
+2023-04-10 08:58:56.0073 | [7] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=0.013674
+2023-04-10 08:58:56.0336 | [10] | INFO | FuctionName=apiPersonLocation.GetBodyMonitor | Message=DeviceId=&DeviceName=&Status=&BorrowerId=
+2023-04-10 08:58:56.0336 | [10] | INFO | FuctionName=apiPersonLocation.GetBodyMonitor | Message=ExpendTime=0.0241778
+2023-04-10 08:58:56.0672 | [6] | INFO | FuctionName=apiPersonLocation.GetAllDevice | Message=DeviceId=&DeviceName=&Status=&BorrowerId=
+2023-04-10 08:58:56.0823 | [6] | INFO | FuctionName=apiPersonLocation.GetAllDevice | Message=ExpendTime=0.038529
+2023-04-10 08:58:56.1331 | [6] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=PersonId=&Name=&CompanyId=
+2023-04-10 08:58:56.1433 | [6] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=0.0470227
+2023-04-10 11:08:43.5176 | [48] | INFO | FuctionName=Account.Login | Start | IP=127.0.0.1 | parametersInfo={"returnUrl":"/","status":"LogOff"}
+2023-04-10 11:08:43.5176 | [48] | INFO | FuctionName=Account.Login | End | IP=127.0.0.1 | ExpendTime=0.0122849
+2023-04-10 11:08:45.2133 | [56] | INFO | FuctionName=Account.Login | Start | IP=127.0.0.1 | parametersInfo={"model":{"UserId":"ADMIN","Password":"123456","ComFacID":"台化油品部儲運處-台北-","RememberMe":false,"Language":null},"returnUrl":"/"}
+2023-04-10 11:08:45.2263 | [56] | INFO | FuctionName=Account.Login | End | IP=127.0.0.1 | ExpendTime=0.0145556
+2023-04-10 11:08:45.2383 | [53] | INFO | FuctionName=Home.Index | Start | IP=127.0.0.1 | parametersInfo={}
+2023-04-10 11:08:45.2383 | [53] | INFO | FuctionName=Home.Index | End | IP=127.0.0.1 | ExpendTime=0.0092308
+2023-04-10 11:08:45.2518 | [53] | INFO | FuctionName=Home._Menu | Start | IP=127.0.0.1 | parametersInfo={}
+2023-04-10 11:08:45.2678 | [53] | INFO | FuctionName=Home._Menu | End | IP=127.0.0.1 | ExpendTime=0.0173496
+2023-04-10 11:08:45.2678 | [53] | INFO | FuctionName=Home._ChangePassword | Start | IP=127.0.0.1 | parametersInfo={}
+2023-04-10 11:08:45.2678 | [53] | INFO | FuctionName=Home._ChangePassword | End | IP=127.0.0.1 | ExpendTime=0.0038504
+2023-04-10 11:08:45.5341 | [48] | INFO | FuctionName=UserManage.CommUser | Start | IP=127.0.0.1 | parametersInfo={}
+2023-04-10 11:08:45.5341 | [48] | INFO | FuctionName=UserManage.CommUser | End | IP=127.0.0.1 | ExpendTime=0.0039238
+2023-04-10 11:08:45.8253 | [53] | INFO | FuctionName=UserManageApi.getUser | Message=
+2023-04-10 11:08:45.8383 | [53] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0668305
+2023-04-10 11:08:45.9203 | [56] | INFO | FuctionName=UserManageApi.getUser | Message=
+2023-04-10 11:08:45.9273 | [56] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0740531
+2023-04-10 11:08:47.6334 | [56] | INFO | FuctionName=PersonLocation.BodyMonitor | Start | IP=127.0.0.1 | parametersInfo={}
+2023-04-10 11:08:47.6334 | [56] | INFO | FuctionName=PersonLocation.BodyMonitor | End | IP=127.0.0.1 | ExpendTime=0.0031101
+2023-04-10 11:08:47.8525 | [48] | INFO | FuctionName=UserManageApi.getUser | Message=
+2023-04-10 11:08:47.8594 | [48] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0813422
+2023-04-10 11:08:47.9024 | [56] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=DeviceId=&DeviceName=&Status=&BorrowerId=
+2023-04-10 11:08:47.9104 | [56] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=0.0546521
+2023-04-10 11:08:47.9284 | [56] | INFO | FuctionName=apiPersonLocation.GetBodyMonitor | Message=DeviceId=&DeviceName=&Status=&BorrowerId=
+2023-04-10 11:08:47.9284 | [56] | INFO | FuctionName=apiPersonLocation.GetBodyMonitor | Message=ExpendTime=0.0602846
+2023-04-10 11:08:48.0005 | [56] | INFO | FuctionName=apiPersonLocation.GetBodyMonitor | Message=DeviceId=&DeviceName=&Status=&BorrowerId=
+2023-04-10 11:08:48.0005 | [56] | INFO | FuctionName=apiPersonLocation.GetBodyMonitor | Message=ExpendTime=0.0679686
+2023-04-10 11:34:53.7181 | [56] | INFO | FuctionName=PersonLocation.PersonData | Start | IP=127.0.0.1 | parametersInfo={}
+2023-04-10 11:34:53.7651 | [56] | INFO | FuctionName=PersonLocation.PersonData | End | IP=127.0.0.1 | ExpendTime=0.126883
+2023-04-10 11:34:57.9318 | [41] | INFO | FuctionName=UserManageApi.getUser | Message=
+2023-04-10 11:34:57.9848 | [41] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0542195
+2023-04-10 11:34:58.1433 | [143] | INFO | FuctionName=apiPersonLocation.GetCompany | Message=
+2023-04-10 11:34:58.1563 | [143] | INFO | FuctionName=apiPersonLocation.GetCompany | Message=ExpendTime=0.0128342
+2023-04-10 11:34:58.2233 | [41] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=
+2023-04-10 11:34:58.2354 | [41] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=0.0254543
+2023-04-10 11:34:58.2354 | [56] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=
+2023-04-10 11:34:58.2514 | [56] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=0.0336453
+2023-04-10 11:36:14.8495 | [143] | INFO | FuctionName=apiPersonLocation.InsertBodyMonitor | Message=DeviceId=device001&DeviceName=%E8%A8%AD%E5%82%99%E4%B8%80&Status=%E9%96%8B%E6%A9%9F&HeartRate=100&BloodPressure=100&Temperature=36&CreateTime=Mon+Apr+10+2023+11%3A08%3A47+GMT%2B0800+(%E5%8F%B0%E5%8C%97%E6%A8%99%E6%BA%96%E6%99%82%E9%96%93)&BatteryInfo=40
+2023-04-10 11:36:14.8645 | [143] | INFO | FuctionName=apiPersonLocation.InsertBodyMonitor | Message=ExpendTime=0.0489942
+2023-04-10 11:36:14.8815 | [155] | INFO | FuctionName=apiPersonLocation.GetBodyMonitor | Message=DeviceId=&DeviceName=&Status=&BorrowerId=
+2023-04-10 11:36:14.8945 | [155] | INFO | FuctionName=apiPersonLocation.GetBodyMonitor | Message=ExpendTime=0.0613259
+2023-04-10 11:36:53.3480 | [41] | INFO | FuctionName=apiPersonLocation.InsertBodyMonitor | Message=DeviceId=device002&DeviceName=%E8%A8%AD%E5%82%992&Status=%E9%96%8B%E6%A9%9F&HeartRate=100&BloodPressure=100&Temperature=36.2&CreateTime=Mon+Apr+10+2023+11%3A08%3A47+GMT%2B0800+(%E5%8F%B0%E5%8C%97%E6%A8%99%E6%BA%96%E6%99%82%E9%96%93)&BatteryInfo=40
+2023-04-10 11:36:53.3480 | [41] | INFO | FuctionName=apiPersonLocation.InsertBodyMonitor | Message=ExpendTime=0.0680637
+2023-04-10 11:36:53.3705 | [143] | INFO | FuctionName=apiPersonLocation.GetBodyMonitor | Message=DeviceId=&DeviceName=&Status=&BorrowerId=
+2023-04-10 11:36:53.3780 | [143] | INFO | FuctionName=apiPersonLocation.GetBodyMonitor | Message=ExpendTime=0.0758156
+2023-04-10 11:37:01.2068 | [41] | INFO | FuctionName=apiPersonLocation.UpdateBodyMonitor | Message=DeviceId=device001&DeviceName=%E8%A8%AD%E5%82%991&Status=%E9%96%8B%E6%A9%9F&BorrowerId=&HeartRate=100&BloodPressure=100&Temperature=36&CreateTime=Mon+Apr+10+2023+00%3A00%3A00+GMT%2B0800+(%E5%8F%B0%E5%8C%97%E6%A8%99%E6%BA%96%E6%99%82%E9%96%93)&BatteryInfo=40
+2023-04-10 11:37:01.2258 | [41] | INFO | FuctionName=apiPersonLocation.UpdateBodyMonitor | Message=ExpendTime=0.0953878
+2023-04-10 11:37:01.2378 | [56] | INFO | FuctionName=apiPersonLocation.GetBodyMonitor | Message=DeviceId=&DeviceName=&Status=&BorrowerId=
+2023-04-10 11:37:01.2378 | [56] | INFO | FuctionName=apiPersonLocation.GetBodyMonitor | Message=ExpendTime=0.1022167
+2023-04-10 13:40:16.9088 | [12] | INFO | FuctionName=Account.Login | Start | IP=127.0.0.1 | parametersInfo={"returnUrl":"/","status":"LogOff"}
+2023-04-10 13:40:16.9318 | [12] | INFO | FuctionName=Account.Login | End | IP=127.0.0.1 | ExpendTime=0.0242187
+2023-04-10 13:40:18.9456 | [27] | INFO | FuctionName=Account.Login | Start | IP=127.0.0.1 | parametersInfo={"model":{"UserId":"ADMIN","Password":"123456","ComFacID":"台化油品部儲運處-台北-","RememberMe":false,"Language":null},"returnUrl":"/"}
+2023-04-10 13:40:18.9962 | [27] | INFO | FuctionName=Account.Login | End | IP=127.0.0.1 | ExpendTime=0.0531103
+2023-04-10 13:40:19.0102 | [12] | INFO | FuctionName=Home.Index | Start | IP=127.0.0.1 | parametersInfo={}
+2023-04-10 13:40:19.0252 | [12] | INFO | FuctionName=Home.Index | End | IP=127.0.0.1 | ExpendTime=0.0160701
+2023-04-10 13:40:19.0702 | [12] | INFO | FuctionName=Home._Menu | Start | IP=127.0.0.1 | parametersInfo={}
+2023-04-10 13:40:19.0912 | [12] | INFO | FuctionName=Home._Menu | End | IP=127.0.0.1 | ExpendTime=0.0228791
+2023-04-10 13:40:19.1132 | [12] | INFO | FuctionName=Home._ChangePassword | Start | IP=127.0.0.1 | parametersInfo={}
+2023-04-10 13:40:19.1132 | [12] | INFO | FuctionName=Home._ChangePassword | End | IP=127.0.0.1 | ExpendTime=0.0034776
+2023-04-10 13:40:19.3792 | [30] | INFO | FuctionName=UserManage.CommUser | Start | IP=127.0.0.1 | parametersInfo={}
+2023-04-10 13:40:19.3822 | [30] | INFO | FuctionName=UserManage.CommUser | End | IP=127.0.0.1 | ExpendTime=0.0041509
+2023-04-10 13:40:19.6723 | [27] | INFO | FuctionName=UserManageApi.getUser | Message=
+2023-04-10 13:40:19.6793 | [27] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0603251
+2023-04-10 13:40:19.7493 | [12] | INFO | FuctionName=UserManageApi.getUser | Message=
+2023-04-10 13:40:19.7493 | [12] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0667478
+2023-04-10 13:40:21.9762 | [12] | INFO | FuctionName=PersonLocation.BodyMonitor | Start | IP=127.0.0.1 | parametersInfo={}
+2023-04-10 13:40:21.9762 | [12] | INFO | FuctionName=PersonLocation.BodyMonitor | End | IP=127.0.0.1 | ExpendTime=0.0026764
+2023-04-10 13:40:22.2022 | [30] | INFO | FuctionName=UserManageApi.getUser | Message=
+2023-04-10 13:40:22.2022 | [30] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.072372
+2023-04-10 13:40:22.2424 | [27] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=DeviceId=&DeviceName=&Status=&BorrowerId=
+2023-04-10 13:40:22.2424 | [27] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=0.1105214
+2023-04-10 13:40:22.2699 | [27] | INFO | FuctionName=apiPersonLocation.GetBodyMonitor | Message=DeviceId=&DeviceName=&Status=&BorrowerId=
+2023-04-10 13:40:22.2759 | [27] | INFO | FuctionName=apiPersonLocation.GetBodyMonitor | Message=ExpendTime=0.1165278
+2023-04-10 13:40:22.3299 | [12] | INFO | FuctionName=apiPersonLocation.GetBodyMonitor | Message=DeviceId=&DeviceName=&Status=&BorrowerId=
+2023-04-10 13:40:22.3389 | [12] | INFO | FuctionName=apiPersonLocation.GetBodyMonitor | Message=ExpendTime=0.1254644
+2023-04-10 13:40:36.1557 | [12] | INFO | FuctionName=PersonLocation.LocationDevice | Start | IP=127.0.0.1 | parametersInfo={}
+2023-04-10 13:40:36.1557 | [12] | INFO | FuctionName=PersonLocation.LocationDevice | End | IP=127.0.0.1 | ExpendTime=0.0026827
+2023-04-10 13:40:36.3217 | [30] | INFO | FuctionName=UserManageApi.getUser | Message=
+2023-04-10 13:40:36.3217 | [30] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0775069
+2023-04-10 13:40:36.3457 | [27] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=DeviceId=&DeviceName=&Status=&BorrowerId=
+2023-04-10 13:40:36.3507 | [27] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=0.1306147
+2023-04-10 13:40:36.3507 | [12] | INFO | FuctionName=apiPersonLocation.GetLocationDevice | Message=DeviceId=&DeviceName=&Status=&BorrowerId=
+2023-04-10 13:40:36.3717 | [12] | INFO | FuctionName=apiPersonLocation.GetLocationDevice | Message=ExpendTime=0.1377541
+2023-04-10 13:40:36.4287 | [27] | INFO | FuctionName=apiPersonLocation.GetLocationDevice | Message=DeviceId=&DeviceName=&Status=&BorrowerId=
+2023-04-10 13:40:36.4287 | [27] | INFO | FuctionName=apiPersonLocation.GetLocationDevice | Message=ExpendTime=0.1460132
+2023-04-10 13:41:09.7626 | [27] | INFO | FuctionName=apiPersonLocation.InsertLocationDevice | Message=DeviceId=device001&DeviceName=%E8%A8%AD%E5%82%991&Status=%E9%96%8B%E6%A9%9F&HeartRate=&BloodPressure=&Temperature=0&CreateTime=Mon+Apr+10+2023+13%3A40%3A36+GMT%2B0800+(%E5%8F%B0%E5%8C%97%E6%A8%99%E6%BA%96%E6%99%82%E9%96%93)&BatteryInfo=3&GPSLocation=%5B23%2C+121%5D&Altitude=3&SignalStrength=4
+2023-04-10 13:41:09.7732 | [27] | INFO | FuctionName=apiPersonLocation.InsertLocationDevice | Message=ExpendTime=0.1566093
+2023-04-10 13:41:09.7732 | [12] | INFO | FuctionName=apiPersonLocation.GetLocationDevice | Message=DeviceId=&DeviceName=&Status=&BorrowerId=
+2023-04-10 13:41:09.7918 | [12] | INFO | FuctionName=apiPersonLocation.GetLocationDevice | Message=ExpendTime=0.1624926

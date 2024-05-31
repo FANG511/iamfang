@@ -1,0 +1,611 @@
+﻿@model FTC_MES_MVC.Models.UserManage.ViewModel_Role_P
+@{
+    Layout = "~/Views/Shared/_LayoutForMESNoMenu.cshtml";
+}
+<style>
+    .window td {
+        text-align: center; /* center checkbox horizontally */
+        vertical-align: middle; /* center checkbox vertically */
+    }
+    /*父節點*/
+    .pLabel {
+        color: blue;
+    }
+    /*子父節點*/
+    .SecpLabel {
+        color: cornflowerblue;
+    }
+    /*子節點*/
+    .cLabel {
+        color: black;
+    }
+
+
+    input[type="checkbox"] {
+        -webkit-appearance: none;
+        vertical-align: middle;
+        margin-top: 0;
+        background: #fff;
+        border: #999 solid 1px;
+        border-radius: 3px;
+        min-height: 12px;
+        min-width: 12px;
+    }
+
+        input[type="checkbox"]:checked {
+            background: #3190e8;
+        }
+
+    input[type=checkbox]:checked::after {
+        content: '';
+        top: 3px;
+        left: 3px;
+        position: absolute;
+        background: transparent;
+        border: #fff solid 2px;
+        border-top: none;
+        border-right: none;
+        height: 6px;
+        width: 10px;
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+</style>
+<h4>@ViewBag.Title</h4>
+<div class="form-horizontal">
+    <div class="form-group">
+        <div class="col-sm-12">
+            <div id="grid" style="width: 100%;"></div>
+            <div id="window"></div>
+            <label id="lblRole" style="display:none;"></label>
+        </div>
+    </div>
+</div>
+
+<script type="text/x-kendo-template" id="authedit">
+    <div class="window">
+        <div class="box">
+            <div class="box-body no-padding">
+                <button id="btnCollapse" class="btn btn_negative" onclick="btnCollapse_click();">
+                    <i class="fa fa-hand-grab-o"></i>
+                    <span data-i18n="UserManage.Text.btnHide"></span>
+                </button>
+                <button id="btnUnCollapse" class="btn btn_primary" onclick="btnUnCollapse_click();">
+                    <i class="fa fa-hand-paper-o"></i>
+                    <span data-i18n="UserManage.Text.btnShow"></span>
+                </button>
+                <table class="table">
+                    <tr>
+                        @*修改為放可以展開的點且可以收合*@
+                        <th width="10%" style="text-align:center" data-i18n="UserManage.Text.thHide"></th>
+                        <th width="30%" style="text-align:center" data-i18n="UserManage.Text.thFun"></th>
+                        <th width="15%" style="text-align:center" data-i18n="UserManage.Text.thPNODE"></th>
+                        <th width="15%" style="text-align:center" data-i18n="UserManage.Text.thCNODE"></th>
+                        <th width="30%" style="text-align:center" data-i18n="UserManage.Text.thADD"></th>
+                        @*@foreach (string s in Model.ControlList)
+                            {
+                                <th>@s</th>
+                            }*@
+                    </tr>
+
+                    @*先遞迴分群後的父節點*@
+                    @foreach (var a in Model.PNodeList)
+                    {
+
+                        <tr id="Tr_P_@a.NODEID">
+
+                            <td>
+                                <input type="checkbox" id="Chk_P_@a.NODEID" class="k-checkbox-wrapper lrg MyCollapse" onclick="hideRow(Chk_P_@a.NODEID)" />
+                                <label for="Chk_P_@a.NODEID" name="P_checkbox_n02_lbl" class="css-label lrg web-two-style"></label>
+                            </td>
+
+
+                            <td>
+                                <label class="pLabel">@a.NODETEXT</label>
+                            </td>
+
+                            @*父節點顯示*@
+                            @*內部node check用 NODEID就好*@
+                            <td>
+                                <input type="checkbox" id="@a.NODEID" class="css-checkbox lrg" />
+                                <label for="@a.NODEID" name="checkbox_n02_lbl" class="css-label lrg web-two-style"></label>
+                            </td>
+
+                            <td></td>
+
+                            @*擺放額外權限*@
+                            <td>
+                                <input id="RoleNodeHasAuth_@a.NODEID" class="MyRoleNodeHasAuth" />
+                            </td>
+
+                        </tr>
+
+                        @*子節點 在該父節點以下的子節點遞迴*@
+                        foreach (var c in Model.NodeList.Where(y => y.PARENTID == a.NODEID).ToList())
+                        {
+                            <tr class="CollapseDetail Tr_C_@a.NODEID">
+                                <td></td>
+
+                                <td>
+                                    <label class="cLabel">@c.NODETEXT</label>
+                                </td>
+
+                                <td></td>
+
+                                @*顯示 不在父節點內*@
+                                @if (!Model.PNodeList.Where(x => x.PARENTID == c.NODEID).ToList().Any())
+                                {
+                                    <td>
+                                        <input type="checkbox" id="@c.NODEID" class="css-checkbox lrg" />
+                                        <label for="@c.NODEID" name="checkbox_n02_lbl" class="css-label lrg web-two-style"></label>
+                                    </td>
+                                    @*擺放額外權限*@
+                                    <td>
+                                        <input id="RoleNodeHasAuth_@c.NODEID" class="MyRoleNodeHasAuth" />
+                                    </td>
+                                }
+
+
+                                @*@foreach (string s in Model.ControlList)
+                                    {
+                                        <td>
+                                            @if (Model.NodeControl.Where(o => o.AUTHTEXT == s && o.PARENTID == a.NODEID).ToList().Count() > 0)
+                                            {
+                                                <input type="checkbox" id="C_@Model.NodeControl.First(o => o.AUTHTEXT == s && o.PARENTID == a.NODEID).NODEID" class="css-checkbox lrg MyAuthCheck" />
+                                                <label for="C_@Model.NodeControl.First(o => o.AUTHTEXT == s && o.PARENTID == a.NODEID).NODEID" name="C_checkbox_n02_lbl" class="css-label lrg web-two-style"></label>
+                                            }
+                                        </td>
+                                    }*@
+                            </tr>
+                        }
+                    }
+
+                </table>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer">
+                <button type="button" id="btnSaveAuth" class="btn btn_primary pull-right">
+                    <i class="fa fa-save"></i> <span data-i18n="ButtonCommon.Save"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script>
+    const vi18n_Name = 'UserManage.Text';
+    const vi18n_BackEnd = 'UserManage.BackEnd';
+    var oi18nLanguAuto;
+    var dataSource;
+    var oDataModels = {};
+    var now = new Date();
+    var vObj;
+    var WebApiUrl_Area_Com = '../api/UserManageApi';
+
+    $(document).ready(function () {
+        QueryString.Initial();
+
+        oi18nLanguAuto = new i18nLanguAuto();
+        oi18nLanguAuto.Initial();
+
+        var wnd,
+            AuthEdit;
+
+        vObj = new getObj()
+        vObj.CheckDB();
+        vObj.Initial();
+
+        wnd = $("#window")
+            .kendoWindow({
+                width: "700px",
+                actions: ["Pin", "Close"],
+                title: "編輯權限",
+                modal: true,
+                visible: false,
+                resizable: false,
+                height: "500px",
+            }).data("kendoWindow");
+
+        AuthEdit = kendo.template($("#authedit").html());
+
+        //給儲存權限的按鈕，Append儲存的事件
+        wnd.element.on("click", "#btnSaveAuth", SaveAuthChange);
+
+        function onAuthEdit(e) {
+            vObj.Initial();//重新要一次資料
+            e.preventDefault();
+            var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+            wnd.content(AuthEdit(dataItem));
+            wnd.open();
+            var item = $("#grid").data("kendoGrid").dataItem($(e.currentTarget).closest("tr"));
+            document.getElementById("lblRole").innerText = item.ROLEID;
+            $('input:checkbox').removeAttr('checked');
+
+            $('#window').i18n();//開啟時候才有html，才可以翻譯
+
+            $.ajax({
+                type: 'Get',
+                url: WebApiUrl_Area_Com + '/GetRoleNode',
+                contentType: 'application/json; charset=utf-8',
+                data: { sRole: item.ROLEID },
+                dataType: 'json',
+                success: function (data) {
+                    
+                    //console.log(data);
+                    data.forEach(function (o) {
+                        //document.getElementById(o).checked = true;
+                        $('#' + o).trigger('click');
+                    });
+
+                    //額外權控列表
+                    BindAddtionalAuth(item.ROLEID);
+
+                }
+            })
+        }
+
+        function SaveAuthChange() {
+            BlockUI('請稍等');
+            var CheckedNode = [];
+            $("input:checkbox").each(function () {
+                var $this = $(this);
+                if ($this.is(":checked") && $this.attr("id") != undefined)
+                    CheckedNode.push($this.attr("id"));
+            });
+            //var postdata = { slistCheckedNode: CheckedNode, sRole: document.getElementById("lblRole").innerText };
+            //console.log(CheckedNode.toString());
+
+            var sAddAuth = ReadAddtionalAuth();
+            debugger
+            $.ajax({
+                type: 'Get',
+                url: WebApiUrl_Area_Com + '/UpdateRoleNode',
+                contentType: 'application/json; charset=utf-8',
+                data: {
+                    sCheckedNode: CheckedNode.toString(),
+                    sRole: document.getElementById("lblRole").innerText,
+                    sAddionalAuth: sAddAuth
+                },
+                dataType: 'json',
+                success: function (data) {
+                    if (data.ReturnCode == 0)
+                        ToastHint("success", "儲存成功", "");
+                    else
+                        ToastHint("error", "儲存失敗", "請聯絡系統管理員");
+                    //location.reload();
+                    btnQuery_Click();
+
+                    setTimeout(function () {
+                        $.unblockUI();
+                    }, 500)
+                }
+            })
+
+            $("#window").data("kendoWindow").close();
+        }
+
+        dataSource = new kendo.data.DataSource({
+            transport: {
+                read: {
+                    url: WebApiUrl_Area_Com + "/getRoles",
+                    type: "Post",
+                    async: false,
+                    dataType: "json"
+                },
+                update: {
+                    url: WebApiUrl_Area_Com + "/updateRole",
+                    type: "Post",
+                    dataType: "json"
+                },
+                destroy: {
+                    url: WebApiUrl_Area_Com + "/deleteRole",
+                    type: "Post",
+                    dataType: "json"
+                },
+                create: {
+                    url: WebApiUrl_Area_Com + "/addRole",
+                    type: "Post",
+                    dataType: "json"
+                },
+                parameterMap: function (options, operation) {
+                    if (operation !== "read" && options.models) {
+                        return options.models[0];
+                    }
+                }
+            },
+            pageSize: 10,
+            requestEnd: function (e) {
+                if (e.type != 'read') {
+                    //alert(oi18nLanguAuto.translate(e.response.ReturnMessage, vi18n_BackEnd));
+                    notification.show({
+                        message: oi18nLanguAuto.translate(e.response.ReturnMessage, vi18n_BackEnd)
+                    }, "success")
+                    $("#grid").data("kendoGrid").dataSource.read();
+                }
+                    
+            },
+            batch: true,
+            schema: {
+                model: {
+                    id: "ROLEID",
+                    fields: {
+                        ROLEID: { validation: { required: true } },
+                        ROLE_NAME: { validation: { required: true } },
+                        ROLE_DESC: {},
+                        TXN_USERID: {},
+                        TXN_TIMESTAMP: { defaultValue: now.getFullYear() + "-" + now.getMonth() + "-" + now.getDate() + " 00:00:00" }
+                    }
+                }
+            }
+        });
+
+        $("#grid").kendoGrid({
+            dataSource: dataSource,
+            pageable: false,
+            height: 700,
+            autoBind: true,
+            selectable: 'row',
+            persistSelection:true,
+            dataBound: onDataBound,
+            pageable: {
+                refresh: true,
+                pageSize: 10,
+                buttonCount: 5
+            },
+            excel: {
+                fileName: i18n.t('UserManage.ExcelDataExport')
+            },
+            toolbar:
+                [
+                    //{
+                    //    name: 'btnQuery',
+                    //    text: i18n.t('ButtonCommon.Query'),
+                    //    className: 'btn btn_primary',
+                    //    iconClass: 'fa fa-search'
+                    //},
+                    {
+                        name: 'create',
+                        text: i18n.t('ButtonCommon.Add'),
+                    },
+                    //{
+                    //    name: 'cancel',
+                    //    text: i18n.t('ButtonCommon.Cancel'),
+                    //},
+                ],
+            columns: [
+                {
+                    command: [
+                        { name: "edit", template: "<a class='crud crud_edit k-grid-edit'><i class='fa fa-pencil'></i></a>&nbsp", text: { edit: "", update: "儲存", cancel: "取消" } },
+                        { name: "destroy", template: "<a class='crud crud_delete k-grid-delete'><i class='fa fa-trash'></i></a>" },
+                        { text: i18n.t(vi18n_Name + '.btnAuth'), className: "btn btn_primary", click: onAuthEdit, iconClass: "k-icon k-i-lock" }
+                    ], title: "&nbsp;", width: "150px"
+                },
+                { field: "ROLEID", title: i18n.t(vi18n_Name + '.ROLEID'), width: "120px" },
+                { field: "ROLE_NAME", title: i18n.t(vi18n_Name + '.ROLE_NAME'), width: "120px" },
+                { field: "ROLE_DESC", title: i18n.t(vi18n_Name + '.ROLE_DESC'), width: "200px" },
+                //{ command: ["edit", "destroy", { text: "編輯權限", click: onAuthEdit, iconClass: "k-icon k-i-lock" }], title: "&nbsp;", width: 150 }
+            ],
+            noRecords: {
+                template: i18n.t('UserManage.NoData')
+            },
+            editable: {
+                mode: "popup",
+                window: {
+                    position: {
+                        top: '20px',
+                        left: "30%"
+                    }
+                }
+            },
+            dataBound: function () {
+                var grid = this;
+                var trs = this.tbody.find('tr').each(function () {
+                    var item = grid.dataItem($(this));
+                    if (item.ROLEID == "SYS_ADM_GRP") {
+                        $(this).find('.k-grid-edit').hide();
+                        $(this).find('.k-grid-delete').hide();
+                    }
+                })
+            }
+        });
+
+        DefineGridButton();
+    });
+
+    function btnQuery_Click() {
+        location.reload(); //Razor要Refresh
+        //$('#grid').data('kendoGrid').dataSource.read();
+        //vObj.Initial();
+    }
+
+    function DefineGridButton() {        
+        $('.k-grid-btnQuery').click(btnQuery_Click);
+    }
+
+    //綁定額外權限
+    function BindAddtionalAuth(sROLEID) {
+        $('.MyRoleNodeHasAuth').each(function () {
+            //過濾資料為該NodeID
+            var sID = $(this).attr('id').replace('RoleNodeHasAuth_', '');
+
+            var ds = vObj.getNodeAuth().filter(function (x) {
+                return x.NODEID == sID;
+            });
+            var aValue = vObj.getRoleAuth().filter(function (x) {
+                return x.ROLEID == sROLEID && x.NODEID == sID;
+            });
+
+            $(this).kendoMultiSelect({
+                dataSource: ds,
+                autoClose: false,
+                dataTextField: "AUTHTEXT",
+                dataValueField: "AUTHID",
+                value: aValue
+            });
+
+        });
+    }
+
+    //讀取額外權限
+    function ReadAddtionalAuth() {
+        var sReturn = "";
+
+        $('input.MyRoleNodeHasAuth').each(function () {
+            var sID = $(this).attr('id').replace('RoleNodeHasAuth_', '');
+            var Data = $(this).data('kendoMultiSelect').dataItems();
+
+            //將資料組成 NODEID1_AUTHID, NODEID2_AUTHID
+            Data.forEach(function (e) {
+                sReturn += sID + "_" + e.AUTHID + ",";
+            });
+
+        });
+
+        return sReturn;
+    }
+
+    //隱藏列
+    function hideRow(e) {
+        var obj = $(e);
+        //console.log(obj.is(":checked"));
+        if (obj.is(":checked")) {
+            var id = obj.attr('id');
+
+            id = id.replace('Chk_P_', 'Tr_C_');
+
+            var tr = $('.' + id);
+
+            tr.hide();
+        }
+        else {
+            var id = obj.attr('id');
+
+            id = id.replace('Chk_P_', 'Tr_C_');
+
+            var tr = $('.' + id);
+
+            tr.show();
+        }
+
+    }
+
+    function btnCollapse_click() {
+        //找到全部收合按鈕
+        var o = $('.MyCollapse');
+        var d = $('.CollapseDetail');
+
+        //指定全部物件
+        o.attr('checked', true);
+        d.hide();
+
+    }
+
+    function btnUnCollapse_click() {
+        //找到全部收合按鈕
+        var o = $('.MyCollapse');
+        var d = $('.CollapseDetail');
+
+        //指定全部物件
+        o.attr('checked', false);
+        d.show();
+    }
+
+    function error_handler(e) {
+        if (e.errors) {
+            var message = "Errors:\n";
+            $.each(e.errors, function (key, value) {
+                if ('errors' in value) {
+                    $.each(value.errors, function () {
+                        message += this + "\n";
+                    });
+                }
+            });
+            alert(message);
+        }
+    }
+
+    function onDataBound(e) {
+        var span = "<span class='k-icon k-i-lock'></span>";
+        $(".k-grid-authedit").prepend(span);
+        ControlAuth();
+    }
+
+    function getObj() {
+        var RoleAuth = [];
+        var NodeAuth = [];
+
+        this.CheckDB = function () {
+            //檢查公用表是否存在
+            $.ajax({
+                url: WebApiUrl_Area_Com + "/CheckComdb",
+                type: 'Post',
+                dataType: 'json',
+                async: false,
+                data: oDataModels,
+                success: function success(ResultData) {
+
+                },
+                error: function error(e) {
+                    alert(ResultData.ReturnMessage);
+                }
+            });
+        }
+
+        this.Initial = function () {
+
+            //取得群組
+            $.ajax({
+                url: WebApiUrl_Area_Com + "/R_COMM_ROLENODE_HAS_AUTH",
+                type: 'Post',
+                dataType: 'json',
+                async: false,
+                data: {
+                    NODEID: ''
+                },
+                success: function success(ResultData) {
+                    RoleAuth = ResultData;
+                },
+                error: function error(e) {
+                    alert(ResultData.ReturnMessage);
+                }
+            });
+
+            //取得節點
+            $.ajax({
+                url: WebApiUrl_Area_Com + "/R_COMM_NODE_HAS_CONTROL",
+                type: 'Post',
+                dataType: 'json',
+                async: false,
+                data: {
+                    NODEID: ''
+                },
+                success: function success(ResultData) {
+                    NodeAuth = ResultData;
+                },
+                error: function error(e) {
+                    alert(ResultData.ReturnMessage);
+                }
+            });
+        };
+
+        //取得
+        this.getRoleAuth = function () {
+            if (RoleAuth.length > 0)
+                return RoleAuth;
+            else
+                return [];
+        }
+
+        //取得
+        this.getNodeAuth = function () {
+            if (NodeAuth.length > 0)
+                return NodeAuth;
+            else
+                return [];
+        }
+
+    }
+
+</script>

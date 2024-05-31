@@ -1,0 +1,229 @@
+2024-02-23 09:26:42.6724 | [6] | ERROR | FuctionName=BaseDal | Error=System.Data.SqlClient.SqlException (0x80131904): 已超過連接逾時的設定。在嘗試使用登入前的信號交換確認時超過逾時等待的時間。這可能是登入前的信號交換發生失敗,或伺服器無法及時回應所造成。  嘗試連接到這部伺服器所花費的時間為 - [登入前] 初始設定=20592; 信號交換=43;  ---> System.ComponentModel.Win32Exception (0x80004005): 等候操作已逾時。   於 System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling, SqlAuthenticationProviderManager sqlAuthProviderManager)   於 System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)   於 System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)   於 System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)   於 System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)   於 System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)   於 System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)   於 System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)   於 System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)   於 System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)   於 System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)   於 System.Data.SqlClient.SqlConnection.Open()   於 FTC_MES_MVC.Models.dalBase..ctor() 於 C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\Models\dalBase.cs: 行 37ClientConnectionId:0db6bc58-9026-4649-91aa-45282950c8e8Error Number:-2,State:0,Class:11
+2024-02-23 09:26:44.4771 | [6] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/","status":"LogOff"}
+2024-02-23 09:26:45.2411 | [6] | ERROR | FuctionName=getMesApHostDb | Error=System.Data.SqlClient.SqlException (0x80131904): 已超過連接逾時的設定。在嘗試使用登入前的信號交換確認時超過逾時等待的時間。這可能是登入前的信號交換發生失敗,或伺服器無法及時回應所造成。  嘗試連接到這部伺服器所花費的時間為 - [登入前] 初始設定=20592; 信號交換=43;  ---> System.ComponentModel.Win32Exception (0x80004005): 等候操作已逾時。   於 System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)   於 System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)   於 System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)   於 System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)   於 System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)   於 System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)   於 System.Data.SqlClient.SqlConnection.Open()   於 Dapper.SqlMapper.<QueryImpl>d__138`1.MoveNext()   於 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)   於 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)   於 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)   於 FTC_MES_MVC.Models.Services.dalCommService.getMesApHostDb() 於 C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\Models\UserManage\Dals\dalCommService.cs: 行 27ClientConnectionId:0db6bc58-9026-4649-91aa-45282950c8e8Error Number:-2,State:0,Class:11
+2024-02-23 09:26:45.4998 | [6] | ERROR | FuctionName=Account.Login | Error=System.Data.SqlClient.SqlException (0x80131904): 已超過連接逾時的設定。在嘗試使用登入前的信號交換確認時超過逾時等待的時間。這可能是登入前的信號交換發生失敗,或伺服器無法及時回應所造成。  嘗試連接到這部伺服器所花費的時間為 - [登入前] 初始設定=20592; 信號交換=43;  ---> System.ComponentModel.Win32Exception (0x80004005): 等候操作已逾時。   於 FTC_MES_MVC.Models.Services.dalCommService.getMesApHostDb() 於 C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\Models\UserManage\Dals\dalCommService.cs: 行 32   於 FTC_MES_MVC.Controllers.AccountController.Login(String returnUrl, String status) 於 C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\Controllers\UserManage\AccountController.cs: 行 50ClientConnectionId:0db6bc58-9026-4649-91aa-45282950c8e8Error Number:-2,State:0,Class:11
+2024-02-23 09:26:45.5446 | [6] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=1.6491553
+2024-02-23 09:29:20.8282 | [7] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/PersonLocation/AreaMonitor","status":"LogOff"}
+2024-02-23 09:29:21.8768 | [7] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=1.4255141
+2024-02-23 09:30:43.4003 | [17] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"model":{"UserId":"admin","Password":"123456","ComFacID":"台化油品部儲運處-台北-","RememberMe":false,"Language":null},"returnUrl":"/PersonLocation/AreaMonitor"}
+2024-02-23 09:30:45.0722 | [17] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=1.7389907
+2024-02-23 09:30:45.1010 | [7] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-02-23 09:30:45.3075 | [7] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.2104175
+2024-02-23 09:30:58.6868 | [7] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-02-23 09:30:59.3886 | [7] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.7015086
+2024-02-23 09:30:59.4599 | [7] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-02-23 09:30:59.4722 | [7] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0112126
+2024-02-23 09:30:59.8691 | [7] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-02-23 09:30:59.8969 | [7] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0295085
+2024-02-23 09:30:59.9094 | [7] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-02-23 09:30:59.9581 | [7] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.0509471
+2024-02-23 09:30:59.9692 | [7] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-02-23 09:30:59.9692 | [7] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0073363
+2024-02-23 09:31:00.5264 | [12] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-02-23 09:31:00.5264 | [12] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0132923
+2024-02-23 09:31:03.5496 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-02-23 09:31:03.7003 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1529187
+2024-02-23 09:31:04.3723 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-02-23 09:31:04.3883 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1693697
+2024-02-23 09:31:12.8144 | [12] | INFO | FuctionName=UserManage.NodeAndAuth | Start | IP=::1 | parametersInfo={}
+2024-02-23 09:31:12.8254 | [12] | INFO | FuctionName=UserManage.NodeAndAuth | End | IP=::1 | ExpendTime=0.0133948
+2024-02-23 09:31:13.1062 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-02-23 09:31:13.1393 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.2024656
+2024-02-23 09:31:13.2093 | [7] | INFO | FuctionName=UserManageApi.CheckComdb | Message=CompanyID=%E5%8F%B0%E5%8C%96%E6%B2%B9%E5%93%81%E9%83%A8%E5%84%B2%E9%81%8B%E8%99%95&FactoryID=%E5%8F%B0%E5%8C%97&MODIFYUSER=ADMIN&Lng=
+2024-02-23 09:31:14.2443 | [7] | INFO | FuctionName=UserManageApi.CheckComdb | Message=ExpendTime=1.237324
+2024-02-23 09:31:14.4319 | [6] | INFO | FuctionName=UserManageApi.R_COMM_FUNCTIONLIST | Message=CompanyID=%E5%8F%B0%E5%8C%96%E6%B2%B9%E5%93%81%E9%83%A8%E5%84%B2%E9%81%8B%E8%99%95&FactoryID=%E5%8F%B0%E5%8C%97&MODIFYUSER=ADMIN&Lng=&Function%5BNODEID%5D=
+2024-02-23 09:31:14.6483 | [6] | INFO | FuctionName=UserManageApi.R_COMM_FUNCTIONLIST | Message=ExpendTime=1.4561286
+2024-02-23 09:31:14.7095 | [6] | INFO | FuctionName=UserManageApi.R_COMM_NODEFUNCTION | Message=CompanyID=%E5%8F%B0%E5%8C%96%E6%B2%B9%E5%93%81%E9%83%A8%E5%84%B2%E9%81%8B%E8%99%95&FactoryID=%E5%8F%B0%E5%8C%97&MODIFYUSER=ADMIN&Lng=&Function%5BNODEID%5D=
+2024-02-23 09:31:14.7269 | [6] | INFO | FuctionName=UserManageApi.R_COMM_NODEFUNCTION | Message=ExpendTime=1.474853
+2024-02-23 09:31:15.0284 | [7] | INFO | FuctionName=UserManageApi.R_COMM_FUNCTIONLIST | Message=CompanyID=%E5%8F%B0%E5%8C%96%E6%B2%B9%E5%93%81%E9%83%A8%E5%84%B2%E9%81%8B%E8%99%95&FactoryID=%E5%8F%B0%E5%8C%97&MODIFYUSER=ADMIN&Lng=&Function%5BNODEID%5D=
+2024-02-23 09:31:15.0522 | [7] | INFO | FuctionName=UserManageApi.R_COMM_FUNCTIONLIST | Message=ExpendTime=1.4994976
+2024-02-23 09:31:32.5093 | [6] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-02-23 09:31:32.5193 | [6] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0119629
+2024-02-23 09:31:32.7555 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-02-23 09:31:32.7706 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=1.5136856
+2024-02-23 09:31:32.8652 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-02-23 09:31:32.8743 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=1.5227819
+2024-02-23 09:31:45.2489 | [10] | INFO | FuctionName=UserManage.Roles | Start | IP=::1 | parametersInfo={}
+2024-02-23 09:31:45.2895 | [10] | INFO | FuctionName=UserManage.Roles | End | IP=::1 | ExpendTime=0.0438235
+2024-02-23 09:31:45.5043 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-02-23 09:31:45.5172 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=1.5352598
+2024-02-23 09:31:45.5827 | [7] | INFO | FuctionName=UserManageApi.CheckComdb | Message=CompanyID=%E5%8F%B0%E5%8C%96%E6%B2%B9%E5%93%81%E9%83%A8%E5%84%B2%E9%81%8B%E8%99%95&FactoryID=%E5%8F%B0%E5%8C%97&MODIFYUSER=ADMIN&Lng=
+2024-02-23 09:31:45.6107 | [7] | INFO | FuctionName=UserManageApi.CheckComdb | Message=ExpendTime=1.5614883
+2024-02-23 09:31:45.6736 | [17] | INFO | FuctionName=UserManageApi.R_COMM_ROLENODE_HAS_AUTH | Message=NODEID=
+2024-02-23 09:31:45.8141 | [17] | INFO | FuctionName=UserManageApi.R_COMM_ROLENODE_HAS_AUTH | Message=ExpendTime=1.7024146
+2024-02-23 09:31:45.8410 | [7] | INFO | FuctionName=UserManageApi.R_COMM_NODE_HAS_CONTROL | Message=NODEID=
+2024-02-23 09:31:45.9432 | [7] | INFO | FuctionName=UserManageApi.R_COMM_NODE_HAS_CONTROL | Message=ExpendTime=1.8047926
+2024-02-23 09:31:46.0875 | [6] | INFO | FuctionName=UserManageApi.getRoles | Message=
+2024-02-23 09:31:46.1678 | [6] | INFO | FuctionName=UserManageApi.getRoles | Message=ExpendTime=1.8847502
+2024-02-23 09:31:51.0964 | [8] | INFO | FuctionName=UserManageApi.R_COMM_ROLENODE_HAS_AUTH | Message=NODEID=
+2024-02-23 09:31:51.1096 | [8] | INFO | FuctionName=UserManageApi.R_COMM_ROLENODE_HAS_AUTH | Message=ExpendTime=1.8974702
+2024-02-23 09:31:51.1336 | [6] | INFO | FuctionName=UserManageApi.R_COMM_NODE_HAS_CONTROL | Message=NODEID=
+2024-02-23 09:31:51.1418 | [6] | INFO | FuctionName=UserManageApi.R_COMM_NODE_HAS_CONTROL | Message=ExpendTime=1.9056282
+2024-02-23 09:31:51.7051 | [6] | INFO | FuctionName=UserManageApi.GetRoleNode | Message=
+2024-02-23 09:31:51.7363 | [6] | INFO | FuctionName=UserManageApi.GetRoleNode | Message=ExpendTime=1.9375121
+2024-02-23 09:32:06.4690 | [6] | INFO | FuctionName=UserManage.NodeFunction | Start | IP=::1 | parametersInfo={}
+2024-02-23 09:32:06.4830 | [6] | INFO | FuctionName=UserManage.NodeFunction | End | IP=::1 | ExpendTime=0.0163265
+2024-02-23 09:32:06.7493 | [12] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-02-23 09:32:06.7493 | [12] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=1.9481137
+2024-02-23 09:32:06.9582 | [8] | INFO | FuctionName=UserManageApi.R_COMM_NODEFUNCTION | Message=CompanyID=%E5%8F%B0%E5%8C%96%E6%B2%B9%E5%93%81%E9%83%A8%E5%84%B2%E9%81%8B%E8%99%95&FactoryID=%E5%8F%B0%E5%8C%97&MODIFYUSER=ADMIN&Lng=
+2024-02-23 09:32:06.9910 | [8] | INFO | FuctionName=UserManageApi.R_COMM_NODEFUNCTION | Message=ExpendTime=1.9817034
+2024-02-23 09:32:10.6028 | [6] | INFO | FuctionName=UserManage.UserHasRoles | Start | IP=::1 | parametersInfo={}
+2024-02-23 09:32:10.6160 | [6] | INFO | FuctionName=UserManage.UserHasRoles | End | IP=::1 | ExpendTime=0.0145812
+2024-02-23 09:32:10.8447 | [12] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-02-23 09:32:10.8447 | [12] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=1.9906571
+2024-02-23 09:32:10.8988 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-02-23 09:32:10.9060 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=1.9980469
+2024-02-23 09:32:10.9215 | [6] | INFO | FuctionName=UserManageApi.getRoles | Message=
+2024-02-23 09:32:10.9215 | [6] | INFO | FuctionName=UserManageApi.getRoles | Message=ExpendTime=2.005795
+2024-02-23 09:32:10.9840 | [6] | INFO | FuctionName=UserManageApi.getUserHasRoles | Message=USERID=
+2024-02-23 09:32:11.0495 | [6] | INFO | FuctionName=UserManageApi.getUserHasRoles | Message=ExpendTime=2.0714682
+2024-02-23 09:32:11.2002 | [12] | INFO | FuctionName=UserManageApi.getUserHasRoles | Message=CompanyID=%E5%8F%B0%E5%8C%96%E6%B2%B9%E5%93%81%E9%83%A8%E5%84%B2%E9%81%8B%E8%99%95&FactoryID=%E5%8F%B0%E5%8C%97&MODIFYUSER=ADMIN&Lng=&COMM_USER_HAS_ROLES=
+2024-02-23 09:32:11.2002 | [12] | INFO | FuctionName=UserManageApi.getUserHasRoles | Message=ExpendTime=2.0803949
+2024-02-23 09:32:11.2333 | [8] | INFO | FuctionName=UserManageApi.R_PageControl | Message=NODEID=N904&MODIFYUSER=ADMIN
+2024-02-23 09:32:11.8808 | [8] | INFO | FuctionName=UserManageApi.R_PageControl | Message=ExpendTime=2.728364
+2024-02-23 09:39:58.6231 | [10] | INFO | FuctionName=PersonLocation.PersonData | Start | IP=::1 | parametersInfo={}
+2024-02-23 09:39:58.6434 | [10] | INFO | FuctionName=PersonLocation.PersonData | End | IP=::1 | ExpendTime=0.0218478
+2024-02-23 09:40:12.4593 | [26] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-02-23 09:40:12.4898 | [26] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=2.7559187
+2024-02-23 09:40:12.6472 | [16] | INFO | FuctionName=apiPersonLocation.GetCompany | Message=PersonIDww=
+2024-02-23 09:40:12.6910 | [16] | INFO | FuctionName=apiPersonLocation.GetCompany | Message=ExpendTime=0.044795
+2024-02-23 09:40:12.8816 | [21] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=PersonIDww=
+2024-02-23 09:40:12.8970 | [16] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=
+2024-02-23 09:40:12.9158 | [21] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=0.0836098
+2024-02-23 09:40:12.9239 | [16] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=0.0836098
+2024-02-23 09:40:17.0879 | [16] | INFO | FuctionName=PersonLocation.DeviceInfo | Start | IP=::1 | parametersInfo={}
+2024-02-23 09:40:17.0994 | [16] | INFO | FuctionName=PersonLocation.DeviceInfo | End | IP=::1 | ExpendTime=0.0131013
+2024-02-23 09:40:17.5917 | [21] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-02-23 09:40:17.6234 | [21] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=2.7838635
+2024-02-23 09:40:17.7822 | [10] | INFO | FuctionName=apiPersonLocation.GetDeviceInfo | Message=
+2024-02-23 09:40:17.7967 | [21] | INFO | FuctionName=apiPersonLocation.GetDeviceInfo | Message=
+2024-02-23 09:40:17.7967 | [10] | INFO | FuctionName=apiPersonLocation.GetDeviceInfo | Message=ExpendTime=0.1077741
+2024-02-23 09:40:17.7967 | [21] | INFO | FuctionName=apiPersonLocation.GetDeviceInfo | Message=ExpendTime=0.1077741
+2024-02-23 09:40:17.8141 | [16] | INFO | FuctionName=apiPersonLocation.GetBindAvailable | Message={"PersonID":""}
+2024-02-23 09:40:17.8541 | [10] | INFO | FuctionName=apiPersonLocation.GetBindPerson | Message=
+2024-02-23 09:40:17.8762 | [16] | INFO | FuctionName=apiPersonLocation.GetBindAvailable | Message=ExpendTime=0.1703004
+2024-02-23 09:40:17.8762 | [10] | INFO | FuctionName=apiPersonLocation.GetBindPerson | Message=ExpendTime=0.1703004
+2024-02-23 09:41:03.1251 | [16] | INFO | FuctionName=apiPersonLocation.GetBindAvailable | Message={"PersonID":"N000165464"}
+2024-02-23 09:41:03.1784 | [16] | INFO | FuctionName=apiPersonLocation.GetBindAvailable | Message=ExpendTime=0.2266942
+2024-02-23 09:41:34.0332 | [10] | INFO | FuctionName=PersonLocation.AreaInfo | Start | IP=::1 | parametersInfo={}
+2024-02-23 09:41:34.0547 | [10] | INFO | FuctionName=PersonLocation.AreaInfo | End | IP=::1 | ExpendTime=0.0217656
+2024-02-23 09:41:34.3406 | [28] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-02-23 09:41:34.3574 | [28] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=2.7993257
+2024-02-23 09:41:34.6046 | [21] | INFO | FuctionName=apiPersonLocation.GetArea | Message=AreaName=&Category=
+2024-02-23 09:41:34.6723 | [21] | INFO | FuctionName=apiPersonLocation.GetArea | Message=ExpendTime=0.2949087
+2024-02-23 09:42:23.7328 | [10] | INFO | FuctionName=PersonLocation.GeoPolygon | Start | IP=::1 | parametersInfo={}
+2024-02-23 09:42:23.7508 | [10] | INFO | FuctionName=PersonLocation.GeoPolygon | End | IP=::1 | ExpendTime=0.0131121
+2024-02-23 09:42:26.2414 | [10] | INFO | FuctionName=apiPersonLocation.GetPolygon | Message={}
+2024-02-23 09:42:26.3026 | [21] | INFO | FuctionName=apiPersonLocation.GetArea | Message={}
+2024-02-23 09:42:26.3026 | [28] | INFO | FuctionName=apiPersonLocation.GetArea | Message={}
+2024-02-23 09:42:26.3308 | [21] | INFO | FuctionName=apiPersonLocation.GetArea | Message=ExpendTime=0.3837904
+2024-02-23 09:42:26.3907 | [28] | INFO | FuctionName=apiPersonLocation.GetArea | Message=ExpendTime=0.3837904
+2024-02-23 09:42:26.7136 | [28] | INFO | FuctionName=apiPersonLocation.GetPolygon | Message={}
+2024-02-23 09:42:29.0344 | [10] | INFO | FuctionName=apiPersonLocation.GetPolygon | Message=ExpendTime=2.7043424
+2024-02-23 09:42:29.0344 | [28] | INFO | FuctionName=apiPersonLocation.GetPolygon | Message=ExpendTime=2.7043424
+2024-02-23 09:43:03.9600 | [10] | INFO | FuctionName=apiPersonLocation.AddPolygon | Message=[{"type":"Feature","properties":{"PolygonName":"jhh","AreaID":"2"},"geometry":{"type":"Polygon","coordinates":[[[121.559595,25.058496],[121.559938,25.056581],[121.557234,25.056367],[121.557008,25.058301],[121.559595,25.058496]]]}}]
+2024-02-23 09:43:04.5534 | [10] | INFO | FuctionName=apiPersonLocation.AddPolygon | Message=ExpendTime=3.286273
+2024-02-23 09:43:04.6033 | [10] | INFO | FuctionName=apiPersonLocation.GetPolygon | Message={}
+2024-02-23 09:43:04.6347 | [10] | INFO | FuctionName=apiPersonLocation.GetPolygon | Message=ExpendTime=3.319648
+2024-02-23 09:43:12.2779 | [10] | INFO | FuctionName=PersonLocation.GeoPolygon | Start | IP=::1 | parametersInfo={}
+2024-02-23 09:43:12.2890 | [10] | INFO | FuctionName=PersonLocation.GeoPolygon | End | IP=::1 | ExpendTime=0.0127998
+2024-02-23 09:43:12.5882 | [31] | INFO | FuctionName=apiPersonLocation.GetPolygon | Message={}
+2024-02-23 09:43:12.5922 | [36] | INFO | FuctionName=apiPersonLocation.GetArea | Message={}
+2024-02-23 09:43:12.5922 | [31] | INFO | FuctionName=apiPersonLocation.GetPolygon | Message=ExpendTime=3.3340103
+2024-02-23 09:43:12.5922 | [32] | INFO | FuctionName=apiPersonLocation.GetArea | Message={}
+2024-02-23 09:43:12.6175 | [36] | INFO | FuctionName=apiPersonLocation.GetArea | Message=ExpendTime=3.3340103
+2024-02-23 09:43:12.7176 | [32] | INFO | FuctionName=apiPersonLocation.GetArea | Message=ExpendTime=3.3340103
+2024-02-23 09:43:12.7913 | [36] | INFO | FuctionName=apiPersonLocation.GetPolygon | Message={}
+2024-02-23 09:43:12.8183 | [36] | INFO | FuctionName=apiPersonLocation.GetPolygon | Message=ExpendTime=3.360469
+2024-02-23 09:43:35.8475 | [28] | INFO | FuctionName=PersonLocation.AlarmSetting | Start | IP=::1 | parametersInfo={}
+2024-02-23 09:43:35.8769 | [28] | INFO | FuctionName=PersonLocation.AlarmSetting | End | IP=::1 | ExpendTime=0.0264268
+2024-02-23 09:43:36.4988 | [21] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-02-23 09:43:36.5165 | [21] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=2.8148576
+2024-02-23 09:43:36.6342 | [28] | INFO | FuctionName=apiPersonLocation.GetAlarmSetting | Message=
+2024-02-23 09:43:36.6922 | [28] | INFO | FuctionName=apiPersonLocation.GetAlarmSetting | Message=ExpendTime=3.4152385
+2024-02-23 09:43:39.1457 | [31] | INFO | FuctionName=PersonLocation.AlarmRecord | Start | IP=::1 | parametersInfo={}
+2024-02-23 09:43:39.1566 | [31] | INFO | FuctionName=PersonLocation.AlarmRecord | End | IP=::1 | ExpendTime=0.0160916
+2024-02-23 09:43:39.4511 | [21] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-02-23 09:43:39.4651 | [21] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=2.8291903
+2024-02-23 09:43:39.5576 | [21] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=
+2024-02-23 09:43:39.5729 | [21] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=3.4278622
+2024-02-23 09:43:39.6056 | [36] | INFO | FuctionName=apiPersonLocation.GetDeviceInfo | Message=
+2024-02-23 09:43:39.6234 | [36] | INFO | FuctionName=apiPersonLocation.GetDeviceInfo | Message=ExpendTime=3.4510062
+2024-02-23 09:43:39.7589 | [21] | INFO | FuctionName=apiPersonLocation.GetAlarmRecord | Message=DeviceID=&UserID=&AlarmID=
+2024-02-23 09:43:39.7899 | [21] | INFO | FuctionName=apiPersonLocation.GetAlarmRecord | Message=ExpendTime=3.4926426
+2024-02-23 09:43:40.1046 | [28] | INFO | FuctionName=PersonLocation.AlarmMessage | Start | IP=::1 | parametersInfo={}
+2024-02-23 09:43:40.1169 | [28] | INFO | FuctionName=PersonLocation.AlarmMessage | End | IP=::1 | ExpendTime=0.0149269
+2024-02-23 09:43:40.4059 | [21] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-02-23 09:43:40.4059 | [21] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=2.8405006
+2024-02-23 09:43:40.4770 | [21] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=
+2024-02-23 09:43:40.4921 | [21] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=3.5097232
+2024-02-23 09:43:40.5172 | [10] | INFO | FuctionName=apiPersonLocation.GetDeviceInfo | Message=
+2024-02-23 09:43:40.5368 | [10] | INFO | FuctionName=apiPersonLocation.GetDeviceInfo | Message=ExpendTime=3.5262211
+2024-02-23 09:43:40.6466 | [32] | INFO | FuctionName=apiPersonLocation.GetAlarmMsg | Message=DeviceID=&PersonID=&AlarmID=
+2024-02-23 09:43:40.7057 | [32] | INFO | FuctionName=apiPersonLocation.GetAlarmMsg | Message=ExpendTime=3.5847313
+2024-02-23 09:52:22.2343 | [50] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-02-23 09:52:22.2463 | [50] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.014631
+2024-02-23 09:52:22.5515 | [52] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-02-23 09:52:22.5654 | [52] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=2.8543785
+2024-02-23 09:52:22.7250 | [50] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-02-23 09:52:22.7369 | [50] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=2.8664428
+2024-02-23 09:52:48.0928 | [43] | INFO | FuctionName=apiPersonLocation.UpdatePersonData | Message=PersonID=B000132314&Name=%E9%99%B3%E5%85%B6%E4%B8%80&Gender=%E5%A5%B3&Phone=09331141&CompanyID=2
+2024-02-23 09:52:48.1982 | [43] | INFO | FuctionName=apiPersonLocation.UpdatePersonData | Message=ExpendTime=3.6902758
+2024-02-23 09:52:48.2320 | [43] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=PersonIDww=&PersonID=&Name=&CompanyID=&Gender=&Phone=
+2024-02-23 09:52:48.2469 | [43] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=3.7052929
+2024-02-23 09:52:53.3824 | [43] | INFO | FuctionName=apiPersonLocation.UpdatePersonData | Message=PersonID=B000132314&Name=%E9%99%B3%E5%85%B6%E4%B8%80&Gender=%E7%94%B7&Phone=09331141&CompanyID=2
+2024-02-23 09:52:53.4063 | [43] | INFO | FuctionName=apiPersonLocation.UpdatePersonData | Message=ExpendTime=3.7296796
+2024-02-23 09:52:53.4402 | [43] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=PersonIDww=&PersonID=&Name=&CompanyID=&Gender=&Phone=
+2024-02-23 09:52:53.4572 | [43] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=3.7458383
+2024-02-23 09:53:07.8935 | [59] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=PersonIDww=&PersonID=&Name=&CompanyID=&Gender=&Phone=
+2024-02-23 09:53:07.9035 | [59] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=3.7560778
+2024-02-23 09:53:09.3960 | [59] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=PersonIDww=&PersonID=&Name=&CompanyID=&Gender=&Phone=
+2024-02-23 09:53:09.4089 | [59] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=3.7689132
+2024-02-23 09:53:33.8024 | [59] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=PersonIDww=&PersonID=&Name=%E9%99%B3%E5%85%B6%E5%AF%A6&CompanyID=&Gender=%E5%A5%B3&Phone=
+2024-02-23 09:53:33.8583 | [59] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=3.82483
+2024-02-23 09:53:44.6130 | [59] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=PersonIDww=&PersonID=&Name=%E9%99%B3%E5%85%B6%E5%AF%A6&CompanyID=&Gender=%E5%A5%B3&Phone=
+2024-02-23 09:53:44.6250 | [59] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=3.8362133
+2024-02-23 09:53:55.1787 | [59] | INFO | FuctionName=PersonLocation.PersonData | Start | IP=::1 | parametersInfo={}
+2024-02-23 09:53:55.1877 | [59] | INFO | FuctionName=PersonLocation.PersonData | End | IP=::1 | ExpendTime=0.0114039
+2024-02-23 09:53:55.9503 | [51] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-02-23 09:53:55.9503 | [51] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=2.8762319
+2024-02-23 09:53:56.0520 | [58] | INFO | FuctionName=apiPersonLocation.GetCompany | Message=PersonIDww=
+2024-02-23 09:53:56.0659 | [58] | INFO | FuctionName=apiPersonLocation.GetCompany | Message=ExpendTime=3.8501119
+2024-02-23 09:53:56.1587 | [62] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=PersonIDww=
+2024-02-23 09:53:56.1736 | [62] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=3.865445
+2024-02-23 09:53:56.1736 | [59] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=
+2024-02-23 09:53:56.2016 | [59] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=3.891444
+2024-02-23 09:54:16.3955 | [59] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=PersonIDww=&PersonID=&Name=%E9%99%B3%E5%85%B6%E4%B8%80&CompanyID=&Gender=%E7%94%B7&Phone=
+2024-02-23 09:54:16.4118 | [59] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=3.907976
+2024-02-23 09:54:26.5808 | [62] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=PersonIDww=&PersonID=&Name=%E9%99%B3%E5%85%B6%E4%B8%80&CompanyID=&Gender=%E7%94%B7&Phone=
+2024-02-23 09:54:26.5928 | [62] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=3.9206509
+2024-02-23 10:44:03.1932 | [13] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/","status":"LogOff"}
+2024-02-23 10:44:03.5614 | [13] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.4684159
+2024-02-23 11:11:26.3839 | [7] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/","status":"LogOff"}
+2024-02-23 11:11:26.9534 | [7] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.9591354
+2024-02-23 11:12:45.0692 | [7] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/","status":"LogOff"}
+2024-02-23 11:12:45.1131 | [7] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.0458257
+2024-02-23 11:16:09.3198 | [5] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=
+2024-02-23 11:16:09.4332 | [5] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=0.1156775
+2024-02-23 11:21:34.8923 | [17] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=
+2024-02-23 11:21:35.1057 | [17] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=0.3291297
+2024-02-23 11:24:10.7988 | [10] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/","status":"LogOff"}
+2024-02-23 11:24:11.2526 | [10] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.7214897
+2024-02-23 11:24:40.7227 | [13] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message={ "Name": "123", "Yest": "Jee"}
+2024-02-23 11:28:17.8706 | [13] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=217.147108
+2024-02-23 17:37:53.3518 | [10] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/","status":"LogOff"}
+2024-02-23 17:37:53.8231 | [10] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.5326775
+2024-02-23 17:38:17.7663 | [8] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"model":{"UserId":"admin","Password":"123456","ComFacID":"台化油品部儲運處-台北-","RememberMe":false,"Language":null},"returnUrl":"/"}
+2024-02-23 17:38:18.0356 | [8] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.2957429
+2024-02-23 17:38:18.0486 | [10] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-02-23 17:38:18.1333 | [10] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0854772
+2024-02-23 17:38:22.1888 | [10] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-02-23 17:38:22.2698 | [10] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.0807677
+2024-02-23 17:38:22.2927 | [10] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-02-23 17:38:22.2927 | [10] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0061122
+2024-02-23 17:38:22.4625 | [9] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-02-23 17:38:22.4625 | [9] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0059906
+2024-02-23 17:38:24.2149 | [10] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-02-23 17:38:24.2419 | [10] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0283086
+2024-02-23 17:38:24.4198 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-02-23 17:38:24.4198 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0325633

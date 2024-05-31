@@ -1,0 +1,39 @@
+/*過濾控件*/
+.FilterLabel {
+    width: 90px;
+}
+
+.FilterControl {
+    width: 100%;
+}
+
+/* grid編輯按鈕 */
+.k-grid tbody .k-button {
+    min-width: 45px;
+}
+/* 綁定人員按鈕 */
+.bind-device-info {
+    min-width: 100px;
+    padding: 0.5rem 1rem;
+}
+
+#my-window {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#my-window .device-info {
+    margin-top: 1rem;
+    display: inline-block;
+    min-height: 200px;
+}
+
+#my-window .device-info li {
+    padding: 1rem;
+    font-size: 1.5rem;
+    list-style: none;
+
+}

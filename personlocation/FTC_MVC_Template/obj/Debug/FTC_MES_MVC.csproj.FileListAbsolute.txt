@@ -1,0 +1,387 @@
+E:\FTC_MVC_Template\FTC_MVC_Template\obj\Debug\FTC_MES_MVC.csproj.CoreCompileInputs.cache
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\ApplicationInsights.config
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\NLog.config
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\csc.exe
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\csc.exe.config
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\csc.rsp
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\csi.exe
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\csi.rsp
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\System.AppContext.dll
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\System.Collections.Immutable.dll
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\System.IO.FileSystem.dll
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\System.Reflection.Metadata.dll
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\vbc.exe
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\vbc.exe.config
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\vbc.rsp
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\VBCSCompiler.exe
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\VBCSCompiler.exe.config
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\FTC_MES_MVC.dll.config
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\FTC_MES_MVC.dll
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\FTC_MES_MVC.pdb
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\Dapper.xml
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\Microsoft.Owin.xml
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\Newtonsoft.Json.xml
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\NLog.xml
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\System.Net.Http.Formatting.xml
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\System.Web.Http.xml
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\System.Web.Http.Cors.xml
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\System.Web.Helpers.xml
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\System.Web.Http.WebHost.xml
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\System.Web.Mvc.xml
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\System.Web.Razor.xml
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\System.Web.WebPages.xml
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\System.Web.WebPages.Deployment.xml
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\System.Web.WebPages.Razor.xml
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\Antlr3.Runtime.pdb
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\Microsoft.ApplicationInsights.xml
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\Microsoft.AI.DependencyCollector.xml
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\Microsoft.AI.WindowsServer.xml
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\Microsoft.AI.Web.xml
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\zh-Hant\System.Net.Http.Formatting.resources.dll
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\zh-Hant\System.Web.Http.resources.dll
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\zh-Hant\System.Web.Helpers.resources.dll
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\zh-Hant\System.Web.Http.WebHost.resources.dll
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\zh-Hant\System.Web.Mvc.resources.dll
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\zh-Hant\System.Web.Razor.resources.dll
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\zh-Hant\System.Web.WebPages.resources.dll
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\zh-Hant\System.Web.WebPages.Deployment.resources.dll
+E:\FTC_MVC_Template\FTC_MVC_Template\bin\zh-Hant\System.Web.WebPages.Razor.resources.dll
+E:\FTC_MVC_Template\FTC_MVC_Template\obj\Debug\FTC_MES_MVC.csproj.CopyComplete
+E:\FTC_MVC_Template\FTC_MVC_Template\obj\Debug\FTC_MES_MVC.dll
+E:\FTC_MVC_Template\FTC_MVC_Template\obj\Debug\FTC_MES_MVC.pdb
+E:\FTC_MVC_Template\FTC_MVC_Template\obj\Debug\FTC_MES_MVC.csprojAssemblyReference.cache
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\ApplicationInsights.config
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\NLog.config
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\csc.exe
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\csc.exe.config
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\csc.rsp
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\csi.exe
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\csi.rsp
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\System.AppContext.dll
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\vbc.exe
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\vbc.exe.config
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\vbc.rsp
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\VBCSCompiler.exe
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\FTC_MES_MVC.dll.config
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\FTC_MES_MVC.dll
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\FTC_MES_MVC.pdb
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\Dapper.xml
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\Microsoft.Owin.xml
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\Newtonsoft.Json.xml
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\NLog.xml
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\System.Net.Http.Formatting.xml
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\System.Web.Http.xml
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\System.Web.Http.Cors.xml
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\System.Web.Helpers.xml
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\System.Web.Http.WebHost.xml
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\System.Web.Mvc.xml
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\System.Web.Razor.xml
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\System.Web.WebPages.xml
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\System.Web.WebPages.Deployment.xml
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\System.Web.WebPages.Razor.xml
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\Antlr3.Runtime.pdb
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\Microsoft.ApplicationInsights.xml
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\Microsoft.AI.Web.xml
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\zh-Hant\System.Net.Http.Formatting.resources.dll
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\zh-Hant\System.Web.Http.resources.dll
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\zh-Hant\System.Web.Helpers.resources.dll
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\zh-Hant\System.Web.Http.WebHost.resources.dll
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\zh-Hant\System.Web.Mvc.resources.dll
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\zh-Hant\System.Web.Razor.resources.dll
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\zh-Hant\System.Web.WebPages.resources.dll
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\zh-Hant\System.Web.WebPages.Deployment.resources.dll
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\bin\zh-Hant\System.Web.WebPages.Razor.resources.dll
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\obj\Debug\FTC_MES_MVC.csprojAssemblyReference.cache
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\obj\Debug\FTC_MES_MVC.csproj.CoreCompileInputs.cache
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\obj\Debug\FTC_MES_MVC.csproj.CopyComplete
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\obj\Debug\FTC_MES_MVC.dll
+C:\Users\bochi\Documents\Visual Studio 2017\Projects\FTC_MVC_Template\FTC_MVC_Template\obj\Debug\FTC_MES_MVC.pdb
+D:\XD5300\FTC_MVC_Template\FTC_MVC_Template\bin\ApplicationInsights.config
+D:\XD5300\FTC_MVC_Template\FTC_MVC_Template\bin\NLog.config
+D:\XD5300\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\csc.exe
+D:\XD5300\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\csc.exe.config
+D:\XD5300\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\csc.rsp
+D:\XD5300\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\csi.exe
+D:\XD5300\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\csi.rsp
+D:\XD5300\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\XD5300\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\XD5300\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\XD5300\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\XD5300\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\XD5300\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\XD5300\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\XD5300\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\XD5300\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\XD5300\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\XD5300\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\System.AppContext.dll
+D:\XD5300\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\System.Collections.Immutable.dll
+D:\XD5300\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\XD5300\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\System.IO.FileSystem.dll
+D:\XD5300\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\XD5300\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\System.Reflection.Metadata.dll
+D:\XD5300\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\vbc.exe
+D:\XD5300\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\vbc.exe.config
+D:\XD5300\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\vbc.rsp
+D:\XD5300\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\VBCSCompiler.exe
+D:\XD5300\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\VBCSCompiler.exe.config
+D:\XD5300\FTC_MVC_Template\FTC_MVC_Template\bin\FTC_MES_MVC.dll.config
+D:\XD5300\FTC_MVC_Template\FTC_MVC_Template\bin\FTC_MES_MVC.dll
+D:\XD5300\FTC_MVC_Template\FTC_MVC_Template\bin\FTC_MES_MVC.pdb
+D:\XD5300\FTC_MVC_Template\FTC_MVC_Template\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\XD5300\FTC_MVC_Template\FTC_MVC_Template\bin\Microsoft.Web.Infrastructure.dll
+D:\XD5300\FTC_MVC_Template\FTC_MVC_Template\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\XD5300\FTC_MVC_Template\FTC_MVC_Template\bin\Microsoft.Web.Infrastructure.xml
+D:\XD5300\FTC_MVC_Template\FTC_MVC_Template\obj\Debug\FTC_MES_MVC.csproj.CoreCompileInputs.cache
+D:\XD5300\FTC_MVC_Template\FTC_MVC_Template\obj\Debug\FTC_MES_MVC.csproj.CopyComplete
+D:\XD5300\FTC_MVC_Template\FTC_MVC_Template\obj\Debug\FTC_MES_MVC.dll
+D:\XD5300\FTC_MVC_Template\FTC_MVC_Template\obj\Debug\FTC_MES_MVC.pdb
+D:\XD5300\FTC_MVC_Template\FTC_MVC_Template\bin\BouncyCastle.Crypto.dll
+D:\XD5300\FTC_MVC_Template\FTC_MVC_Template\bin\BouncyCastle.Crypto.xml
+D:\XD5300\FTC_MVC_Template\FTC_MVC_Template\obj\Debug\FTC_MES_MVC.csproj.AssemblyReference.cache
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\ApplicationInsights.config
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\NLog.config
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\csc.exe
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\csc.exe.config
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\csc.rsp
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\csi.exe
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\csi.rsp
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\System.AppContext.dll
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\vbc.exe
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\vbc.exe.config
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\vbc.rsp
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\VBCSCompiler.exe
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\FTC_MES_MVC.dll.config
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\FTC_MES_MVC.dll
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\FTC_MES_MVC.pdb
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\BouncyCastle.Crypto.dll
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\BouncyCastle.Crypto.xml
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\obj\Debug\FTC_MES_MVC.csproj.CoreCompileInputs.cache
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\obj\Debug\FTC_MES_MVC.csproj.CopyComplete
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\obj\Debug\FTC_MES_MVC.dll
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\obj\Debug\FTC_MES_MVC.pdb
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\NetTopologySuite.dll
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\System.Buffers.dll
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\System.Memory.dll
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\System.Numerics.Vectors.dll
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\NetTopologySuite.xml
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\System.Buffers.xml
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\System.Memory.xml
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\System.Numerics.Vectors.xml
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\n000183926\Documents\FTC\FTC\1. 專案\人員定位\台塑石化\程式碼\FTC_MVC_Template\FTC_MVC_Template\obj\Debug\FTC_MES_MVC.csproj.AssemblyReference.cache
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\ApplicationInsights.config
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\NLog.config
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\roslyn\csc.exe
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\roslyn\csc.exe.config
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\roslyn\csc.rsp
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\roslyn\csi.exe
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\roslyn\csi.rsp
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\roslyn\System.AppContext.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\roslyn\vbc.exe
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\roslyn\vbc.exe.config
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\roslyn\vbc.rsp
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\roslyn\VBCSCompiler.exe
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\FTC_MES_MVC.dll.config
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\FTC_MES_MVC.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\FTC_MES_MVC.pdb
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\NetTopologySuite.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\System.Buffers.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\System.Memory.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\System.Numerics.Vectors.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\BouncyCastle.Crypto.xml
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\NetTopologySuite.xml
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\System.Buffers.xml
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\System.Memory.xml
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\System.Numerics.Vectors.xml
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\bin\Microsoft.Web.Infrastructure.xml
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\obj\Debug\FTC_MES_MVC.csproj.AssemblyReference.cache
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\obj\Debug\FTC_MES_MVC.csproj.CoreCompileInputs.cache
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\obj\Debug\FTC_MES_MVC.csproj.CopyComplete
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\obj\Debug\FTC_MES_MVC.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\personLocation\FTC_MVC_Template\obj\Debug\FTC_MES_MVC.pdb
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\ApplicationInsights.config
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\NLog.config
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\roslyn\csc.exe
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\roslyn\csc.exe.config
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\roslyn\csc.rsp
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\roslyn\csi.exe
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\roslyn\csi.rsp
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\roslyn\System.AppContext.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\roslyn\vbc.exe
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\roslyn\vbc.exe.config
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\roslyn\vbc.rsp
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\roslyn\VBCSCompiler.exe
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\FTC_MES_MVC.dll.config
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\FTC_MES_MVC.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\FTC_MES_MVC.pdb
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\NetTopologySuite.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\System.Buffers.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\System.Memory.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\System.Numerics.Vectors.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\BouncyCastle.Crypto.xml
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\NetTopologySuite.xml
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\System.Buffers.xml
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\System.Memory.xml
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\System.Numerics.Vectors.xml
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\bin\Microsoft.Web.Infrastructure.xml
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\obj\Debug\FTC_MES_MVC.csproj.AssemblyReference.cache
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\obj\Debug\FTC_MES_MVC.csproj.CoreCompileInputs.cache
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\obj\Debug\FTC_MES_MVC.csproj.CopyComplete
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\obj\Debug\FTC_MES_MVC.dll
+C:\Users\n000183926\Documents\FTC\FTC\4_ReferencesData\MES\personLocation\FTC_MVC_Template\obj\Debug\FTC_MES_MVC.pdb
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\ApplicationInsights.config
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\NLog.config
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\roslyn\csc.exe
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\roslyn\csc.exe.config
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\roslyn\csc.rsp
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\roslyn\csi.exe
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\roslyn\csi.rsp
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\roslyn\System.AppContext.dll
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\roslyn\vbc.exe
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\roslyn\vbc.exe.config
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\roslyn\vbc.rsp
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\roslyn\VBCSCompiler.exe
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\FTC_MES_MVC.dll.config
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\FTC_MES_MVC.dll
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\FTC_MES_MVC.pdb
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\NetTopologySuite.dll
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\System.Buffers.dll
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\System.Memory.dll
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\System.Numerics.Vectors.dll
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\BouncyCastle.Crypto.xml
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\NetTopologySuite.xml
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\System.Buffers.xml
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\System.Memory.xml
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\System.Numerics.Vectors.xml
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\Microsoft.Web.Infrastructure.xml
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\obj\Debug\FTC_MES_MVC.csproj.AssemblyReference.cache
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\obj\Debug\FTC_MES_MVC.csproj.CoreCompileInputs.cache
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\obj\Debug\FTC_MES_MVC.csproj.CopyComplete
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\obj\Debug\FTC_MES_MVC.dll
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\obj\Debug\FTC_MES_MVC.pdb
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\Newtonsoft.Json.dll
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\System.Net.Http.Formatting.dll
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\System.Web.Http.dll
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\System.Web.Http.WebHost.dll
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\Newtonsoft.Json.xml
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\System.Net.Http.Formatting.xml
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\System.Web.Http.xml
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\System.Web.Http.WebHost.xml
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\zh-Hant\System.Net.Http.Formatting.resources.dll
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\zh-Hant\System.Web.Http.resources.dll
+C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\bin\zh-Hant\System.Web.Http.WebHost.resources.dll

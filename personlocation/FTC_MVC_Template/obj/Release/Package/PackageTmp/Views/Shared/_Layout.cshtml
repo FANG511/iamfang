@@ -1,0 +1,726 @@
+﻿
+@if (Request.IsAuthenticated)
+{
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>@ViewBag.Title</title>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/bundles/jqueryval")
+        @Scripts.Render("~/bundles/kendo/Script")
+        @Styles.Render("~/Content/css")
+        @Styles.Render("~/Content/kendo/Css")
+        @*<script src="@Url.Content("~/signalr/hubs")"></script>*@
+
+    </head>
+    <body class="sidebar-mini wysihtml5-supported uxui-blue">
+        <div class="wrapper">
+            <!-- Main Header -->
+            <header class="main-header">
+                <!-- Logo -->
+                <a href="../Home/Index" class="logo" onclick="logo()">
+                    <!-- mini logo for sidebar mini 50x50 pixels -->
+                    
+                    <span class="logo-mini"><img src="~/Content/UIUX/Login/images/logo_efpg_top.png" width="32px" /><b>FTC</b></span>
+                    <!-- logo for regular state and mobile devices -->
+                    <span class="logo-lg" style="text-align:left"><img src="~/Content/UIUX/Login/images/logo_efpg_top.png" width="32px" />&nbsp;&nbsp;<b>@System.Configuration.ConfigurationManager.AppSettings.Get("System_Name")</b></span>
+                </a>
+                <!-- Header Navbar -->
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                        <span class="sr-only">Toggle navigation</span>
+                    </a>
+                    <div style="width:200px;float:left;padding-top:15px;"><span style="font-weight:bold;font-size:16px;color:black;"><b>@ViewBag.FactoryName </b></span></div>
+
+                    <!-- Navbar Right Menu -->
+                    <div class="navbar-custom-menu">
+                        <ul class="nav navbar-nav">
+
+                            @if (System.Configuration.ConfigurationManager.AppSettings["Iframe"] == "true")
+                            {
+                                <li onclick="closeOtherTabs()">
+                                    <a class="" data-toggle="modal">
+                                        <i class="fa fa-remove"></i>
+                                        <span class="label label-danger"></span>
+                                    </a>
+                                </li>
+                                <li onclick="refreshTab()">
+                                    <a class="" data-toggle="modal">
+                                        <i class="fa fa-refresh"></i>
+                                        <span class="label label-danger"></span>
+                                    </a>
+                                </li>
+                            }
+
+                            <li class="dropdown notifications-menu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-users"></i>
+                                    <span class="label label-danger" id="spOnlineCount"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="header">
+                                        目前共
+                                        <span id="spOnlineCountHeader" style="color:red;font-weight:bold;"></span> 人在線上
+                                    </li>
+                                    <li>
+                                        <ul id="ulOnline" class="menu">
+                                            <!--動態新增在線人員-->
+                                        </ul>
+                                    </li>
+                                    <li class="footer"></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown user user-menu">
+                                <!-- Menu Toggle Button -->
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <!-- The user image in the navbar-->
+                                    <img src="~/content/dist/img/user.png" class="user-image" alt="User Image">
+                                    <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                                    <span class="hidden-xs">@User.Identity.Name</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="user-header">
+                                        <img src="~/content/dist/img/user.png" class="img-circle" alt="User Image">
+                                        <p class="user-text">
+                                            <!--字體變色用-->
+                                            Hello @User.Identity.Name !!
+                                            <small id="time"></small>
+                                        </p>
+                                    </li>
+                                    <li class="user-footer">
+                                        <div class="pull-left">
+                                            @*<input type="button" class="btn btn-default btn-flat" style="color:black" onclick="wndChangePassword_Open()" value="更改密碼" />*@
+                                            <a id="btnModal" class="btn btn_secondary" data-target="#myModal" data-toggle="modal" href="#"><i class="fa fa-lock"></i>更改密碼</a>
+                                        </div>
+
+                                        <div class="pull-right">
+                                            @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "btn btn_primary" }))
+                                            {
+                                                @Html.AntiForgeryToken()
+                                                <a href="javascript:document.getElementById('logoutForm').submit()"  class="btn_primary"><i class="fa fa-sign-out"></i>登出</a>
+                                            }
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        @*<div id="divChangePassword" style="display:none">
+                            @{
+                                Html.RenderAction("_ChangePassword");
+                            }
+                        </div>*@
+                    </div>
+
+                </nav>
+            </header>
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar">
+                <!-- sidebar: style can be found in sidebar.less -->
+                <section class="sidebar">
+                    <!-- Sidebar Menu -->
+                    <ul class="sidebar-menu">
+                        @*<li class="header">功能列表</li>*@
+                        <!-- Optionally, you can add ico ns to the links -->
+                        @{
+                            Html.RenderAction("_Menu");
+                        }
+                    </ul>
+                    <!-- /.sidebar-menu -->
+                </section>
+                <!-- /.sidebar -->
+            </aside>
+
+            @if (System.Configuration.ConfigurationManager.AppSettings["Iframe"] == "true")
+            {
+                <!-- Content Wrapper. Contains page content -->
+                <div class="content-wrapper" @*style="min-height: 1036px;"*@>
+
+                    <section id="content">
+                        <div class="nav-tabs-custom" id="tabs" style="border:none;">
+                            <!-- 頁面標籤列表 -->
+
+                            <nav class="navbar">
+                                <div class="container-fluid" style="background-color: #ecf0f5;">
+                                    <ul class="nav  nav-tabs " id="myTab">
+                                        <li id="tab-home" class='active'>
+                                            <a data-toggle='tab' href='#tab-content-home'>首頁</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </nav>
+
+                            <!-- 頁面内容列表，和頁面標籤列表對應 -->
+                            <div class="tab-content" id="tab-iframe">
+                                <div id='tab-content-home' class='tab-pane active'>
+                                    @if (ViewBag.HomePage == "")
+                                    {
+                                        <iframe width='1400px' height='700px' frameborder='0' scrolling='auto' srcdoc='@RenderBody().ToHtmlString()'></iframe>
+                                    }
+                                    else
+                                    {
+                                        <div style="display:none">@RenderBody()</div>
+                                        <iframe width='1400px' height='700px' frameborder='0' scrolling='auto' src='@ViewBag.HomePage'></iframe>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- /.content -->
+                </div>
+            }
+            else
+            {
+                <!-- Content Wrapper. Contains page content -->
+                <div class="content-wrapper" @*style="min-height: 1036px;"*@>
+                    <!-- Content Header (Page header) -->
+                    <section class="content-header">
+                        <h1 id="hUrlTitle"></h1>
+                        <ol class="breadcrumb">
+                            <li>
+                                <a href="/Home/Index"><i class="fa fa-dashboard"></i> Home</a>
+                            </li>
+                            <li class="active">
+                                <label id="ActionURL"></label>
+                            </li>
+                        </ol>
+                    </section>
+                    <!-- Main content -->
+                    <section class="content" id="content">
+                    
+                    </section>
+                    <!-- /.content -->
+                </div>
+            }
+
+                <footer class="main-footer" style="height:50px">
+                    <div class="pull-right hidden-xs">
+                        <b>TEL:</b> (02)27122211#
+                    </div>
+                    <strong>Copyright &copy; <a href="http://www.efpg.com.tw/efpg/" style="color:blue">台塑網科技</a>.</strong> All rights
+                    reserved.<label id="txtVersion">Ver:1.1.0.3</label>
+                    @{
+                        Html.RenderAction("_ChangePassword");
+                    }
+                </footer>
+            <!-- /.control-sidebar -->
+            <!-- Add the sidebar's background. This div must be placed
+        immediately after the control sidebar -->
+            <div class="control-sidebar-bg"></div>
+        </div>
+        <script>
+            var wndChangePassword;
+            $(document).ready(function () {
+                //wndChangePassword = $("#divChangePassword")
+                //    .kendoWindow({
+                //        title: "變更密碼",
+                //        modal: true,
+                //        visible: false,
+                //        resizable: true,
+                //        close: wndChangePassword_Close,
+                //        width: 450,
+                //        height: 390
+                //    }).data("kendoWindow");
+                //自動展開MenuTree
+                var urlParams = new URLSearchParams(window.location.search);
+                var NodeId = urlParams.get('NodeId');
+                $('#' + NodeId).parents('ul').css('display', 'block');
+                $('#' + NodeId).parents('li.treeview').addClass(' active');
+
+                //在非分頁模式下，左上角顯示當前功能
+                $('#hUrlTitle').text(NodeId != undefined ? document.getElementsByName(NodeId)[0].getAttribute("displaytitle") : '');
+
+                ////建立與Server端的Hub的物件，注意Hub的開頭字母一定要為小寫
+                //var onlineHub = $.connection.counterHub;
+
+                ////讓server呼叫(抓取資料)
+                //onlineHub.client.getList = function (userList) {
+                //    document.getElementById("spOnlineCount").innerHTML = userList.length;
+                //    document.getElementById("spOnlineCountHeader").innerHTML = userList.length;
+
+                //    //新增登入人員至右上角下拉選單
+                //    $.each(userList, function (index, obj) {
+                //        $("#ulOnline").append(
+                //            "<li>" +
+                //                "<a href='#'>" +
+                //                    "<i class='fa fa-users text-red'></i>" +
+                //                    "ID：" + obj.USERID + "(IP：" + obj.IP + ")" +
+                //                "</a >" +
+                //            "</li>");
+                //    });
+                //}
+
+                ////將連線打開
+                //$.connection.hub.start().done(function () {
+                //    onlineHub.server.userConnected(location.href, navigator.userAgent);//呼叫server
+                //});
+
+                ////讓server呼叫(移除離開人員)
+                //onlineHub.client.onUserDisconnected = function (id) {
+                //    //內容自由發揮
+                //    $('#' + id).remove();
+                //}
+
+                refreshWidth();
+            });
+
+            //顯示訊息字幕
+            function ToastHint(sType, sTitle, sWords, iDelay) {
+                Lobibox.notify(sType, {
+                    title: sTitle,
+                    msg: sWords,
+                    delay: iDelay || 5000,
+                    sound: false,
+                });
+            }
+
+            $(document).ajaxStart(function () {
+                $.blockUI({ message: '<table align="center"><tr><td><img src="content/dist/img/ajax-loader.gif">' + ' 處理中，請稍候!!</td></tr></table>' });
+            });
+
+            $(document).ajaxStop($.unblockUI);
+
+            var correctIcon = "../Content/Images/correct.png",
+                errorIcon = "../Content/Images/error.png";
+
+            $(function () {
+                //關閉時清除所有已輸入資料
+                $('#myModal').on('hidden.bs.modal', function () {
+                    $("#confirmpassword").val('');
+                    $("#newpassword").val('');
+                    $("#oldpassword").val('');
+                    $("#opImg").hide();
+                    $("#npImg").hide();
+                    $("#cpImg").hide();
+                })
+
+                $('#myModal').on('shown.bs.modal', function () {
+                    $("#save").attr("disabled", true);
+                    $("#newpassword").attr("disabled", true);
+                    $("#confirmpassword").attr("disabled", true);
+                    $("#oldpassword").val('');
+                });
+            });
+
+            //新密碼長度需大於六位數
+            function checkPwdLength() {
+                var newpassword = $("#newpassword").val();
+                $("#npImg").show();
+                if (newpassword.length < 6) {
+                    $("#npImg").attr("src", errorIcon);
+                    $("#npLabel").show();
+                } else {
+                    $("#npLabel").hide();
+                    $("#cpImg").show();
+                    $("#npImg").attr("src", correctIcon);
+                    passwordconfirm();
+                }
+            }
+
+            //不可命名為confirm,會與kendo grid的預設function相衝
+            function passwordconfirm() {
+                var newpassword = $("#newpassword").val();
+                var confirmpassword = $("#confirmpassword").val()
+                $("#cpImg").show();
+                if (newpassword == confirmpassword) {
+                    $("#save").attr("disabled", false);
+                    $("#cpImg").attr("src", correctIcon);
+                } else {
+                    $("#save").attr("disabled", true);
+                    $("#cpImg").attr("src", errorIcon);
+                }
+            }
+
+            function oldconfirm() {
+                var pwd = "@ViewData["hashpwd"]";
+                var oldpassword = CryptoJS.MD5($("#oldpassword").val()).toString(CryptoJS.enc.Hex).toUpperCase();
+                //alert(oldpassword);
+                $("#opImg").show();
+                if (pwd == oldpassword) {
+                    $("#newpassword").attr("disabled", false);
+                    $("#confirmpassword").attr("disabled", false);
+                    $("#opImg").attr("src", correctIcon);
+                    //$("#opErrImg").show();
+                    //$("#opCorrImg").hide();
+                } else {
+                    $("#newpassword").attr("disabled", true);
+                    $("#confirmpassword").attr("disabled", true);
+                    $("#opImg").attr("src", errorIcon);
+                    //$("#opErrImg").show();
+                    //$("#opCorrImg").hide();
+                }
+            }
+
+            //function wndChangePassword_Open() {
+            //    //wndChangePassword.center().open();
+            //    $("#confirmpassword").val('');
+            //    $("#newpassword").val('');
+            //    $("#oldpassword").val('');
+            //    $("#save").attr("disabled", true);
+            //    $("#newpassword").attr("disabled", true);
+            //    $("#confirmpassword").attr("disabled", true);
+            //}
+
+            //function wndChangePassword_Close() {
+            //    $("#save").attr("disabled", true);
+            //    $("#newpassword").attr("disabled", true);
+            //    $("#confirmpassword").attr("disabled", true);
+            //    $("#oldpassword").val('');
+            //}
+
+            @*//不可命名為confirm,會與kendo grid的預設function相衝
+            function passwordconfirm() {
+                var newpassword = $("#newpassword").val();
+                var confirmpassword = $("#confirmpassword").val()
+                if (newpassword.length < 5) {
+                    //alert(newpassword.length);
+                    alert('密碼長度須大於等於6個字元!!');
+                } else if (newpassword == confirmpassword) {
+                    $("#save").attr("disabled", false);
+                } else {
+                    alert('確認密碼輸入錯誤!!');
+                }
+            }
+
+            function oldconfirm() {
+                var oldpassword = $("#oldpassword").val();
+                var name = "@User.Identity.Name";
+                $.ajax({
+                    type: 'Post',
+                    url: 'Account/OldPassword',
+                    //contentType: 'application/json; charset=utf-8',
+                    dataType: 'json',
+                    data: { oldpassword: $("#oldpassword").val() },
+                    success: function (data) {
+                        //alert(data.result);
+                        if (data.result == "1") {
+                            $("#newpassword").attr("disabled", false);
+                            $("#confirmpassword").attr("disabled", false);
+                            $("#save").attr("disabled", false);
+                        } else {
+                            alert('舊密碼輸入錯誤!!');
+                            $("#oldpassword").val('');
+                            $("#save").attr("disabled", true);
+                            $("#newpassword").attr("disabled", true);
+                            $("#confirmpassword").attr("disabled", true);
+                        }
+                    },
+                    error: function (xhr) {
+                        alert(xhr.responseText);
+                    }
+                })
+            }*@
+
+            //管控畫面上的按鈕權限
+            function ControlAuth() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const NodeId = urlParams.get('NodeId');
+                $.ajax({
+                    type: 'Get',
+                    url: "../Base/getPageControl",
+                    contentType: 'application/json; charset=utf-8',
+                    dataType: 'json',
+                    data: { sNodeId: NodeId },
+                    success: function (data) {
+                        for (var i = 0; i < data.length; i++) {
+                            if (!data[i].IsVisible) {
+                                //console.log(data[i].OBJECTCLASS);
+                                $(data[i].OBJECTCLASS).hide();
+                                //$(data[i].DESCRIPTION).attr("style", "display:none");
+                            }
+                        }
+                    },
+                    error: function (e) {
+                        console.log('Control');
+                        alert(e.responseText);
+                    }
+                })
+            }
+
+            //切換tab頁的顯示
+            $(document).on('click', '#myTab > li', function (e) {
+                //清除原還顯示的tab頁
+                var oldTab = $("#myTab li.active").removeClass("active").find("a[data-toggle='tab']");
+                $(oldTab.attr("href")).removeClass("active");
+
+                //設置新的顯示tab頁
+                var newTab = $(this).addClass("active").find("a[data-toggle='tab']");
+                $(newTab.attr("href")).addClass("active");
+
+                refreshTabHistory(false/*isDelete*/, $(this).attr('id').substring(4));
+            })
+            //手動調用切換到要顯示的tab頁,當前的action只支持show
+            //eg:$("#tab-0 a[data-toggle='tab']").tab("show");
+            $.fn.tab = function (action) {
+                if (action == "show") {
+                    $(this).parent().click();
+                }
+            }
+
+            var currentTabId = '';//當前焦點Tab
+            //在非左側菜單欄彈出的tab頁也會用到該數據，如common.js中的pageForward函数
+            var pageCounter = 0;
+
+
+            /*
+            function addTab: 新增Tab
+            height: 分頁高度
+            id:       tab頁簽的html標籤ID属性格式為"tab-"+id，内容容器的html標籤ID格式為"tab-content-"+id
+            text:     tab頁簽的顯示文本
+            url:      打開的iframe的url
+            innerTab: 是否是内部彈出頁（打開的tab頁觸發添加新的tab頁），默認為undefined/false
+            */
+            function addTab(height, id, text, url, innerTab) {
+                //如果某個頁面已經打開，則切換到該頁顯示即可，不會新添加tab頁
+                if ($('#myTab #tab-' + id).length > 0) {
+                    $('#myTab  #tab-' + id + ' a').tab('show');
+                } else {
+                    var tab_id = "tab-" + id,
+                        tab_content_id = "tab-content-" + id;
+
+                    //添加tab頁簽
+                    $("#myTab > li").removeClass("active");
+                    $("#myTab").append("<li id='" + tab_id + "' class='active'><a data-toggle='tab' href='#"
+                        + tab_content_id + "'>" + text + "</a>"
+                        + ("<i class='fa fa-times' onclick='deleteTab(\"" + id + "\")'></i>") + "</li>");
+
+                    //添加新的内容顯示
+                    $(".tab-content > div").removeClass("active");
+                    $("#tab-iframe").append("<div id='" + tab_content_id + "'  class='tab-pane active'>"
+                        + "<iframe id='iframepage" + (pageCounter++) + "' name='iframepage" + (pageCounter++)
+                        + "' width='100%' height = '" + height + "'  frameborder='0' scrolling='no'  src='" + url + "'></iframe></div>");
+
+
+                }
+                //刷新切換tab的歷史紀錄
+                refreshTabHistory(false/*isDelete*/, id);
+                //重新設置tab頁簽的寬度
+                refreshWidth();
+            }
+            function addTabNew(height, id, text, url, innerTab) {
+                //如果某個頁面已經打開，則切換到該頁顯示即可，不會新添加tab頁
+                
+                    var tab_id = "tab-" + id,
+                        tab_content_id = "tab-content-" + id;
+
+                    //添加tab頁簽
+                    $("#myTab > li").removeClass("active");
+                    $("#myTab").append("<li id='" + tab_id + "' class='active'><a data-toggle='tab' href='#"
+                        + tab_content_id + "'>" + text + "</a>"
+                        + ("<i class='fa fa-times' onclick='deleteTab(\"" + id + "\")'></i>") + "</li>");
+
+                    //添加新的内容顯示
+                    $(".tab-content > div").removeClass("active");
+                    $("#tab-iframe").append("<div id='" + tab_content_id + "'  class='tab-pane active'>"
+                        + "<iframe id='iframepage" + (pageCounter++) + "' name='iframepage" + (pageCounter++)
+                        + "' width='100%' height = '" + height + "'  frameborder='0' scrolling='no'  src='" + url + "'></iframe></div>");
+
+
+                
+                //刷新切換tab的歷史紀錄
+                refreshTabHistory(false/*isDelete*/, id);
+                //重新設置tab頁簽的寬度
+                refreshWidth();
+            }
+
+
+            //参數id為tab的標誌，但是並不是tab頁的id属性，真正的id属性值是"tab-"+id
+            //function deleteTab: 刪除tab
+            function deleteTab(id) {
+                var tabJQ = $("#tab-" + id),
+                tabContentJQ = $("#tab-content-" + id);
+
+                if (!tabJQ.hasClass("active")) {
+                    tabJQ.remove();
+                    tabContentJQ.remove();
+                    refreshTabHistory(true/*isDelete*/, id);
+                } else {
+                    tabJQ.remove();
+                    tabContentJQ.remove();
+                    refreshTabHistory(true/*isDelete*/, id);
+                    //currentTabId = 'N036'
+                    $('#tab-' + currentTabId + ' > a').click();
+                }
+                refreshWidth();
+            }
+            //關閉當前tab頁的快速方法
+            function closeCurrentTab() {
+                deleteTab(currentTabId);
+            }
+
+            /*
+            刷新頁簽切換歷史
+            isdelete: 是否是删除tab頁簽,true:是，false：否
+            curTabId：要處理的tab頁簽的id,tab頁簽html標籤元素的ID属性格式為"tab-"+curTabId
+            */
+            function refreshTabHistory(isdelete, curTabId) {
+                if (!refreshTabHistory.histoty) {
+                    //用來記錄用戶點擊tab的歷史
+                    refreshTabHistory.histoty = [];
+                }
+                var index = 0,
+                leng = refreshTabHistory.histoty.length;
+                //查找傳入的tab頁簽在歷史紀錄中的位置
+                for (; index < leng; index++) {
+                    if (refreshTabHistory.histoty[index] == curTabId) {
+                        break;
+                    }
+                }
+
+                //如果是删除頁簽，直接在歷史紀錄中删除即可，歷史紀錄的其他頁簽的順序不變
+                if (isdelete) {
+                    refreshTabHistory.histoty.splice(index, 1);
+
+                    //如果是新增頁簽，先保證歷史紀錄中没有改頁簽（有就删掉），然後將新增的頁簽放在歷史紀錄的最後面（即該頁簽為最新）
+                } else {
+                    if (index < leng) {
+                        refreshTabHistory.histoty.splice(index, 1);
+                    }
+                    refreshTabHistory.histoty.push(curTabId);
+                }
+                currentTabId = refreshTabHistory.histoty[refreshTabHistory.histoty.length - 1];
+                //如果只剩下一頁就點一下Home，避免異常
+                if ($('ul#myTab').children('li').length == 1) {
+                    $("#tab-content-home").addClass('active');
+                }
+            }
+
+            //刷新重置tab頁簽的寬度
+            function refreshWidth() {
+                var panelWidth = $('#myTab').width() - 20/*可能存在的滚動條寬度*/,
+                tabs = $('#myTab > li'),
+                tabContentAverageWidth = 0/*tab > a標籤的寬度*/,
+                minTabAverageWidth = 25/*margin-left:5,X按鈕寬度為20*/,
+                zeroContentTabWidth = 35/*當tab > a標籤寬度為0時tab標籤對應的寬度是30px，外加上margin-left:5*/,
+                aPaddingLeft = 10/*tab > a標籤的padding-left默認是10，當averageWidth< 35需要調整*/;
+                averageWidth = parseInt(panelWidth / (tabs.length), 10);//
+                if (averageWidth >= zeroContentTabWidth) {
+                    tabContentAverageWidth = averageWidth - zeroContentTabWidth;
+
+                    /*35 > averageWidth >= 25*/
+                } else if (averageWidth >= minTabAverageWidth) {
+                    tabContentAverageWidth = 0;
+                    aPaddingLeft = averageWidth - minTabAverageWidth;
+
+                    //averageWidth < 25
+                } else {
+                    tabContentAverageWidth = 0;
+                    aPaddingLeft = 0;
+                }
+                //tab頁簽名稱元素a標籤的寬度和padding-left。這個是在box-sizing:border-box。的情况下
+                tabs.find('>a').css({ 'width': (tabContentAverageWidth + aPaddingLeft), 'padding-left': aPaddingLeft });
+            }
+
+
+            //重新整理該分頁內容
+            var refreshTab = function () {
+                //刷新當前tab
+                var pageId = getActivePageId();
+                refreshTabById(pageId);
+            };
+
+            //取得該Active頁的Id
+            function getActivePageId() {
+                var $a = $('#myTab').find('.active');
+                return getPageId($a);
+            }
+
+            //取得該頁的Id
+            function getPageId(element) {
+                if (element instanceof jQuery) {
+                    return element.attr("id");
+                } else {
+                    return $(element).attr("id");
+                }
+            }
+
+            //重新整理Id 為 pagId的分頁
+            function refreshTabById(pageId) {
+                var $iframe = findIframeById(pageId);
+                var url = $iframe.attr('src');
+
+                if (url.indexOf(top.document.domain) < 0) {
+                    $iframe.attr("src", url);// 跨域狀况下，重新設置url
+                } else {
+                    $iframe[0].contentWindow.location.reload(true);//帶參數刷新
+                }
+
+
+            }
+
+            //使用pageId找尋Iframe
+            function findIframeById(pageId) {
+                return findTabPanel(pageId).children("iframe");
+            }
+
+            //使用pageId找尋Tab
+            function findTabPanel(pageId) {
+                var $ele = null;
+                var temp = pageId.split('-');
+                var tab_content_id = temp[0] + '-content-' + temp[1];
+                $("#tab-iframe").find("div.tab-pane").each(function () {
+                    var $div = $(this);
+
+                    if ($div.attr("id") == tab_content_id) {
+                        $ele = $div;
+                        return false;//退出循環
+                    }
+                });
+                return $ele;
+            }
+
+            //關閉全部分頁，保留首頁
+            function closeOtherTabs() {
+
+                $("#myTab").find("li").each(function () {
+                    var $i = $(this);
+                    if ($i.attr("id") != "tab-home") {
+                        $i.remove();
+                    } else {
+                        $i.addClass('active')
+                    }
+
+                });
+                $("#tab-iframe").children("div").each(function () {
+                    var $i = $(this);
+                    if ($i.attr("id") != "tab-content-home") {
+                        $i.remove();
+                    } else {
+                        $i.addClass('active')
+                    }
+                });
+            }
+
+        </script>
+    </body>
+   
+    </html>
+
+
+<script type="text/javascript">
+    //點左邊功能列的設定
+    if ("@System.Configuration.ConfigurationManager.AppSettings["Iframe"]" == "true") {
+        $('a').each(function () {
+            this.onclick = function () {
+                if ($(this).data("link") != undefined) {
+                    //如果是分頁模式就新增tab
+
+                    addTab($(this).attr('iframeHeight'), $(this).attr('name'), $(this).html(), $(this).data("link"));
+
+                    var title = $(this).attr('displaytitle');
+                    $('#ActionURL').text(title);
+                    $('#PageHeader').text(title);
+
+                    return false;
+                }
+            };
+        });
+    }
+</script>
+}

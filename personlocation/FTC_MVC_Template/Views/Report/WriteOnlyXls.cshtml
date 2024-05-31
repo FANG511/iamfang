@@ -1,0 +1,137 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutForMESNoMenu.cshtml";
+}
+<style>
+    div.k-spreadsheet-formula-bar,
+    div.k-spreadsheet-row-header,
+    div.k-spreadsheet-column-header,
+    div.k-spreadsheet-top-corner {
+        display: none;
+    }
+</style>
+<div class="form-horizontal">
+    <div class="form-group">
+        <button id="btnSaveData" class="btn btn_primary" onclick="SaveData();">
+            <i class="fa fa-print"></i>
+            <span>儲存</span>
+        </button>
+        <div class="col-xs-12">
+            <div id="spreadsheet" style="width:100%;height:450px"></div>
+        </div>
+    </div>
+    <div class="form-group" style="display:none">
+        <div class="col-xs-12">
+            <input type="file" id="Uploadfile" />
+        </div>
+    </div>
+</div>
+
+<script>
+    const vi18n_Name = 'UserManage.Text';
+    const vi18n_BackEnd = 'UserManage.BackEnd';
+    var oi18nLanguAuto;
+    var sFileName = 'test2.xlsx';
+    var crudServiceBaseUrl ="/../api/ReportApi";
+    var spreadsheet;
+    var FileUplad;
+    var UpdateList = [];//修改的資料會存到裡面
+    var CellItems = [];//修改的資料會存到裡面
+    $(document).ready(function () {
+        QueryString.Initial();
+        oi18nLanguAuto = new i18nLanguAuto();
+        oi18nLanguAuto.Initial();
+        $("#spreadsheet").kendoSpreadsheet(
+            {
+                change: onChange,sheetsbar: false, toolbar: false,
+                headerHeight: 0,
+                headerWidth: 0,
+                scrollable: false
+            },
+        );
+        spreadsheet = $("#spreadsheet").data("kendoSpreadsheet");
+        FileUplad = $('#Uploadfile');
+        downloadXLS();
+    });
+
+    
+    function downloadXLS() {
+        debugger
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', crudServiceBaseUrl + "/getExcelTemplate", true);
+        xhr.responseType = 'blob';
+        var params = "ReportXlsFile=" + sFileName; // 參數格式為 key=value，多個參數用 & 連接
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.setRequestHeader("Content-Length", params.length);
+
+        xhr.onload = function (e) {
+            if (this.status == 200) {
+                debugger
+                var blob = new Blob([this.response], { type: 'application/octet-stream' });
+                var file = new File([blob], sFileName, { type: blob.type });
+                const dataTransfer = new DataTransfer();
+                dataTransfer.items.add(file);
+                FileUplad[0].files = dataTransfer.files;
+                spreadsheet.fromFile(FileUplad[0].files[0]);
+            }
+        };
+        xhr.send(params);
+    }
+
+    //======修改spread內容儲存至UpdateList===========================================================================
+    function onChange(arg) {
+        //debugger;
+        //kendo.alert("Spreadsheet change. New value: " + arg.range.value() + ",TagName=" + arg.range.verticalAlign());
+        console.log('Row=' + arg.range._ref.topLeft.row + ',Col=' + arg.range._ref.topLeft.col + ',val=' + arg.range.value());
+        var CellID = arg.range._ref.topLeft.row + "-" + arg.range._ref.topLeft.col;
+        var TagValue = arg.range.value(); //;encodeURIComponent(arg.range.value());
+        var Repeat = 0;
+        if (CellItems.length == 0) {
+            CellItems.push({ "Key": CellID, "Value": TagValue });
+        }
+        else {
+            if (CellItems.length > 0) {
+                Repeat = 0;
+                for (i = 0; i < CellItems.length; i++) {
+                    //重複取代同樣key對應之value
+                    if (CellItems[i].Key == CellID) {
+                        CellItems[i].Value = TagValue
+                        Repeat = 1;
+                    }
+                }
+                //沒有重複修改 在放一組資料上去
+                if (Repeat == 0) {
+                    CellItems.push({ "Key": CellID, "Value": TagValue });
+                };
+            }
+        }
+    }
+    //======更新Spreadsheet資料=====================================================================================
+    function SaveData() {
+        console.log('CellItems.length' + CellItems.length);
+        if (CellItems.length > 0) {
+            $.ajax({
+                url: crudServiceBaseUrl + "/UpdateSpreadValue?REF=Y",
+                type: 'Post',
+                dataType: 'json',
+                data: {
+                    XlsFileName: sFileName,
+                    CellItems: CellItems,
+                },
+                beforeSend: function () {
+                },
+                complete: function () {
+                },
+                success: function (ResultData) {
+                    notification.show({
+                        message: oi18nLanguAuto.translate(ResultData.ReturnMessage, vi18n_BackEnd)
+                    }, "success")
+                },
+                error: function (e) {
+                    notification.show({
+                        message: oi18nLanguAuto.translate(ResultData.ReturnMessage, vi18n_BackEnd)
+                    }, "error")
+                }
+            })
+        }
+    }
+</script>

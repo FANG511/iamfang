@@ -1,0 +1,1028 @@
+﻿@{
+    ViewBag.Title = "創建地圖";
+    Layout = "~/Views/Shared/_LayoutForMap.cshtml";
+}
+
+
+<link rel="stylesheet" href="~/Content/personLocation/leaflet-sidebar.css" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"></script>
+
+<div class="map-content">
+    <div id="map"> </div>
+    <button class="edit-feature">完成</button>
+    <div id="sidebar" class="sidebar collapsed">
+        <!-- Nav tabs -->
+        <div class="sidebar-tabs">
+            <ul role="tablist">
+                <li><a href="#home" role="tab"><i class="fa fa-bars"></i></a></li>
+            </ul>
+
+        </div>
+
+        <!-- Tab panes -->
+        <div class="sidebar-content">
+            <div class="sidebar-pane" id="home">
+                <h1 class="sidebar-header">
+                    人員定位追蹤
+                    <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
+                </h1>
+
+                <div class="info-panel" id="people-count">
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+</div>
+
+<div id="id01" class="modal">
+    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+    <form class="modal-content">
+        <div class="container">
+            <h1>新增圖徵</h1>
+            <p>請填入圖徵名稱與對應的區域</p>
+            <hr>
+            <label for="polygonName"><b>名稱</b></label>
+            <input type="text" placeholder="請輸入圖徵名稱" name="PolygonName" required>
+
+            <label for="AreaID"><b>區域名稱</b></label>
+            <div class="button dropdown">
+                <select id="area-selector-new">
+                    <option value="">請選擇</option>
+                    <option value="red">Red</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="blue">Blue</option>
+                </select>
+            </div>
+
+            <div class="clearfix">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                        class="cancelbtn">
+                    取消
+                </button>
+                <button type="button" class="signupbtn" id="upload-polygon">儲存</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div id="id02" class="modal">
+    <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+    <form class="modal-content">
+        <div class="container">
+            <h1>編輯圖徵</h1>
+            <p>請填入圖徵名稱與對應的區域</p>
+            <hr>
+            <label for="polygonName"><b>名稱</b></label>
+            <input type="text" placeholder="請輸入圖徵名稱" name="PolygonName" id="edit-poly-name" required>
+
+            <label for="AreaID"><b>區域名稱</b></label>
+            <div class="button dropdown">
+                <select id="area-selector-edit">
+                    <option value="">請選擇</option>
+                    <option value="red">Red</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="blue">Blue</option>
+                </select>
+            </div>
+
+            <div class="clearfix">
+                <button type="button" onclick="document.getElementById('id02').style.display='none'"
+                        class="cancelbtn">
+                    取消
+                </button>
+                <button type="button" class="signupbtn" id="edit-polygon">儲存</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div id="id03" class="modal">
+    <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
+    <form class="modal-content">
+        <div class="container">
+            <h1>刪除圖徵</h1>
+            <p>請確認是否要刪除圖徵</p>
+            <hr>
+            <div class="del-info">
+                <label for="polygonName"><b>名稱</b></label>
+                <p class="del-poly-name" id="del-poly-name">圖徵</p>
+            </div>
+            <div class="clearfix">
+                <button type="button" onclick="document.getElementById('id03').style.display='none'"
+                        class="cancelbtn">
+                    取消
+                </button>
+                <button type="button" class="signupbtn" id="delete-polygon">確認刪除</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<style>
+    .map-content {
+        position: absolute;
+        width: 100vw;
+        max-height: 100%;
+        top: 0px;
+        left: 0px;
+        padding: 10px;
+        z-index: 400;
+    }
+
+
+    body {
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+    }
+
+    html,
+    body,
+    #map {
+        height: 95vh;
+        font: 10pt "Helvetica Neue", Arial, Helvetica, sans-serif;
+        position: relative;
+    }
+
+    .info-panel {
+        margin: 2rem 0.5rem;
+        font-size: 16px;
+    }
+
+    .edit-feature {
+        position: absolute;
+        right: 100px;
+        top: 30px;
+        z-index: 1000;
+        background-color: #04AA6D;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100px;
+        opacity: 0.9;
+    }
+
+    .nodata {
+        display: none;
+    }
+
+    /* Full-width input fields */
+    input[type=text],
+    input[type=password] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background: #f1f1f1;
+    }
+
+        /* Add a background color when the inputs get focus */
+        input[type=text]:focus,
+        input[type=password]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+
+    /* Set a style for all buttons */
+    .info-panel .list-button {
+        background-color: #04AA6D;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+    }
+
+    .info-panel button:hover {
+        opacity: 1;
+    }
+
+    .clearfix button {
+        background-color: #04AA6D;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+    }
+
+        .clearfix button:hover {
+            opacity: 1;
+        }
+
+    /* Extra styles for the cancel button */
+    .clearfix .cancelbtn {
+        padding: 14px 20px;
+        background-color: #f44336;
+    }
+
+    .signupbtn {
+    }
+
+    /* Float cancel and signup buttons and add an equal width */
+    .cancelbtn,
+    .signupbtn {
+        float: left;
+        width: 40%;
+    }
+
+    /* Add padding to container elements */
+    .container {
+        padding: 16px;
+    }
+
+    /* The Modal (background) */
+    .modal {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Stay in place */
+        z-index: 500;
+        /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        height: 100%;
+        /* Full height */
+        overflow: auto;
+        /* Enable scroll if needed */
+        background-color: rgba(71, 78, 93, 0.5);
+        padding-top: 50px;
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto 15% auto;
+        /* 5% from the top, 15% from the bottom and centered */
+        border: 1px solid #888;
+        width: 80%;
+        /* Could be more or less, depending on screen size */
+    }
+
+    /* Style the horizontal ruler */
+    hr {
+        border: 1px solid #f1f1f1;
+        margin-bottom: 25px;
+    }
+
+    /* The Close Button (x) */
+    .close {
+        position: absolute;
+        right: 35px;
+        top: 15px;
+        font-size: 40px;
+        font-weight: bold;
+        color: #f1f1f1;
+    }
+
+    label {
+        font-size: 16px;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #f44336;
+        cursor: pointer;
+    }
+
+    .clearfix {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+        /* Clear floats */
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .clearfix button {
+            margin: 1rem;
+        }
+
+    .dropdown {
+        position: relative;
+        background-color: #f1f1f1;
+        display: block;
+        margin-top: 0.5em;
+        padding: 0;
+    }
+
+        /* This is the native select, we're making everything the text invisible so we can see the button styles in the wrapper */
+        .dropdown select {
+            width: 100%;
+            margin: 0;
+            background: none;
+            border: 1px solid transparent;
+            outline: none;
+            /* Prefixed box-sizing rules necessary for older browsers */
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            /* Remove select styling */
+            -webkit-appearance: none;
+            /* Magic font size number to prevent iOS text zoom */
+            font-size: 1.25em;
+            /* General select styles: change as needed */
+            /* font-weight: bold; */
+            color: #444;
+            padding: .6em 1.9em .5em .8em;
+            line-height: 1.3;
+        }
+
+    /* 列表選單 */
+
+    /* This is the native select, we're making everything the text invisible so we can see the button styles in the wrapper */
+    #area-count .dropdown select {
+        width: 100%;
+        margin: 0;
+        background: none;
+        border: 1px solid transparent;
+        outline: none;
+        /* Prefixed box-sizing rules necessary for older browsers */
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        /* Remove select styling */
+        appearance: none;
+        -webkit-appearance: none;
+        /* Magic font size number to prevent iOS text zoom */
+        font-size: 1.25em;
+        /* General select styles: change as needed */
+        /* font-weight: bold; */
+        color: #444;
+        padding: .6em 1.9em .5em .8em;
+        line-height: 1.3;
+    }
+
+    /* Style the buttons that are used to open and close the accordion panel */
+    .accordion {
+        background-color: #b6b4b4;
+        color: #444;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        text-align: left;
+        border: none;
+        outline: none;
+        transition: 0.4s;
+    }
+
+        /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+        #area-count .active,
+        .accordion:hover {
+            background-color: #ffffff;
+            border: #b6b4b4;
+        }
+
+    /* Style the accordion panel. Note: hidden by default */
+    #area-count .panel {
+        padding: 0 18px;
+        background-color: white;
+        display: none;
+        overflow: hidden;
+    }
+
+    #area-count .panel {
+        padding: 0 18px;
+        background-color: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+    }
+
+    #area-count .accordion:after {
+        content: '\02795';
+        /* Unicode character for "plus" sign (+) */
+        font-size: 13px;
+        color: #777;
+        float: right;
+        margin-left: 5px;
+    }
+
+    #area-count .active:after {
+        content: "\2796";
+        /* Unicode character for "minus" sign (-) */
+    }
+
+    #area-count ul {
+        list-style-type: none;
+        /* Remove bullets */
+        padding: 0;
+        /* Remove padding */
+        margin: 0;
+        /* Remove margins */
+    }
+
+        #area-count ul li {
+            border: 1px solid #ddd;
+            /* Add a thin border to each list item */
+            margin-top: -1px;
+            /* Prevent double borders */
+            background-color: #f6f6f6;
+            /* Add a grey background color */
+            padding: 12px;
+            /* Add some padding */
+        }
+
+    .area-list {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .poly-edit {
+        display: flex;
+        justify-content: end;
+    }
+
+    #people-count li {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        border: 1px solid #ddd;
+        /* Add a thin border to each list item */
+        margin-top: -1px;
+        /* Prevent double borders */
+        background-color: #f6f6f6;
+        /* Add a grey background color */
+        padding: 12px;
+        /* Add some padding */
+        cursor: pointer;
+        border-radius: 2px;
+        margin-top: 0.5rem;
+    }
+
+    .edit-button {
+        padding: auto;
+        color: #1e1a1a8f;
+    }
+
+
+    /* 刪除表單內容 */
+    .del-info {
+        display: flex;
+        justify-content: center;
+        justify-content: center;
+        font-size: 20px;
+    }
+
+
+    /* 滑動選單定義 */
+    /* width */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    /* track */
+    ::-webkit-scrollbar-track {
+        background-color: #f1f1f1;
+    }
+
+    /* handle */
+    ::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+
+        /* handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+</style>
+
+@*引用區*@
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+      integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+        integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
+<script src="https://unpkg.com/leaflet-rotate@0.2.2/dist/leaflet-rotate-src.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.10/leaflet.draw-src.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+@*axios*@
+<script type="text/javascript" src="https://unpkg.com/axios@1.2.1/dist/axios.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wicket/1.3.8/wicket.js"></script>
+<script src="~/Scripts/PersonLocation/leaflet-sidebar.js"></script>
+
+
+<script>
+    /**
+       * 定義初始參數
+       * */
+    const result_panel = document.getElementById("result_panel")
+    const workAreaList = document.getElementById("workAreaList")
+    const warningAreaList = document.getElementById("warningAreaList")
+    const otherAreaList = document.getElementById("otherAreaList")
+
+    let personLocationUrl = "/api/apiPersonLocation"
+    var map;
+    var workArea;
+
+    /**
+     * ----------------------------------------------------------------------
+     * ----------------------//     初始化地圖     //------------------------
+     * ----------------------------------------------------------------------
+     */
+    map = L.map('map', {
+        zoom: 19,
+        rotate: true,
+        rotateControl: false,
+        zoomControl: false,
+        bearing: 0,
+        center: [25.05747, 121.55099],
+    });
+
+    // 設定底圖
+    var mapLayers = {
+        '中文': L.tileLayer('https://wmts.nlsc.gov.tw/wmts/EMAP98/default/GoogleMapsCompatible/{z}/{y}/{x}', {
+            attribution: '&copy; <a href="https://www.tgos.tw/tgos/web/tgos_home.aspx">TGOS</a>'
+        }),
+        '英文': L.tileLayer('https://wmts.nlsc.gov.tw/wmts/EMAP97/default/GoogleMapsCompatible/{z}/{y}/{x}', {
+            attribution: '&copy; <a href="https://www.tgos.tw/tgos/web/tgos_home.aspx">TGOS</a>'
+        }),
+        '衛星': L.tileLayer('https://wmts.nlsc.gov.tw/wmts/PHOTO_MIX/default/GoogleMapsCompatible/{z}/{y}/{x}', {
+            attribution: '&copy; <a href="https://www.tgos.tw/tgos/web/tgos_home.aspx">TGOS</a>'
+        }),
+        'OSM': L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        })
+    };
+    //mapLayers['OSM'].addTo(map); // 使用中文地圖作為預設
+
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1,
+        accessToken: 'pk.eyJ1IjoibWFraWZpIiwiYSI6ImNrb2xtaThiODAwMzQydHBvODF2eGF3b2gifQ.R0Ps3-ylf29uGUoKkfsMKw' // 換成你自己的 Mapbox Access Token
+    }).addTo(map);
+
+    L.control.layers(mapLayers).addTo(map); // 加入地圖切換控制項
+    // 旋轉控制
+    var rotateOptions = {
+        closeOnZeroBearing: false,
+        position: 'topright',
+    }
+    var rotate = L.control.rotate(rotateOptions);
+    rotate.addTo(map)
+
+    // zoom control options
+    var zoomOptions = {
+        zoomInText: '+',
+        zoomOutText: '-',
+        position: "topright"
+    };
+    var zoom = L.control.zoom(zoomOptions);   // Creating zoom control
+    zoom.addTo(map);   // Adding zoom control to the map
+
+    //side bar control
+    var sidebar = L.control.sidebar('sidebar').addTo(map);
+
+    // scale
+    var scale = L.control.scale({
+        position: "bottomright"
+    }); // Creating scale control
+    scale.addTo(map); // Adding scale control to the map
+
+    // 初始化圖層
+    var workArea = L.geoJSON();
+    var warningArea = L.geoJSON();
+    var otherArea = L.geoJSON();
+    var featureGroup = L.featureGroup([workArea, warningArea, otherArea])
+        .bindPopup(function (layer) {
+            let feature = layer.feature
+            console.log(feature)
+            let id = feature.properties.polygonID
+            let name = feature.properties.polygonName
+            let areaId = feature.properties.AreaID
+            let content = `
+                        <table class="table">
+                            <thread>
+                                <tr><th class="text-center">${name}</th></th>
+                            </thread>
+                            <tbody>
+                                <tr><td class="text-center">${areaId}</td></tr>
+                                <tr><td class="text-center">
+                                    <span><button style="border:none;background-color:transparent;" data-id=${id} data-category="${areaId}" data-areaname="${name}" onClick="onEditMapNew(this)"><i class="fa-solid fa-pen-to-square"></i></button><span>
+                                    <span><button style="border:none;background-color:transparent;"  data-id=${id} data-category="${areaId}" data-areaname="${name}" onClick="onDeleteMap(this)"><i class="fa-solid fa-trash"></i></button><span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                          `
+            return content
+        })
+        .addTo(map);
+
+    getMap();
+
+    // 預設打開
+    const sidebarA = document.getElementById("sidebar")
+    const homeA = document.getElementById("home")
+    sidebarA.classList.remove("collapsed")
+    homeA.classList.add("active")
+
+
+    function onClear() {
+        //featureGroup.removeLayer(myLayer)
+
+    }
+
+
+    // 取得地圖
+    function getMap() {
+        axios.post(`${personLocationUrl}/GetPolygon`, {
+
+        }).then((res) => {
+            if (res.status === 200) {
+                // 成功連線
+                if (res.data.length === 0) {
+                    console.log("Nodata")
+                } else {
+                    // 重置圖徵
+                    workArea.clearLayers();
+                    const data = res.data
+                    data.forEach(el => {
+                        const ID = el.PolygonID;
+                        const Name = el.PolygonName;
+                        const AreaID = el.AreaID;
+                        const wkt_geom = el.WKTGeometry;
+
+                        try {
+                            var wkt = new Wkt.Wkt();
+                            wkt.read(wkt_geom);
+                            const feature = {
+                                "type": "Feature",
+                                "properties": {
+                                    "polygonID": ID,
+                                    "polygonName": Name,
+                                    "AreaID": AreaID
+                                },
+                                "geometry": wkt.toJson()
+                            };
+                            workArea.addData(feature);
+                        } catch (error) {
+                            console.log(error);
+                        }
+
+                    })
+                }
+            }
+        }).catch(() => {
+            console.error()
+        });
+    }
+    // 取得區域名稱
+    var fkArea = []
+    getAreaList()
+    function getAreaList() {
+        axios.post(`${personLocationUrl}/GetArea`, {
+        }).then((res) => {
+            if (res.status === 200) {
+                // 成功連線
+                if (res.data.length === 0) {
+                    console.log("Nodata")
+                } else {
+                    fkArea = []
+                    const data = res.data
+                    data.forEach(el => {
+                        fkArea.push({ id: el.AreaID, name: el.AreaName, category: el.Category })
+                    })
+                }
+            }
+        }).catch(() => {
+            console.error()
+        });
+    }
+
+    // 編輯地圖功能
+    var drawnItems = new L.FeatureGroup();
+    map.addLayer(drawnItems);
+    var option = {
+        draw: { // 設定可編輯類型，只留polygon類型
+            marker: false,
+            polyline: false,
+            rectangle: false,
+            circle: false,
+            circlemarker: false
+        },
+        position: 'topright',
+        collapsed: true,
+        edit: {
+            featureGroup: drawnItems
+        }
+    }
+    var drawControl = new L.Control.Draw(option);
+    map.addControl(drawControl);
+
+    var layer; // 定義一個空的layer
+
+    map.on(L.Draw.Event.CREATED, function (e) {
+        layer = e.layer,
+            feature = layer.feature = layer.feature || {}; // Initialize feature
+        feature.type = feature.type || "Feature"; // Initialize feature.type
+        var props = feature.properties = feature.properties || {}; // Initialize feature.properties
+        var type = e.layerType
+        drawnItems.addLayer(layer)
+        mapEdit.classList.remove('nodata')
+        if (type === 'circle') {
+            var center = layer.getLatLng();
+            var radius = layer.getRadius();
+            console.log(`經度: ${center.lng}, 緯度: ${center.lat}`);
+            console.log(`半徑: ${radius} (m)`);
+
+        } else if (type === 'marker') {
+            var point = layer.getLatLng();
+            console.log(`經度: ${point.lng}, 緯度: ${point.lat}`);
+            kendo.alert(`經度: ${point.lng}, 緯度: ${point.lat}`)
+
+        } else if (type === 'rectangle') {
+            var str = "";
+            var arr = layer.getLatLngs();
+            arr = arr[0].forEach(function (item, index) {
+                str += `${index} => 經度: ${item.lng}, 緯度: ${item.lat}`
+            });
+
+        } else if (type === 'polygon') {
+            var str = "";
+            var arr = layer.getLatLngs();
+            arr = arr[0].map(function (item, index) {
+                return {
+                    x: item.lng,
+                    y: item.lat
+                }
+            });
+            console.log(arr)
+        }
+    })
+
+    const mapEdit = document.querySelector(".edit-feature")
+    mapEdit.classList.add('nodata')
+    mapEdit.addEventListener('click', e => {
+        //alert(layer.editing.latlngs[0][0].length)
+
+        const areaSelector = document.querySelector("#area-selector-new");
+        let contentText = `<option value="" >請選擇</option>`
+        fkArea.forEach(el => {
+            contentText += `<option value="${el.id}">${el.name}</option>`
+        })
+        areaSelector.innerHTML = contentText
+        document.getElementById('id01').style.display = 'block'
+    })
+
+    // 上傳圖徵
+    const submitPolygon = document.getElementById("upload-polygon")
+    submitPolygon.addEventListener('click', e => {
+        const areaSelector = document.querySelector("#area-selector-new");
+        const selectedOption = areaSelector.options[areaSelector.selectedIndex];
+        if (selectedOption.selected) {
+            if (selectedOption.value === "") {
+                console.log("未选择任何选项1");
+            } else {
+                const form = document.getElementById("id01")
+                const value = form.querySelector("input").value
+                var data = layer.toGeoJSON();
+                data.properties.PolygonName = value
+                data.properties.AreaID = selectedOption.value
+                const item = []
+                item.push(data)
+                AddPolygon(item)
+                form.style.display = 'none'
+            }
+        } else {
+            console.log("未选择任何选项");
+        }
+    })
+
+    // 更新圖徵
+    function AddPolygon(data) {
+        axios.post(`${personLocationUrl}/AddPolygon`, data).then((res) => {
+            if (res.status === 200) {
+                // 成功連線
+                if (res.data.ReturnCode === 0) {
+                    // 成功上傳
+                    // 更新
+                    getMap()
+                    const editButton = document.querySelector(".edit-feature")
+                    editButton.classList.add("nodata");
+                }
+            }
+        }).catch(() => {
+            console.error()
+        });
+    }
+
+    // 呈現圖徵
+    showAreaList()
+    function showAreaList() {
+        const polygonList = document.getElementById("people-count")
+        axios.post(`${personLocationUrl}/GetArea`, {
+        }).then((res) => {
+            if (res.status === 200) {
+                // 成功連線
+                if (res.data.length !== 0) {
+                    // 區域列表
+                    polygonList.innerHTML = `<h3>區域列表</h3>`
+                    const data = res.data;
+                    data.forEach(el => {
+                        const areaid = el.AreaID
+                        const areaName = el.AreaName;
+                        const item = document.createElement('div')
+                        item.innerHTML = `<button class="accordion">${areaName}</button>`
+                        const children = document.createElement('div')
+                        children.classList.add(`${areaid}-panel`)
+                        children.innerHTML = `<ul class="list-${areaid}"></ul>`
+                        item.appendChild(children)
+                        polygonList.appendChild(item)
+                    })
+                    const item = document.createElement('div')
+                    item.innerHTML = `<button class="accordion">未命名的區域</button>`
+                    const children = document.createElement('div')
+                    children.classList.add(`other-panel`)
+                    children.innerHTML = `<ul class="other-list"></ul>`
+                    item.appendChild(children)
+                    polygonList.appendChild(item)
+                    showPolygonList()
+                }
+            }
+        })
+    }
+
+    function showPolygonList() {
+        axios.post(`${personLocationUrl}/GetPolygon`, {
+        }).then((res) => {
+            if (res.status === 200) {
+                // 成功連線
+                if (res.data.length !== 0) {
+                    const data = res.data
+                    data.forEach(el => {
+                        const areaid = el.AreaID
+                        if (areaid === null) {
+                            const list = document.querySelector('.other-list')
+                            list.innerHTML += `<li class="area-list" data-id=${el.PolygonID} onclick="onShowMap(${el.PolygonID})">
+                                  <div class="poly-text">${el.PolygonName}</div>
+                                  <div class="poly-edit">
+                                    <button class="edit-button" style="border:none;background-color:transparent;" data-id=${el.PolygonID} data-category="${areaid}" data-areaname="${el.PolygonName}" onClick="onEditMapNew(this)">
+                                      <i class="fa-solid fa-pen-to-square"></i>
+                                    </button>
+                                    <button class="edit-button" style="border:none;background-color:transparent;"  data-id=${el.PolygonID} data-category="${areaid}" data-areaname="${el.PolygonName}" onClick="onDeleteMap(this)">
+                                      <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                  </div>
+                                </li>`
+                        } else {
+                            console.log(areaid)
+                            const list = document.querySelector(`.list-${areaid}`)
+                            list.innerHTML += `<li class="area-list" data-id=${el.PolygonID} onclick="onShowMap(${el.PolygonID})">
+                                   <div class="poly-text">${el.PolygonName}</div>
+                                   <div class="poly-edit">
+                                    <button class="edit-button" style="border:none;background-color:transparent;" data-id=${el.PolygonID} data-category="${areaid}" data-areaname="${el.PolygonName}" onClick="onEditMapNew(this)">
+                                      <i class="fa-solid fa-pen-to-square"></i>
+                                    </button>
+                                    <button class="edit-button" style="border:none;background-color:transparent;"  data-id=${el.PolygonID} data-category="${areaid}" data-areaname="${el.PolygonName}" onClick="onDeleteMap(this)">
+                                      <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                   </div>
+                                </li>`
+                        }
+                    })
+                }
+            }
+        })
+    }
+
+    // 下拉清單的部分
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            /* Toggle between adding and removing the "active" class,
+            to highlight the button that controls the panel */
+            this.classList.toggle("active");
+
+            /* Toggle between hiding and showing the active panel */
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+
+
+    // 編輯圖徵
+    function onEditMapNew(e) {
+        let id = e.dataset.id
+        let areaName = e.dataset.areaname
+        let category = e.dataset.category
+        console.log(id, areaName, category)
+        document.getElementById('id02').style.display = 'block'
+
+        // 輸入選擇內容
+        document.querySelector('#edit-poly-name').value = areaName;
+        const areaSelector = document.querySelector("#area-selector-edit");
+        let contentText = `<option value="" >請選擇</option>`
+        fkArea.forEach(el => {
+            contentText += `<option value="${el.id}">${el.name}</option>`
+        })
+        areaSelector.innerHTML = contentText
+        areaSelector.value = category;
+
+        // 更新上傳
+        const editBtn = document.querySelector('#edit-polygon')
+        editBtn.addEventListener('click', e => {
+            // 更新圖徵
+            updatePolygon(id, document.querySelector('#edit-poly-name').value, areaSelector.value);
+        })
+    }
+
+    // 更新圖徵api
+    function updatePolygon(id, polygonName, areaId) {
+        axios.post(`${personLocationUrl}/UpdatePolygon`, {
+            PolygonID: id,
+            PolygonName: polygonName,
+            AreaID: areaId
+        })
+            .then((res) => {
+                if (res.status === 200 && res.data.ReturnCode === 0) {
+                    // 更新成功
+                    console.log('更新成功')
+                    location.reload();
+                }
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }
+
+    // 刪除
+    function onDeleteMap(e) {
+        let id = e.dataset.id
+        let areaName = e.dataset.areaname
+        let category = e.dataset.category
+        document.querySelector('#del-poly-name').innerHTML = areaName;
+
+        // 跳出確認框
+        document.getElementById('id03').style.display = 'block'
+        const delBtn = document.querySelector('#delete-polygon')
+        delBtn.addEventListener('click', () => {
+            // 刪除圖徵
+            deletePolygon(id)
+        })
+    }
+
+    // 刪除圖徵api
+    function deletePolygon(id) {
+        axios.post(`${personLocationUrl}/DeletePolygon`, {
+            PolygonID: id
+        })
+            .then((res) => {
+                if (res.status === 200 && res.data.ReturnCode === 0) {
+                    // 刪除成功
+                    console.log(res.data)
+                    location.reload();
+                }
+            })
+            .catch((error) => {
+                console.error(error)
+            })
+    }
+
+    // 呈現圖徵
+    function onShowMap(id) {
+        const targetID = String(id)
+        workArea.eachLayer(layer => {
+            const feature = layer.feature
+            const areaId = feature.properties.polygonID
+            if (areaId === targetID) {
+                map.fitBounds(layer.getBounds())
+                layer.openPopup()
+            }
+        })
+    }
+
+
+</script>

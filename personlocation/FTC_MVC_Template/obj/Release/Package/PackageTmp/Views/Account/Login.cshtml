@@ -1,0 +1,91 @@
+﻿@using FTC_MES_MVC.Models
+@model LoginViewModel
+@{
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+<div class="login_wrapper">
+    <div class="logo_area">
+        <img src="../../Content/UIUX/Login/images/logo.png" class="logo">
+    </div>
+    <div class="login_title">@System.Configuration.ConfigurationManager.AppSettings.Get("System_Name")</div>
+    <div class="login_block">
+        <div class="login_header">請輸入帳號與密碼登入</div>
+        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "login_content", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form_group">
+                <label class="user"><i class="fa fa-user"></i></label>
+                @Html.TextBoxFor(m => m.UserId, new { @class = "form_input", placeholder = "使用者帳號" }) 
+                @Html.ValidationMessageFor(m => m.UserId, "", new { @class = "text-danger", })
+            </div>
+            <div class="form_group ">
+                <label class="password"><i class="fa fa-key"></i></label>
+                @Html.PasswordFor(m => m.Password, new { @class = "form_input", placeholder = "使用者密碼" })
+                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger", })
+            </div>
+            <div style="display:@ViewBag.ShowComFacID">
+                <div class="form_group">
+                    <label class="ComFacID"><i class="fa fa-home"></i></label>
+
+                    @Html.DropDownListFor(m => m.ComFacID, (IEnumerable<SelectListItem>)ViewBag.SelectList, new { @class = "form_input" })
+                </div>
+            </div>
+            <div class="form_group">
+                <label class="Language"><i class="fa fa-language"></i></label>
+                @Html.DropDownListFor(m => m.Language, (IEnumerable<SelectListItem>)ViewBag.LanguageList, new { @class = "form_input" })
+            </div>
+
+            <div class="row">
+                <div class="form-check clearfix">
+                    <div class="pull-left">
+                        <input type="checkbox" class="form_check_input">
+                        <label class="form_check_label">記住帳號</label>
+                    </div>
+                    <a href="" class="forget_password">忘記密碼</a>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="login_in_btn" id="btnSignIn">登入<i class="fas fa-sign-in-alt"></i></button>
+                </div>
+            </div>
+            @*<div class="row">
+                <b><a href="http://10.115.84.1:8008/GoogleChrome.zip">請先下載Google瀏覽器</a></b>
+            </div>
+            <div class="row">
+                <b><a href="http://10.115.84.1:8008/NDP452-KB2901907-x86-x64-AllOS-ENU.exe">下載.NET Framework 4.5離線安裝包</a></b>
+            </div>*@
+        }
+    </div>
+        </div>
+<div class="copyright clearfix">
+    <div class="pull-left copyright_text">Formosa Technology Corporation © 2020</div>
+    <div class="pull-right"><img src="../../Content/UIUX/Login/images/footer_logo.png" class="footer_logo"></div>
+    <div class="pull-right copyright_text">v1.1</div>
+</div>
+<script>
+    $(document).ready(function () {
+        document.getElementById("UserId").focus();
+        $("input").change(function () {
+            var value = document.getElementById("UserId").value;
+            for (var i = 0; i < value.length; i++) {
+                if (value.charCodeAt(i) > 256) {
+                    alert('禁止輸入全形!!');
+                    document.getElementById("UserId").value = "";
+                    return;
+                }
+            }
+        });
+        CheckiframeView();
+    });
+    function CheckiframeView() {
+        //alert('CheckiframeView');
+        var Version = window.parent.$('#txtVersion').text();
+        if (Version != "") {
+            //alert(window.location.href.split("?")[0]);
+            parent.window.location.assign(window.location.href.split("?")[0]);//刷新父頁面
+            //alert('Version=' + Version);
+            return false;
+        }
+    }
+</script>

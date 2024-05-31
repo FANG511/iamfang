@@ -1,0 +1,566 @@
+﻿@{
+    ViewBag.Title = "DeviceInfo";
+    Layout = "~/Views/Shared/_LayoutForMESNoMenu.cshtml";
+}
+
+<link rel="stylesheet" href="@Url.Content("~/Content/personLocation/deviceInfo.css")" />
+
+<!-- 工具列，使用form-group -->
+<a class="btn btn_primary auth-query" onclick="gridRefresh()">
+    <i class="fa fa-search fa-fw mr-1"></i><span data-i18n="ButtonCommon.Query"></span>
+</a> <!--文字的顏色部分需更新-->
+<a class="btn btn_primary auth-add" onclick="gridAdd()">
+    <i class="fa fa-plus fa-fw mr-1"></i><span data-i18n="ButtonCommon.Add">
+</a>
+<a class="btn btn_secondary auth-export" onclick="ExportXls()"><i class="fa fa-file-excel fa-fw mr-1"></i>匯出</span></a>
+<div class="form-horiziotal">
+    <div class="form-group" id="divQueryParameter">
+        <!-- 查詢列 -->
+        <div class="form-group">
+            <div id="FilterArea" class="box box-warning box-solid" style="border-color:lightgrey;">
+                <div class="box-header with-border">
+                    <h3 class="box-title" data-i18n="UserManage.Text.Filter"></h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="FilterBody" class="box-body row form-group">
+                    <div class="col-md-3">
+                        <div class="col-md-5 k-info-colored" for="filter_DeviceID">
+                            <label class="FilterLabel">設備編號</label>
+                        </div>
+                        <div class="col-md-7">
+                            <input id="txtDeviceID" class="k-textbox FilterControl" type="text"
+                                   data-bind="value: DeviceID" />
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="col-md-5 k-info-colored" for="filter_Enable">
+                            <label class="FilterLabel">啟用</label>
+                        </div>
+                        <div class="col-md-7">
+                            <input id="txtEnable" class="k-textbox FilterControl" type="text"
+                                   data-bind="value: Enable" />
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="col-md-5 k-info-colored" for="filter_BindPerson">
+                            <label class="FilterLabel">綁定人員</label>
+                        </div>
+                        <div class="col-md-7">
+                            <input id="txtPersonName" class="k-textbox FilterControl" type="text"
+                                   data-bind="value: BindPerson" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="grid" style="width:100%;"></div>
+        <div id="my-window">
+
+        </div>
+    </div>
+</div>
+
+@*axios*@
+<script type="text/javascript" src="https://unpkg.com/axios@1.2.1/dist/axios.min.js"></script>
+
+
+<script>
+    // 定義變數
+    var oQueryPara = {}
+    var oUpdataPara = { "ModifyUser": "admin", "PersonId": "" };
+    var dsDeviceInfo, dsDevice;
+    var gridDevcieInfo;
+    var fkDevice = [], fkEnable = [{ value: "Y", text: "啟用" }, { value: "N", text: "不啟用" }], fkBindPerson, fkPerson = [];
+    var viewModel;
+    var personLocationUrl = "/api/apiPersonLocation";
+
+    // 初始化 ViewModel
+    $(document).ready(function () {
+        QueryString.Initial();
+
+        viewModel = kendo.observable({
+            DeviceID: "",
+            DeviceName: "",
+            UUID: "",
+            BindPerson: "",
+            Enable: ""
+        });
+        kendo.bind($("#divQueryParameter"), viewModel);
+
+
+
+        // 定義 DataSource
+        dsDeviceInfo = new kendo.data.DataSource({
+            transport: {
+                read: {
+                    url: personLocationUrl + "/GetDeviceInfo",
+                    type: "Post",
+                    dataType: "json"
+                },
+                update: {
+                    url: personLocationUrl + "/UpdateDeviceInfo",
+                    type: "Post",
+                    dataType: "json"
+                },
+                destroy: {
+                    url: personLocationUrl + "/DeleteDeviceInfo",
+                    type: "Post",
+                    dataType: "json"
+                },
+                create: {
+                    url: personLocationUrl + "/AddDeviceInfo",
+                    type: "Post",
+                    dataType: "json"
+                },
+                parameterMap: function (options, operation) {
+                    if (operation !== "read" && options.models) {
+                        let newItem = options.models
+                        return newItem[0];
+                    }
+                    else {
+                        return oQueryPara;
+                    }
+                }
+            },
+            batch: true,
+            requestEnd: function (e) {
+                var type = e.type;
+                if (type != 'read') {
+                    if (e.response.ReturnCode != 0) {
+                        alert(e.response.ReturnMessage);
+                    }
+                    gridRefresh();
+                }
+            },
+            schema: {
+                model: {
+                    id: "DeviceID",
+                    fields: {
+                        DeviceID: { validation: { required: true } },
+                        DeviceName: { validation: { required: true } },
+                        UUID: { validation: { required: true } },
+                        BindPerson: { validation: { required: true } },
+                        Enable: { validation: { required: true } },
+                    }
+                }
+            },
+            pageSize: 10,
+        });
+
+        // 定義 Grid
+        $("#grid").kendoGrid({
+            dataSource: dsDeviceInfo,
+            autoBind: true,
+            editable: {
+                mode: "popup",
+                window: {
+                    title: "新增"
+                }
+            },
+            height: 500,
+            resizable: true,
+            columnMenu: true,
+            sortable: true,
+            filterable: { extra: false },
+            scrollable: true,
+            selectable: "row",
+            dataBound: onDataBound, // 資料綁定事件
+            pageable: {
+                refresh: true,
+                pageSizes: true,
+                buttonCount: 5
+            },
+            excel: {
+                fileName: "DeviceInfo.xlsx",
+                allPages: true
+            },
+            toolbar: ["create"],
+            edit: function (e) {
+                if (!e.model.isNew()) {
+                    var nameField = e.container.find("input[name=name]");
+                    var name = nameField.val();
+                    e.container.data("kendoWindow").title("修改");
+                }
+            },
+            persistSelection: true,
+            columns: [
+                {
+                    command: [
+                        { name: "edit", text: { edit: "", update: "儲存", cancel: "取消" } },
+                        { name: "destroy", text: "" }
+                    ], title: " ", width: "80px"
+                },
+                { field: "DeviceID", title: "設備ID", width: "90px" },
+                { field: "DeviceName", title: "裝置名稱", width: "90px" },
+                { field: "UUID", title: "裝置識別碼", width: "100px" },
+                {
+                    field: "BindPerson", title: "綁定人員", width: "60px", fkBindPerson,
+                    editor: function (container, options) {
+                        // Create the editor only when editing
+                        container.text(options.model[options.field]);
+                    }
+                },
+                {
+                    field: "Enable", title: "啟用", width: "60px", values: fkEnable,
+                    editor: function (container, options) {
+                        // Create the editor only when editing
+                        if (options.model.isNew()) {
+                            // Do not create the editor for new records
+                            container.text(options.model[options.field]);
+                        } else {
+                            // Create the editor for existing records
+                            $('<input name="' + options.field + '"/>')
+                                .appendTo(container)
+                                .kendoDropDownList({
+                                    dataTextField: "text",
+                                    dataValueField: "value",
+                                    dataSource: fkEnable
+                                });
+                        }
+                    }
+                },
+                {
+                    title: "綁定",
+                    width: "90px",
+                    template: function (dataItem) {
+                        const button = $("<button/>").kendoButton({ // 使用 Kendo UI 的 Button 元件
+                            icon: "check", // 設定圖示
+                            text: "Yes" // 按鈕文字
+                        });
+                        const btn = button[0];
+                        btn.classList.add("bind-device-info"); // 加上自訂的 CSS class
+                        btn.dataset.id = dataItem.PersonId; // 加上 data-id 屬性儲存資料 ID
+                        btn.innerText = "綁定人員"
+                        return btn.outerHTML; // 回傳 HTML 字串
+                    }, editor: function (container, options) {
+                        // Create the editor only when editing
+                        if (options.model.isNew()) {
+                            // Do not create the editor for new records
+                            container.text(options.model[options.field]);
+                        } else {
+                            // Create the editor for existing records
+                            $('<input name="' + options.field + '"/>')
+                                .appendTo(container)
+                                .kendoDropDownList({
+                                    dataTextField: "text",
+                                    dataValueField: "value",
+                                    dataSource: fkEnable
+                                });
+                        }
+                    }
+                },
+
+            ]
+        });
+        gridDeviceInfo = $("#grid").data("kendoGrid");
+        $('#txtEnable').kendoDropDownList({
+            dataTextField: "text",
+            dataValueField: "value",
+            dataSource: fkEnable
+        });
+        dsDevice = new kendo.data.DataSource({
+            transport: {
+                read: {
+                    url: personLocationUrl + "/GetDeviceInfo",
+                    type: "Post",
+                    async: false,
+                    dataType: "json"
+                }
+            }
+        });
+        dsDevice.read();
+        dsDevice._data.forEach(function (e) {
+            fkDevice.push({ "value": e.DeviceID, "text": e.DeviceID });
+            //fkUserName.push({ "value": e.Name, "text": e.Name });
+        })
+        $('#txtDeviceID').kendoAutoComplete({
+            dataTextField: "value",
+            dataValueField: "value",
+            dataSource: fkDevice,
+            select: function (e) {
+                var dataId = e.dataItem.value;
+                $('#txtDeviceID').attr('data-id', dataId);
+            }
+        });
+
+        // 取得目前綁定狀況
+        getBindDevice()
+
+    })
+
+    // 取得目前可綁定人員
+    getBindAvailable("")
+
+    // 取得可以綁定的人員
+    async function getBindAvailable(id) {
+        axios.post(`${personLocationUrl}/GetBindAvailable`, {
+            PersonID: id
+        })
+            .then((res) => {
+                const data = res.data
+                if (data.length > 0) {
+                    fkPerson = [{ PersonID: -1, Name: "請選擇綁定人員" }]
+                    data.forEach(el => {
+                        fkPerson.push({ PersonID: el.PersonID, Name: el.Name })
+                    })
+                }
+                return true
+            })
+            .catch((error) => {
+                console.log(error)
+                return false
+            })
+    }
+
+    // 取得綁定裝置人員
+    function getBindDevice() {
+        axios.post(personLocationUrl + "/GetBindPerson")
+            .then((res) => {
+                fkBindPerson = res.data
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+    }
+
+    async function onDataBound(e) {
+        var grid = $("#grid").data("kendoGrid");
+        $(grid.tbody).on("click", "td", function (e) {
+            var row = $(this).closest("tr");
+            var rowIdx = $("tr", grid.tbody).index(row);
+            var colIdx = $("td", row).contents().get(0).text;
+            var colId = row.find("td:eq(0)").text();
+            var colName = row.find("td:eq(1)").text();
+            var person = row.find("td:eq(4)").text();
+            // 尋找button
+            const target = e.target;
+            if (target.tagName === "BUTTON") {
+                showBind(colName, person);
+
+            } else {
+                // 點擊綁定裝置
+                //onSearchDevice(colId, colName)
+            }
+        });
+    }
+
+    // 呈現綁定資訊
+    async function showBind(device, person) {
+        // 按鈕事件
+        const list = getDeviceDetail(device)
+        // 更新可綁定人員
+        await getBindAvailable(person)
+
+        setTimeout(showWindow(device, list), 1000)
+
+
+    }
+
+    function showWindow(device, list) {
+        const dialogWindow = document.getElementById("my-window")
+        //const userName = fkUser.find(obj => obj["id"] === colId)
+        dialogWindow.innerHTML = `<h3>${device}</h3>` // `<h3>${userName.name}</h3>`
+        dialogWindow.appendChild(list)
+        var window = $("#my-window").kendoWindow({
+            title: "查看裝置連結明細",
+            modal: true,
+            visible: false,
+            resizable: false,
+            width: "300px",
+            scrollable: false,
+            position: {
+                top: "10%",
+                left: "35%"
+            },
+            close: function (e) {
+
+            }
+        }).data("kendoWindow");
+        window.open();
+        $("#dropdown-bind-person").kendoDropDownList({
+            dataTextField: "Name",
+            dataValueField: "PerosnID",
+            dataSource: fkPerson
+        });
+        var dropdownlist = $("#dropdown-bind-person").data("kendoDropDownList");
+
+        const personID = document.getElementById("has-bind-person").dataset.id
+        // 尋找ID對應的index值
+        let index = 0;
+        for (i = 0; i < fkPerson.length; i++) {
+            const itemID = fkPerson[i].PersonID
+
+            index = (personID === itemID ? i : index)
+        }
+        dropdownlist.select(index)
+
+        // 儲存送出
+        const submit = document.getElementById("submitBind")
+        submit.addEventListener('click', e => {
+            const selectID = dropdownlist.select()
+            if (selectID > 0 && personID === "undefined") {
+                const item = {
+                    DeviceID: device,
+                    PersonID: fkPerson[selectID].PersonID,
+                    Status: "連接",
+                    CreateTime: getDateTime()
+                }
+                bindPerson(item)
+            } else if (selectID > 0 && personID !== "undefined") {
+                const inbindItem = {
+                    DeviceID: device,
+                    PersonID: fkPerson[selectID].PersonID,
+                    Status: "解除連接",
+                    EndTime: getDateTime()
+                }
+                unBindPerson(inbindItem)
+                const bindItem = {
+                    DeviceID: device,
+                    PersonID: fkPerson[selectID].PersonID,
+                    Status: "連接",
+                    CreateTime: getDateTime()
+                }
+                bindPerson(bindItem)
+            }
+            window.close();
+        })
+    }
+
+    // 取得日期時間
+    function getDateTime() {
+        const currentDate = new Date();
+        const year = currentDate.getFullYear();
+        const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // 月份从0开始，需+1；使用padStart补零
+        const day = String(currentDate.getDate()).padStart(2, '0'); // 使用padStart补零
+        const hours = String(currentDate.getHours()).padStart(2, '0'); // 使用padStart补零
+        const minutes = String(currentDate.getMinutes()).padStart(2, '0'); // 使用padStart补零
+        const seconds = String(currentDate.getSeconds()).padStart(2, '0'); // 使用padStart补零
+
+        const formattedDateTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+        return formattedDateTime;
+    }
+
+    // 綁定裝置
+    function bindPerson(data) {
+        axios.post(personLocationUrl + "/BindDevice", data)
+            .then((res) => {
+                const data = res.data
+                if (data.ReturnCode === 0) {
+                    // 成功綁定
+                    console.log("綁定成功")
+                    gridRefresh();
+                }
+                console.log(res.data)
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+    }
+    // 解除綁定裝置
+    function unBindPerson(data) {
+        axios.post(personLocationUrl + "/UnBindDevice", data)
+            .then((res) => {
+                const data = res.data
+                if (data.ReturnCode === 0) {
+                    // 成功解除綁定
+                    console.log("解除綁定")
+                    gridRefresh();
+                }
+                console.log(res.data)
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+    }
+
+    // 取得裝置清單
+    function getDeviceDetail(id) {
+        const count = fkBindPerson.length
+        if (count === 0) {
+            /// 沒有設備的狀況
+            const content = document.createElement('p')
+            content.textContent = "沒有裝置或異常"
+            return content;
+        } else {
+            const content = document.createElement('div')
+            content.classList.add('device-info')
+
+            fkBindPerson.forEach(el => {
+                if (el.DeviceID === id) {
+                    if (el.PersonID !== null) {
+                        const deviceID = document.createElement("li")
+                        deviceID.innerHTML = `裝置編號: ${el.DeviceID}`
+                        content.appendChild(deviceID)
+                        const deviceName = document.createElement("li")
+                        deviceName.innerHTML = `裝置名稱: ${el.DeviceName}`
+                        content.appendChild(deviceName)
+                        const personName = document.createElement("li")
+                        personName.innerHTML = `綁定人員: <span id="has-bind-person" data-id=${el.PersonID}>${el.PersonName}</span>`
+                        content.appendChild(personName)
+                        const bindPerson = document.createElement("li")
+                        bindPerson.innerHTML = `重新綁定: <span><input class="k-text-box k-input k-input-md" id="dropdown-bind-person" placeholder="請綁定人員" /></span>`
+                        content.appendChild(bindPerson)
+                        const submit = document.createElement("div")
+                        submit.innerHTML = `<button class="btn btn_primary" id="submitBind">確認</button>`
+                        content.appendChild(submit)
+                        return content;
+                    } else {
+                        const deviceID = document.createElement("li")
+                        deviceID.innerHTML = `裝置編號: ${el.DeviceID}`
+                        content.appendChild(deviceID)
+                        const deviceName = document.createElement("li")
+                        deviceName.innerHTML = `裝置名稱: ${el.DeviceName}`
+                        content.appendChild(deviceName)
+                        const personName = document.createElement("li")
+                        personName.innerHTML = `綁定人員: <span id="has-bind-person" data-id="undefined">尚未綁定人員</span>`
+                        content.appendChild(personName)
+                        const bindPerson = document.createElement("li")
+                        bindPerson.innerHTML = `進行綁定: <span><input class="k-text-box k-input k-input-md" id="dropdown-bind-person" placeholder="請綁定人員" /></span>`
+                        content.appendChild(bindPerson)
+                        const submit = document.createElement("div")
+                        submit.innerHTML = `<button class="btn btn_primary"  id="submitBind">確認</button>`
+                        content.appendChild(submit)
+                        return content;
+                    }
+                }
+            })
+            if (content.childNodes.length === 0) {
+                li.innerHTML = `查無裝置綁定紀錄`
+                content.appendChild(li)
+            }
+            return content;
+        }
+    }
+
+
+    // 更新 Grid 資料
+    function gridRefresh() {
+        oQueryPara["DeviceID"] = viewModel.DeviceID;
+        oQueryPara["DeviceName"] = viewModel.DeviceName;
+        oQueryPara["UUID"] = viewModel.UUID;
+        oQueryPara["BindPerson"] = viewModel.BindPerson;
+        oQueryPara["Enable"] = viewModel.Enable;
+        dsDeviceInfo.read();
+    }
+
+    // 新增一個項目
+    function gridAdd() {
+        gridUserInfo.addRow();
+    }
+
+    // 匯出為 Excel
+    function ExportXls() {
+        gridUserInfo.saveAsExcel();
+    }
+
+    function isEditable(e) {
+        return e.NotesID == "";
+    }
+</script>
+

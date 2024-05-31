@@ -1,0 +1,676 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/kendo/Css")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/kendo/Script")
+    @{ var culture = Session["Language"] != null ? Session["Language"].ToString() : "zh-TW"; }
+    <script src="@Url.Content("~/Scripts/kendo/cultures/kendo.culture." + culture + ".min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo/messages/kendo.messages." + culture + ".min.js")"></script>
+    @*公用CSS*@
+    <style>
+        /*KendoTabStrip設定*/
+        #tabstrip > .k-tabstrip-items {
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: nowrap;
+        }
+
+        .k-tab-on-top.k-state-active {
+            /*opacity: 0.6;*/
+            background-color: aliceblue;
+        }
+
+            .k-tab-on-top.k-state-active > .k-link {
+                color: black;
+            }
+
+        /*kendo grid popup 主版畫面設定*/
+        /*主板位置*/
+        .k-widget k-window k-display-inline-flex {
+            top: 10px;
+        }
+
+        /*主板*/
+        div.k-edit-form-container {
+            /*            height: auto;*/
+            /*            overflow-y: auto;*/
+            padding: 1px;
+        }
+
+        /*調整彈出式每行視窗間距*/
+        .k-edit-form-container .editor-label, .k-edit-label {
+            padding-top: 0.3em; /*原0.4em*/
+            padding-bottom: 0.5em; /*原1em*/
+        }
+
+        /*切版畫面*/
+        .MyKendoPopupLayout {
+            display: inline-block;
+            float: left;
+            padding-right: 30px;
+        }
+
+        /*kendo stepper 調整顏色 藍色風格*/
+        .k-stepper .k-step-current.k-step-disabled .k-step-indicator,
+        .k-stepper .k-step-current:disabled .k-step-indicator,
+        .k-stepper .k-step-current .k-step-indicator,
+        .k-stepper .k-step-current .k-step-indicator:hover,
+        .k-stepper .k-step-done .k-step-indicator,
+        .k-stepper .k-step-done .k-step-indicator:hover,
+        .k-stepper .k-step-done.k-step-disabled .k-step-indicator,
+        .k-stepper .k-step-done:disabled .k-step-indicator,
+        .k-draghandle.k-state-selected:hover,
+        .k-ghost-splitbar-horizontal,
+        .k-ghost-splitbar-vertical,
+        .k-list > .k-state-highlight,
+        .k-list > .k-state-selected,
+        .k-marquee-color, .k-panel > .k-state-selected,
+        .k-scheduler .k-today.k-state-selected,
+        .k-state-selected, .k-state-selected:link,
+        .k-state-selected:visited {
+            border-color: dodgerblue;
+            background-color: dodgerblue;
+        }
+
+        /*將alert調整到最高層*/
+        .swal2-container {
+            z-index: 1000000;
+        }
+
+        /*調整Body其他css*/
+        .my-swal-body {
+            font-size: 14px;
+        }
+
+        /*修正原本kendo grid按鈕 字顏色 */
+        .k-button:not( .k-button.k-grid-cancel-changes,.k-grid-cancel, .k-button.k-state-disabled, .k-button.k-grid-btnClose, .k-button.btn_negative) {
+            color: azure;
+        }
+
+        /*新增btn_third 紅色色系*/
+        .btn_third {
+            background-color: #ff6a6a;
+            color: white;
+        }
+
+            .btn_third:hover {
+                background-color: #ff6a6a;
+                opacity: 0.8;
+                color: white;
+            }
+
+            .btn_third:active {
+                background-color: #ca4c4c;
+                color: white;
+            }
+
+        /*調整Kendo各類型按鈕*/
+        /*所有disable不能Hover*/
+        .k-grid-add, .btn_primary,
+        .btn_negative, .btn_third, .k-grid-excel,
+        .k-grid-save-changes, .btn_secondary,
+        .k-grid-cancel-changes,
+        div.k-edit-form-container > k-grid-update,
+        div.k-edit-form-container > k-grid-cancel {
+            /*font-family: "Montserrat", sans-serif;
+            text-transform: uppercase;
+            text-decoration: none;*/
+            margin: 0.3rem;
+            padding: 0.8rem;
+            /*            border: 2px solid #e5dc15;*/
+            border-radius: 2.0rem;
+            position: relative;
+            top: 0;
+            transition: all 0.3s ease-in-out;
+        }
+
+            .k-grid-add:not([disabled]):hover,
+            .btn_primary:not([disabled]):hover,
+            div.k-edit-form-container > k-grid-update :not([disabled]):hover {
+                background: #3184d4;
+                color: #d0f9f3;
+                /*                animation: btn-down 0.3s ease-in-out forwards;*/
+                top: 0.2em;
+                box-shadow: 0 0.4em #808080, 0 0.7em rgba(0%, 0%, 100%, 0.4);
+            }
+
+            .k-grid-excel:not([disabled]):hover,
+            .k-grid-save-changes:not([disabled]):hover,
+            .btn_secondary:not([disabled]):hover {
+                background: #1dd31a;
+                color: #d0f9f3;
+                top: 0.2em;
+                box-shadow: 0 0.4em #808080, 0 0.7em rgba(0%, 100%, 0%, 0.4);
+            }
+
+            .btn_negative:not([disabled]):hover,
+            .k-grid-cancel-changes:not([disabled]):hover,
+            div.k-edit-form-container > k-grid-cancel:not([disabled]):hover {
+                background: #000000;
+                color: #ffffff;
+                top: 0.2em;
+                box-shadow: 0 0.4em #808080, 0 0.7em rgba(100%, 100%, 100%, 0.4);
+            }
+
+        .crud.crud_delete,
+        .crud.crud_edit,
+        .crud_read {
+        }
+
+            .crud.crud_delete:not([disabled]):hover,
+            .btn_third:not([disabled]):hover {
+                border-radius: 50%;
+                background: #ff0000;
+                color: #efeeee;
+                top: 0.1em;
+                box-shadow: 0 0.3em #808080, 0 0.1em rgba(100%, 0%, 0%, 0.4);
+            }
+
+            .crud.crud_edit:not([disabled]):hover {
+                border-radius: 50%;
+                background: #1dd31a;
+                color: #efeeee;
+                top: 0.1em;
+                box-shadow: 0 0.3em #808080, 0 0.1em rgba(100%, 0%, 0%, 0.4);
+            }
+
+            .crud_read:not([disabled]):hover {
+                border-radius: 50%;
+                background: dodgerblue;
+                color: #efeeee;
+                top: 0.1em;
+                box-shadow: 0 0.3em #808080, 0 0.1em rgba(100%, 0%, 0%, 0.4);
+            }
+
+        .myDataCheck-Alert {
+            /*background-color: greenyellow;*/
+            color: blue;
+            font-weight: bold;
+            background-color: lightcoral;
+            opacity: 0.6;
+        }
+
+        .lobibox-notify-msg {
+            font-size: small;
+        }
+
+        /*針對disable 調整透明度*/
+        *[disabled = "disabled"] {
+            opacity: 0.6;
+        }
+
+        /* Notifications */
+        .k-notification h3 {
+            padding: 30px 10px 5px;
+            font-size: 1em;
+            line-height: normal;
+        }
+
+        .k-notification img {
+            margin: 20px;
+            float: left;
+        }
+        /* Error template */
+        .wrong-pass {
+            width: 300px;
+            height: 100px;
+        }
+
+        /* Success template */
+        .upload-success {
+            width: 300px;
+            height: 100px;
+        }
+    </style>
+    <script id="errorTemplate" type="text/x-kendo-template">
+        <div class="wrong-pass">
+            <img alt="Kendo UI for jQuery Notification Error Icon" src="../Content/images/error-icon.png" />
+            <h3>#= title #</h3>
+            <p>#= message #</p>
+        </div>
+    </script>
+
+    <script id="successTemplate" type="text/x-kendo-template">
+        <div class="upload-success">
+            <img alt="Kendo UI for jQuery Notification Success Icon" src="../Content/images/success-icon.png" />
+            <h3>#= message #</h3>
+        </div>
+    </script>
+    <script type="text/javascript">
+        var CompanyID;
+        var FactoryID;
+        var MODIFYUSER;
+        var LOTID;
+        var EQPID;
+        var NodeId;
+        var UserData;
+        var Lng = "";
+        var siteRoot = "..";
+        var WebApiUrl_User = siteRoot + "/api/UserManageApi";
+
+        var oDataModels = {};
+        var notification;
+        //get value from url
+        QueryString = {
+            data: {},
+            Initial: function () {
+
+                var aPairs, aTmp;
+                var queryString = new String(window.location.search);
+                queryString = queryString.substr(1, queryString.length);
+                aPairs = queryString.split("&");
+                for (var i = 0; i < aPairs.length; i++) {
+                    aTmp = aPairs[i].split("=");
+                    this.data[aTmp[0]] = aTmp[1];
+                }
+                //GetDefaultValue
+                CompanyID = QueryString.GetValue('CompanyID');
+                FactoryID = QueryString.GetValue('FactoryID');
+                MODIFYUSER = QueryString.GetValue('MODIFYUSER');
+                Lng = QueryString.GetValue('Lng');
+                NodeId = QueryString.GetValue('NodeId');
+                if (CompanyID == "undefined") {
+                    CompanyID = "2";
+                }
+                if (FactoryID == "undefined") {
+                    FactoryID = "8900";
+                }
+                if (MODIFYUSER == "undefined") {
+                    MODIFYUSER = "FTCMES";
+                }
+                if (Lng == "undefined") {
+                    Lng = "zh-TW";
+                }
+                oDataModels["CompanyID"] = CompanyID;
+                oDataModels["FactoryID"] = FactoryID;
+                oDataModels["MODIFYUSER"] = MODIFYUSER;
+                oDataModels["Lng"] = Lng;
+                i18n.init({
+                    resGetPath: '../../Content/language/translation.__lng__.json?a',
+                    lng: Lng,
+                    getAsync: false,//是否异步调用语言包
+                    fallbackLng: Lng
+                }
+                    , function (t) {
+                        // i18n est maintenant initialisé
+                        $('body').i18n();
+                        console.log('i18n.init success');
+                    }
+                );
+                kendo.culture(Lng);
+                console.log('Lng=' + Lng);
+                var culture = kendo.culture();
+                console.log('kendo.culture=' + culture.name);
+                //動態載入js資源檔
+                //$.getScript({ url: "/Scripts/kendo/messages/kendo.messages." + Lng +".min.js", cache: true })
+
+                //載入notification
+                notification = $("#notification").kendoNotification({
+                    position: {
+                        pinned: true,
+                        top: 30,
+                        right: 30
+                    },
+                    autoHideAfter: 2000,
+                    stacking: "down",
+                    templates: [{
+                        type: "error",
+                        template: $("#errorTemplate").html()
+                    }, {
+                        type: "success",
+                        template: $("#successTemplate").html()
+                    }]
+
+                }).data("kendoNotification");
+
+                $(document).one("kendo:pageUnload", function () { if (notification) { notification.hide(); } });
+            },
+            GetValue: function (key) {
+                return decodeURIComponent(this.data[key]);
+            }
+        };
+
+        UserData = getUserData();
+
+        function getUserData() {
+            var rtnData = [];
+
+            $.ajax({
+                url: WebApiUrl_User + "/getUser",
+                async: false,
+                dataType: "json",
+                type: "Post",
+                data: {
+                },
+                success: function (ResultData) {
+                    if (ResultData != null) {
+                        ResultData.forEach(function (item, index, array) {
+                            rtnData.push({ text: item.USER_NAME, value: item.USERID });
+                        });
+                    }
+
+                    return ResultData;
+                },
+                error: function (e) {
+
+                    console.log(i18n.t('AlmCommon.ajaxErr'));
+                }
+            });
+            return rtnData;
+        }
+
+        //管控畫面上的按鈕權限 sType 不傳，看抓到哪幾筆就隱藏對應 class ; sType = 1 單純回傳資料
+        //通常放在grid的 DataBound Event 範例:
+        //BlockUI('Wait');
+        //setTimeout(function () {
+        //    ControlAuth();
+        //}, 200)
+        //setTimeout(function () {
+        //    $.unblockUI();
+        //}, 200)
+        function ControlAuth(sType) {
+            //Url = new URL(window.location.href);
+            //NodeId = Url.searchParams.get('NodeId');
+            console.log(NodeId);
+            var Type = sType ? sType : 0;
+            var R = [];
+
+            $.ajax({
+                type: 'Post',
+                url: siteRoot + "/api/UserManageApi/R_PageControl",
+                dataType: 'json',
+                async: false,
+                data: {
+                    "NODEID": NodeId,
+                    "MODIFYUSER": MODIFYUSER
+                },
+                success: function (data) {
+                    switch (Type) {
+                        case 0:
+                            //有權控清單隱藏
+                            for (var i = 0; i < data.length; i++) {
+                                if (!data[i].IsVisible)
+                                    $(data[i].OBJECTCLASS).remove();
+                            }
+                            break;
+                    }
+
+                    R = data;
+                },
+                error: function (e) {
+                    alert(e.responseText);
+                }
+            })
+
+            return R;
+        }
+
+        //$(document).ajaxStart(function () {
+        //    $.blockUI({ message: '處理中' });
+        //}).ajaxStop($.unblockUI);
+        function escapeHtml(string) {
+            var entityMap = {
+                "&": "&amp;",
+                "<": "&lt;",
+                ">": "&gt;",
+                '"': '&quot;',
+                "'": '&#39;',
+                "/": '&#x2F;'
+            };
+            return String(string).replace(/[&<>"'\/]/g, function (s) {
+                return entityMap[s];
+            });
+        }
+
+        //=========================#i18n區==========================================================================================================================================
+        //i18n 遞迴指定的層
+        function i18nLanguAuto() {
+            vObject = {};
+
+            //debug用 看目前的變數
+            this.CheckObj = function () {
+                return vObject;
+            };
+
+            //初始化 抓取語系
+            this.Initial = function () {
+                vObject = $.getJSON(
+                    i18n.options.resGetPath.replace('__lng__', i18n.options.lng)
+                );
+            };
+
+            //str 輸入字串 ; i18nClass 指定抓出來的語系物件層數
+            this.translate = function (str, i18nClass) {
+                //總共幾層
+                var classDepth = i18nClass.split('.');
+                var TObject;
+                var counter = 0;
+
+                classDepth.forEach(function (cls) {
+                    //遞迴找到該層的物件
+                    if (counter == 0)
+                        TObject = vObject.responseJSON[cls];
+                    else
+                        TObject = TObject[cls];
+                    counter++;
+                });
+
+                //將該層物件遞迴Replace
+                for (var key in TObject) {
+                    if (TObject.hasOwnProperty(key)) {
+                        str = str.replaceAll(key, TObject[key]);
+                    }
+                }
+
+                return str;
+            };
+        }
+
+        //grid語言翻譯 注意必須給予排序(SORT)、分類(FILTER)功能並給予title
+        function TranslateGrid(sPageName) {
+            //查詢KendoGrid
+            var GridSelector = $(".k-grid")
+            //對每個grid執行翻譯
+            GridSelector.each(function () {
+                var Selector = $(this).children('.k-grid-header').children('.k-grid-header-wrap').children('table').children('thead').children();
+                var grid = $(this).data("kendoGrid");
+                var dataItem = grid.dataItem(grid.select());
+                var sIndex = grid.items().index(grid.select()).toString()
+                //總欄位
+                var iTotalColCount = Selector.children('th').length;
+                for (var i = 1; i < iTotalColCount + 1; i++) {
+                    //指定子節點
+                    var GridItem = Selector.children("th:nth-child(" + i + ")");
+                    //找尋title名稱
+                    var sItemName = GridItem.attr("data-title");
+                    var sItemField = GridItem.attr("data-title") || 0 ? GridItem.attr('data-field').indexOf('ATTRIBUTE') > -1 ? '' : GridItem.attr("data-field") : '';//若為動態產生之欄位不處理
+                    //確認是欄位
+                    if ((sItemName || 0) && (sItemField != '')) {
+                        var oText = GridItem.contents().filter(function () {
+                            return this.nodeType !== 1;
+                        })
+                        if (oText.length == 0) {
+                            $(GridItem).children().each(function () {
+                                //確認文字位置
+                                if ($(this).text() != '') {
+                                    $(this).attr("data-i18n", sPageName + "." + sItemName);
+                                }
+                            })
+                        }
+                        else {
+                            oText[0].textContent = i18n.t(sPageName + "." + sItemName);
+                        }
+                        //if (GridItem.children().length > 1) {
+                        //    $(GridItem).children().each(function () {
+                        //        //確認文字位置
+                        //        if ($(this).text() != '') {
+                        //            $(this).attr("data-i18n", sPageName + "." + sItemName);
+                        //        }
+                        //    })
+                        //}
+                        //else {
+                        //    GridItem.attr("data-i18n", sPageName + "." + sItemName);
+                        //}
+                    }
+                }
+                $(this).i18n();
+                //if (dataItem || 0) {
+                //    grid.select("tr:eq(" + sIndex + ")")
+                //}
+                $(this).data('kendoGrid').refresh();
+
+                if (sIndex >= 0)
+                    grid.select("tr:eq(" + sIndex + ")");
+            })
+        }
+        //驗證文字翻譯 命名原則 ValidationMessage_元件id ex.ValidationMessage_lstSelectAttr
+        function TranslateValidationMessage(sPageName) {
+            $('[validationMessage]').each(function () {
+                $(this).attr('validationMessage', i18n.t(sPageName + "." + "ValidationMessage_" + $(this).attr('id')))
+            })
+        }
+        //按鈕翻譯 命名原則 Button_元件id ex.Button_btnAdd
+        function TranslateButton(sPageName) {
+            $('input[type=button]').each(function () {
+                $(this).attr('value', i18n.t(sPageName + "." + "Button_" + $(this).attr('id')))
+            })
+        }
+
+        // 放在 kendo grid edit event 一開始, SliceNumber決定要切幾個面板
+        // RowsCount 指定一列幾個
+        // 某些行若寬不夠，自行修改該 行class寬度，已達預期
+        function KendoGridMultipleLayoutForm(SliceNumber, RowsCount) {
+
+            var DivdeColHtml = "";
+
+            if (!SliceNumber)
+                SliceNumber = 2;
+
+            for (var i = 1; i <= SliceNumber; i++) {
+
+                var html = '<div class=" Mycolumn{0} MyKendoPopupLayout" ></div>'.format(i);
+
+                DivdeColHtml += html;
+            }
+
+            $(".k-edit-form-container").prepend(DivdeColHtml);
+
+            var obj = $(".k-edit-form-container").children(".k-edit-label, .k-edit-field");
+            var PreviousNum = 0;
+
+            if (!RowsCount) {
+                for (var i = 1; i <= SliceNumber; i++) {
+
+                    var StartNum = i == 0 ? 0 : PreviousNum;
+
+                    var EndNum = parseInt(obj.length * (i) / SliceNumber);
+
+                    //拆分不能拆奇數
+                    if (EndNum % 2 == 1)
+                        EndNum = EndNum + 1;
+
+                    obj.slice(StartNum, EndNum).appendTo(".Mycolumn{0}".format(i));
+
+                    PreviousNum = EndNum;
+
+                    //console.log(StartNum);
+                    //console.log(EndNum);
+                    //console.log(obj);
+                }
+            }
+            else {
+                for (var i = 1; i <= SliceNumber; i++) {
+
+                    var StartNum = i == 0 ? 0 : PreviousNum;
+
+                    var EndNum = parseInt(StartNum + (Number(RowsCount)) * 2);
+
+                    //拆分不能拆奇數
+                    if (EndNum % 2 == 1)
+                        EndNum = EndNum + 1;
+
+                    //計算最後一次有沒有跑完全部
+                    if (i == SliceNumber && EndNum < obj.length)
+                        EndNum = obj.length;
+
+                    obj.slice(StartNum, EndNum).appendTo(".Mycolumn{0}".format(i));
+
+                    PreviousNum = EndNum;
+
+                    //console.log(StartNum);
+                    //console.log(EndNum);
+                    //console.log(obj);
+                }
+            }
+
+
+            $(".k-edit-form-container").css("width", "auto");
+            //$(".k-window").css("verflow-x:", "auto");
+            //$('.k-window').css({ top: '100%', left: '50%', margin: '-' + ($('.k-window').height() / 2) + 'px 0 0 -' + ($('.k-window').width() / 2) + 'px' });
+            //$('.k-window').css({ top: '3px', left: '50%', margin: '-2px 0 0 -' + ($('.k-window').width() / 2) + 'px' });
+
+        };
+
+        function BlockUI(message) {
+            $.blockUI({
+                //message: "<div class='block-center-all'><i class='fa fa-spinner fa-spin' style='font-size:400%'></i> </div>",
+                message: "<br /><br /><i class='fa fa-spinner fa-pulse fa-3x fa-fw' ></i><br /><br /><div class=\"spinner-border text-warning\"></div>&nbsp&nbsp&nbsp<label style=\"vertical-align:middle\">".concat(message, "</label>"),
+                css: {
+                    border: 'none',
+                    'font-size': '20px',
+                    padding: '15px',
+                    backgroundColor: '#000',
+                    '-webkit-border-radius': '10px',
+                    '-moz-border-radius': '10px',
+                    opacity: .8,
+                    color: '#ffff',
+                    textAlign: 'center',
+                    top: '10%',
+                    //width: '50%',
+                }
+            });
+        }
+
+        //=========================#Lobibox區==========================================================================================================================================
+
+        //顯示訊息字幕
+        function ToastHint(sType, sTitle, sContent) {
+            Lobibox.notify(sType, {
+                title: sTitle,
+                msg: sContent,
+                delay: 5000,
+                sound: false,
+            });
+        }
+
+        //=========================#string區==========================================================================================================================================
+        // string擴充 string.format 函式定義
+        if (!String.prototype.format) {
+            String.prototype.format = function () {
+                var args = arguments;
+                return this.replace(/{(\d+)}/g, function (match, number) {
+                    return typeof args[number] != 'undefined'
+                        ? args[number]
+                        : match
+                        ;
+                });
+            };
+        }
+
+    </script>
+</head>
+<body>
+    <span id="notification" style="display:none;"></span>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+</body>
+</html>

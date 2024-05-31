@@ -1,0 +1,490 @@
+﻿
+@{
+    ViewBag.Title = "警報設定";
+    Layout = "~/Views/Shared/_LayoutForMESNoMenu.cshtml";
+}
+
+<style>
+    /*過濾控件*/
+    .FilterLabel {
+        /*width: 90px;*/
+    }
+
+    .FilterControl {
+        width: 100%;
+    }
+</style>
+
+<p class="h4">@ViewBag.Title</p>
+
+<div id="accordion">
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+                <button class="btn btn-primary collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <span data-i18n="ButtonCommon.Query"></span>
+                    <span data-i18n="AlarmSetting.TEXT.DynamicData"></span>
+                </button>
+            </h5>
+        </div>
+
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">類別</th>
+                            <th scope="col">監控數值</th>
+                            <th scope="col">監控項目</th>
+                            <th scope="col">警戒值</th>
+                            <th scope="col">通知群組</th>
+                            <th scope="col">編輯</th>
+                        </tr>
+                    </thead>
+                    <tbody id="alarm-list">
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="example">
+    <div id="dialog">
+    </div>
+    <span id="undo" style="display:none" class="k-button k-button-solid-base k-button-solid k-button-md k-rounded-md hide-on-narrow">Click here to open the dialog</span>
+</div>
+<div id="progress-bar"></div>
+
+
+
+<style>
+    .vertical .list-group {
+        max-height: 220px;
+        margin-bottom: 10px;
+        overflow: scroll;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    #location-device > div {
+        padding: 0.75em;
+    }
+
+    #body-device > div {
+        padding: 0.75em;
+    }
+
+    /* form group */
+    .form-group {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+    }
+
+        .form-group label {
+            width: 120px;
+            margin-right: 1rem;
+            font-size: medium;
+            text-align: right
+        }
+
+        .form-group input {
+            width: 200px;
+        }
+
+        .form-group small {
+            margin-left: 1rem;
+            width: 50px;
+        }
+</style>
+
+@*axios*@
+<script type="text/javascript" src="https://unpkg.com/axios@1.2.1/dist/axios.min.js"></script>
+
+<script>
+    const mSettingList = document.getElementById("alarm-list")
+    const personLocationUrl = "/api/apiPersonLocation"
+
+    // 修改描述
+    const Desc = {
+        body: {
+            HeartRate: {
+                Value: "心率",
+                Item: ["最大值", "最小值"],
+                Unit: ["（bpm）", "（bpm）"]
+            },
+            BloodPressure: {
+                Value: "血壓",
+                Item: ["最大值", "最小值"],
+                Unit: ["（mmHg）", "（mmHg）"]
+            },
+            Temperature: {
+                Value: "體溫",
+                Item: ["最大值", "最小值"],
+                Unit: ["攝氏度C（°C）", "攝氏度C（°C）"]
+            }
+        },
+        location: {
+            StayOnePlace: {
+                Value: "單一點位停留時間",
+                Item: ["停留時間", "監測範圍"],
+                Unit: ["分鐘", "公尺"]
+            },
+            StayPeroid: {
+                Value: "停留同一區域過久",
+                Item: ["停留時間"],
+                Unit: ["分鐘"]
+            },
+            WorkareaExit: {
+                Value: "離開施工區域",
+                Item: ["最大值"],
+                Unit: [""]
+            },
+            WarningAreaEntry: {
+                Value: "進入警戒區域",
+                Item: ["進入"],
+                Unit: [""]
+            },
+            Altitude: {
+                Value: "高空作業",
+                Item: ["限制高度", "最小高度"],
+                Unit: ["公尺", "公尺"]
+            }
+        },
+        value: {
+            max: "最大值",
+            min: "最小值",
+            period: "期間",
+            out: "離開",
+            in: "進入",
+        }
+    }
+
+
+    $(document).ready(function () {
+
+        QueryString.Initial();
+        //初始化表格
+        getAlarmSetting();
+        //設定點選事件
+        checkRole();
+    })
+
+    /**
+     * 查詢目前有的警報設定
+     * */
+    async function getAlarmSetting() {
+        try {
+            mSettingList.innerHTML = ""
+            const response = await axios.post(`${personLocationUrl}/GetAlarmSetting`)
+            response.status === 200 && response.data.length !== 0 ? createList(response.data) : console.log(response.status)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    /**
+     * 處理取得的警報設定並分類
+     */
+    function createList(array) {
+        array.forEach(item => {
+            let field = getField(item.AlarmField);
+            let value = getValue(item.AlarmValue, item.AlarmField);
+            let listItem = createListItem(item.AlarmID, item.Enable, item.AlarmName, field, item.AlarmRole, value, item.NotificationGroup);
+            mSettingList.innerHTML += listItem
+        });
+    }
+
+    /**
+     * 建立警報設定列表
+     */
+    function createListItem(id, enable, name, field, role, value, notificationGroup) {
+        let checked = enable.includes("Y") ? "checked" : "";
+        let listItem = `
+        <tr id="${id}">
+            <th scope="row">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="inputMode" value="" ${checked}>
+                    <label class="form-check-label" for="flexCheckDisabled">
+                        啟用
+                    </label>
+                </div>
+            </th>
+            <th scope="col">${name}</th>
+            <th scope="col">${field}</th>
+            <th scope="col">${role}</th>
+            <th scope="col">${value}</th>
+            <th scope="col">${notificationGroup}</th>
+            <th scope="col">
+                <button class="btn btn-success name="editSetting" data-id="${id}">編輯</button>
+            </th>
+        </tr>
+    `;
+        return listItem;
+    }
+
+    /**
+     * 更新取用規則
+     */
+    function updateAlerm(id, checked) {
+        axios.post(`${personLocationUrl}/UpdateAlarmSetting`, { AlarmID: id, Enable: checked })
+            .then(function (res) {
+                if (res.data.ReturnMessage === 'Success') {
+                    // 成功
+                    (checked === "Y" ? notificaionShow("成功啟用規則", "success") : notificaionShow("成功關閉規則", "success"));
+                } else {
+                    // 失敗
+                    notificaionShow("更改失敗", "error");
+                }
+            })
+            .catch(function (error) {
+                console.error(error);
+            });
+    }
+
+    /**
+     * 編輯警報內容
+     * */
+    function checkRole() {
+        const tableList = document.querySelector('#accordion');
+        tableList.addEventListener('change', e => {
+            let targetId = e.target.parentElement.parentElement.parentElement.id
+            let check = e.target.checked ? "Y" : "N"
+            updateAlerm(targetId, check)
+        });
+        tableList.addEventListener('click', e => {
+            let target = e.target;
+            if (target.className.includes('btn') && target.innerHTML === "編輯") {
+                let targetId = target.parentElement.parentElement.id;
+                axios.post(`${personLocationUrl}/GetAlarmSetting`, { AlarmID: targetId })
+                    .then(function (res) {
+                        openDialog(targetId, res.data[0]);
+                    })
+                    .catch(function (error) {
+                        console.error(error);
+                    });
+            }
+        });
+    }
+
+    /**
+     * 修改警報對話內容
+     */
+    function openDialog(id, data) {
+        let content = getEditContent(data);
+        $("#dialog").kendoDialog({
+            width: "450px",
+            title: `修改 ${id} 設定`,
+            closable: false,
+            modal: false,
+            visable: true,
+            content: content,
+            actions: [
+                { text: '返回' },
+                {
+                    text: '確認', primary: true, action: function (e) {
+                        let str = data.AlarmValue.substring(1, data.AlarmValue.length - 1).split(',');
+                        let valueArr = [];
+                        for (i = 0; i < str.length; i++) {
+                            let it = document.querySelector(`input[name='item-${i}']`).value;
+                            it = Number(it.trim());
+                            valueArr.push(it);
+                        }
+                        updateAlarmValue(id, valueArr.toString());
+                        return true;
+                    }
+                }
+            ]
+        });
+        $("#dialog").data("kendoDialog").open();
+    }
+
+    /**
+     * 取得編輯警報內容欄位
+     */
+    function getEditContent(alarm) {
+        let alarmValueArr = alarm.AlarmValue.split(',')
+        let roleLabels = getRole(alarm.AlarmField)
+        let unitLabels = getUnit(alarm.AlarmField)
+
+        let content = $('<div>').data('id', alarm.AlarmId);
+
+        if (alarmValueArr.length > 0) {
+            for (let i = 0; i < alarmValueArr.length; i++) {
+                let input = $(`
+                <div class="form-group">
+                    <label for="alarmValue">${roleLabels[i]}</label>
+                    <input type="text" class="form-control" name="item-${i}" value="${alarmValueArr[i]}">
+                    <small class="form-text text-muted">${unitLabels[i]}</small>
+                </div>
+            `);
+                content.append(input);
+            }
+        }
+
+        return content;
+    }
+
+    /**
+     * 更新數值
+     */
+    function updateAlarmValue(alarmId, value) {
+        axios.post(`${personLocationUrl}/UpdateAlarmSetting`, { AlarmId: alarmId, AlarmValue: value })
+            .then(function (res) {
+                if (res.data.ReturnMessage === 'Success') {
+                    notificaionShow("更改警戒數值成功", "success");
+                } else {
+                    notificaionShow("更改失敗", "error");
+                }
+                getAlarmSetting();
+            })
+            .catch(function (error) {
+                console.error(error);
+            });
+    }
+
+    /**
+     *  取得修改欄位內容
+     */
+    function getField(string) {
+        let str = string.split('.')
+        if (str[0] === "BodyMonitoringDevice") {
+            switch (str[1]) {
+                case "HeartRate":
+                    return Desc.body.HeartRate.Value
+                case "BloodPressure":
+                    return Desc.body.BloodPressure.Value
+                case "Temperature":
+                    return Desc.body.Temperature.Value
+            }
+        } else if (str[0] === "LocationDevice") {
+            switch (str[1]) {
+                case "StayOnePlace":
+                    return Desc.location.StayOnePlace.Value
+                case "StayPeroid":
+                    return Desc.location.StayPeroid.Value
+                case "WorkareaExit":
+                    return Desc.location.WorkareaExit.Value
+                case "WarningAreaEntry":
+                    return Desc.location.WarningAreaEntry.Value
+                case "Altitude":
+                    return Desc.location.Altitude.Value
+            }
+        } else {
+            return "No role"
+        }
+    }
+    /**
+     * 取得警報
+     */
+    function getRole(string) {
+        let str = string.split('.')
+        if (str[0] === "BodyMonitoringDevice") {
+            switch (str[1]) {
+                case "HeartRate":
+                    return Desc.body.HeartRate.Item
+                case "BloodPressure":
+                    return Desc.body.BloodPressure.Item
+                case "Temperature":
+                    return Desc.body.Temperature.Item
+            }
+        } else if (str[0] === "LocationDevice") {
+            switch (str[1]) {
+                case "StayOnePlace":
+                    return Desc.location.StayOnePlace.Item
+                case "StayPeroid":
+                    return Desc.location.StayPeroid.Item
+                case "WorkareaExit":
+                    return Desc.location.WorkareaExit.Item
+                case "WarningAreaEntry":
+                    return Desc.location.WarningAreaEntry.Item
+                case "Altitude":
+                    return Desc.location.Altitude.Item
+            }
+        } else {
+            return "No Item"
+        }
+    }
+    /**
+     * 取得警報輸入單位
+     */
+    function getUnit(string) {
+        let str = string.split('.')
+        if (str[0] === "BodyMonitoringDevice") {
+            switch (str[1]) {
+                case "HeartRate":
+                    return Desc.body.HeartRate.Unit
+                case "BloodPressure":
+                    return Desc.body.BloodPressure.Unit
+                case "Temperature":
+                    return Desc.body.Temperature.Unit
+            }
+        } else if (str[0] === "LocationDevice") {
+            switch (str[1]) {
+                case "StayOnePlace":
+                    return Desc.location.StayOnePlace.Unit
+                case "StayPeroid":
+                    return Desc.location.StayPeroid.Unit
+                case "WorkareaExit":
+                    return Desc.location.WorkareaExit.Unit
+                case "WarningAreaEntry":
+                    return Desc.location.WarningAreaEntry.Unit
+                case "Altitude":
+                    return Desc.location.Altitude.Unit
+            }
+        } else {
+            return "No Unit"
+        }
+    }
+
+    /**
+     * 取得警報數值
+     */
+    function getValue(string, field) {
+        const newStr = string.split(',');
+        const newField = field.split('.');
+        let unit;
+        let text;
+        switch (newField[0]) {
+            case 'BodyMonitoringDevice':
+                unit = getUnit(field)[0];
+                text = `${newStr[0]}~${newStr[1]} ${unit}`;
+                break;
+            case 'LocationDevice':
+                switch (newField[1]) {
+                    case 'Altitude':
+                        unit = getUnit(field)[0];
+                        text = `${newStr[0]}~${newStr[1]} ${unit}`;
+                        break;
+                    case 'StayOnePlace':
+                        unit = getUnit(field);
+                        text = `停留${newStr[0]} ${unit[0]}, 範圍${newStr[1]} ${unit[1]}`;
+                        break;
+                    default:
+                        unit = getUnit(field);
+                        text = `${newStr[0]} ${unit[0]}`;
+                        break;
+                }
+                break;
+        }
+        return text;
+    }
+
+    /**
+     * 使用提醒元件，輸入文字與類型
+     */
+    function notificaionShow(messageText, type) {
+        notification.show({
+            message: messageText
+        }, type)
+    }
+
+</script>
+
+

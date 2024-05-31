@@ -1,0 +1,672 @@
+2024-04-24 09:21:59.6735 | [7] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/PersonData/PersonData","status":"LogOff"}
+2024-04-24 09:22:00.9571 | [7] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=1.2925087
+2024-04-24 09:25:13.4153 | [8] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/","status":"LogOff"}
+2024-04-24 09:25:13.6044 | [8] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.2004595
+2024-04-24 09:25:47.2771 | [7] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"model":{"UserId":"admin","Password":"123456","ComFacID":"台化油品部儲運處-台北-","RememberMe":false,"Language":null},"returnUrl":"/"}
+2024-04-24 09:25:47.5700 | [7] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.3167667
+2024-04-24 09:25:47.5880 | [10] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-04-24 09:25:47.7161 | [10] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.1281714
+2024-04-24 09:25:56.2402 | [10] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-04-24 09:25:56.3305 | [10] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.0911161
+2024-04-24 09:25:56.3823 | [10] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-04-24 09:25:56.3862 | [10] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0043114
+2024-04-24 09:25:56.8630 | [10] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-04-24 09:25:56.8689 | [10] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.006244
+2024-04-24 09:25:56.8689 | [10] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-04-24 09:25:56.8689 | [10] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.0071255
+2024-04-24 09:25:56.8689 | [10] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-04-24 09:25:56.8872 | [10] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0038636
+2024-04-24 09:25:58.3156 | [13] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-04-24 09:25:58.3764 | [13] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0618018
+2024-04-24 09:26:01.6413 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 09:26:01.6702 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0292952
+2024-04-24 09:26:02.6369 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 09:26:02.6369 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0372927
+2024-04-24 09:29:25.3200 | [7] | INFO | FuctionName=UserManage.NodeAndAuth | Start | IP=::1 | parametersInfo={}
+2024-04-24 09:29:25.3200 | [7] | INFO | FuctionName=UserManage.NodeAndAuth | End | IP=::1 | ExpendTime=0.00433
+2024-04-24 09:29:27.0180 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 09:29:27.0180 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0430639
+2024-04-24 09:29:27.1377 | [8] | INFO | FuctionName=UserManageApi.CheckComdb | Message=CompanyID=%E5%8F%B0%E5%8C%96%E6%B2%B9%E5%93%81%E9%83%A8%E5%84%B2%E9%81%8B%E8%99%95&FactoryID=%E5%8F%B0%E5%8C%97&MODIFYUSER=ADMIN&Lng=
+2024-04-24 09:29:27.3168 | [8] | INFO | FuctionName=UserManageApi.CheckComdb | Message=ExpendTime=0.2223424
+2024-04-24 09:29:27.3896 | [7] | INFO | FuctionName=UserManageApi.R_COMM_FUNCTIONLIST | Message=CompanyID=%E5%8F%B0%E5%8C%96%E6%B2%B9%E5%93%81%E9%83%A8%E5%84%B2%E9%81%8B%E8%99%95&FactoryID=%E5%8F%B0%E5%8C%97&MODIFYUSER=ADMIN&Lng=&Function%5BNODEID%5D=
+2024-04-24 09:29:27.4523 | [7] | INFO | FuctionName=UserManageApi.R_COMM_FUNCTIONLIST | Message=ExpendTime=0.2849379
+2024-04-24 09:29:27.4727 | [7] | INFO | FuctionName=UserManageApi.R_COMM_NODEFUNCTION | Message=CompanyID=%E5%8F%B0%E5%8C%96%E6%B2%B9%E5%93%81%E9%83%A8%E5%84%B2%E9%81%8B%E8%99%95&FactoryID=%E5%8F%B0%E5%8C%97&MODIFYUSER=ADMIN&Lng=&Function%5BNODEID%5D=
+2024-04-24 09:29:27.4727 | [7] | INFO | FuctionName=UserManageApi.R_COMM_NODEFUNCTION | Message=ExpendTime=0.2932318
+2024-04-24 09:29:27.6749 | [7] | INFO | FuctionName=UserManageApi.R_COMM_FUNCTIONLIST | Message=CompanyID=%E5%8F%B0%E5%8C%96%E6%B2%B9%E5%93%81%E9%83%A8%E5%84%B2%E9%81%8B%E8%99%95&FactoryID=%E5%8F%B0%E5%8C%97&MODIFYUSER=ADMIN&Lng=&Function%5BNODEID%5D=
+2024-04-24 09:29:27.6749 | [7] | INFO | FuctionName=UserManageApi.R_COMM_FUNCTIONLIST | Message=ExpendTime=0.3001007
+2024-04-24 09:54:22.6512 | [70] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-04-24 09:54:22.6512 | [70] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0047641
+2024-04-24 09:54:22.6651 | [70] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-04-24 09:54:22.6791 | [70] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.0155983
+2024-04-24 09:54:22.6791 | [70] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-04-24 09:54:22.6791 | [70] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0054365
+2024-04-24 09:56:56.2310 | [70] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-04-24 09:56:56.2310 | [70] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0043544
+2024-04-24 09:56:56.2430 | [70] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-04-24 09:56:56.2430 | [70] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.01142
+2024-04-24 09:56:56.2587 | [70] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-04-24 09:56:56.2587 | [70] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0044087
+2024-04-24 10:35:51.6259 | [8] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/","status":"LogOff"}
+2024-04-24 10:35:51.7751 | [8] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.1604349
+2024-04-24 10:36:06.0475 | [7] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"model":{"UserId":"admin","Password":"123456","ComFacID":"台化油品部儲運處-台北-","RememberMe":false,"Language":null},"returnUrl":"/"}
+2024-04-24 10:36:06.0920 | [7] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.0487344
+2024-04-24 10:36:06.1100 | [9] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-04-24 10:36:06.1219 | [9] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0136584
+2024-04-24 10:36:06.1648 | [9] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-04-24 10:36:06.2655 | [9] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.1021793
+2024-04-24 10:36:06.2954 | [9] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-04-24 10:36:06.2994 | [9] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0046037
+2024-04-24 10:36:07.6998 | [7] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-04-24 10:36:07.7047 | [7] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0069166
+2024-04-24 10:36:09.2047 | [9] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 10:36:09.2338 | [9] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0305215
+2024-04-24 10:36:09.3823 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 10:36:09.3922 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0408609
+2024-04-24 10:37:19.6876 | [7] | INFO | FuctionName=UserManage.NodeAndAuth | Start | IP=::1 | parametersInfo={}
+2024-04-24 10:37:19.6926 | [7] | INFO | FuctionName=UserManage.NodeAndAuth | End | IP=::1 | ExpendTime=0.0057131
+2024-04-24 10:37:20.9898 | [14] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 10:37:20.9898 | [14] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0484314
+2024-04-24 10:37:21.0717 | [7] | INFO | FuctionName=UserManageApi.CheckComdb | Message=CompanyID=%E5%8F%B0%E5%8C%96%E6%B2%B9%E5%93%81%E9%83%A8%E5%84%B2%E9%81%8B%E8%99%95&FactoryID=%E5%8F%B0%E5%8C%97&MODIFYUSER=ADMIN&Lng=
+2024-04-24 10:37:21.0986 | [7] | INFO | FuctionName=UserManageApi.CheckComdb | Message=ExpendTime=0.0759447
+2024-04-24 10:37:21.1883 | [8] | INFO | FuctionName=UserManageApi.R_COMM_FUNCTIONLIST | Message=CompanyID=%E5%8F%B0%E5%8C%96%E6%B2%B9%E5%93%81%E9%83%A8%E5%84%B2%E9%81%8B%E8%99%95&FactoryID=%E5%8F%B0%E5%8C%97&MODIFYUSER=ADMIN&Lng=&Function%5BNODEID%5D=
+2024-04-24 10:37:21.2303 | [8] | INFO | FuctionName=UserManageApi.R_COMM_FUNCTIONLIST | Message=ExpendTime=0.1181078
+2024-04-24 10:37:21.2702 | [8] | INFO | FuctionName=UserManageApi.R_COMM_NODEFUNCTION | Message=CompanyID=%E5%8F%B0%E5%8C%96%E6%B2%B9%E5%93%81%E9%83%A8%E5%84%B2%E9%81%8B%E8%99%95&FactoryID=%E5%8F%B0%E5%8C%97&MODIFYUSER=ADMIN&Lng=&Function%5BNODEID%5D=
+2024-04-24 10:37:21.2702 | [8] | INFO | FuctionName=UserManageApi.R_COMM_NODEFUNCTION | Message=ExpendTime=0.1281205
+2024-04-24 10:37:21.3490 | [7] | INFO | FuctionName=UserManageApi.R_COMM_FUNCTIONLIST | Message=CompanyID=%E5%8F%B0%E5%8C%96%E6%B2%B9%E5%93%81%E9%83%A8%E5%84%B2%E9%81%8B%E8%99%95&FactoryID=%E5%8F%B0%E5%8C%97&MODIFYUSER=ADMIN&Lng=&Function%5BNODEID%5D=
+2024-04-24 10:37:21.3490 | [7] | INFO | FuctionName=UserManageApi.R_COMM_FUNCTIONLIST | Message=ExpendTime=0.1364394
+2024-04-24 10:37:42.1925 | [7] | INFO | FuctionName=UserManageApi.U_COMM_FUNCTIONLIST | Message=CompanyID=%E5%8F%B0%E5%8C%96%E6%B2%B9%E5%93%81%E9%83%A8%E5%84%B2%E9%81%8B%E8%99%95&FactoryID=%E5%8F%B0%E5%8C%97&MODIFYUSER=ADMIN&Lng=&Function%5BNODEID%5D=N601&Function%5BPARENTID%5D=N600&Function%5BNODETEXT%5D=%E9%8A%B7%E5%94%AE%E5%A0%B1%E8%A1%A8&Function%5BNODESEQUENCE%5D=1&Function%5BNODEURL%5D=%2FOrderDetail%2FOrderHighcharts%3FNodeId%3DN601&Function%5BNODETARGET%5D=mainFrame&Function%5BNODEIMAGE%5D=fa+fa-chart-line&Function%5BNODEEXPANDIMAGE%5D=&Function%5BFUNCTIONID%5D=&Function%5BDESCRIPTION%5D=&Function%5BISLEAFNODE%5D=true&Function%5BISEXPANDED%5D=false&Function%5BIFRAMEHEIGHT%5D=800&Function%5BISREFERENCE%5D=false&Function%5BPGROUP%5D=N600
+2024-04-24 10:37:42.2364 | [7] | INFO | FuctionName=UserManageApi.U_COMM_FUNCTIONLIST | Message=ExpendTime=0.179967
+2024-04-24 10:37:42.2754 | [7] | INFO | FuctionName=UserManageApi.R_COMM_FUNCTIONLIST | Message=CompanyID=%E5%8F%B0%E5%8C%96%E6%B2%B9%E5%93%81%E9%83%A8%E5%84%B2%E9%81%8B%E8%99%95&FactoryID=%E5%8F%B0%E5%8C%97&MODIFYUSER=ADMIN&Lng=&Function%5BNODEID%5D=
+2024-04-24 10:37:42.2754 | [7] | INFO | FuctionName=UserManageApi.R_COMM_FUNCTIONLIST | Message=ExpendTime=0.1868854
+2024-04-24 10:37:42.3791 | [7] | INFO | FuctionName=UserManageApi.R_COMM_FUNCTIONLIST | Message=CompanyID=%E5%8F%B0%E5%8C%96%E6%B2%B9%E5%93%81%E9%83%A8%E5%84%B2%E9%81%8B%E8%99%95&FactoryID=%E5%8F%B0%E5%8C%97&MODIFYUSER=ADMIN&Lng=&Function%5BNODEID%5D=
+2024-04-24 10:37:42.3791 | [7] | INFO | FuctionName=UserManageApi.R_COMM_FUNCTIONLIST | Message=ExpendTime=0.1958078
+2024-04-24 10:37:42.4091 | [7] | INFO | FuctionName=UserManageApi.R_COMM_NODEFUNCTION | Message=CompanyID=%E5%8F%B0%E5%8C%96%E6%B2%B9%E5%93%81%E9%83%A8%E5%84%B2%E9%81%8B%E8%99%95&FactoryID=%E5%8F%B0%E5%8C%97&MODIFYUSER=ADMIN&Lng=&Function%5BNODEID%5D=
+2024-04-24 10:37:42.4151 | [7] | INFO | FuctionName=UserManageApi.R_COMM_NODEFUNCTION | Message=ExpendTime=0.2014888
+2024-04-24 10:37:50.3741 | [7] | INFO | FuctionName=UserManageApi.U_COMM_FUNCTIONLIST | Message=CompanyID=%E5%8F%B0%E5%8C%96%E6%B2%B9%E5%93%81%E9%83%A8%E5%84%B2%E9%81%8B%E8%99%95&FactoryID=%E5%8F%B0%E5%8C%97&MODIFYUSER=ADMIN&Lng=&Function%5BNODEID%5D=N600&Function%5BPARENTID%5D=&Function%5BNODETEXT%5D=%E5%9C%96%E8%A1%A8%E5%88%86%E6%9E%90&Function%5BNODESEQUENCE%5D=600&Function%5BNODEURL%5D=&Function%5BNODETARGET%5D=mainFrame&Function%5BNODEIMAGE%5D=fa+fa-chart-pie&Function%5BNODEEXPANDIMAGE%5D=&Function%5BFUNCTIONID%5D=&Function%5BDESCRIPTION%5D=&Function%5BISLEAFNODE%5D=false&Function%5BISEXPANDED%5D=true&Function%5BIFRAMEHEIGHT%5D=800&Function%5BISREFERENCE%5D=false&Function%5BPGROUP%5D=N600
+2024-04-24 10:37:50.3830 | [7] | INFO | FuctionName=UserManageApi.U_COMM_FUNCTIONLIST | Message=ExpendTime=0.210043
+2024-04-24 10:37:50.4219 | [8] | INFO | FuctionName=UserManageApi.R_COMM_FUNCTIONLIST | Message=CompanyID=%E5%8F%B0%E5%8C%96%E6%B2%B9%E5%93%81%E9%83%A8%E5%84%B2%E9%81%8B%E8%99%95&FactoryID=%E5%8F%B0%E5%8C%97&MODIFYUSER=ADMIN&Lng=&Function%5BNODEID%5D=
+2024-04-24 10:37:50.4295 | [8] | INFO | FuctionName=UserManageApi.R_COMM_FUNCTIONLIST | Message=ExpendTime=0.2168331
+2024-04-24 10:37:50.5262 | [8] | INFO | FuctionName=UserManageApi.R_COMM_FUNCTIONLIST | Message=CompanyID=%E5%8F%B0%E5%8C%96%E6%B2%B9%E5%93%81%E9%83%A8%E5%84%B2%E9%81%8B%E8%99%95&FactoryID=%E5%8F%B0%E5%8C%97&MODIFYUSER=ADMIN&Lng=&Function%5BNODEID%5D=
+2024-04-24 10:37:50.5262 | [8] | INFO | FuctionName=UserManageApi.R_COMM_FUNCTIONLIST | Message=ExpendTime=0.2244539
+2024-04-24 10:37:50.5501 | [7] | INFO | FuctionName=UserManageApi.R_COMM_NODEFUNCTION | Message=CompanyID=%E5%8F%B0%E5%8C%96%E6%B2%B9%E5%93%81%E9%83%A8%E5%84%B2%E9%81%8B%E8%99%95&FactoryID=%E5%8F%B0%E5%8C%97&MODIFYUSER=ADMIN&Lng=&Function%5BNODEID%5D=
+2024-04-24 10:37:50.5551 | [7] | INFO | FuctionName=UserManageApi.R_COMM_NODEFUNCTION | Message=ExpendTime=0.2297367
+2024-04-24 10:38:03.3463 | [7] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-04-24 10:38:03.3523 | [7] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0081252
+2024-04-24 10:38:03.3523 | [7] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-04-24 10:38:03.3706 | [7] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.0109728
+2024-04-24 10:38:03.3706 | [7] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-04-24 10:38:03.3827 | [7] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0050574
+2024-04-24 10:38:04.8491 | [9] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-04-24 10:38:04.8491 | [9] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0116003
+2024-04-24 10:38:06.2867 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 10:38:06.2867 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.2360161
+2024-04-24 10:38:06.4348 | [9] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 10:38:06.4457 | [9] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.2467426
+2024-04-24 10:41:36.8757 | [13] | INFO | FuctionName=PersonData.PersonData | Start | IP=::1 | parametersInfo={}
+2024-04-24 10:41:36.8757 | [13] | INFO | FuctionName=PersonData.PersonData | End | IP=::1 | ExpendTime=0.0047265
+2024-04-24 10:41:42.3037 | [9] | INFO | FuctionName=PersonLocation.PersonMonitor | Start | IP=::1 | parametersInfo={}
+2024-04-24 10:41:42.3057 | [9] | INFO | FuctionName=PersonLocation.PersonMonitor | End | IP=::1 | ExpendTime=0.0033032
+2024-04-24 10:41:43.6195 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 10:41:43.6195 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.2592565
+2024-04-24 10:41:43.8229 | [7] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=
+2024-04-24 10:41:43.8838 | [7] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.0615136
+2024-04-24 10:41:45.1751 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 10:41:45.1811 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.2644672
+2024-04-24 10:41:46.8654 | [7] | INFO | FuctionName=apiPersonLocation.GetPolygon | Message={}
+2024-04-24 10:41:47.2224 | [9] | INFO | FuctionName=apiPersonLocation.GetArea | Message={}
+2024-04-24 10:41:47.2285 | [13] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message={}
+2024-04-24 10:41:47.2522 | [13] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=0.3860315
+2024-04-24 10:41:47.2773 | [9] | INFO | FuctionName=apiPersonLocation.GetArea | Message=ExpendTime=0.3860315
+2024-04-24 10:41:47.3092 | [9] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message={}
+2024-04-24 10:41:47.3092 | [13] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message={}
+2024-04-24 10:41:47.4452 | [13] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message=ExpendTime=0.5218894
+2024-04-24 10:41:47.5684 | [9] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message=ExpendTime=0.5218894
+2024-04-24 10:41:47.9096 | [7] | INFO | FuctionName=apiPersonLocation.GetPolygon | Message=ExpendTime=0.5218894
+2024-04-24 10:41:57.8935 | [9] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message={}
+2024-04-24 10:41:57.9065 | [9] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=0.5345985
+2024-04-24 10:41:57.9244 | [9] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message={}
+2024-04-24 10:41:57.9244 | [13] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message={}
+2024-04-24 10:41:57.9304 | [9] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message=ExpendTime=0.5409521
+2024-04-24 10:41:57.9304 | [13] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message=ExpendTime=0.5409521
+2024-04-24 10:42:07.0615 | [13] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message={}
+2024-04-24 10:42:07.0874 | [13] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=0.567146
+2024-04-24 10:42:07.1123 | [9] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message={}
+2024-04-24 10:42:07.1123 | [13] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message={}
+2024-04-24 10:42:07.1193 | [9] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message=ExpendTime=0.5741929
+2024-04-24 10:42:07.1193 | [13] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message=ExpendTime=0.5741929
+2024-04-24 10:42:17.0326 | [7] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message={}
+2024-04-24 10:42:17.0326 | [7] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=0.579761
+2024-04-24 10:42:17.0515 | [7] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message={}
+2024-04-24 10:42:17.0515 | [9] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message={}
+2024-04-24 10:42:17.0585 | [7] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message=ExpendTime=0.5866091
+2024-04-24 10:42:17.0585 | [9] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message=ExpendTime=0.5866091
+2024-04-24 10:42:27.0226 | [7] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message={}
+2024-04-24 10:42:27.0285 | [7] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=0.5931556
+2024-04-24 10:42:27.0415 | [7] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message={}
+2024-04-24 10:42:27.0415 | [9] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message={}
+2024-04-24 10:42:27.0415 | [7] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message=ExpendTime=0.6047581
+2024-04-24 10:42:27.0704 | [9] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message=ExpendTime=0.6047581
+2024-04-24 10:42:37.0388 | [9] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message={}
+2024-04-24 10:42:37.0488 | [9] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=0.614273
+2024-04-24 10:42:37.0680 | [7] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message={}
+2024-04-24 10:42:37.0680 | [9] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message={}
+2024-04-24 10:42:37.0750 | [7] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message=ExpendTime=0.6211461
+2024-04-24 10:42:37.0879 | [9] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message=ExpendTime=0.6211461
+2024-04-24 10:42:47.0355 | [7] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message={}
+2024-04-24 10:42:47.0434 | [7] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=0.6290332
+2024-04-24 10:42:47.0434 | [9] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message={}
+2024-04-24 10:42:47.0564 | [7] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message={}
+2024-04-24 10:42:47.0564 | [9] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message=ExpendTime=0.6365899
+2024-04-24 10:42:47.0744 | [7] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message=ExpendTime=0.6365899
+2024-04-24 10:42:57.8712 | [9] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message={}
+2024-04-24 10:42:57.8712 | [9] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=0.6398893
+2024-04-24 10:42:57.8881 | [13] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message={}
+2024-04-24 10:42:57.8881 | [12] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message={}
+2024-04-24 10:42:57.8881 | [13] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message=ExpendTime=0.6456237
+2024-04-24 10:42:57.9011 | [12] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message=ExpendTime=0.6456237
+2024-04-24 10:43:07.8768 | [20] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message={}
+2024-04-24 10:43:07.8850 | [20] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=0.6535881
+2024-04-24 10:43:07.9007 | [9] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message={}
+2024-04-24 10:43:07.9007 | [13] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message={}
+2024-04-24 10:43:07.9007 | [9] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message=ExpendTime=0.6591724
+2024-04-24 10:43:07.9007 | [13] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message=ExpendTime=0.6591724
+2024-04-24 10:43:17.8747 | [9] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message={}
+2024-04-24 10:43:17.8747 | [9] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=0.6626358
+2024-04-24 10:43:17.8917 | [13] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message={}
+2024-04-24 10:43:17.8917 | [12] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message={}
+2024-04-24 10:43:17.8917 | [13] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message=ExpendTime=0.6678844
+2024-04-24 10:43:17.9037 | [12] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message=ExpendTime=0.6678844
+2024-04-24 10:43:27.8787 | [9] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message={}
+2024-04-24 10:43:27.8865 | [9] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=0.6753636
+2024-04-24 10:43:27.9035 | [9] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message={}
+2024-04-24 10:43:27.9035 | [13] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message={}
+2024-04-24 10:43:27.9035 | [9] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message=ExpendTime=0.6831112
+2024-04-24 10:43:27.9264 | [13] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message=ExpendTime=0.6831112
+2024-04-24 10:43:37.8797 | [19] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message={}
+2024-04-24 10:43:37.8876 | [19] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=0.6913339
+2024-04-24 10:43:37.9046 | [9] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message={}
+2024-04-24 10:43:37.9046 | [12] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message={}
+2024-04-24 10:43:37.9046 | [9] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message=ExpendTime=0.6982289
+2024-04-24 10:43:37.9215 | [12] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message=ExpendTime=0.6982289
+2024-04-24 10:43:47.8654 | [9] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message={}
+2024-04-24 10:43:47.8704 | [9] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=0.7035856
+2024-04-24 10:43:47.8843 | [9] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message={}
+2024-04-24 10:43:47.8843 | [13] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message={}
+2024-04-24 10:43:47.8843 | [9] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message=ExpendTime=0.7104982
+2024-04-24 10:43:47.9043 | [13] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message=ExpendTime=0.7104982
+2024-04-24 10:43:57.8931 | [9] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message={}
+2024-04-24 10:43:57.8931 | [9] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=0.7165754
+2024-04-24 10:43:57.9190 | [7] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message={}
+2024-04-24 10:43:57.9190 | [9] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message={}
+2024-04-24 10:43:57.9190 | [7] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message=ExpendTime=0.7236251
+2024-04-24 10:43:57.9330 | [9] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message=ExpendTime=0.7236251
+2024-04-24 10:44:07.8835 | [19] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message={}
+2024-04-24 10:44:07.8875 | [19] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=0.7273419
+2024-04-24 10:44:07.9015 | [9] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message={}
+2024-04-24 10:44:07.9015 | [13] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message={}
+2024-04-24 10:44:07.9015 | [9] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message=ExpendTime=0.7341549
+2024-04-24 10:44:07.9015 | [13] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message=ExpendTime=0.7341549
+2024-04-24 10:44:17.8847 | [9] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message={}
+2024-04-24 10:44:17.8847 | [9] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=0.7410909
+2024-04-24 10:44:17.9084 | [9] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message={}
+2024-04-24 10:44:17.9084 | [13] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message={}
+2024-04-24 10:44:17.9084 | [9] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message=ExpendTime=0.746974
+2024-04-24 10:44:17.9214 | [13] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message=ExpendTime=0.746974
+2024-04-24 10:44:27.8627 | [13] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message={}
+2024-04-24 10:44:27.8627 | [13] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=0.7502633
+2024-04-24 10:44:27.8788 | [7] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message={}
+2024-04-24 10:44:27.8788 | [9] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message={}
+2024-04-24 10:44:27.8788 | [7] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message=ExpendTime=0.7564493
+2024-04-24 10:44:27.8916 | [9] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message=ExpendTime=0.7564493
+2024-04-24 10:45:23.8710 | [7] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message={}
+2024-04-24 10:45:23.8710 | [7] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=0.7631788
+2024-04-24 10:45:23.8909 | [13] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message={}
+2024-04-24 10:45:23.8909 | [12] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message={}
+2024-04-24 10:45:23.9359 | [13] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message=ExpendTime=0.8082412
+2024-04-24 10:45:23.9478 | [12] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message=ExpendTime=0.8082412
+2024-04-24 10:46:06.6905 | [7] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message={}
+2024-04-24 10:46:06.6994 | [7] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=0.8171072
+2024-04-24 10:46:06.6994 | [7] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message={}
+2024-04-24 10:46:06.7154 | [9] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message={}
+2024-04-24 10:46:06.7154 | [7] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message=ExpendTime=0.8285929
+2024-04-24 10:46:06.7393 | [9] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message=ExpendTime=0.8285929
+2024-04-24 10:46:17.8654 | [13] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message={}
+2024-04-24 10:46:17.8704 | [13] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=0.8333525
+2024-04-24 10:46:17.8873 | [7] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message={}
+2024-04-24 10:46:17.8873 | [9] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message={}
+2024-04-24 10:46:17.8873 | [7] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message=ExpendTime=0.8418143
+2024-04-24 10:46:17.9023 | [9] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message=ExpendTime=0.8418143
+2024-04-24 10:46:27.8923 | [9] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message={}
+2024-04-24 10:46:27.8923 | [9] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=0.8487355
+2024-04-24 10:46:27.9127 | [9] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message={}
+2024-04-24 10:46:27.9127 | [13] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message={}
+2024-04-24 10:46:27.9187 | [9] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message=ExpendTime=0.854788
+2024-04-24 10:46:27.9187 | [13] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message=ExpendTime=0.854788
+2024-04-24 10:46:37.8851 | [20] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message={}
+2024-04-24 10:46:37.8918 | [20] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=0.8617082
+2024-04-24 10:46:37.9068 | [13] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message={}
+2024-04-24 10:46:37.9068 | [12] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message={}
+2024-04-24 10:46:37.9068 | [13] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message=ExpendTime=0.8683093
+2024-04-24 10:46:37.9217 | [12] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message=ExpendTime=0.8683093
+2024-04-24 10:46:47.8643 | [9] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message={}
+2024-04-24 10:46:47.8643 | [9] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=0.8728944
+2024-04-24 10:46:47.8832 | [7] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message={}
+2024-04-24 10:46:47.8832 | [9] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message={}
+2024-04-24 10:46:47.8912 | [7] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message=ExpendTime=0.8811153
+2024-04-24 10:46:47.9032 | [9] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message=ExpendTime=0.8811153
+2024-04-24 10:46:57.8708 | [9] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message={}
+2024-04-24 10:46:57.8708 | [9] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=0.8881006
+2024-04-24 10:46:57.8952 | [7] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message={}
+2024-04-24 10:46:57.8952 | [9] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message={}
+2024-04-24 10:46:57.9022 | [7] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message=ExpendTime=0.8953796
+2024-04-24 10:46:57.9022 | [9] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message=ExpendTime=0.8953796
+2024-04-24 10:47:07.8724 | [19] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message={}
+2024-04-24 10:47:07.8724 | [19] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=0.9018499
+2024-04-24 10:47:07.9003 | [7] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message={}
+2024-04-24 10:47:07.9023 | [9] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message={}
+2024-04-24 10:47:07.9023 | [7] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message=ExpendTime=0.9110864
+2024-04-24 10:47:07.9292 | [9] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message=ExpendTime=0.9110864
+2024-04-24 10:47:17.0721 | [7] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message={}
+2024-04-24 10:47:17.0791 | [7] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=0.9184395
+2024-04-24 10:47:17.0930 | [13] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message={}
+2024-04-24 10:47:17.0930 | [12] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message={}
+2024-04-24 10:47:17.0930 | [13] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message=ExpendTime=0.9241945
+2024-04-24 10:47:17.1060 | [12] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message=ExpendTime=0.9241945
+2024-04-24 10:47:27.0407 | [9] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message={}
+2024-04-24 10:47:27.0472 | [9] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=0.9311158
+2024-04-24 10:47:27.0691 | [9] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message={}
+2024-04-24 10:47:27.0691 | [13] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message={}
+2024-04-24 10:47:27.0761 | [9] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message=ExpendTime=0.9385144
+2024-04-24 10:47:27.0761 | [13] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message=ExpendTime=0.9385144
+2024-04-24 10:47:32.3619 | [13] | INFO | FuctionName=apiPersonData.DeletePersonData | Message=PersonID=C000293423&Name=%E9%99%B3%E6%9B%89%E6%98%8E&Gender=%E7%94%B7&Phone=0938293485&CompanyID=HG
+2024-04-24 10:47:32.3703 | [13] | INFO | FuctionName=apiPersonData.DeletePersonData | Message=ExpendTime=0.070107
+2024-04-24 10:47:32.4142 | [13] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=
+2024-04-24 10:47:32.4202 | [13] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.0762687
+2024-04-24 10:47:33.9684 | [9] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=
+2024-04-24 10:47:33.9684 | [9] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.0834243
+2024-04-24 10:47:37.0247 | [14] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message={}
+2024-04-24 10:47:37.0277 | [14] | INFO | FuctionName=apiPersonLocation.GetPersonData | Message=ExpendTime=0.9419591
+2024-04-24 10:47:37.0277 | [13] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message={}
+2024-04-24 10:47:37.0427 | [12] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message={}
+2024-04-24 10:47:37.0427 | [13] | INFO | FuctionName=apiPersonLocation.GetDeviceCurrent | Message=ExpendTime=0.9473573
+2024-04-24 10:47:37.0427 | [12] | INFO | FuctionName=apiPersonLocation.getAreaPeopleCount | Message=ExpendTime=0.9473573
+2024-04-24 10:47:42.6228 | [9] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-04-24 10:47:42.6228 | [9] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0116989
+2024-04-24 10:47:42.6448 | [9] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-04-24 10:47:42.6587 | [9] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.0157476
+2024-04-24 10:47:42.6687 | [9] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-04-24 10:47:42.6687 | [9] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0062064
+2024-04-24 10:47:44.3222 | [9] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-04-24 10:47:44.3242 | [9] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0042856
+2024-04-24 10:47:45.6787 | [12] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 10:47:45.6856 | [12] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.2715232
+2024-04-24 10:47:45.8150 | [9] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 10:47:45.8245 | [9] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.2810318
+2024-04-24 11:01:47.3179 | [7] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/OrderDetail/OrderHighcharts","status":"LogOff"}
+2024-04-24 11:01:47.4545 | [7] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.1415353
+2024-04-24 11:02:05.9699 | [5] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"model":{"UserId":"admin","Password":"123456","ComFacID":"台化油品部儲運處-台北-","RememberMe":false,"Language":null},"returnUrl":"/OrderDetail/OrderHighcharts"}
+2024-04-24 11:02:06.1215 | [5] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.1558026
+2024-04-24 11:02:06.1445 | [7] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:02:06.1567 | [7] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.012804
+2024-04-24 11:02:11.1520 | [7] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:02:11.1772 | [7] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.0262576
+2024-04-24 11:02:11.2109 | [7] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:02:11.2169 | [7] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0070182
+2024-04-24 11:02:11.7231 | [7] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:02:11.7321 | [7] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0099004
+2024-04-24 11:02:11.7321 | [7] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:02:11.7491 | [7] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.0105208
+2024-04-24 11:02:11.7491 | [7] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:02:11.7630 | [7] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0078134
+2024-04-24 11:02:12.8511 | [5] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:02:12.8780 | [5] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0278654
+2024-04-24 11:02:15.4577 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 11:02:15.5036 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0473507
+2024-04-24 11:02:15.6961 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 11:02:15.6961 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.055707
+2024-04-24 11:02:17.4926 | [7] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:02:17.4926 | [7] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0087825
+2024-04-24 11:02:19.7943 | [9] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 11:02:19.7943 | [9] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0617603
+2024-04-24 11:04:04.9790 | [19] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:04:04.9790 | [19] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0036072
+2024-04-24 11:04:09.4146 | [6] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:04:09.4216 | [6] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0108757
+2024-04-24 11:04:09.6009 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:04:09.6069 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0070919
+2024-04-24 11:04:09.7209 | [6] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:04:09.7209 | [6] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0065859
+2024-04-24 11:04:09.9223 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:04:09.9223 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0051588
+2024-04-24 11:04:11.0719 | [18] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 11:04:11.0719 | [18] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0687065
+2024-04-24 11:04:48.4522 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:04:48.4522 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0039898
+2024-04-24 11:04:52.4301 | [6] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:04:52.4350 | [6] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0087976
+2024-04-24 11:04:52.6953 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:04:52.7078 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0138283
+2024-04-24 11:04:53.6538 | [18] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 11:04:53.6538 | [18] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.078054
+2024-04-24 11:05:39.5145 | [5] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:05:39.5145 | [5] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.00548
+2024-04-24 11:05:43.5262 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:05:43.5262 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0102173
+2024-04-24 11:05:44.8910 | [17] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 11:05:44.8910 | [17] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0842932
+2024-04-24 11:07:01.0957 | [17] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:07:01.0957 | [17] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0036886
+2024-04-24 11:07:05.1673 | [6] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:07:05.1673 | [6] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0027289
+2024-04-24 11:07:05.6418 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:07:05.6418 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0061705
+2024-04-24 11:07:06.5935 | [18] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 11:07:06.5935 | [18] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0904083
+2024-04-24 11:08:35.7967 | [5] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:08:35.7967 | [5] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0038387
+2024-04-24 11:08:40.9473 | [17] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 11:08:40.9527 | [17] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0953956
+2024-04-24 11:09:30.1020 | [5] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:09:30.1050 | [5] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.003764
+2024-04-24 11:09:33.9558 | [18] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:09:33.9558 | [18] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0021673
+2024-04-24 11:09:34.0854 | [17] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:09:34.1014 | [17] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0175965
+2024-04-24 11:09:34.2999 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:09:34.3078 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0091823
+2024-04-24 11:09:35.4339 | [38] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 11:09:35.4339 | [38] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1025171
+2024-04-24 11:09:41.5826 | [30] | INFO | FuctionName=PersonData.PersonData | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:09:41.5826 | [30] | INFO | FuctionName=PersonData.PersonData | End | IP=::1 | ExpendTime=0.0066039
+2024-04-24 11:09:43.5577 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 11:09:43.5647 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1099848
+2024-04-24 11:09:43.8029 | [8] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=
+2024-04-24 11:09:43.8160 | [8] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.0132968
+2024-04-24 11:10:10.9005 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:10:10.9036 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0037531
+2024-04-24 11:10:15.2220 | [30] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:10:15.2220 | [30] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0044732
+2024-04-24 11:10:16.6252 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 11:10:16.6252 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.116859
+2024-04-24 11:11:01.3258 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:11:01.3258 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0036161
+2024-04-24 11:11:05.5433 | [29] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:11:05.5453 | [29] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0022904
+2024-04-24 11:11:07.1731 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 11:11:07.1731 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1243905
+2024-04-24 11:12:32.8554 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:12:32.8554 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0036111
+2024-04-24 11:12:37.9194 | [47] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 11:12:37.9234 | [47] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1283916
+2024-04-24 11:12:54.4349 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:12:54.4387 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0041101
+2024-04-24 11:12:58.3558 | [47] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:12:58.3558 | [47] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0050416
+2024-04-24 11:12:58.4654 | [29] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:12:58.4693 | [29] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0051332
+2024-04-24 11:12:58.6201 | [48] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:12:58.6201 | [48] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0062535
+2024-04-24 11:13:00.1577 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 11:13:00.1577 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1351446
+2024-04-24 11:14:09.1223 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:14:09.1223 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0036249
+2024-04-24 11:14:13.2132 | [48] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:14:13.2132 | [48] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0091643
+2024-04-24 11:14:14.5427 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 11:14:14.5517 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1441673
+2024-04-24 11:15:26.7574 | [46] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:15:26.7574 | [46] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0036487
+2024-04-24 11:15:31.0757 | [62] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:15:31.0757 | [62] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0072195
+2024-04-24 11:15:32.5793 | [46] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 11:15:32.5893 | [46] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1534309
+2024-04-24 11:16:06.8592 | [46] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:16:06.8592 | [46] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0040484
+2024-04-24 11:16:10.6776 | [62] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:16:10.6776 | [62] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0022055
+2024-04-24 11:16:10.7275 | [52] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:16:10.7275 | [52] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0120901
+2024-04-24 11:16:12.0669 | [62] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 11:16:12.0669 | [62] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1592689
+2024-04-24 11:16:28.8349 | [46] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:16:28.8349 | [46] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0043278
+2024-04-24 11:16:33.9137 | [48] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 11:16:33.9137 | [48] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1658388
+2024-04-24 11:16:53.4877 | [48] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:16:53.4877 | [46] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:16:53.5491 | [48] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.1703242
+2024-04-24 11:16:53.5491 | [46] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.1700964
+2024-04-24 11:16:54.6846 | [62] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:16:54.6846 | [62] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0043596
+2024-04-24 11:16:55.7343 | [51] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:16:55.7343 | [51] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0046975
+2024-04-24 11:16:55.9218 | [52] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:16:55.9218 | [52] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0042622
+2024-04-24 11:16:56.8892 | [54] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:16:56.8892 | [54] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0052066
+2024-04-24 11:16:59.4924 | [32] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:16:59.5049 | [32] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0150832
+2024-04-24 11:17:10.4008 | [32] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:17:10.4287 | [32] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.0306489
+2024-04-24 11:17:10.4716 | [32] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:17:10.4898 | [32] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0195634
+2024-04-24 11:17:27.8991 | [46] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:17:27.8991 | [46] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0055946
+2024-04-24 11:17:29.3637 | [62] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 11:17:29.4102 | [62] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0481374
+2024-04-24 11:18:00.9030 | [65] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:18:00.9030 | [65] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0037449
+2024-04-24 11:18:03.3219 | [32] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:18:03.3219 | [32] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0050071
+2024-04-24 11:18:06.1652 | [66] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 11:18:06.1652 | [66] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.052553
+2024-04-24 11:18:45.9163 | [32] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:18:45.9163 | [32] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.003745
+2024-04-24 11:18:48.4496 | [66] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:18:48.4496 | [66] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0046679
+2024-04-24 11:18:50.2818 | [57] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:18:50.2818 | [57] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0043078
+2024-04-24 11:18:51.6320 | [32] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 11:18:51.6320 | [32] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0585735
+2024-04-24 11:19:09.3095 | [43] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:19:09.3095 | [43] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0025939
+2024-04-24 11:19:09.7884 | [32] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:19:09.7884 | [32] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0049525
+2024-04-24 11:19:14.4182 | [65] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 11:19:14.4182 | [65] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.064705
+2024-04-24 11:29:05.6805 | [45] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:29:05.6805 | [45] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0040153
+2024-04-24 11:29:06.2972 | [68] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:29:06.2972 | [68] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0054111
+2024-04-24 11:29:09.5231 | [41] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:29:09.5231 | [41] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.003257
+2024-04-24 11:29:11.0392 | [10] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 11:29:11.0462 | [10] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0719085
+2024-04-24 11:39:18.3990 | [21] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:39:18.3990 | [21] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0043412
+2024-04-24 11:39:23.7183 | [12] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 11:39:23.7183 | [12] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0760051
+2024-04-24 11:46:18.0026 | [21] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:46:18.0026 | [21] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.004657
+2024-04-24 11:46:19.3553 | [21] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 11:46:19.3553 | [21] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0839077
+2024-04-24 11:47:33.6368 | [21] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:47:33.6368 | [21] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0040555
+2024-04-24 11:47:38.7825 | [14] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 11:47:38.7885 | [14] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0896074
+2024-04-24 11:48:08.1397 | [6] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:48:08.1397 | [6] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0038595
+2024-04-24 11:48:13.1882 | [21] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 11:48:13.1882 | [21] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0939558
+2024-04-24 11:48:52.9720 | [21] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:48:52.9720 | [21] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0037574
+2024-04-24 11:48:58.1266 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 11:48:58.1336 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1011395
+2024-04-24 11:49:27.8466 | [6] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:49:27.8466 | [6] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0037422
+2024-04-24 11:49:33.1843 | [21] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 11:49:33.1843 | [21] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1055856
+2024-04-24 11:54:04.8939 | [76] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:54:04.8999 | [76] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0070367
+2024-04-24 11:54:06.6385 | [79] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:54:06.6385 | [79] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0084024
+2024-04-24 11:54:07.0850 | [78] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:54:07.0990 | [78] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0166766
+2024-04-24 11:54:13.0386 | [76] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 11:54:13.0486 | [76] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1157139
+2024-04-24 11:56:04.0228 | [76] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:56:04.0248 | [76] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0039482
+2024-04-24 11:56:06.1484 | [78] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:56:06.1494 | [78] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.00247
+2024-04-24 11:56:06.4446 | [79] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:56:06.4476 | [79] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0042604
+2024-04-24 11:56:06.7268 | [90] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:56:06.7268 | [90] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0043117
+2024-04-24 11:56:07.2245 | [86] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:56:07.2285 | [86] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0043823
+2024-04-24 11:56:09.5307 | [76] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 11:56:09.5307 | [76] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1201739
+2024-04-24 11:58:12.2552 | [86] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 11:58:12.2582 | [86] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0044558
+2024-04-24 11:58:17.9852 | [76] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 11:58:17.9952 | [76] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1307511
+2024-04-24 13:43:26.5624 | [36] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/","status":"LogOff"}
+2024-04-24 13:43:26.7479 | [36] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.1909575
+2024-04-24 13:43:38.8165 | [34] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"model":{"UserId":"admin","Password":"123456","ComFacID":"台化油品部儲運處-台北-","RememberMe":false,"Language":null},"returnUrl":"/"}
+2024-04-24 13:43:39.4177 | [34] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.6053424
+2024-04-24 13:43:39.4416 | [31] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-04-24 13:43:39.4560 | [31] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0157657
+2024-04-24 13:43:39.4685 | [31] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-04-24 13:43:39.5134 | [31] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.046357
+2024-04-24 13:43:39.5713 | [31] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-04-24 13:43:39.5772 | [31] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0076036
+2024-04-24 13:43:40.9703 | [34] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-04-24 13:43:40.9703 | [34] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0090653
+2024-04-24 13:43:42.9708 | [36] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 13:43:42.9708 | [36] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1363545
+2024-04-24 13:43:43.1946 | [31] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 13:43:43.1996 | [31] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1413024
+2024-04-24 13:43:44.9407 | [30] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 13:43:44.9407 | [30] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0049644
+2024-04-24 13:43:57.5475 | [36] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 13:43:57.5475 | [36] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0063592
+2024-04-24 13:43:57.6423 | [30] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 13:43:57.6423 | [30] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0030634
+2024-04-24 13:43:59.3467 | [34] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 13:43:59.3467 | [34] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1462095
+2024-04-24 13:43:59.5335 | [34] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 13:43:59.5335 | [34] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0034977
+2024-04-24 13:44:01.4490 | [34] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 13:44:01.4490 | [34] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1513301
+2024-04-24 13:54:20.9976 | [8] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/OrderDetail/OrderHighcharts","status":"LogOff"}
+2024-04-24 13:54:21.4143 | [8] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.4303085
+2024-04-24 13:54:34.6368 | [6] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"model":{"UserId":"admin","Password":"123456","ComFacID":"台化油品部儲運處-台北-","RememberMe":false,"Language":null},"returnUrl":"/OrderDetail/OrderHighcharts"}
+2024-04-24 13:54:35.0634 | [6] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.4337355
+2024-04-24 13:54:35.0857 | [8] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-04-24 13:54:35.1099 | [8] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0270607
+2024-04-24 13:54:35.2214 | [8] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-04-24 13:54:35.3378 | [8] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.1183011
+2024-04-24 13:54:35.4254 | [8] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-04-24 13:54:35.4254 | [8] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0446878
+2024-04-24 13:54:38.3733 | [7] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-04-24 13:54:38.4259 | [7] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0541679
+2024-04-24 13:54:40.2025 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 13:54:40.2546 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0531496
+2024-04-24 13:54:40.6393 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 13:54:40.6393 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0583185
+2024-04-24 13:54:44.2166 | [6] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 13:54:44.2166 | [6] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0030278
+2024-04-24 13:54:50.8762 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 13:54:50.8762 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0627148
+2024-04-24 13:56:13.5573 | [7] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 13:56:13.5573 | [7] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0046843
+2024-04-24 13:56:16.8959 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 13:56:16.9193 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.085224
+2024-04-24 14:03:11.8817 | [12] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 14:03:11.8817 | [12] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0067063
+2024-04-24 14:03:19.6191 | [25] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 14:03:19.6303 | [25] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0962623
+2024-04-24 14:05:36.5657 | [12] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 14:05:36.5657 | [12] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0044512
+2024-04-24 14:05:47.9847 | [21] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 14:05:47.9867 | [21] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0026707
+2024-04-24 14:05:50.5902 | [21] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 14:05:50.6135 | [21] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1191478
+2024-04-24 14:06:34.7093 | [12] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 14:06:34.7093 | [12] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0042111
+2024-04-24 14:06:37.5665 | [12] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 14:06:37.5665 | [12] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1255971
+2024-04-24 14:15:35.8281 | [12] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 14:15:35.8462 | [12] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0223644
+2024-04-24 14:15:46.9007 | [12] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 14:15:46.9488 | [12] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1741865
+2024-04-24 14:22:12.8958 | [60] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 14:22:12.8978 | [60] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.005155
+2024-04-24 14:22:21.0716 | [60] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 14:22:21.6051 | [60] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.7079405
+2024-04-24 14:27:00.8178 | [60] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 14:27:00.8218 | [60] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0056983
+2024-04-24 14:27:07.2873 | [60] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 14:27:07.3061 | [60] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.7269796
+2024-04-24 14:39:38.6086 | [84] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 14:39:38.8891 | [84] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.2817189
+2024-04-24 14:40:05.7417 | [84] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 14:40:05.8661 | [84] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.8514046
+2024-04-24 14:42:19.9340 | [84] | INFO | FuctionName=PersonData.PersonData | Start | IP=::1 | parametersInfo={}
+2024-04-24 14:42:19.9340 | [84] | INFO | FuctionName=PersonData.PersonData | End | IP=::1 | ExpendTime=0.0101192
+2024-04-24 14:42:23.4308 | [56] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 14:42:23.7175 | [56] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=1.1401624
+2024-04-24 14:42:37.4163 | [84] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=
+2024-04-24 14:42:37.9504 | [84] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.5339382
+2024-04-24 14:42:45.1667 | [84] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=
+2024-04-24 14:42:45.1667 | [84] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.5390033
+2024-04-24 14:43:13.2315 | [84] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=
+2024-04-24 14:43:13.2315 | [84] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.5453189
+2024-04-24 14:43:22.3419 | [84] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 14:43:22.3419 | [84] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0028062
+2024-04-24 14:43:29.1308 | [84] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 14:43:29.2502 | [84] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=1.2601695
+2024-04-24 14:45:19.1488 | [84] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 14:45:19.1592 | [84] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.007374
+2024-04-24 14:45:27.3881 | [84] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 14:45:27.4086 | [84] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=1.2804134
+2024-04-24 14:48:45.3047 | [72] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message={    "sStartDate": "1996-07-04",    "sEndDate": "1996-07-08"}
+2024-04-24 14:48:45.5971 | [72] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.2917391
+2024-04-24 14:49:07.5284 | [72] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message={    "sStartDate": "1996-7-4",    "sEndDate": "1996-07-08"}
+2024-04-24 14:49:08.0366 | [72] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.8006421
+2024-04-24 14:49:20.4011 | [72] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message={    "sStartDate": "1996-7-4",    "sEndDate": "19960711"}
+2024-04-24 14:49:20.4755 | [72] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.8750719
+2024-04-24 14:53:05.8338 | [72] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message={    "sStartDate": "19960704",    "sEndDate": "19960711"}
+2024-04-24 14:53:05.8498 | [72] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.8905693
+2024-04-24 15:16:10.8152 | [38] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message={    "sStartDate": "19960704",    "sEndDate": "19960711"}
+2024-04-24 15:16:11.2888 | [38] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=1.363923
+2024-04-24 15:18:30.2318 | [11] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/","status":"LogOff"}
+2024-04-24 15:18:30.2528 | [6] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message={    "sStartDate": "19960704",    "sEndDate": "19960711"}
+2024-04-24 15:18:30.5377 | [11] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.3143751
+2024-04-24 15:18:30.5705 | [6] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.317757
+2024-04-24 15:57:24.5402 | [88] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message={    "sStartDate": "19960704",    "sEndDate": "19960711"}
+2024-04-24 15:57:24.6819 | [88] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.4599726
+2024-04-24 15:58:15.7024 | [5] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/","status":"LogOff"}
+2024-04-24 15:58:15.7193 | [6] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message={    "sStartDate": "19960704",    "sEndDate": "19960711"}
+2024-04-24 15:58:15.9597 | [5] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.2606628
+2024-04-24 15:58:16.0444 | [6] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.3265558
+2024-04-24 16:10:38.8878 | [30] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"model":{"UserId":"admin","Password":"123456","ComFacID":"台化油品部儲運處-台北-","RememberMe":false,"Language":null},"returnUrl":"/"}
+2024-04-24 16:10:39.0037 | [30] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.1342116
+2024-04-24 16:10:39.0037 | [35] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-04-24 16:10:39.0597 | [35] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0432593
+2024-04-24 16:10:43.8357 | [35] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-04-24 16:10:43.8786 | [35] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.0437687
+2024-04-24 16:10:43.9056 | [35] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-04-24 16:10:43.9096 | [35] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0049909
+2024-04-24 16:10:45.3884 | [35] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-04-24 16:10:45.3949 | [35] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0082789
+2024-04-24 16:10:47.8701 | [30] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 16:10:47.8811 | [30] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.011058
+2024-04-24 16:10:48.2117 | [30] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 16:10:48.2257 | [30] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0254036
+2024-04-24 16:12:33.8071 | [30] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-24 16:12:33.8071 | [30] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0058636
+2024-04-24 16:12:40.0059 | [30] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-24 16:12:40.0925 | [30] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1116022
+2024-04-24 17:29:28.8892 | [12] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/OrderDetail/OrderHighcharts","status":"LogOff"}
+2024-04-24 17:29:29.6691 | [12] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.8724989

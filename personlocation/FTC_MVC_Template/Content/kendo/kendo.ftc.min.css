@@ -1,0 +1,573 @@
+:root {
+    --btn_primary_normal: #3386c5;
+    --btn_primary_active: #196aa8;
+    --btn_secondary_normal: #10b79c;
+    --btn_secondary_active: #0a917b;
+    --btn_negative_normal: #d9d9d9;
+    --btn_negative_active: #c0c0c0;
+    --crud_read_normal: #3ba9fc;
+    --crud_read_active: #2379b9;
+    --crud_duplicate_normal: #ffa717;
+    --crud_edit_normal: #10b79c;
+    --crud_edit_active: #008d77;
+    --crud_duplicate_active: #e59410;
+    --crud_delete_normal: #ff6a6a;
+    --crud_delete_active: #ca4c4c;
+    --blue-h-1: #e5faff;
+    --blue-h-2: #cef2ff;
+    --blue-h-3: #aee2f6;
+    --blue-h-4: #53c2ed;
+    --blue-h-5: #21a4fc;
+    --blue-h-6: #0c87f6;
+    --blue-h-7: #016ed0;
+    --blue-l-1: #e0f3f7;
+    --blue-l-2: #cfe9f2;
+    --blue-l-3: #b9dcea;
+    --blue-l-4: #a5ccdb;
+    --blue-l-5: #7da7c7;
+    --blue-l-6: #5b87af;
+    --blue-l-7: #396a92;
+    --blue-m-8: #1f4364;
+    --blue-m-9: #122d4e;
+    --blue-h-10: #02152c;
+    --error_primary: #ff4848;
+    --success_primary: #10b79c;
+}
+
+
+/*table*/
+/*https://demos.telerik.com/kendo-ui/grid/index*/
+/*群組區塊標題列*/
+.k-grouping-header {
+    color: #fff;
+    background-color: var(--blue-m-8);
+    background-image: none;
+}
+/*表頭 header 底色*/
+.k-grid-header .k-header {
+    background-color: var(--blue-l-6);
+    background-image: none;
+    color: white;
+}
+    /*表頭 header 文字色*/
+    .k-grid-header .k-header > .k-link {
+        color: #fff;
+    }
+/*表格雙數列*/
+.k-alt {
+    background-color: var(--blue-l-1);
+}
+/*表格 hover*/
+.k-grid tr:hover {
+    background-color: var(--blue-h-2);
+}
+/*分頁條底色*/
+.k-pager-wrap {
+    background-color: #fff;
+}
+/*分頁按鈕數字顏色*/
+.k-pager-numbers .k-link {
+    background-color: #fff !important;
+    color: #000 !important;
+}
+/*分頁按鈕顏色*/
+.k-pager-wrap .k-link {
+    border-color: #fff;
+    background-color: var(--blue-l-4);
+    color: #fff;
+}
+    /*分頁顏色按鈕 hover*/
+    .k-pager-wrap .k-link:hover {
+        background-color: var(--blue-h-2) !important;
+    }
+    /*按鈕 disabled*/
+    .k-pager-wrap .k-link.k-state-disabled {
+        color: #fff;
+        border-color: var(--blue-l-4);
+        background-color: var(--blue-l-4);
+    }
+    /*表格分頁 active*/
+    .k-pager-wrap .k-link.k-state-selected {
+        background-color: var(--blue-l-7) !important;
+        color: #fff !important;
+    }
+
+/*DateTimePicker*/
+/*https://demos.telerik.com/kendo-ui/datetimepicker/keyboard-navigation*/
+/*右邊兩顆按鈕*/
+.k-datetimepicker .k-select {
+    color: #ffffff;
+    background-color: var(--blue-h-7);
+}
+/*今天日期*/
+.k-calendar .k-today .k-link {
+    background-color: var(--blue-h-7);
+    color: #fff;
+    box-shadow: inset 0 0 0 1px var(--blue-h-7);
+}
+
+.k-calendar td.k-state-selected .k-link {
+    border-color: var(--blue-h-7);
+    background-color: var(--blue-h-7);
+    background-image: none;
+}
+/*日期 hover*/
+.k-state-hover {
+    background-color: var(--blue-h-7);
+    color: #fff;
+}
+/*footer 日期*/
+.k-calendar .k-footer .k-nav-today {
+    color: var(--blue-h-7);
+}
+
+    .k-calendar .k-footer .k-nav-today:hover {
+        color: var(--blue-h-7);
+    }
+/*時間選擇底色*/
+.k-list-container {
+    background-color: #fff;
+}
+/*時間選擇 hover*/
+.k-list > .k-state-hover {
+    color: #fff;
+    background-color: var(--blue-h-7);
+}
+/*時間選擇 selected*/
+.k-list > .k-state-selected {
+    background-color: var(--blue-h-7);
+}
+
+/*Dialog*/
+/*https://demos.telerik.com/kendo-ui/dialog/index*/
+.k-window-titlebar {
+    color: #fff;
+    background-color: var(--blue-m-8);
+    background-image: none;
+}
+
+.k-dialog-buttongroup {
+    background-color: #f5f5f5;
+}
+
+.k-dialog-button-layout-stretched .k-button {
+    background-color: #d9d9d9;
+    border-color: #d9d9d9;
+    background-image: none;
+}
+
+.k-dialog-button-layout-stretched .k-primary {
+    background-color: var(--btn_secondary_normal);
+}
+
+
+/*Form*/
+/*https://demos.telerik.com/kendo-ui/form/items*/
+/*switch 按鈕*/
+.k-switch-on .k-switch-handle {
+    background-color: #fff;
+    border-color: #fff;
+    color: #fff;
+    background-image: none;
+}
+/*switch 按鈕文字顏色*/
+.k-switch-on .k-switch-container {
+    background-color: var(--blue-h-7);
+    color: #fff;
+}
+/*switch 按鈕 hover*/
+.k-switch-on:hover .k-switch-container {
+    background-color: var(--blue-h-7);
+    color: #fff;
+}
+
+.k-switch-on:hover .k-switch-handle {
+    background-color: #fff;
+    border-color: #fff;
+    color: #fff;
+}
+/*submit 按鈕*/
+.k-button.k-primary {
+    border-color: var(--blue-h-7);
+    background-color: var(--blue-h-7);
+    background-image: none;
+}
+    /*submit 按鈕 hover*/
+    .k-button.k-primary:hover {
+        border-color: var(--blue-h-7);
+        background-color: var(--blue-h-7);
+        background-image: none;
+    }
+/*DropDownList下拉選單按鈕*/
+.k-state-default > .k-select {
+    background-color: #016ed0;
+    color: #fff;
+}
+/*DropDownList下拉選單*/
+.k-state-focused.k-state-selected {
+    box-shadow: inset 0 0 3px 1px var(--blue-h-7);
+}
+
+.k-popup .k-list .k-state-selected {
+    background-color: var(--blue-h-7);
+}
+
+.k-list > .k-state-hover {
+    color: #fff;
+    background-color: var(--blue-h-7);
+}
+
+
+/*scheduler*/
+/*https://demos.telerik.com/kendo-ui/scheduler/index*/
+.k-button-group .k-button.k-state-selected {
+    color: #ffffff;
+    background-color: var(--blue-h-7);
+    border-color: var(--blue-h-7);
+}
+
+.k-button.k-state-selected:hover {
+    color: #ffffff;
+    background-color: var(--blue-h-7);
+    border-color: var(--blue-h-7);
+}
+
+.k-button:focus, .k-button:focus:hover, .k-button:focus:active {
+    box-shadow: var(--blue-h-7);
+    border-color: var(--blue-h-7);
+}
+
+/*spreadsheet*/
+/*https://demos.telerik.com/kendo-ui/spreadsheet/index?autoRun=true&theme=default*/
+
+/*頭尾*/
+.k-header {
+    border-color: var(--blue-l-3);
+    background-color: var(--blue-l-6);
+    background-image: none;
+}
+.k-grid-toolbar {
+    border-color: var(--blue-l-3);
+    background-color: rgba(255,255,255,.25);
+    background-image: none;
+}
+/*按鈕顏色*/
+    .k-button {
+    background-color: var(--blue-h-7);
+    background-image: none;
+    border-radius: 4px;
+    color: #000;
+}
+   .k-button:hover {
+        background-color: var(--blue-h-7);
+        background-image: none;
+    }
+.k-grid-excel {
+    background-color: var(--btn_secondary_normal);
+    background-image: none;
+    border-radius: 4px;
+    color: #fff;
+}
+
+    .k-grid-excel:hover {
+        background-color: var(--btn_secondary_normal);
+        color: white;
+        opacity: 0.8;
+    }
+
+    .k-grid-excel:active {
+        background-color: var(--btn_secondary_active);
+        color: white;
+    }
+.k-grid-add {
+    background-color: var(--btn_primary_normal);
+    background-image: none;
+    border-radius: 4px;
+    color: #fff;
+}
+    .k-grid-add:hover {
+        background-color: var(--btn_primary_normal);
+        color: white;
+        opacity: 0.8;
+    }
+
+    .k-grid-add:active {
+        background-color: var(--btn_primary_active);
+        color: white;
+    }
+.k-grid-update {
+    background-color: var(--btn_primary_normal);
+    background-image: none;
+    border-radius: 4px;
+    color: #fff;
+}
+    .k-grid-update:hover {
+        background-color: var(--btn_primary_normal);
+        color: white;
+        opacity: 0.8;
+    }
+
+    .k-grid-update:active {
+        background-color: var(--btn_primary_active);
+        color: white;
+    }
+.k-grid-save-changes {
+    background-color: var(--btn_secondary_normal);
+    background-image: none;
+    border-radius: 4px;
+    color: #fff;
+}
+    .k-grid-save-changes:hover {
+        background-color: var(--btn_secondary_normal);
+        color: white;
+        opacity: 0.8;
+    }
+
+    .k-grid-save-changes:active {
+        background-color: var(--btn_secondary_active);
+        color: white;
+    }
+.k-grid-cancel-changes {
+    background-color: var(--btn_negative_normal);
+    background-image: none;
+    border-radius: 4px;
+    color: #3d3d3d;
+}
+    .k-grid-cancel-changes:hover {
+        background-color: var(--btn_negative_normal);
+        color: #3d3d3d;
+        opacity: 0.8;
+    }
+
+    .k-grid-cancel-changes:active {
+        background-color: var(--btn_negative_active);
+        color: white;
+    }
+.k-grid-cancel {
+    background-color: var(--btn_negative_normal);
+    background-image: none;
+    border-radius: 4px;
+    color: #3d3d3d;
+}
+    .k-grid-cancel:hover {
+        background-color: var(--btn_negative_normal);
+        color: #3d3d3d;
+        opacity: 0.8;
+    }
+.k-grid td.k-state-selected, .k-grid tr.k-state-selected {
+    background-color: var(--blue-h-7);
+    background-image: none;
+}
+.k-grid td.k-state-selected:hover, .k-grid tr.k-state-selected:hover {
+    background-color: var(--blue-h-7);
+    background-image: none;
+}
+.k-grid-cancel:active {
+    background-color: var(--btn_negative_active);
+    color: white;
+}
+   
+/*tab 選單按鈕 active*/
+.k-tabstrip-items .k-state-active {
+    color: #fff;
+    background-color: var(--btn_secondary_normal);
+    border-color: transparent;
+}
+
+.k-tabstrip-items .k-state-default .k-link {
+    color: #fff;
+}
+
+.k-tabstrip-items .k-state-default {
+    background-color: transparent;
+    background-image: none;
+    border-color: transparent;
+}
+
+.k-tabstrip-items .k-state-hover {
+    background-color: var(--btn_secondary_normal);
+    border-color: transparent;
+    color: #fff;
+}
+
+/*表格被選取範圍樣式*/
+.k-spreadsheet-pane .k-selection-partial {
+    background-color: var(--btn_secondary_normal);
+    color: #fff;
+}
+/*按鈕 active*/
+.k-button.k-state-active {
+    background-color: var(--btn_secondary_normal);
+    border-color: var(--btn_secondary_normal);
+}
+
+.k-spreadsheet-popup .k-state-active {
+    background-color: var(--btn_secondary_normal);
+}
+
+.k-button:focus, .k-button:focus:hover {
+    border-color: var(--btn_secondary_normal);
+    box-shadow: 0 0 2px 1px var(--btn_secondary_normal);
+}
+/*選單下拉 icon 顏色*/
+.k-spreadsheet-popup .k-button.k-button-icon {
+    color: #000;
+}
+
+.k-spreadsheet-popup .k-button {
+    color: #000;
+}
+
+.k-overflow-container .k-overflow-button {
+    color: #000;
+}
+
+
+/*notification*/
+/*https://demos.telerik.com/kendo-ui/notification/templates*/
+
+.k-notification-error {
+    color: #fff;
+    background-color: var(--error_primary);
+    border: 1px solid #fff;
+    border-radius: 4px;
+}
+
+.k-notification-success {
+    color: #fff;
+    background-color: var(--success_primary);
+    border: 1px solid #fff;
+    border-radius: 4px;
+}
+/*FTC UX/Ui button Css*/
+
+.btn {
+    border: none;
+    /*padding: 14px 20px;*/
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    /*font-size: 18px;*/
+    margin: 4px 2px;
+    border-radius: 5px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.btn_primary {
+    background-color: var(--btn_primary_normal);
+    color: white;
+}
+
+    .btn_primary:hover {
+        background-color: var(--btn_primary_normal);
+        color: white;
+        opacity: 0.8;
+    }
+
+    .btn_primary:active {
+        background-color: var(--btn_primary_active);
+        color: white;
+    }
+
+.btn_secondary {
+    background-color: var(--btn_secondary_normal);
+    color: white;
+}
+
+    .btn_secondary:hover {
+        background-color: var(--btn_secondary_normal);
+        opacity: 0.8;
+        color: white;
+    }
+
+    .btn_secondary:active {
+        background-color: var(--btn_secondary_active);
+        color: white;
+    }
+
+.btn_negative {
+    background-color: var(--btn_negative_normal);
+    color: #3d3d3d;
+}
+
+    .btn_negative:hover {
+        background-color: var(--btn_negative_normal);
+        opacity: 0.8;
+    }
+
+    .btn_negative:active {
+        background-color: var(--btn_negative_active);
+    }
+
+.btn_primary_disabled {
+    background-color: var(--btn_primary_normal);
+    color: white;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.crud {
+    border: none;
+    padding: 4px;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 50px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.crud_edit {
+    background-color: var(--crud_edit_normal);
+    color: white;
+    width: 23px;
+    /*height: 30px;*/
+}
+
+    .crud_edit:hover {
+        background-color: var(--crud_edit_normal);
+        color: white;
+        opacity: 0.6;
+    }
+
+.crud_read {
+    background-color: var(--crud_read_normal);
+    color: white;
+    width: 23px;
+    /*height: 30px;*/
+}
+
+    .crud_read:hover {
+        background-color: var(--crud_read_normal);
+        color: white;
+        opacity: 0.6;
+    }
+
+.crud_duplicate {
+    background-color: var(--crud_duplicate_normal);
+    color: white;
+    width: 23px;
+    /*height: 30px;*/
+}
+
+    .crud_duplicate:hover {
+        background-color: var(--crud_duplicate_normal);
+        color: white;
+        opacity: 0.6;
+    }
+
+.crud_delete {
+    background-color: var(--crud_delete_normal);
+    color: white;
+    width: 23px;
+    /*height: 30px;*/
+}
+
+    .crud_delete:hover {
+        background-color: var(--crud_delete_normal);
+        color: white;
+        opacity: 0.6;
+    }

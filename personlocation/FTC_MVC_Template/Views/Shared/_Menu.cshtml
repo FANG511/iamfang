@@ -1,0 +1,66 @@
+﻿@using FTC_MES_MVC.Models.ViewModels;
+@model FTC_MES_MVC.Models.ViewModels.TreeViewModel
+
+@helper GenerateTree(IEnumerable<V_TreeNode> nodes, string nodeID)
+{
+    if (nodes.Any(x => x.PARENTID == nodeID))
+    {
+        <ul class="treeview-menu">
+            @foreach (var item in nodes.Where(x => x.PARENTID == nodeID).OrderBy(x => x.NODESEQUENCE))
+            {
+                if (Model.TreeNodes.Any(x => x.PARENTID == item.NODEID))
+                {
+                    <li class="treeview">
+                        <a href="#" displaytitle="@item.NODETEXT">
+                            <i class="@item.NODEIMAGE"></i>
+
+                            <span style="font:large">@item.NODETEXT</span>
+
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        @GenerateTree(nodes, item.NODEID)
+                    </li>
+                }
+                else
+                {
+                    <li>
+                        <a href="@item.NODEURL" data-link="@item.NODEURL" displaytitle="@item.NODETEXT" name="@item.NODEID" iframeheight="@item.IFRAMEHEIGHT"><i class="@item.NODEIMAGE"></i><span style="font:large">@item.NODETEXT</span></a>
+                        @GenerateTree(nodes, item.NODEID)
+                    </li>
+                }
+            }
+        </ul>
+    }
+}
+
+@if (Model.RootNodes.Count > 0 && Model.TreeNodes.Count > 0)
+{
+    foreach (var item in Model.RootNodes.OrderBy(x => x.NODESEQUENCE))
+    {
+        if (Model.TreeNodes.Any(x => x.PARENTID == item.NODEID))
+        {
+            <li class="treeview">
+                <a href="#" displaytitle="@item.NODETEXT">
+                    <i class="@item.NODEIMAGE"></i>
+
+                    <span style="font:large">@item.NODETEXT</span>
+
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                @GenerateTree(Model.TreeNodes, item.NODEID)
+            </li>
+        }
+        else
+        {
+            <li>
+                <a href="@item.NODEURL" data-link="@item.NODEURL" displaytitle="@item.NODETEXT"><i class="@item.NODEIMAGE"></i><span style="font:large">@item.NODETEXT</span></a>
+                @GenerateTree(Model.TreeNodes, item.NODEID)
+            </li>
+        }
+    }
+}
+

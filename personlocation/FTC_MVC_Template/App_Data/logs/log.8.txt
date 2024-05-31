@@ -1,0 +1,1035 @@
+2024-04-25 08:58:18.2977 | [7] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/OrderDetail/OrderHighcharts","status":"LogOff"}
+2024-04-25 08:58:19.3925 | [7] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=1.4255641
+2024-04-25 08:59:09.6927 | [7] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/OrderDetail/OrderHighcharts","status":"LogOff"}
+2024-04-25 08:59:10.2404 | [7] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.6904352
+2024-04-25 08:59:36.2372 | [7] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"model":{"UserId":"admin","Password":"123456","ComFacID":"台化油品部儲運處-台北-","RememberMe":false,"Language":null},"returnUrl":"/OrderDetail/OrderHighcharts"}
+2024-04-25 08:59:36.5084 | [7] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.3157703
+2024-04-25 08:59:36.5503 | [10] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-04-25 08:59:36.5724 | [10] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0238058
+2024-04-25 08:59:43.3355 | [10] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-04-25 08:59:43.4820 | [10] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.1481688
+2024-04-25 08:59:43.5714 | [10] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-04-25 08:59:43.5764 | [10] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0071656
+2024-04-25 08:59:45.1780 | [7] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-04-25 08:59:45.1849 | [7] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0074542
+2024-04-25 08:59:48.8716 | [12] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 08:59:48.9165 | [12] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0451584
+2024-04-25 08:59:49.3456 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 08:59:49.3456 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0534673
+2024-04-25 09:01:41.3750 | [7] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 09:01:41.3750 | [7] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0089745
+2024-04-25 09:01:47.7375 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 09:01:47.7464 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0622893
+2024-04-25 09:02:42.0060 | [7] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 09:02:42.0110 | [7] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0053624
+2024-04-25 09:02:44.0180 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 09:02:44.0180 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0692487
+2024-04-25 09:02:57.2250 | [7] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-04-25 09:02:57.2329 | [7] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.009623
+2024-04-25 09:02:57.2329 | [7] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-04-25 09:02:57.2539 | [7] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.0138646
+2024-04-25 09:02:57.2638 | [7] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-04-25 09:02:57.2638 | [7] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0052375
+2024-04-25 09:02:58.6988 | [19] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-04-25 09:02:58.6988 | [19] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0068713
+2024-04-25 09:03:00.1821 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 09:03:00.1891 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0761844
+2024-04-25 09:03:00.2868 | [19] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 09:03:00.2958 | [19] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0850661
+2024-04-25 09:03:03.6546 | [19] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 09:03:03.6546 | [19] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0049263
+2024-04-25 09:03:04.6948 | [20] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 09:03:04.6998 | [20] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0898933
+2024-04-25 09:04:07.9533 | [25] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 09:04:07.9533 | [25] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0088655
+2024-04-25 09:04:15.9260 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 09:04:15.9370 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1009225
+2024-04-25 09:05:38.0464 | [28] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 09:05:38.0464 | [28] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0065403
+2024-04-25 09:05:39.5967 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 09:05:39.5967 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1070791
+2024-04-25 09:08:17.8236 | [8] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-04-25 09:08:17.8236 | [8] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0110847
+2024-04-25 09:08:17.8406 | [8] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-04-25 09:08:17.8406 | [8] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.0111786
+2024-04-25 09:08:17.8560 | [8] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-04-25 09:08:17.8560 | [8] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0056178
+2024-04-25 09:08:20.2940 | [8] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-04-25 09:08:20.2940 | [8] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0091775
+2024-04-25 09:08:22.7716 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 09:08:22.7786 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1148536
+2024-04-25 09:08:22.9501 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 09:08:22.9501 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1232966
+2024-04-25 09:08:27.3538 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 09:08:27.3597 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0077799
+2024-04-25 09:08:32.9887 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 09:08:32.9966 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1314428
+2024-04-25 09:10:01.7653 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 09:10:01.7653 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0039012
+2024-04-25 09:10:06.0831 | [42] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 09:10:06.0921 | [42] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0121946
+2024-04-25 09:10:08.2403 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 09:10:08.2403 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1379561
+2024-04-25 09:11:08.0154 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 09:11:08.0154 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0046292
+2024-04-25 09:11:12.1057 | [42] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 09:11:12.1057 | [42] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0036765
+2024-04-25 09:11:14.5656 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 09:11:14.6088 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1808432
+2024-04-25 09:11:21.5946 | [8] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=StartDate=1996%2F07%2F04&EndDate=1996%2F07%2F04
+2024-04-25 09:11:29.2976 | [8] | ERROR | FuctionName=GetOrderDetail | Error=System.InvalidOperationException: ExecuteReader: CommandText 屬性尚未初始化   於 System.Data.SqlClient.SqlCommand.ValidateCommand(String method, Boolean async)   於 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)   於 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)   於 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)   於 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)   於 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)   於 Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)   於 Dapper.SqlMapper.<QueryImpl>d__138`1.MoveNext()   於 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)   於 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)   於 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)   於 FTC_MES_MVC.Models.DAL.OrderDetail.dalOrderDetail.GetOrderDetail(String p_sStartDate, String p_sEndDate) 於 C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\Models\OrderDetail\DAL\dalOrderDetail.cs: 行 56
+2024-04-25 09:11:29.4213 | [8] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=7.8254799
+2024-04-25 09:11:42.8282 | [46] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=StartDate=1996%2F07%2F04&EndDate=1996%2F07%2F04
+2024-04-25 09:11:51.0162 | [46] | ERROR | FuctionName=GetOrderDetail | Error=System.InvalidOperationException: ExecuteReader: CommandText 屬性尚未初始化   於 System.Data.SqlClient.SqlCommand.ValidateCommand(String method, Boolean async)   於 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)   於 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)   於 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)   於 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)   於 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)   於 Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)   於 Dapper.SqlMapper.<QueryImpl>d__138`1.MoveNext()   於 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)   於 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)   於 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)   於 FTC_MES_MVC.Models.DAL.OrderDetail.dalOrderDetail.GetOrderDetail(String p_sStartDate, String p_sEndDate) 於 C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\Models\OrderDetail\DAL\dalOrderDetail.cs: 行 56
+2024-04-25 09:12:27.4296 | [46] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=52.42498
+2024-04-25 10:08:37.4846 | [7] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/OrderDetail/OrderHighcharts","status":"LogOff"}
+2024-04-25 10:08:38.0574 | [7] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.6834281
+2024-04-25 10:09:13.6482 | [5] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"model":{"UserId":"admin","Password":"123456","ComFacID":"台化油品部儲運處-台北-","RememberMe":false,"Language":null},"returnUrl":"/OrderDetail/OrderHighcharts"}
+2024-04-25 10:09:13.8175 | [5] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.1868784
+2024-04-25 10:09:13.8554 | [8] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-04-25 10:09:13.8744 | [8] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0201876
+2024-04-25 10:09:18.4784 | [8] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-04-25 10:09:18.5458 | [8] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.0686097
+2024-04-25 10:09:18.6187 | [8] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-04-25 10:09:18.6187 | [8] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0065354
+2024-04-25 10:09:18.9461 | [7] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-04-25 10:09:18.9461 | [7] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0065274
+2024-04-25 10:09:18.9590 | [7] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-04-25 10:09:18.9825 | [7] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.0254272
+2024-04-25 10:09:18.9915 | [7] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-04-25 10:09:18.9915 | [7] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0077549
+2024-04-25 10:09:20.5220 | [11] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-04-25 10:09:20.5220 | [11] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0084288
+2024-04-25 10:09:23.1409 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 10:09:23.1977 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0577363
+2024-04-25 10:09:23.3885 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 10:09:23.3955 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0647241
+2024-04-25 10:09:30.0701 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 10:09:30.0701 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.005701
+2024-04-25 10:09:32.7859 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 10:09:32.7859 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0722253
+2024-04-25 10:11:27.2634 | [6] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 10:11:27.2664 | [6] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.003748
+2024-04-25 10:11:34.4231 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 10:11:34.4231 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0813414
+2024-04-25 10:15:06.7442 | [24] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 10:15:06.7442 | [24] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0059586
+2024-04-25 10:15:11.0629 | [23] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 10:15:11.0649 | [23] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0028574
+2024-04-25 10:15:11.5699 | [22] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 10:15:11.5699 | [22] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.005086
+2024-04-25 10:15:13.4702 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 10:15:13.4981 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1097512
+2024-04-25 10:15:47.2102 | [22] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=StartDate=1996%2F07%2F04&EndDate=1996%2F07%2F04
+2024-04-25 10:15:47.2102 | [22] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.0061016
+2024-04-25 10:16:22.7104 | [35] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=StartDate=1996%2F07%2F04&EndDate=1996%2F07%2F10
+2024-04-25 10:19:45.5096 | [35] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=202.8015025
+2024-04-25 10:20:16.8392 | [7] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 10:20:16.8392 | [7] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0040574
+2024-04-25 10:20:23.9412 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 10:20:23.9452 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1142133
+2024-04-25 10:20:36.6656 | [7] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=StartDate=1996%2F07%2F04&EndDate=1996%2F07%2F04
+2024-04-25 10:20:38.7508 | [7] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=204.8866146
+2024-04-25 10:21:19.0328 | [6] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=StartDate=1996%2F07%2F04&EndDate=1996%2F07%2F04
+2024-04-25 10:21:27.9573 | [6] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=213.8109317
+2024-04-25 10:22:00.3551 | [6] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=StartDate=1996%2F07%2F04&EndDate=1996%2F07%2F04
+2024-04-25 10:23:27.8674 | [6] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=301.3206831
+2024-04-25 10:23:44.9164 | [6] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=StartDate=1996%2F07%2F12&EndDate=1996%2F07%2F25
+2024-04-25 10:24:23.0162 | [6] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=339.4203056
+2024-04-25 10:24:26.3591 | [6] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 10:24:26.3591 | [6] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0023297
+2024-04-25 10:24:30.2438 | [64] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 10:24:30.2459 | [64] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0023053
+2024-04-25 10:24:31.8529 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 10:24:31.8568 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1182634
+2024-04-25 10:24:37.8223 | [6] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=StartDate=1996%2F07%2F12&EndDate=1996%2F07%2F17
+2024-04-25 10:25:30.7856 | [7] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/OrderDetail/OrderHighcharts","status":"LogOff"}
+2024-04-25 10:25:31.0866 | [7] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.381538
+2024-04-25 10:26:17.1908 | [7] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"model":{"UserId":"admin","Password":"123456","ComFacID":"台化油品部儲運處-台北-","RememberMe":false,"Language":null},"returnUrl":"/OrderDetail/OrderHighcharts"}
+2024-04-25 10:26:17.4452 | [7] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.2743108
+2024-04-25 10:26:17.4734 | [11] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-04-25 10:26:17.4853 | [11] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.012634
+2024-04-25 10:26:17.5627 | [11] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-04-25 10:26:17.5976 | [11] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.0361176
+2024-04-25 10:26:17.6475 | [11] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-04-25 10:26:17.6475 | [11] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0053772
+2024-04-25 10:26:18.9399 | [7] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-04-25 10:26:18.9528 | [7] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0164813
+2024-04-25 10:26:20.2434 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 10:26:20.2774 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0350152
+2024-04-25 10:26:20.4581 | [11] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 10:26:20.4680 | [11] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.045331
+2024-04-25 10:26:23.6844 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 10:26:23.6895 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.00544
+2024-04-25 10:26:24.7711 | [11] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 10:26:24.7711 | [11] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0500862
+2024-04-25 10:26:34.4811 | [11] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 10:26:34.4841 | [11] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0045697
+2024-04-25 10:26:36.2344 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 10:26:36.2344 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0591249
+2024-04-25 10:27:04.7975 | [11] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=StartDate=1996%2F07%2F04&EndDate=1996%2F07%2F04
+2024-04-25 10:27:23.6730 | [11] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=18.8756128
+2024-04-25 10:27:32.4751 | [8] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=StartDate=1996%2F07%2F04&EndDate=1996%2F07%2F04
+2024-04-25 10:27:32.4751 | [8] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=18.8771935
+2024-04-25 10:29:20.9874 | [28] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=StartDate=1996%2F07%2F12&EndDate=1996%2F07%2F27
+2024-04-25 10:29:20.9874 | [28] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=18.8807602
+2024-04-25 10:31:20.5966 | [8] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=StartDate=1996%2F07%2F12&EndDate=1996%2F07%2F27
+2024-04-25 10:31:20.5966 | [8] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=18.8843671
+2024-04-25 10:36:10.9682 | [8] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=StartDate=1996%2F07%2F12&EndDate=1996%2F07%2F27
+2024-04-25 10:36:10.9751 | [8] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=18.8906657
+2024-04-25 10:36:35.5283 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 10:36:35.5652 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.1007604
+2024-04-25 10:36:51.0595 | [27] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 10:36:51.2111 | [27] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.15292
+2024-04-25 10:37:11.0594 | [41] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=StartDate=1996%2F07%2F04&EndDate=1996%2F07%2F04
+2024-04-25 10:37:11.0690 | [41] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.0087665
+2024-04-25 10:37:30.0358 | [44] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=StartDate=1996%2F07%2F04&EndDate=1996%2F07%2F04
+2024-04-25 10:38:37.6085 | [44] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=67.5796121
+2024-04-25 10:38:46.8426 | [8] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=StartDate=1996%2F07%2F04&EndDate=1996%2F07%2F04
+2024-04-25 10:38:54.1627 | [8] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=74.8992632
+2024-04-25 10:39:04.4424 | [27] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 10:39:04.4444 | [27] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0029057
+2024-04-25 10:39:10.5083 | [11] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 10:39:10.5083 | [11] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1639488
+2024-04-25 10:39:29.8109 | [29] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996%2F07%2F04&EndDate=1996%2F07%2F04
+2024-04-25 10:40:35.6495 | [29] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=140.7369317
+2024-04-25 10:40:51.4263 | [29] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996%2F07%2F04&EndDate=1996%2F07%2F12
+2024-04-25 10:41:02.2762 | [29] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=151.5866916
+2024-04-25 10:41:14.4321 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 10:41:14.4321 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0064763
+2024-04-25 10:41:20.7796 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 10:41:20.7796 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1683994
+2024-04-25 10:41:29.2012 | [8] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996%2F07%2F04&sEndDate=1996%2F07%2F11
+2024-04-25 10:42:37.6202 | [8] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=218.6043834
+2024-04-25 10:44:03.4774 | [8] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996%2F07%2F04&sEndDate=1996%2F07%2F11
+2024-04-25 10:45:41.9155 | [8] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=317.031242
+2024-04-25 10:46:39.0845 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 10:46:39.0845 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0038278
+2024-04-25 10:46:40.3828 | [29] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 10:46:40.3878 | [29] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.174056
+2024-04-25 10:46:50.0247 | [8] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-04-25 10:46:50.0316 | [8] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0076813
+2024-04-25 10:46:52.5267 | [27] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 10:46:52.5403 | [27] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1880261
+2024-04-25 10:46:52.8380 | [29] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 10:46:52.8460 | [29] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1960377
+2024-04-25 10:46:54.8071 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 10:46:54.8111 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0046491
+2024-04-25 10:46:56.9774 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 10:46:56.9844 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.2022908
+2024-04-25 10:47:12.2381 | [54] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996%2F07%2F04&sEndDate=1996%2F07%2F04
+2024-04-25 10:47:12.2500 | [54] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=317.0431991
+2024-04-25 10:48:10.3626 | [27] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996%2F07%2F04&sEndDate=1996%2F07%2F04
+2024-04-25 10:48:10.3626 | [27] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=317.0504697
+2024-04-25 10:49:29.6885 | [27] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996%2F07%2F04&sEndDate=1996%2F07%2F04
+2024-04-25 10:49:29.6885 | [27] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=317.0609218
+2024-04-25 10:50:12.0201 | [70] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996%2F07%2F04&sEndDate=1996%2F07%2F04
+2024-04-25 10:50:36.1466 | [70] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=341.1870188
+2024-04-25 10:50:55.2218 | [71] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996%2F07%2F04&sEndDate=1996%2F07%2F31
+2024-04-25 10:51:11.1182 | [71] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=357.0835358
+2024-04-25 10:52:08.8090 | [68] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 10:52:08.8130 | [68] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0044571
+2024-04-25 10:52:14.5139 | [73] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 10:52:14.5139 | [73] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.2056705
+2024-04-25 10:52:21.8119 | [83] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996%2F07%2F04&sEndDate=1996%2F07%2F25
+2024-04-25 10:52:24.8225 | [83] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=360.094101
+2024-04-25 10:52:46.6490 | [69] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996%2F07%2F04&sEndDate=1996%2F07%2F25
+2024-04-25 10:52:48.3287 | [69] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=361.7734066
+2024-04-25 10:53:11.9966 | [68] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996%2F07%2F04&sEndDate=1996%2F07%2F25
+2024-04-25 10:53:12.0056 | [68] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=361.7820622
+2024-04-25 10:53:25.1805 | [73] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996%2F07%2F04&sEndDate=1996%2F07%2F25
+2024-04-25 10:53:25.1895 | [73] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=361.7904958
+2024-04-25 11:19:09.5804 | [72] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/OrderDetail/OrderHighcharts?NodeId=N601&CompanyID=%E5%8F%B0%E5%8C%96%E6%B2%B9%E5%93%81%E9%83%A8%E5%84%B2%E9%81%8B%E8%99%95&FactoryID=%E5%8F%B0%E5%8C%97&MODIFYUSER=ADMIN&Lng=","status":"LogOff"}
+2024-04-25 11:19:09.6362 | [72] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.0576601
+2024-04-25 11:19:12.2771 | [68] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":null,"status":null}
+2024-04-25 11:19:12.2771 | [68] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.0102664
+2024-04-25 11:19:45.8968 | [68] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"model":{"UserId":"admin","Password":"123456","ComFacID":"台化油品部儲運處-台北-","RememberMe":false,"Language":null},"returnUrl":null}
+2024-04-25 11:19:46.0077 | [68] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.1140181
+2024-04-25 11:19:46.0296 | [84] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-04-25 11:19:46.0801 | [84] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0515372
+2024-04-25 11:19:46.1375 | [84] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-04-25 11:19:46.1603 | [84] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.0232782
+2024-04-25 11:19:46.1962 | [84] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-04-25 11:19:46.1962 | [84] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0054623
+2024-04-25 11:19:47.8951 | [68] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-04-25 11:19:47.9011 | [68] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0080225
+2024-04-25 11:19:50.6334 | [68] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 11:19:50.6334 | [68] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.214832
+2024-04-25 11:19:50.7910 | [69] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 11:19:50.7910 | [69] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.2234377
+2024-04-25 11:19:59.1925 | [68] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 11:19:59.1965 | [68] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0044262
+2024-04-25 11:20:05.1647 | [68] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 11:20:05.1647 | [68] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.2317899
+2024-04-25 11:21:17.2676 | [65] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996%2F07%2F04&sEndDate=1996%2F07%2F04
+2024-04-25 11:21:17.2796 | [65] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=361.8032741
+2024-04-25 11:21:31.0710 | [68] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 11:21:31.0710 | [68] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0025359
+2024-04-25 11:21:33.0602 | [65] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 11:21:33.0602 | [65] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.2362368
+2024-04-25 11:22:21.0889 | [68] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996%2F07%2F04&sEndDate=1996%2F07%2F04
+2024-04-25 11:22:21.1088 | [68] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=361.8232727
+2024-04-25 11:22:45.1374 | [68] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996%2F07%2F04&sEndDate=1996%2F07%2F04
+2024-04-25 11:22:45.1374 | [68] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=361.8289005
+2024-04-25 11:22:53.9905 | [73] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 11:22:53.9935 | [73] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0040418
+2024-04-25 11:22:57.7972 | [69] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 11:22:57.7972 | [69] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0025132
+2024-04-25 11:22:57.9472 | [69] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 11:22:57.9472 | [69] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0137482
+2024-04-25 11:23:00.4337 | [68] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 11:23:00.4337 | [68] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.2468203
+2024-04-25 11:23:27.9062 | [68] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996%2F07%2F04&sEndDate=1996%2F07%2F04
+2024-04-25 11:23:27.9182 | [68] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=361.8406376
+2024-04-25 11:23:43.9740 | [68] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996%2F07%2F04&sEndDate=1996%2F07%2F04
+2024-04-25 11:23:43.9820 | [68] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=361.8486605
+2024-04-25 11:23:58.0730 | [68] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996%2F07%2F04&sEndDate=1996%2F07%2F04
+2024-04-25 11:23:58.0730 | [68] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=361.8561341
+2024-04-25 11:24:22.4593 | [68] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996%2F07%2F04&sEndDate=1996%2F07%2F04
+2024-04-25 11:24:22.4723 | [68] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=361.8683368
+2024-04-25 11:24:49.1568 | [68] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996%2F07%2F04&sEndDate=1996%2F07%2F04
+2024-04-25 11:24:49.1688 | [68] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=361.8805552
+2024-04-25 11:25:17.7586 | [68] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996%2F07%2F04&sEndDate=1996%2F07%2F11
+2024-04-25 11:25:17.7586 | [68] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=361.8868273
+2024-04-25 11:28:21.6333 | [9] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/OrderDetail/OrderHighcharts","status":"LogOff"}
+2024-04-25 11:28:21.9260 | [9] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.3490465
+2024-04-25 11:29:08.3630 | [7] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"model":{"UserId":"admin","Password":"123456","ComFacID":"台化油品部儲運處-台北-","RememberMe":false,"Language":null},"returnUrl":"/OrderDetail/OrderHighcharts"}
+2024-04-25 11:29:08.4609 | [7] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.1012062
+2024-04-25 11:29:08.4779 | [9] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-04-25 11:29:08.4919 | [9] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0142516
+2024-04-25 11:29:08.5421 | [9] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-04-25 11:29:08.5888 | [9] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.0471846
+2024-04-25 11:29:08.6357 | [9] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-04-25 11:29:08.6392 | [9] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0042649
+2024-04-25 11:29:09.6107 | [7] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-04-25 11:29:09.6107 | [7] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0068487
+2024-04-25 11:29:10.8757 | [10] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 11:29:10.9137 | [10] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0386138
+2024-04-25 11:29:11.1404 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 11:29:11.1404 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0465355
+2024-04-25 11:29:23.3386 | [7] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 11:29:23.3426 | [7] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0057267
+2024-04-25 11:29:29.6135 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 11:29:29.6135 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0535689
+2024-04-25 11:32:26.2245 | [7] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-04-25 11:32:26.2622 | [7] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0383524
+2024-04-25 11:32:26.2721 | [7] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-04-25 11:32:26.2841 | [7] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.0128841
+2024-04-25 11:32:26.2841 | [7] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-04-25 11:32:26.2841 | [7] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0067064
+2024-04-25 11:32:28.1713 | [7] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-04-25 11:32:28.1743 | [7] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0037366
+2024-04-25 11:32:29.6529 | [18] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 11:32:29.6579 | [18] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0588323
+2024-04-25 11:32:29.7427 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 11:32:29.7427 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0675779
+2024-04-25 11:32:36.2105 | [7] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 11:32:36.2105 | [7] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0059238
+2024-04-25 11:32:41.8130 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 11:32:41.8190 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0735117
+2024-04-25 11:32:59.6478 | [7] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996%2F07%2F04&sEndDate=1996%2F07%2F18
+2024-04-25 11:32:59.6774 | [7] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.030157
+2024-04-25 11:33:49.5405 | [7] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996%2F07%2F04&sEndDate=1996%2F07%2F18
+2024-04-25 11:33:49.5525 | [7] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.0423515
+2024-04-25 11:38:28.7950 | [7] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 11:38:28.7950 | [7] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0047922
+2024-04-25 11:38:35.5624 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 11:38:35.5684 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0797057
+2024-04-25 11:38:50.0261 | [34] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996%2F07%2F04&sEndDate=1996%2F07%2F11
+2024-04-25 11:38:50.0410 | [34] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.0580369
+2024-04-25 11:40:35.6590 | [8] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996%2F07%2F04&sEndDate=1996%2F07%2F11
+2024-04-25 11:40:35.6710 | [8] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.0703167
+2024-04-25 11:42:34.7635 | [9] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/OrderDetail/OrderHighcharts","status":"LogOff"}
+2024-04-25 11:42:35.0187 | [9] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.3141614
+2024-04-25 11:42:57.9481 | [8] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"model":{"UserId":"admin","Password":"123456","ComFacID":"台化油品部儲運處-台北-","RememberMe":false,"Language":null},"returnUrl":"/OrderDetail/OrderHighcharts"}
+2024-04-25 11:42:58.1281 | [8] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.1861842
+2024-04-25 11:42:58.1520 | [11] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-04-25 11:42:58.1659 | [11] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0151488
+2024-04-25 11:42:58.2158 | [11] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-04-25 11:42:58.2727 | [11] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.0574613
+2024-04-25 11:42:58.3379 | [11] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-04-25 11:42:58.3379 | [11] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0068726
+2024-04-25 11:42:59.6413 | [13] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-04-25 11:42:59.6483 | [13] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0082317
+2024-04-25 11:43:01.1617 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 11:43:01.1996 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0389999
+2024-04-25 11:43:01.3911 | [9] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 11:43:01.3991 | [9] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0472255
+2024-04-25 11:43:06.6263 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 11:43:06.6322 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0067969
+2024-04-25 11:43:12.8597 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 11:43:12.8816 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0693623
+2024-04-25 11:47:27.7396 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 11:47:27.7429 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0038265
+2024-04-25 11:47:34.2894 | [17] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 11:47:34.2894 | [17] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0738839
+2024-04-25 11:49:01.8376 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 11:49:01.8735 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.098817
+2024-04-25 11:49:10.9577 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 11:49:11.0324 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0754825
+2024-04-25 11:50:26.0378 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 11:50:26.0378 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0039543
+2024-04-25 11:50:31.8926 | [12] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 11:50:31.8983 | [12] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0813682
+2024-04-25 11:50:56.0440 | [22] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996%2F07%2F04&sEndDate=1996%2F07%2F04
+2024-04-25 11:50:56.0662 | [22] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.0222565
+2024-04-25 11:52:11.8917 | [15] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 11:52:11.8917 | [15] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0038157
+2024-04-25 11:52:17.9058 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 11:52:17.9127 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0881032
+2024-04-25 11:52:35.1272 | [15] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996%2F07%2F04&sEndDate=1996%2F07%2F18
+2024-04-25 11:52:35.1442 | [15] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.0389703
+2024-04-25 11:54:25.5551 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 11:54:25.5551 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0037798
+2024-04-25 11:54:31.0995 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 11:54:31.1064 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0942826
+2024-04-25 11:54:35.9462 | [8] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996%2F07%2F04&sEndDate=1996%2F07%2F31
+2024-04-25 11:54:35.9612 | [8] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.0540172
+2024-04-25 11:54:37.1344 | [15] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996%2F07%2F04&sEndDate=1996%2F07%2F31
+2024-04-25 11:54:37.1344 | [15] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.0653974
+2024-04-25 11:56:20.2900 | [41] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996%2F07%2F04&sEndDate=1996%2F07%2F31
+2024-04-25 11:58:09.5419 | [41] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=109.3165513
+2024-04-25 11:58:13.3203 | [15] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996%2F07%2F04&sEndDate=1996%2F07%2F31
+2024-04-25 11:59:03.4856 | [11] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/","status":"LogOff"}
+2024-04-25 11:59:03.9833 | [11] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.613628
+2024-04-25 11:59:17.3747 | [8] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"model":{"UserId":"admin","Password":"123456","ComFacID":"台化油品部儲運處-台北-","RememberMe":false,"Language":null},"returnUrl":"/"}
+2024-04-25 11:59:17.4941 | [8] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.1388792
+2024-04-25 11:59:17.5220 | [11] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-04-25 11:59:17.5409 | [11] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0197893
+2024-04-25 11:59:21.5956 | [11] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-04-25 11:59:21.6393 | [11] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.0447465
+2024-04-25 11:59:21.6982 | [11] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-04-25 11:59:21.6982 | [11] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0068956
+2024-04-25 11:59:22.7091 | [13] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-04-25 11:59:22.7191 | [13] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0115516
+2024-04-25 11:59:25.2242 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 11:59:25.2672 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.044227
+2024-04-25 11:59:25.4467 | [9] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 11:59:25.4467 | [9] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0550807
+2024-04-25 11:59:28.9986 | [9] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 11:59:28.9986 | [9] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0079138
+2024-04-25 11:59:31.2806 | [11] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 11:59:31.2806 | [11] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.060356
+2024-04-25 11:59:34.7991 | [13] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996%2F07%2F04&sEndDate=1996%2F07%2F17
+2024-04-25 12:05:17.2443 | [13] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=342.4293455
+2024-04-25 12:05:48.2366 | [7] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/","status":"LogOff"}
+2024-04-25 12:05:48.5558 | [7] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.4158949
+2024-04-25 12:06:02.8663 | [5] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"model":{"UserId":"admin","Password":"123456","ComFacID":"台化油品部儲運處-台北-","RememberMe":false,"Language":null},"returnUrl":"/"}
+2024-04-25 12:06:03.0318 | [5] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.1975412
+2024-04-25 12:06:03.0657 | [7] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-04-25 12:06:03.0885 | [7] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0235085
+2024-04-25 12:06:07.2907 | [7] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-04-25 12:06:07.3576 | [7] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.0686895
+2024-04-25 12:06:07.4294 | [7] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-04-25 12:06:07.4294 | [7] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0066545
+2024-04-25 12:06:08.4526 | [6] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-04-25 12:06:08.4606 | [6] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.009217
+2024-04-25 12:06:11.0055 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 12:06:11.0599 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0552677
+2024-04-25 12:06:11.2315 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 12:06:11.2315 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0622345
+2024-04-25 12:06:13.6104 | [5] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 12:06:13.6104 | [5] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0053503
+2024-04-25 12:06:15.7257 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 12:06:15.7317 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0675345
+2024-04-25 12:06:20.2676 | [16] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996%2F07%2F04&sEndDate=1996%2F07%2F18
+2024-04-25 12:06:32.9142 | [16] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=12.6472125
+2024-04-25 12:06:39.3118 | [5] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996%2F07%2F04&sEndDate=1996%2F07%2F11
+2024-04-25 12:09:36.5442 | [8] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/","status":"LogOff"}
+2024-04-25 12:09:36.9646 | [8] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.5487786
+2024-04-25 12:09:47.5865 | [7] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"model":{"UserId":"admin","Password":"123456","ComFacID":"台化油品部儲運處-台北-","RememberMe":false,"Language":null},"returnUrl":"/"}
+2024-04-25 12:09:47.7176 | [7] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.1563694
+2024-04-25 12:09:47.7470 | [10] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-04-25 12:09:47.7990 | [10] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0533653
+2024-04-25 12:09:47.8708 | [10] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-04-25 12:09:47.8994 | [10] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.029561
+2024-04-25 12:09:47.9663 | [10] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-04-25 12:09:47.9663 | [10] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0076193
+2024-04-25 12:09:49.0025 | [8] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-04-25 12:09:49.0025 | [8] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.009011
+2024-04-25 12:09:50.4381 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 12:09:50.4915 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0540914
+2024-04-25 12:09:50.6860 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 12:09:50.6860 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0619422
+2024-04-25 12:09:53.1967 | [7] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 12:09:53.2018 | [7] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0057227
+2024-04-25 12:09:54.4005 | [11] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 12:09:54.4005 | [11] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.069324
+2024-04-25 12:09:58.2473 | [7] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996%2F07%2F04&sEndDate=1996%2F07%2F11
+2024-04-25 12:12:49.4623 | [7] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/","status":"LogOff"}
+2024-04-25 12:12:49.9895 | [7] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.6399413
+2024-04-25 12:13:11.0866 | [5] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"model":{"UserId":"admin","Password":"123456","ComFacID":"台化油品部儲運處-台北-","RememberMe":false,"Language":null},"returnUrl":"/"}
+2024-04-25 12:13:11.2392 | [5] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.1688419
+2024-04-25 12:13:11.2651 | [7] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-04-25 12:13:11.3122 | [7] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0479646
+2024-04-25 12:13:15.0678 | [7] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-04-25 12:13:15.1006 | [7] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.0337157
+2024-04-25 12:13:15.1794 | [7] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-04-25 12:13:15.1834 | [7] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0052531
+2024-04-25 12:13:16.0769 | [8] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-04-25 12:13:16.0769 | [8] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0076902
+2024-04-25 12:13:18.6017 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 12:13:18.6515 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0513295
+2024-04-25 12:13:18.8250 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 12:13:18.8250 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0593423
+2024-04-25 12:13:23.6590 | [5] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 12:13:23.6590 | [5] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0079333
+2024-04-25 12:13:25.4997 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 12:13:25.5118 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0714221
+2024-04-25 12:13:28.1657 | [5] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996%2F07%2F04&sEndDate=1996%2F07%2F11
+2024-04-25 12:13:30.6942 | [5] | ERROR | FuctionName=GetOrderDetail | Error=System.Data.SqlClient.SqlException (0x80131904): 接近 'master' 之處的語法不正確。   於 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)   於 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)   於 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)   於 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)   於 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()   於 System.Data.SqlClient.SqlDataReader.get_MetaData()   於 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)   於 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)   於 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)   於 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)   於 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)   於 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)   於 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)   於 Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)   於 Dapper.SqlMapper.<QueryImpl>d__138`1.MoveNext()   於 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)   於 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)   於 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)   於 FTC_MES_MVC.Models.DAL.OrderDetail.dalOrderDetail.GetOrderDetail(String p_sStartDate, String p_sEndDate) 於 C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\Models\OrderDetail\DAL\dalOrderDetail.cs: 行 60ClientConnectionId:113044b5-0db9-480c-9896-0b29b913a9d8Error Number:102,State:1,Class:15
+2024-04-25 12:13:45.1105 | [5] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=16.94499
+2024-04-25 12:13:48.2496 | [6] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996%2F07%2F04&sEndDate=1996%2F07%2F11
+2024-04-25 12:13:51.3412 | [6] | ERROR | FuctionName=GetOrderDetail | Error=System.Data.SqlClient.SqlException (0x80131904): 接近 'master' 之處的語法不正確。   於 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)   於 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)   於 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)   於 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)   於 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()   於 System.Data.SqlClient.SqlDataReader.get_MetaData()   於 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)   於 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)   於 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)   於 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)   於 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)   於 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)   於 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)   於 Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)   於 Dapper.SqlMapper.<QueryImpl>d__138`1.MoveNext()   於 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)   於 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)   於 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)   於 FTC_MES_MVC.Models.DAL.OrderDetail.dalOrderDetail.GetOrderDetail(String p_sStartDate, String p_sEndDate) 於 C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\Models\OrderDetail\DAL\dalOrderDetail.cs: 行 60ClientConnectionId:113044b5-0db9-480c-9896-0b29b913a9d8Error Number:102,State:1,Class:15
+2024-04-25 12:17:20.0941 | [6] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=228.7878866
+2024-04-25 12:17:24.0196 | [5] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996%2F07%2F04&sEndDate=1996%2F07%2F11
+2024-04-25 12:19:28.6118 | [7] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/","status":"LogOff"}
+2024-04-25 12:19:29.0229 | [7] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.5305647
+2024-04-25 12:19:42.6757 | [5] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"model":{"UserId":"admin","Password":"123456","ComFacID":"台化油品部儲運處-台北-","RememberMe":false,"Language":null},"returnUrl":"/"}
+2024-04-25 12:19:42.8331 | [5] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.1817
+2024-04-25 12:19:42.8665 | [7] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-04-25 12:19:42.8864 | [7] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0202173
+2024-04-25 12:19:46.8102 | [7] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-04-25 12:19:46.8552 | [7] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.0463161
+2024-04-25 12:19:46.9171 | [7] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-04-25 12:19:46.9200 | [7] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0044204
+2024-04-25 12:19:48.1078 | [6] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-04-25 12:19:48.1078 | [6] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.019006
+2024-04-25 12:19:50.6389 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 12:19:50.6768 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0386745
+2024-04-25 12:19:50.8875 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 12:19:50.8975 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0482861
+2024-04-25 12:19:52.2653 | [5] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 12:19:52.2653 | [5] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0052957
+2024-04-25 12:19:54.2052 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 12:19:54.2052 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0531141
+2024-04-25 12:19:57.0833 | [5] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996%2F07%2F04&sEndDate=1996%2F07%2F31
+2024-04-25 12:28:50.7554 | [5] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=533.6695697
+2024-04-25 12:29:56.5526 | [7] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/","status":"LogOff"}
+2024-04-25 12:29:56.9011 | [7] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.4097351
+2024-04-25 12:30:09.3485 | [8] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"model":{"UserId":"admin","Password":"123456","ComFacID":"台化油品部儲運處-台北-","RememberMe":false,"Language":null},"returnUrl":"/"}
+2024-04-25 12:30:09.4861 | [8] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.168577
+2024-04-25 12:30:09.5170 | [11] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-04-25 12:30:09.5561 | [11] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0405783
+2024-04-25 12:30:14.0543 | [11] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-04-25 12:30:14.0848 | [11] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.0319683
+2024-04-25 12:30:14.1654 | [11] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-04-25 12:30:14.1734 | [11] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0096566
+2024-04-25 12:30:14.6433 | [11] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-04-25 12:30:14.6433 | [11] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.008869
+2024-04-25 12:30:14.6573 | [11] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-04-25 12:30:14.6573 | [11] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.0092435
+2024-04-25 12:30:14.6722 | [11] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-04-25 12:30:14.6722 | [11] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0063821
+2024-04-25 12:30:15.6443 | [12] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-04-25 12:30:15.6443 | [12] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.007593
+2024-04-25 12:30:18.3664 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 12:30:18.4103 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0439425
+2024-04-25 12:30:18.5889 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 12:30:18.5998 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0540916
+2024-04-25 12:30:19.9313 | [7] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 12:30:19.9313 | [7] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0063044
+2024-04-25 12:30:21.8461 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 12:30:21.8461 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0606666
+2024-04-25 12:30:28.2148 | [8] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996%2F07%2F04&sEndDate=1996%2F07%2F24
+2024-04-25 13:57:33.5934 | [5] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/","status":"LogOff"}
+2024-04-25 13:57:34.1857 | [5] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.7230476
+2024-04-25 13:57:46.6480 | [8] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"model":{"UserId":"admin","Password":"123456","ComFacID":"台化油品部儲運處-台北-","RememberMe":false,"Language":null},"returnUrl":"/"}
+2024-04-25 13:57:46.9297 | [8] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.2968404
+2024-04-25 13:57:46.9538 | [11] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-04-25 13:57:46.9737 | [11] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0209147
+2024-04-25 13:57:47.0187 | [11] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-04-25 13:57:47.0541 | [11] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.0367787
+2024-04-25 13:57:47.1082 | [11] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-04-25 13:57:47.1082 | [11] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.004999
+2024-04-25 13:57:48.3136 | [10] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-04-25 13:57:48.3136 | [10] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0068532
+2024-04-25 13:57:49.6008 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 13:57:49.6287 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0284365
+2024-04-25 13:57:49.8010 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 13:57:49.8010 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0333498
+2024-04-25 13:57:50.7286 | [13] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 13:57:50.7286 | [13] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0038364
+2024-04-25 13:57:59.0434 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 13:57:59.0434 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0385518
+2024-04-25 13:58:19.0761 | [8] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-18
+2024-04-25 13:59:18.2376 | [8] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/","status":"LogOff"}
+2024-04-25 13:59:18.6618 | [8] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.5205659
+2024-04-25 14:00:16.3512 | [7] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"model":{"UserId":"admin","Password":"123456","ComFacID":"台化油品部儲運處-台北-","RememberMe":false,"Language":null},"returnUrl":"/"}
+2024-04-25 14:00:16.5734 | [7] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.2377493
+2024-04-25 14:00:16.6013 | [10] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-04-25 14:00:16.6205 | [10] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0191639
+2024-04-25 14:00:16.6814 | [10] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-04-25 14:00:16.7164 | [10] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.0355432
+2024-04-25 14:00:16.7662 | [10] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-04-25 14:00:16.7662 | [10] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0049961
+2024-04-25 14:00:18.2330 | [7] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-04-25 14:00:18.2330 | [7] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.010591
+2024-04-25 14:00:19.8556 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 14:00:19.8932 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0382421
+2024-04-25 14:00:20.1451 | [10] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 14:00:20.1561 | [10] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0493485
+2024-04-25 14:00:23.1034 | [7] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 14:00:23.1064 | [7] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0044682
+2024-04-25 14:00:24.6545 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 14:00:24.6545 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0596493
+2024-04-25 14:00:27.7842 | [8] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-12
+2024-04-25 14:01:41.1802 | [8] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=73.3949112
+2024-04-25 14:01:50.0202 | [7] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 14:01:50.0202 | [7] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0052813
+2024-04-25 14:01:52.4675 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 14:01:52.4675 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0664544
+2024-04-25 14:01:58.1608 | [7] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-09
+2024-04-25 14:01:58.1764 | [7] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=73.4108683
+2024-04-25 14:02:09.5192 | [7] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-30
+2024-04-25 14:02:09.5192 | [7] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=73.4187499
+2024-04-25 14:23:23.4172 | [70] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 14:23:23.4172 | [70] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0039516
+2024-04-25 14:23:34.1013 | [49] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 14:23:34.1202 | [49] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0859199
+2024-04-25 14:23:42.4993 | [62] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-17
+2024-04-25 14:23:42.5132 | [62] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=73.4329592
+2024-04-25 14:23:43.1466 | [49] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-17
+2024-04-25 14:23:43.1466 | [49] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=73.4417806
+2024-04-25 14:24:18.1914 | [63] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-17
+2024-04-25 14:24:18.1914 | [63] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=73.4509584
+2024-04-25 14:24:20.2853 | [52] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-17
+2024-04-25 14:24:20.2853 | [52] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=73.4572112
+2024-04-25 14:24:21.3893 | [59] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-17
+2024-04-25 14:24:21.3966 | [59] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=73.4648424
+2024-04-25 14:26:39.0356 | [53] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 14:26:39.0356 | [53] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0086682
+2024-04-25 14:26:45.9073 | [63] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 14:26:45.9103 | [63] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0056465
+2024-04-25 14:26:46.1734 | [59] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 14:26:46.1963 | [59] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0250823
+2024-04-25 14:26:48.6490 | [59] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 14:26:48.6609 | [59] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0984087
+2024-04-25 14:26:51.9588 | [53] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-17
+2024-04-25 14:26:51.9748 | [53] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=73.4813153
+2024-04-25 14:26:52.2226 | [59] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-17
+2024-04-25 14:26:52.2226 | [59] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=73.4908928
+2024-04-25 14:27:07.9099 | [53] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-17
+2024-04-25 14:27:07.9099 | [53] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=73.5002793
+2024-04-25 14:35:13.0576 | [90] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-17
+2024-04-25 14:35:13.0715 | [90] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=73.5135932
+2024-04-25 14:35:13.1904 | [88] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-17
+2024-04-25 14:35:13.1993 | [88] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=73.5217524
+2024-04-25 14:36:45.7283 | [83] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-07
+2024-04-25 14:36:45.7449 | [83] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=73.5386123
+2024-04-25 14:37:01.0935 | [83] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-07
+2024-04-25 14:37:01.0994 | [83] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=73.5445705
+2024-04-25 14:37:24.8718 | [89] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-05&sEndDate=1996-07-07
+2024-04-25 14:37:24.8798 | [89] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=73.5527709
+2024-04-25 14:38:43.1855 | [81] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-05&sEndDate=1996-07-07
+2024-04-25 14:38:43.1975 | [81] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=73.5651187
+2024-04-25 14:38:53.0931 | [85] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 14:38:53.0931 | [85] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0042932
+2024-04-25 14:38:59.9556 | [89] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 14:38:59.9818 | [89] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1245466
+2024-04-25 14:39:04.0942 | [89] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-11
+2024-04-25 14:39:04.1103 | [89] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=73.5812682
+2024-04-25 14:39:13.4543 | [76] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-11&sEndDate=1996-07-11
+2024-04-25 14:39:13.4642 | [76] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=73.5911796
+2024-04-25 14:39:19.2541 | [89] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-11&sEndDate=1996-07-24
+2024-04-25 14:39:19.2541 | [89] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=73.5996947
+2024-04-25 14:41:09.6821 | [85] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-11&sEndDate=1996-07-24
+2024-04-25 14:41:09.6970 | [85] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=73.6143461
+2024-04-25 14:41:10.0082 | [92] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-11&sEndDate=1996-07-24
+2024-04-25 14:41:10.0082 | [92] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=73.6248074
+2024-04-25 14:41:15.2511 | [85] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-11&sEndDate=1996-07-24
+2024-04-25 14:41:15.2591 | [85] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=73.6326499
+2024-04-25 14:41:34.0213 | [72] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 14:41:34.0213 | [72] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0023453
+2024-04-25 14:41:41.7460 | [71] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 14:41:41.7610 | [71] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1401324
+2024-04-25 14:42:43.4921 | [72] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 14:42:43.4921 | [72] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0060535
+2024-04-25 14:42:53.8211 | [72] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 14:42:53.8446 | [72] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1641276
+2024-04-25 14:42:58.7199 | [78] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-04
+2024-04-25 14:42:58.7369 | [78] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=73.6495009
+2024-04-25 14:43:11.0230 | [85] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-04
+2024-04-25 14:43:11.0230 | [85] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=73.6574076
+2024-04-25 14:43:11.2143 | [85] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-04
+2024-04-25 14:43:11.2240 | [85] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=73.6676941
+2024-04-25 14:43:12.2339 | [71] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-04
+2024-04-25 14:43:12.2801 | [71] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=73.713831
+2024-04-25 14:43:19.3189 | [78] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-04
+2024-04-25 14:43:19.3189 | [78] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=73.7259985
+2024-04-25 14:43:19.9199 | [76] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-04
+2024-04-25 14:43:19.9329 | [76] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=73.7390686
+2024-04-25 14:43:20.8770 | [76] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-04
+2024-04-25 14:43:20.8940 | [76] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=73.7559379
+2024-04-25 14:43:23.5700 | [71] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 14:43:23.5700 | [71] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0026797
+2024-04-25 14:43:30.4076 | [76] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 14:43:30.4150 | [76] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1711469
+2024-04-25 14:44:31.6052 | [78] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 14:44:31.6052 | [78] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0039022
+2024-04-25 14:44:37.0031 | [71] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 14:44:37.0061 | [71] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0035233
+2024-04-25 14:44:38.8679 | [78] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 14:44:38.8679 | [78] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1769381
+2024-04-25 14:44:57.5183 | [70] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 14:44:57.5202 | [70] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0032401
+2024-04-25 14:45:05.8886 | [78] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 14:45:05.8976 | [78] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1856501
+2024-04-25 14:46:05.6533 | [78] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 14:46:05.6533 | [78] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0041821
+2024-04-25 14:46:11.5439 | [70] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 14:46:11.5439 | [70] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1896886
+2024-04-25 14:47:18.9132 | [70] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-11
+2024-04-25 14:47:18.9272 | [70] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=73.7695712
+2024-04-25 14:47:35.3821 | [78] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-12
+2024-04-25 14:47:35.3821 | [78] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=73.7797344
+2024-04-25 14:47:59.6322 | [78] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-16
+2024-04-25 14:47:59.6322 | [78] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=73.7918416
+2024-04-25 14:49:52.7999 | [78] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-17
+2024-04-25 14:49:52.8133 | [78] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=73.8049405
+2024-04-25 14:52:00.7558 | [78] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 14:52:00.7598 | [78] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.004501
+2024-04-25 14:52:09.2490 | [78] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 14:52:09.2490 | [78] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1966197
+2024-04-25 14:52:31.5032 | [78] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1997-08-04&sEndDate=1997-08-13
+2024-04-25 14:52:31.5175 | [78] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=73.8187712
+2024-04-25 14:53:19.2681 | [49] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 14:53:19.2681 | [49] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0043312
+2024-04-25 14:53:22.0631 | [43] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1997-08-04&sEndDate=1997-08-13
+2024-04-25 14:53:22.0781 | [43] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=73.8334615
+2024-04-25 14:53:26.2799 | [78] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 14:53:26.2799 | [78] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.2056845
+2024-04-25 14:54:13.2127 | [78] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-04
+2024-04-25 14:54:13.2436 | [78] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=73.8644793
+2024-04-25 14:54:20.2715 | [78] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 14:54:20.2715 | [78] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0023487
+2024-04-25 14:54:25.4714 | [52] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 14:54:25.4714 | [52] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0034192
+2024-04-25 14:54:28.2738 | [45] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 14:54:28.2828 | [45] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.214576
+2024-04-25 14:55:00.1949 | [78] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 14:55:00.1949 | [78] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0053159
+2024-04-25 14:55:06.8603 | [78] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 14:55:06.8673 | [78] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.2220938
+2024-04-25 14:55:32.1030 | [78] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-11
+2024-04-25 14:55:32.1163 | [78] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=73.8775553
+2024-04-25 14:55:33.3182 | [78] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-11
+2024-04-25 14:55:33.3182 | [78] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=73.8831221
+2024-04-25 14:56:41.3809 | [31] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-11
+2024-04-25 14:56:41.3949 | [31] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=73.8974041
+2024-04-25 15:11:01.3614 | [17] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 15:11:01.3614 | [17] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0041869
+2024-04-25 15:11:08.0539 | [17] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 15:11:08.0834 | [17] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.2513571
+2024-04-25 15:11:54.2208 | [17] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 15:11:54.2641 | [17] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.1160066
+2024-04-25 15:12:03.9667 | [100] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 15:12:04.0529 | [100] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0875357
+2024-04-25 15:12:40.4630 | [17] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 15:12:40.4630 | [17] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0040111
+2024-04-25 15:12:46.6525 | [17] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 15:12:46.6584 | [17] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0934475
+2024-04-25 15:13:25.6391 | [17] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 15:13:25.6446 | [17] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0069288
+2024-04-25 15:13:27.8583 | [17] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 15:13:27.8652 | [17] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1005022
+2024-04-25 15:13:32.1999 | [17] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-10
+2024-04-25 15:13:32.2148 | [17] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.0154249
+2024-04-25 15:17:41.5898 | [96] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 15:17:41.5898 | [96] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0041243
+2024-04-25 15:17:42.7189 | [17] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 15:17:42.7189 | [17] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0023933
+2024-04-25 15:17:42.9079 | [16] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 15:17:42.9119 | [16] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.005979
+2024-04-25 15:17:43.0467 | [97] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 15:17:43.0467 | [97] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.004584
+2024-04-25 15:17:45.4072 | [98] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 15:17:45.4072 | [98] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0034699
+2024-04-25 15:17:48.7869 | [17] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 15:17:48.7869 | [17] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1054245
+2024-04-25 15:17:52.2074 | [17] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-04
+2024-04-25 15:17:52.2204 | [17] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.0289241
+2024-04-25 15:18:22.6076 | [17] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 15:18:22.6076 | [17] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0042499
+2024-04-25 15:18:29.9551 | [93] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 15:18:29.9742 | [93] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1240179
+2024-04-25 15:18:35.5358 | [99] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-18
+2024-04-25 15:18:35.5519 | [99] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.0450001
+2024-04-25 15:23:03.1032 | [95] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-19
+2024-04-25 15:23:03.1182 | [95] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.0607096
+2024-04-25 15:23:06.7220 | [95] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-25
+2024-04-25 15:23:06.7289 | [95] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.0677985
+2024-04-25 15:23:12.3480 | [95] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-23
+2024-04-25 15:23:12.3540 | [95] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.0736146
+2024-04-25 15:23:28.9860 | [91] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-08-30
+2024-04-25 15:23:28.9860 | [91] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.0796305
+2024-04-25 15:23:44.0114 | [102] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-08-04
+2024-04-25 15:23:44.0114 | [102] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.088163
+2024-04-25 15:23:49.6237 | [103] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-26&sEndDate=1996-08-04
+2024-04-25 15:23:49.6337 | [103] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.0979325
+2024-04-25 15:24:12.7555 | [20] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-08-16&sEndDate=1996-08-04
+2024-04-25 15:24:12.7685 | [20] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.1114165
+2024-04-25 15:24:18.9877 | [20] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-08&sEndDate=1996-08-04
+2024-04-25 15:24:18.9967 | [20] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.1198141
+2024-04-25 15:45:33.3670 | [8] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/","status":"LogOff"}
+2024-04-25 15:45:33.7566 | [8] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.4508374
+2024-04-25 15:45:55.6061 | [6] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"model":{"UserId":"admin","Password":"123456","ComFacID":"台化油品部儲運處-台北-","RememberMe":false,"Language":null},"returnUrl":"/"}
+2024-04-25 15:45:55.9499 | [6] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.3588362
+2024-04-25 15:45:55.9729 | [8] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-04-25 15:45:56.0071 | [8] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0344416
+2024-04-25 15:46:00.0130 | [8] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-04-25 15:46:00.1346 | [8] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.1226513
+2024-04-25 15:46:00.1835 | [8] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-04-25 15:46:00.1867 | [8] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0047783
+2024-04-25 15:46:00.6132 | [8] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-04-25 15:46:00.6132 | [8] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0060113
+2024-04-25 15:46:00.6231 | [8] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-04-25 15:46:00.6231 | [8] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.0047394
+2024-04-25 15:46:00.6231 | [8] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-04-25 15:46:00.6231 | [8] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0026624
+2024-04-25 15:46:02.4642 | [7] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-04-25 15:46:02.4672 | [7] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0037002
+2024-04-25 15:46:05.2456 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 15:46:05.2726 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0277339
+2024-04-25 15:46:05.4229 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 15:46:05.4229 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0329916
+2024-04-25 15:46:42.2444 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 15:46:42.2444 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.003836
+2024-04-25 15:46:47.8769 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 15:46:47.8769 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0377952
+2024-04-25 15:46:50.7992 | [7] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-04
+2024-04-25 15:46:50.9187 | [7] | ERROR | FuctionName=GetOrderDetail | Error=System.Data.SqlClient.SqlException (0x80131904): 接近關鍵字 'ORDER' 之處的語法不正確。   於 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)   於 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)   於 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)   於 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)   於 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()   於 System.Data.SqlClient.SqlDataReader.get_MetaData()   於 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)   於 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)   於 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)   於 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)   於 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)   於 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)   於 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)   於 Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)   於 Dapper.SqlMapper.<QueryImpl>d__138`1.MoveNext()   於 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)   於 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)   於 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)   於 FTC_MES_MVC.Models.DAL.OrderDetail.dalOrderDetail.GetOrderDetail(String p_sStartDate, String p_sEndDate) 於 C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\Models\OrderDetail\DAL\dalOrderDetail.cs: 行 73ClientConnectionId:cccdd51b-8313-456b-bcb2-506527825dcdError Number:156,State:1,Class:15
+2024-04-25 15:46:51.0132 | [7] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.214275
+2024-04-25 15:46:55.2223 | [7] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-10
+2024-04-25 15:46:55.2383 | [7] | ERROR | FuctionName=GetOrderDetail | Error=System.Data.SqlClient.SqlException (0x80131904): 接近關鍵字 'ORDER' 之處的語法不正確。   於 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)   於 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)   於 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)   於 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)   於 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()   於 System.Data.SqlClient.SqlDataReader.get_MetaData()   於 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)   於 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)   於 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)   於 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)   於 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)   於 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)   於 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)   於 Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)   於 Dapper.SqlMapper.<QueryImpl>d__138`1.MoveNext()   於 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)   於 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)   於 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)   於 FTC_MES_MVC.Models.DAL.OrderDetail.dalOrderDetail.GetOrderDetail(String p_sStartDate, String p_sEndDate) 於 C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\Models\OrderDetail\DAL\dalOrderDetail.cs: 行 73ClientConnectionId:cccdd51b-8313-456b-bcb2-506527825dcdError Number:156,State:1,Class:15
+2024-04-25 15:46:55.2383 | [7] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.2391952
+2024-04-25 15:46:55.4936 | [7] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-10
+2024-04-25 15:46:55.5135 | [7] | ERROR | FuctionName=GetOrderDetail | Error=System.Data.SqlClient.SqlException (0x80131904): 接近關鍵字 'ORDER' 之處的語法不正確。   於 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)   於 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)   於 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)   於 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)   於 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()   於 System.Data.SqlClient.SqlDataReader.get_MetaData()   於 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)   於 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)   於 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)   於 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)   於 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)   於 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)   於 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)   於 Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)   於 Dapper.SqlMapper.<QueryImpl>d__138`1.MoveNext()   於 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)   於 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)   於 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)   於 FTC_MES_MVC.Models.DAL.OrderDetail.dalOrderDetail.GetOrderDetail(String p_sStartDate, String p_sEndDate) 於 C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\Models\OrderDetail\DAL\dalOrderDetail.cs: 行 73ClientConnectionId:cccdd51b-8313-456b-bcb2-506527825dcdError Number:156,State:1,Class:15
+2024-04-25 15:46:55.5135 | [7] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.270328
+2024-04-25 15:47:15.3500 | [8] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-10
+2024-04-25 15:47:15.3670 | [8] | ERROR | FuctionName=GetOrderDetail | Error=System.Data.SqlClient.SqlException (0x80131904): 接近關鍵字 'ORDER' 之處的語法不正確。   於 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)   於 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)   於 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)   於 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)   於 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()   於 System.Data.SqlClient.SqlDataReader.get_MetaData()   於 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)   於 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)   於 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)   於 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)   於 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)   於 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)   於 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)   於 Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)   於 Dapper.SqlMapper.<QueryImpl>d__138`1.MoveNext()   於 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)   於 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)   於 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)   於 FTC_MES_MVC.Models.DAL.OrderDetail.dalOrderDetail.GetOrderDetail(String p_sStartDate, String p_sEndDate) 於 C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\Models\OrderDetail\DAL\dalOrderDetail.cs: 行 73ClientConnectionId:cccdd51b-8313-456b-bcb2-506527825dcdError Number:156,State:1,Class:15
+2024-04-25 15:47:15.3729 | [8] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.2934827
+2024-04-25 15:47:39.2964 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 15:47:39.2964 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0035052
+2024-04-25 15:47:41.1206 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 15:47:41.1266 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.043499
+2024-04-25 15:47:46.3777 | [7] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-17
+2024-04-25 15:47:46.4066 | [7] | ERROR | FuctionName=GetOrderDetail | Error=System.Data.SqlClient.SqlException (0x80131904): 接近關鍵字 'ORDER' 之處的語法不正確。   於 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)   於 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)   於 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)   於 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)   於 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()   於 System.Data.SqlClient.SqlDataReader.get_MetaData()   於 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)   於 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)   於 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)   於 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)   於 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)   於 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)   於 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)   於 Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)   於 Dapper.SqlMapper.<QueryImpl>d__138`1.MoveNext()   於 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)   於 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)   於 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)   於 FTC_MES_MVC.Models.DAL.OrderDetail.dalOrderDetail.GetOrderDetail(String p_sStartDate, String p_sEndDate) 於 C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\Models\OrderDetail\DAL\dalOrderDetail.cs: 行 73ClientConnectionId:cccdd51b-8313-456b-bcb2-506527825dcdError Number:156,State:1,Class:15
+2024-04-25 15:47:46.4066 | [7] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.3327379
+2024-04-25 15:48:18.0089 | [8] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-17
+2024-04-25 15:48:18.0249 | [8] | ERROR | FuctionName=GetOrderDetail | Error=System.Data.SqlClient.SqlException (0x80131904): 接近關鍵字 'ORDER' 之處的語法不正確。   於 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)   於 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)   於 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)   於 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)   於 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()   於 System.Data.SqlClient.SqlDataReader.get_MetaData()   於 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)   於 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)   於 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)   於 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)   於 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)   於 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)   於 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)   於 Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)   於 Dapper.SqlMapper.<QueryImpl>d__138`1.MoveNext()   於 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)   於 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)   於 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)   於 FTC_MES_MVC.Models.DAL.OrderDetail.dalOrderDetail.GetOrderDetail(String p_sStartDate, String p_sEndDate) 於 C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\Models\OrderDetail\DAL\dalOrderDetail.cs: 行 73ClientConnectionId:cccdd51b-8313-456b-bcb2-506527825dcdError Number:156,State:1,Class:15
+2024-04-25 15:48:18.0319 | [8] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.3557064
+2024-04-25 15:48:19.4649 | [17] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-17
+2024-04-25 15:48:19.4808 | [17] | ERROR | FuctionName=GetOrderDetail | Error=System.Data.SqlClient.SqlException (0x80131904): 接近關鍵字 'ORDER' 之處的語法不正確。   於 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)   於 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)   於 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)   於 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)   於 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()   於 System.Data.SqlClient.SqlDataReader.get_MetaData()   於 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)   於 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)   於 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)   於 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)   於 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)   於 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)   於 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)   於 Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)   於 Dapper.SqlMapper.<QueryImpl>d__138`1.MoveNext()   於 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)   於 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)   於 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)   於 FTC_MES_MVC.Models.DAL.OrderDetail.dalOrderDetail.GetOrderDetail(String p_sStartDate, String p_sEndDate) 於 C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\Models\OrderDetail\DAL\dalOrderDetail.cs: 行 73ClientConnectionId:cccdd51b-8313-456b-bcb2-506527825dcdError Number:156,State:1,Class:15
+2024-04-25 15:48:19.4858 | [17] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.376953
+2024-04-25 15:50:34.5397 | [5] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-17
+2024-04-25 15:50:45.9053 | [5] | ERROR | FuctionName=GetOrderDetail | Error=System.Data.SqlClient.SqlException (0x80131904): 接近關鍵字 'ORDER' 之處的語法不正確。   於 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)   於 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)   於 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)   於 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)   於 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()   於 System.Data.SqlClient.SqlDataReader.get_MetaData()   於 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)   於 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)   於 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)   於 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)   於 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)   於 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)   於 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)   於 Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)   於 Dapper.SqlMapper.<QueryImpl>d__138`1.MoveNext()   於 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)   於 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)   於 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)   於 FTC_MES_MVC.Models.DAL.OrderDetail.dalOrderDetail.GetOrderDetail(String p_sStartDate, String p_sEndDate) 於 C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\Models\OrderDetail\DAL\dalOrderDetail.cs: 行 73ClientConnectionId:36a9ec99-01c9-4005-9849-1e2b6a9bd17eError Number:156,State:1,Class:15
+2024-04-25 15:51:11.9043 | [5] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=37.7417538
+2024-04-25 15:51:14.0969 | [8] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-17
+2024-04-25 15:51:54.4534 | [8] | ERROR | FuctionName=GetOrderDetail | Error=System.Data.SqlClient.SqlException (0x80131904): 接近關鍵字 'ORDER' 之處的語法不正確。   於 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)   於 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)   於 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)   於 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)   於 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()   於 System.Data.SqlClient.SqlDataReader.get_MetaData()   於 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)   於 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)   於 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)   於 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)   於 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)   於 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)   於 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)   於 Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)   於 Dapper.SqlMapper.<QueryImpl>d__138`1.MoveNext()   於 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)   於 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)   於 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)   於 FTC_MES_MVC.Models.DAL.OrderDetail.dalOrderDetail.GetOrderDetail(String p_sStartDate, String p_sEndDate) 於 C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\Models\OrderDetail\DAL\dalOrderDetail.cs: 行 73ClientConnectionId:36a9ec99-01c9-4005-9849-1e2b6a9bd17eError Number:156,State:1,Class:15
+2024-04-25 15:51:54.4534 | [8] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=78.1059537
+2024-04-25 15:53:11.2129 | [8] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-17
+2024-04-25 15:57:39.1113 | [8] | ERROR | FuctionName=GetOrderDetail | Error=System.Data.SqlClient.SqlException (0x80131904): 無效的物件名稱 'Orders'。   於 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)   於 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)   於 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)   於 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)   於 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()   於 System.Data.SqlClient.SqlDataReader.get_MetaData()   於 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)   於 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)   於 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)   於 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)   於 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)   於 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)   於 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)   於 Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)   於 Dapper.SqlMapper.<QueryImpl>d__138`1.MoveNext()   於 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)   於 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)   於 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)   於 FTC_MES_MVC.Models.DAL.OrderDetail.dalOrderDetail.GetOrderDetail(String p_sStartDate, String p_sEndDate)ClientConnectionId:36a9ec99-01c9-4005-9849-1e2b6a9bd17eError Number:208,State:1,Class:16
+2024-04-25 15:57:39.1113 | [35] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-04-25 15:58:37.8471 | [5] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/","status":"LogOff"}
+2024-04-25 15:58:38.2445 | [5] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.4896483
+2024-04-25 15:58:54.0879 | [5] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"model":{"UserId":"admin","Password":"123456","ComFacID":"台化油品部儲運處-台北-","RememberMe":false,"Language":null},"returnUrl":"/"}
+2024-04-25 15:58:54.2544 | [5] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.1890076
+2024-04-25 15:58:54.2923 | [10] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-04-25 15:58:54.3118 | [10] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0207278
+2024-04-25 15:58:58.2087 | [10] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-04-25 15:58:58.2450 | [10] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.0372348
+2024-04-25 15:58:58.3228 | [10] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-04-25 15:58:58.3228 | [10] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0057652
+2024-04-25 15:58:59.3248 | [5] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-04-25 15:58:59.3281 | [5] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0042159
+2024-04-25 15:59:01.9366 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 15:59:01.9914 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.056012
+2024-04-25 15:59:02.1822 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 15:59:02.1872 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0603673
+2024-04-25 15:59:05.1996 | [5] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 15:59:05.2025 | [5] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0041923
+2024-04-25 15:59:07.1758 | [10] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 15:59:07.1758 | [10] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0657075
+2024-04-25 15:59:15.6760 | [5] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-12
+2024-04-25 16:02:48.7914 | [5] | ERROR | FuctionName=GetOrderDetail | Error=System.Data.SqlClient.SqlException (0x80131904): 無效的物件名稱 'Orders'。   於 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)   於 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)   於 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)   於 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)   於 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()   於 System.Data.SqlClient.SqlDataReader.get_MetaData()   於 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)   於 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)   於 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)   於 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)   於 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)   於 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)   於 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)   於 Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)   於 Dapper.SqlMapper.<QueryImpl>d__138`1.MoveNext()   於 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)   於 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)   於 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)   於 FTC_MES_MVC.Models.DAL.OrderDetail.dalOrderDetail.GetOrderDetail(String p_sStartDate, String p_sEndDate) 於 C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\Models\OrderDetail\DAL\dalOrderDetail.cs: 行 72ClientConnectionId:1bafb4de-6150-4496-aafd-4dabbebd2232Error Number:208,State:1,Class:16
+2024-04-25 16:07:44.2859 | [10] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/","status":"LogOff"}
+2024-04-25 16:07:44.7035 | [10] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.5074605
+2024-04-25 16:08:01.6333 | [5] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"model":{"UserId":"admin","Password":"123456","ComFacID":"台化油品部儲運處-台北-","RememberMe":false,"Language":null},"returnUrl":"/"}
+2024-04-25 16:08:01.8083 | [5] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.1937216
+2024-04-25 16:08:01.8440 | [11] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-04-25 16:08:01.8773 | [11] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0353297
+2024-04-25 16:08:06.1004 | [11] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-04-25 16:08:06.1334 | [11] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.0339619
+2024-04-25 16:08:06.2081 | [11] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-04-25 16:08:06.2151 | [11] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0077578
+2024-04-25 16:08:06.6844 | [10] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-04-25 16:08:06.6844 | [10] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0104908
+2024-04-25 16:08:06.7034 | [10] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-04-25 16:08:06.7034 | [10] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.006846
+2024-04-25 16:08:06.7133 | [10] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-04-25 16:08:06.7133 | [10] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0032443
+2024-04-25 16:08:07.7068 | [5] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-04-25 16:08:07.7068 | [5] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0043195
+2024-04-25 16:08:10.5493 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 16:08:10.6391 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.091579
+2024-04-25 16:08:10.8037 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 16:08:10.8077 | [8] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0963369
+2024-04-25 16:08:14.2581 | [12] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 16:08:14.2581 | [12] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0041313
+2024-04-25 16:08:16.6093 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 16:08:16.6093 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1025528
+2024-04-25 16:08:21.2205 | [5] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-18
+2024-04-25 16:08:49.9393 | [5] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=28.7180242
+2024-04-25 16:09:17.1613 | [13] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-11
+2024-04-25 16:09:17.1757 | [13] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=28.7318236
+2024-04-25 16:12:30.0747 | [5] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-04-25 16:12:30.0776 | [5] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0037095
+2024-04-25 16:12:32.6947 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 16:12:32.7096 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1171334
+2024-04-25 16:12:32.9048 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 16:12:32.9248 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1368273
+2024-04-25 16:12:38.4178 | [5] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 16:12:38.4178 | [5] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.004446
+2024-04-25 16:12:44.9843 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 16:12:44.9843 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1439144
+2024-04-25 16:12:49.6269 | [5] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-18
+2024-04-25 16:12:49.6494 | [5] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=28.7541983
+2024-04-25 16:13:02.2094 | [11] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-19
+2024-04-25 16:13:02.2203 | [11] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=28.7647892
+2024-04-25 16:13:52.2258 | [5] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-19
+2024-04-25 16:13:52.2438 | [5] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=28.7829445
+2024-04-25 16:14:07.2010 | [10] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-08-15&sEndDate=1996-07-19
+2024-04-25 16:14:07.2050 | [10] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=28.7870193
+2024-04-25 16:14:10.5798 | [8] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-08-15&sEndDate=1996-08-29
+2024-04-25 16:14:10.5897 | [8] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=28.7964423
+2024-04-25 16:15:11.2603 | [5] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-08-15&sEndDate=1996-08-29
+2024-04-25 16:15:11.2782 | [5] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=28.8142494
+2024-04-25 16:15:18.6397 | [5] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 16:15:18.6397 | [5] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0023034
+2024-04-25 16:15:24.3063 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 16:15:24.3063 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1498122
+2024-04-25 16:15:41.5269 | [5] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-08-15&sEndDate=1996-08-29
+2024-04-25 16:15:41.5469 | [5] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=28.8344875
+2024-04-25 16:25:23.1475 | [11] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-08-15&sEndDate=1996-08-29
+2024-04-25 16:25:23.1624 | [11] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=28.8494701
+2024-04-25 16:25:29.8103 | [40] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 16:25:29.8103 | [40] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.004677
+2024-04-25 16:25:36.2813 | [40] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 16:25:36.3032 | [40] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.171743
+2024-04-25 16:25:39.5493 | [40] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-11
+2024-04-25 16:25:39.5693 | [40] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=28.869515
+2024-04-25 16:26:15.7405 | [40] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-04-25 16:26:15.7405 | [40] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0052669
+2024-04-25 16:26:17.2290 | [45] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 16:26:17.2344 | [45] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1780434
+2024-04-25 16:26:17.3924 | [40] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 16:26:17.4083 | [40] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1933371
+2024-04-25 16:26:20.5596 | [40] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 16:26:20.5637 | [40] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0051158
+2024-04-25 16:26:22.4804 | [40] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 16:26:22.4854 | [40] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1986296
+2024-04-25 16:26:26.1016 | [40] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-26
+2024-04-25 16:26:26.1148 | [40] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=28.8829807
+2024-04-25 16:28:27.5488 | [43] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-04-25 16:28:27.5488 | [43] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0040129
+2024-04-25 16:28:28.6156 | [40] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 16:28:28.6306 | [40] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.017004
+2024-04-25 16:28:29.1592 | [43] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 16:28:29.1592 | [43] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.2075645
+2024-04-25 16:28:29.3577 | [39] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 16:28:29.3646 | [39] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.214159
+2024-04-25 16:28:30.0618 | [43] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 16:28:30.0618 | [43] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.2192761
+2024-04-25 16:28:33.6003 | [40] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-12
+2024-04-25 16:28:33.6102 | [40] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=28.8935384
+2024-04-25 16:28:40.2872 | [40] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-19
+2024-04-25 16:28:40.2969 | [40] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=28.9036615
+2024-04-25 16:30:29.3819 | [40] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 16:30:29.3819 | [40] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0099971
+2024-04-25 16:30:34.9696 | [40] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 16:30:34.9696 | [40] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.2271672
+2024-04-25 16:30:38.2596 | [43] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-12
+2024-04-25 16:30:38.2764 | [43] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=28.9204181
+2024-04-25 16:31:10.3667 | [40] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 16:31:10.3667 | [40] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0037146
+2024-04-25 16:31:16.8678 | [40] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 16:31:16.8750 | [40] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.2342918
+2024-04-25 16:31:20.7372 | [40] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-27
+2024-04-25 16:31:20.7561 | [40] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=28.9391193
+2024-04-25 16:32:02.9686 | [47] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 16:32:02.9724 | [47] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0037687
+2024-04-25 16:32:08.0018 | [45] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 16:32:08.0018 | [45] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.2389007
+2024-04-25 16:32:10.2334 | [40] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-20
+2024-04-25 16:32:10.2544 | [40] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=28.9593956
+2024-04-25 16:32:16.6007 | [40] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-25
+2024-04-25 16:32:16.6156 | [40] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=28.9741907
+2024-04-25 16:51:32.6573 | [26] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-08-09
+2024-04-25 16:51:32.6832 | [26] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=29.0001664
+2024-04-25 16:51:38.1215 | [56] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-20&sEndDate=1996-08-09
+2024-04-25 16:51:38.1335 | [56] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=29.0121651
+2024-04-25 16:51:46.8311 | [56] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-20&sEndDate=1996-07-26
+2024-04-25 16:51:46.8454 | [56] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=29.0263267
+2024-04-25 16:52:17.1205 | [56] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-20&sEndDate=1996-07-31
+2024-04-25 16:52:17.1375 | [56] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=29.0435325
+2024-04-25 17:34:56.4624 | [7] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/OrderDetail/OrderHighcharts","status":"LogOff"}
+2024-04-25 17:34:56.6649 | [7] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.2698314
+2024-04-25 17:35:17.1618 | [7] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"model":{"UserId":"admin","Password":"123456","ComFacID":"台化油品部儲運處-台北-","RememberMe":false,"Language":null},"returnUrl":"/OrderDetail/OrderHighcharts"}
+2024-04-25 17:35:17.4851 | [7] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.3385271
+2024-04-25 17:35:17.5010 | [6] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-04-25 17:35:17.5389 | [6] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0382531
+2024-04-25 17:35:18.6828 | [6] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-04-25 17:35:18.7675 | [6] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.0871182
+2024-04-25 17:35:18.8084 | [6] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-04-25 17:35:18.8084 | [6] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0054424
+2024-04-25 17:35:20.4804 | [12] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-04-25 17:35:20.4804 | [12] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0034062
+2024-04-25 17:35:25.1644 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 17:35:25.2074 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0438188
+2024-04-25 17:35:25.4558 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 17:35:25.4558 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.048501
+2024-04-25 17:35:27.3870 | [5] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 17:35:27.3870 | [5] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0055546
+2024-04-25 17:35:30.6073 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 17:35:30.6073 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0520848
+2024-04-25 17:36:14.7089 | [11] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-12
+2024-04-25 17:36:14.7381 | [11] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.0291593
+2024-04-25 17:36:32.8882 | [6] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-25
+2024-04-25 17:36:32.8882 | [6] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.034429
+2024-04-25 17:37:01.4666 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 17:37:01.4666 | [8] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0038527
+2024-04-25 17:37:07.9479 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 17:37:07.9479 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0621792
+2024-04-25 17:37:14.2105 | [16] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-18
+2024-04-25 17:37:14.2285 | [16] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.0527958
+2024-04-25 17:44:36.5298 | [7] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/","status":"LogOff"}
+2024-04-25 17:44:36.7275 | [7] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.2692774
+2024-04-25 17:44:49.8626 | [7] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"model":{"UserId":"admin","Password":"123456","ComFacID":"台化油品部儲運處-台北-","RememberMe":false,"Language":null},"returnUrl":"/"}
+2024-04-25 17:44:50.0583 | [7] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.2132572
+2024-04-25 17:44:50.0753 | [10] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-04-25 17:44:50.1086 | [10] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0346183
+2024-04-25 17:44:50.1731 | [10] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-04-25 17:44:50.2062 | [10] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.0338505
+2024-04-25 17:44:50.2272 | [10] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-04-25 17:44:50.2272 | [10] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0047745
+2024-04-25 17:44:51.6272 | [11] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-04-25 17:44:51.6272 | [11] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0074926
+2024-04-25 17:44:52.8898 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 17:44:52.9167 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0270095
+2024-04-25 17:44:53.1554 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 17:44:53.1554 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0329524
+2024-04-25 17:44:57.7214 | [7] | INFO | FuctionName=OrderDetail.OrderHighcharts | Start | IP=::1 | parametersInfo={}
+2024-04-25 17:44:57.7214 | [7] | INFO | FuctionName=OrderDetail.OrderHighcharts | End | IP=::1 | ExpendTime=0.0044601
+2024-04-25 17:44:59.8805 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-04-25 17:44:59.8805 | [7] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0381911
+2024-04-25 17:45:18.9197 | [7] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-10
+2024-04-25 17:45:18.9397 | [7] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.0200376
+2024-04-25 17:45:32.9857 | [7] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-24
+2024-04-25 17:45:32.9857 | [7] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.0257266
+2024-04-25 17:45:44.5426 | [8] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-04&sEndDate=1996-07-31
+2024-04-25 17:45:44.5495 | [8] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.0327616
+2024-04-25 17:45:48.1209 | [8] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1996-07-25&sEndDate=1996-07-31
+2024-04-25 17:45:48.1269 | [8] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.0391545
+2024-04-25 17:46:54.8459 | [8] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=sStartDate=1997-12-10&sEndDate=1997-12-17
+2024-04-25 17:46:54.8459 | [8] | INFO | FuctionName=apiOrderDetail.GetOrderDetail | Message=ExpendTime=0.0468262

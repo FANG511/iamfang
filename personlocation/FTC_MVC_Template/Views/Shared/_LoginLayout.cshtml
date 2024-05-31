@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@(System.Configuration.ConfigurationManager.AppSettings.Get("System_Name")) </title>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/kendo/Script")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/kendo/Css")
+
+    @Styles.Render("~/Content/UIUX/Login/css")
+</head>
+<body>
+    <div class="container body-content">
+
+    </div>
+    @RenderBody()
+
+    @*@RenderSection("scripts", required: false)*@
+</body>
+</html>

@@ -1,0 +1,3584 @@
+[
+	{
+		"TableName": "COMM_FUNCTIONLIST",
+		"ColName": "NODEID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_FUNCTIONLIST",
+		"ColName": "PARENTID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_FUNCTIONLIST",
+		"ColName": "NODETEXT",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_FUNCTIONLIST",
+		"ColName": "NODESEQUENCE",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_FUNCTIONLIST",
+		"ColName": "NODEURL",
+		"DataType": "nvarchar",
+		"MaxLength": "500",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_FUNCTIONLIST",
+		"ColName": "NODETARGET",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_FUNCTIONLIST",
+		"ColName": "NODEIMAGE",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_FUNCTIONLIST",
+		"ColName": "NODEEXPANDIMAGE",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_FUNCTIONLIST",
+		"ColName": "FUNCTIONID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_FUNCTIONLIST",
+		"ColName": "DESCRIPTION",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_FUNCTIONLIST",
+		"ColName": "ISLEAFNODE",
+		"DataType": "bit",
+		"MaxLength": null,
+		"DefaultValue": "((1))",
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_FUNCTIONLIST",
+		"ColName": "ISEXPANDED",
+		"DataType": "bit",
+		"MaxLength": null,
+		"DefaultValue": "((1))",
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_FUNCTIONLIST",
+		"ColName": "IFRAMEHEIGHT",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_FUNCTIONLIST",
+		"ColName": "ISREFERENCE",
+		"DataType": "bit",
+		"MaxLength": null,
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_ItemList",
+		"ColName": "ListName",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_ItemList",
+		"ColName": "ItemIndex",
+		"DataType": "smallint",
+		"MaxLength": null,
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_ItemList",
+		"ColName": "ItemName",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_ItemList",
+		"ColName": "ItemValue",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_ItemList",
+		"ColName": "ValueType",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_ItemList",
+		"ColName": "ItemMemo",
+		"DataType": "nvarchar",
+		"MaxLength": "-1",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_ItemList",
+		"ColName": "Description",
+		"DataType": "nvarchar",
+		"MaxLength": "200",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_NODE_HAS_CONTROL",
+		"ColName": "NODEID",
+		"DataType": "nvarchar",
+		"MaxLength": "30",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_NODE_HAS_CONTROL",
+		"ColName": "PARENTID",
+		"DataType": "nvarchar",
+		"MaxLength": "30",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_NODE_HAS_CONTROL",
+		"ColName": "AUTHID",
+		"DataType": "nvarchar",
+		"MaxLength": "10",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_NODEFUNCTION",
+		"ColName": "AUTHID",
+		"DataType": "int",
+		"MaxLength": null,
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_NODEFUNCTION",
+		"ColName": "AUTHTEXT",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_NODEFUNCTION",
+		"ColName": "OBJECTCLASS",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_ROLE",
+		"ColName": "ROLEID",
+		"DataType": "varchar",
+		"MaxLength": "20",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_ROLE",
+		"ColName": "ROLE_NAME",
+		"DataType": "varchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_ROLE",
+		"ColName": "ROLE_DESC",
+		"DataType": "varchar",
+		"MaxLength": "100",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_ROLE",
+		"ColName": "TXN_USERID",
+		"DataType": "varchar",
+		"MaxLength": "20",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_ROLE",
+		"ColName": "TXN_TIMESTAMP",
+		"DataType": "datetime",
+		"MaxLength": null,
+		"DefaultValue": "(getdate())",
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_ROLENODE",
+		"ColName": "ROLEID",
+		"DataType": "nvarchar",
+		"MaxLength": "20",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_ROLENODE",
+		"ColName": "NODEID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_ROLENODE",
+		"ColName": "CONTROLID",
+		"DataType": "bit",
+		"MaxLength": null,
+		"DefaultValue": "('')",
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_ROLENODE",
+		"ColName": "DESCRIPTION",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_USER",
+		"ColName": "USERID",
+		"DataType": "varchar",
+		"MaxLength": "20",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_USER",
+		"ColName": "USER_NAME",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_USER",
+		"ColName": "USER_DEPT",
+		"DataType": "varchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_USER",
+		"ColName": "USER_DESC",
+		"DataType": "varchar",
+		"MaxLength": "100",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_USER",
+		"ColName": "MAIL",
+		"DataType": "varchar",
+		"MaxLength": "100",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_USER",
+		"ColName": "PHONE",
+		"DataType": "varchar",
+		"MaxLength": "30",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_USER",
+		"ColName": "PWD",
+		"DataType": "nvarchar",
+		"MaxLength": "250",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_USER",
+		"ColName": "TXN_USERID",
+		"DataType": "varchar",
+		"MaxLength": "20",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_USER",
+		"ColName": "TXN_TIMESTAMP",
+		"DataType": "datetime",
+		"MaxLength": null,
+		"DefaultValue": "(getdate())",
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_USER",
+		"ColName": "EXT01",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_USER",
+		"ColName": "EXT02",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_USER",
+		"ColName": "EXT03",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_USER",
+		"ColName": "EXT04",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_USER",
+		"ColName": "EXT05",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_USER_HAS_ROLES",
+		"ColName": "USERID",
+		"DataType": "varchar",
+		"MaxLength": "20",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_USER_HAS_ROLES",
+		"ColName": "ROLEID",
+		"DataType": "varchar",
+		"MaxLength": "20",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_USER_HAS_ROLES",
+		"ColName": "TXN_USERID",
+		"DataType": "varchar",
+		"MaxLength": "20",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "COMM_USER_HAS_ROLES",
+		"ColName": "TXN_TIMESTAMP",
+		"DataType": "datetime",
+		"MaxLength": null,
+		"DefaultValue": "(getdate())",
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "Company",
+		"ColName": "CompanyID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "Company",
+		"ColName": "CompanyName",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "ErpApHostDb",
+		"ColName": "SYSUniqueID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": "(newid())",
+		"isNullAble": "NO",
+		"Description": "系統惟一值"
+	},
+	{
+		"TableName": "ErpApHostDb",
+		"ColName": "LinkUniqueID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "FK from ErpPwMgr.SYSUniqueID"
+	},
+	{
+		"TableName": "ErpApHostDb",
+		"ColName": "CompanyID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "公司編號，ex:南亞:2。"
+	},
+	{
+		"TableName": "ErpApHostDb",
+		"ColName": "FactoryID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "工廠編號，ex:南亞銅箔一廠:8900。"
+	},
+	{
+		"TableName": "ErpApHostDb",
+		"ColName": "AppProcName",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "應用系統別"
+	},
+	{
+		"TableName": "ErpApHostDb",
+		"ColName": "Descript",
+		"DataType": "nvarchar",
+		"MaxLength": "200",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "說明"
+	},
+	{
+		"TableName": "ErpApHostDb",
+		"ColName": "ActiveStat",
+		"DataType": "nvarchar",
+		"MaxLength": "2",
+		"DefaultValue": "('00')",
+		"isNullAble": "YES",
+		"Description": "啟用註記，00:設定中  01:啟用"
+	},
+	{
+		"TableName": "ErpApHostDb",
+		"ColName": "ActiveINVL",
+		"DataType": "int",
+		"MaxLength": null,
+		"DefaultValue": "((0))",
+		"isNullAble": "YES",
+		"Description": "資料更新間隔，依照sql job的頻率*該設定。ex:sql job的頻率設定成1分鐘執行一次，ActiveInterval設定成60，表示該工作為每60分鐘執行一次"
+	},
+	{
+		"TableName": "ErpApHostDb",
+		"ColName": "CurrentINVL",
+		"DataType": "int",
+		"MaxLength": null,
+		"DefaultValue": "((0))",
+		"isNullAble": "YES",
+		"Description": "資料更新間隔次數，依照sql job的頻率*該設定。ex:sql job的頻率設定成1分鐘執行一次，表示暪分鐘會加1，直到該數值與ActiveInterval一致，則會開始執行資料同步，完成後會復歸成0"
+	},
+	{
+		"TableName": "ErpApHostDb",
+		"ColName": "ErpActMode",
+		"DataType": "nvarchar",
+		"MaxLength": "2",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "Erp資料傳遞模式，00:下載  01:上傳 02:下載上傳"
+	},
+	{
+		"TableName": "ErpApHostDb",
+		"ColName": "ErpSynMode",
+		"DataType": "nvarchar",
+		"MaxLength": "2",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "Erp資料同步模式，00:上傳及下載每次更新(資料全部刪除後重新匯入所有資料)，01:上傳及下載差異更新依時間 "
+	},
+	{
+		"TableName": "ErpApHostDb",
+		"ColName": "ErpSourTable",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "Erp 資料同步Table名稱"
+	},
+	{
+		"TableName": "ErpApHostDb",
+		"ColName": "ErpSynResult",
+		"DataType": "nvarchar",
+		"MaxLength": "-1",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "Erp資料同步結果。00:成功  01:失敗"
+	},
+	{
+		"TableName": "ErpApHostDb",
+		"ColName": "ErpSynTime",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "Erp資料同步時間"
+	},
+	{
+		"TableName": "ErpApHostDb",
+		"ColName": "ErpPKey",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "Erp資料同步Table PK欄位名稱"
+	},
+	{
+		"TableName": "ErpApHostDb",
+		"ColName": "ErpDiffKey",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "Erp資料同步Table 比對欄位名稱，通常都是更新時間。"
+	},
+	{
+		"TableName": "ErpApHostDb",
+		"ColName": "ApHostIP",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "應用系統主機 IP"
+	},
+	{
+		"TableName": "ErpApHostDb",
+		"ColName": "ApDbPort",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "應用資料庫 Port No"
+	},
+	{
+		"TableName": "ErpApHostDb",
+		"ColName": "ApDbName",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "應用資料庫名稱"
+	},
+	{
+		"TableName": "ErpApHostDb",
+		"ColName": "ApTableName",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "應用資料庫Table名稱"
+	},
+	{
+		"TableName": "ErpApHostDb",
+		"ColName": "ApPrimaryKey",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "應用資料庫Table 對應唯一值PK"
+	},
+	{
+		"TableName": "ErpApHostDb",
+		"ColName": "ApUploadKey",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "應用資料庫Table 上傳ERP成功後更新的註記，對應的欄位名稱。0:尚未上傳 9:上傳成功 1~8重傳次數"
+	},
+	{
+		"TableName": "ErpApHostDb",
+		"ColName": "ApDbUser",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "應用資料庫帳號"
+	},
+	{
+		"TableName": "ErpApHostDb",
+		"ColName": "ApDbPswd",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "應用資料庫密碼"
+	},
+	{
+		"TableName": "ErpApHostDb",
+		"ColName": "UpLoad_SQL",
+		"DataType": "nvarchar",
+		"MaxLength": "2000",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "Ap DB 上傳到 Erp DB SQL 語法"
+	},
+	{
+		"TableName": "ErpApHostDb",
+		"ColName": "DownLoad_SQL",
+		"DataType": "nvarchar",
+		"MaxLength": "2000",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "Erp DB 下載 Ap DB  SQL 語法"
+	},
+	{
+		"TableName": "ErpApHostDb",
+		"ColName": "UpdateUser",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "資料異動人員"
+	},
+	{
+		"TableName": "ErpApHostDb",
+		"ColName": "UpdateTime",
+		"DataType": "datetime",
+		"MaxLength": null,
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "資料異動日期時間"
+	},
+	{
+		"TableName": "ErpApHostDb",
+		"ColName": "ApUploadResult",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "上傳結果欄位設定"
+	},
+	{
+		"TableName": "ErpPwMgr",
+		"ColName": "SYSUniqueID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": "(newid())",
+		"isNullAble": "NO",
+		"Description": "系統惟一值"
+	},
+	{
+		"TableName": "ErpPwMgr",
+		"ColName": "CompanyID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "公司編號，ex:南亞:2。"
+	},
+	{
+		"TableName": "ErpPwMgr",
+		"ColName": "FactoryID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "工廠編號，ex:南亞銅箔一廠:8900。"
+	},
+	{
+		"TableName": "ErpPwMgr",
+		"ColName": "AppProcName",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "應用系統別"
+	},
+	{
+		"TableName": "ErpPwMgr",
+		"ColName": "Descript",
+		"DataType": "nvarchar",
+		"MaxLength": "200",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "說明"
+	},
+	{
+		"TableName": "ErpPwMgr",
+		"ColName": "ErpSIDName",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "Erp SID 名稱或是ODBC 名稱"
+	},
+	{
+		"TableName": "ErpPwMgr",
+		"ColName": "ErpUserName",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "帳號名稱"
+	},
+	{
+		"TableName": "ErpPwMgr",
+		"ColName": "ErpOldPw",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "帳號舊密碼"
+	},
+	{
+		"TableName": "ErpPwMgr",
+		"ColName": "ErpNewPw",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "帳號新密碼"
+	},
+	{
+		"TableName": "ErpPwMgr",
+		"ColName": "DateVali",
+		"DataType": "datetime",
+		"MaxLength": null,
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "生效日期"
+	},
+	{
+		"TableName": "ErpPwMgr",
+		"ColName": "DUpdStat",
+		"DataType": "nvarchar",
+		"MaxLength": "2",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "資料更新註記，00:正常  01:更新中"
+	},
+	{
+		"TableName": "ErpPwMgr",
+		"ColName": "DBLinkType",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "建立DBLink連接哪種資料庫格式，目前只支援三種，1.SQL，2.Oracle，3.ODBC"
+	},
+	{
+		"TableName": "ErpPwMgr",
+		"ColName": "UpdateUser",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "資料異動人員"
+	},
+	{
+		"TableName": "ErpPwMgr",
+		"ColName": "UpdateTime",
+		"DataType": "datetime",
+		"MaxLength": null,
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "資料異動日期時間"
+	},
+	{
+		"TableName": "ErpPwMgr",
+		"ColName": "ConnectType",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": "(N'ODPNet')",
+		"isNullAble": "YES",
+		"Description": "连接MIS方式:DBLink：DBLink，ODP.Net:ODPNet"
+	},
+	{
+		"TableName": "ErpUsrPswd",
+		"ColName": "PlantNId",
+		"DataType": "varchar",
+		"MaxLength": "16",
+		"DefaultValue": "('')",
+		"isNullAble": "NO",
+		"Description": "廠區廠號,至多八個中文字。如新港玻二、台北設備 "
+	},
+	{
+		"TableName": "ErpUsrPswd",
+		"ColName": "AppProcN",
+		"DataType": "varchar",
+		"MaxLength": "24",
+		"DefaultValue": "('')",
+		"isNullAble": "NO",
+		"Description": "應用系統別,至多十二個中文字。如生管系統、物流系統、保養e化"
+	},
+	{
+		"TableName": "ErpUsrPswd",
+		"ColName": "Descript",
+		"DataType": "varchar",
+		"MaxLength": "50",
+		"DefaultValue": "('')",
+		"isNullAble": "NO",
+		"Description": "說明,生管系統製程生產資料上傳"
+	},
+	{
+		"TableName": "ErpUsrPswd",
+		"ColName": "ErpUserN",
+		"DataType": "varchar",
+		"MaxLength": "10",
+		"DefaultValue": "('')",
+		"isNullAble": "NO",
+		"Description": "ERP帳號名稱"
+	},
+	{
+		"TableName": "ErpUsrPswd",
+		"ColName": "ErpOldPw",
+		"DataType": "varchar",
+		"MaxLength": "10",
+		"DefaultValue": "('')",
+		"isNullAble": "NO",
+		"Description": "ERP帳號舊密碼"
+	},
+	{
+		"TableName": "ErpUsrPswd",
+		"ColName": "ErpNewPw",
+		"DataType": "varchar",
+		"MaxLength": "10",
+		"DefaultValue": "('')",
+		"isNullAble": "NO",
+		"Description": "ERP帳號新密碼"
+	},
+	{
+		"TableName": "ErpUsrPswd",
+		"ColName": "DateVali",
+		"DataType": "varchar",
+		"MaxLength": "10",
+		"DefaultValue": "('')",
+		"isNullAble": "NO",
+		"Description": "生效日期,YYYYMMDD"
+	},
+	{
+		"TableName": "ErpUsrPswd",
+		"ColName": "DUpdStat",
+		"DataType": "varchar",
+		"MaxLength": "1",
+		"DefaultValue": "('0')",
+		"isNullAble": "NO",
+		"Description": "資料更新註記,0:正常  1:更新中"
+	},
+	{
+		"TableName": "ErpUsrPswd",
+		"ColName": "PwCtrlGp",
+		"DataType": "varchar",
+		"MaxLength": "1",
+		"DefaultValue": "('')",
+		"isNullAble": "NO",
+		"Description": "應用系統歸屬別,A~Z, 搭配密碼修訂管控的人員群組"
+	},
+	{
+		"TableName": "ErpUsrPswd",
+		"ColName": "DaExgOpr",
+		"DataType": "varchar",
+		"MaxLength": "10",
+		"DefaultValue": "(user_name())",
+		"isNullAble": "NO",
+		"Description": "資料異動人員"
+	},
+	{
+		"TableName": "ErpUsrPswd",
+		"ColName": "DaExgWks",
+		"DataType": "varchar",
+		"MaxLength": "15",
+		"DefaultValue": "(host_name())",
+		"isNullAble": "YES",
+		"Description": "資料異動工作站"
+	},
+	{
+		"TableName": "ErpUsrPswd",
+		"ColName": "DaExgDtm",
+		"DataType": "varchar",
+		"MaxLength": "19",
+		"DefaultValue": "(CONVERT([varchar](19),getdate(),(121)))",
+		"isNullAble": "NO",
+		"Description": "資料異動日期時間,YYYY-MM-DD hh:mm:ss"
+	},
+	{
+		"TableName": "ErpUsrPswd",
+		"ColName": "ConnName",
+		"DataType": "varchar",
+		"MaxLength": "100",
+		"DefaultValue": "('')",
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "ErpUsrPswd",
+		"ColName": "DaRemark",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": "('')",
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "ErpUsrPswd",
+		"ColName": "OprDescr",
+		"DataType": "varchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "ErpUsrPswd",
+		"ColName": "LinkSvrN",
+		"DataType": "varchar",
+		"MaxLength": "24",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "Factory",
+		"ColName": "CompanyID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "Factory",
+		"ColName": "FactoryID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "Factory",
+		"ColName": "FactoryName",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "FTCAFALERTDEFINE",
+		"ColName": "SYSID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": "系統唯一值"
+	},
+	{
+		"TableName": "FTCAFALERTDEFINE",
+		"ColName": "COMPANYID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "公司編號，ex:南亞:2。"
+	},
+	{
+		"TableName": "FTCAFALERTDEFINE",
+		"ColName": "FACTORYID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "工廠編號，ex:南亞銅箔一廠:8900。"
+	},
+	{
+		"TableName": "FTCAFALERTDEFINE",
+		"ColName": "ALERTNAME",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "AF警報點位名稱"
+	},
+	{
+		"TableName": "FTCAFALERTDEFINE",
+		"ColName": "SENDTYPE",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "傳送類別，目前有:'NOTES', '簡訊'"
+	},
+	{
+		"TableName": "FTCAFALERTDEFINE",
+		"ColName": "ALERTCATEGORY",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "警報類別，目前有:'工安管理', '生產管理', '品質管理', '設備管理'"
+	},
+	{
+		"TableName": "FTCAFALERTDEFINE",
+		"ColName": "ALERTLEVEL",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "警報等級，目前有:'低', '中', '高', '極高'"
+	},
+	{
+		"TableName": "FTCAFALERTDEFINE",
+		"ColName": "ALERTTITLE",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "郵件標題"
+	},
+	{
+		"TableName": "FTCAFALERTDEFINE",
+		"ColName": "ALERTMESSAGE",
+		"DataType": "nvarchar",
+		"MaxLength": "500",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "警報訊息"
+	},
+	{
+		"TableName": "FTCAFALERTDEFINE",
+		"ColName": "SENDGROUP",
+		"DataType": "nvarchar",
+		"MaxLength": "500",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "警報接收人群組，連接FTCSENDMESSAGEGROUP.GROUPNAME"
+	},
+	{
+		"TableName": "FTCAFALERTDEFINE",
+		"ColName": "ANALYSISRULE",
+		"DataType": "nvarchar",
+		"MaxLength": "500",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "表達式"
+	},
+	{
+		"TableName": "FTCAFALERTDEFINE",
+		"ColName": "TIMETRUE",
+		"DataType": "nvarchar",
+		"MaxLength": "10",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "警報條件達成設定秒數後觸發警報"
+	},
+	{
+		"TableName": "FTCAFALERTDEFINE",
+		"ColName": "MODIFYUSER",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "資料異動人員"
+	},
+	{
+		"TableName": "FTCAFALERTDEFINE",
+		"ColName": "MODIFYTIME",
+		"DataType": "datetime",
+		"MaxLength": null,
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "資料異動時間"
+	},
+	{
+		"TableName": "FTCAFALERTDEFINE",
+		"ColName": "ALERTACTIVE",
+		"DataType": "nvarchar",
+		"MaxLength": "2",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "警報是否啟用"
+	},
+	{
+		"TableName": "FTCAFALERTDEFINE",
+		"ColName": "PICHECKRESULT",
+		"DataType": "nvarchar",
+		"MaxLength": "2",
+		"DefaultValue": "(N'N')",
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "FTCAFALERTDEFINE",
+		"ColName": "UPLOADAF",
+		"DataType": "int",
+		"MaxLength": null,
+		"DefaultValue": "((0))",
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "FTCAFEXCELTO",
+		"ColName": "SYSID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": "系統唯一值"
+	},
+	{
+		"TableName": "FTCAFEXCELTO",
+		"ColName": "COMPANYID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "公司編號，ex:南亞:2。"
+	},
+	{
+		"TableName": "FTCAFEXCELTO",
+		"ColName": "FACTORYID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "工廠編號，ex:南亞銅箔一廠:8900。"
+	},
+	{
+		"TableName": "FTCAFEXCELTO",
+		"ColName": "EXCELNAME",
+		"DataType": "nvarchar",
+		"MaxLength": "100",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "Excel生產紀錄表檔案名稱"
+	},
+	{
+		"TableName": "FTCAFEXCELTO",
+		"ColName": "NOTESTO",
+		"DataType": "nvarchar",
+		"MaxLength": "500",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "傳送Notes名單，用\";\"隔開"
+	},
+	{
+		"TableName": "FTCAFEXCELTO",
+		"ColName": "PARAMNAME",
+		"DataType": "nvarchar",
+		"MaxLength": "100",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": " 轉PDF參數名稱"
+	},
+	{
+		"TableName": "FTCAFEXCELTO",
+		"ColName": "PARAMVALUE",
+		"DataType": "nvarchar",
+		"MaxLength": "100",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": " 轉PDF參數"
+	},
+	{
+		"TableName": "FTCAFEXCELTO",
+		"ColName": "PDFNAME",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": " 轉PDF檔案名稱"
+	},
+	{
+		"TableName": "FTCAFEXCELTO",
+		"ColName": "UPLOADTO",
+		"DataType": "nvarchar",
+		"MaxLength": "200",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "上傳到sharepoint資料夾路徑"
+	},
+	{
+		"TableName": "FTCAFEXCELTO",
+		"ColName": "MODIFYUSER",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "資料異動人員"
+	},
+	{
+		"TableName": "FTCAFEXCELTO",
+		"ColName": "MODIFYTIME",
+		"DataType": "datetime",
+		"MaxLength": null,
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "資料異動時間"
+	},
+	{
+		"TableName": "FTCAFEXCELTO",
+		"ColName": "EXCRESULT",
+		"DataType": "int",
+		"MaxLength": null,
+		"DefaultValue": "((0))",
+		"isNullAble": "YES",
+		"Description": "轉檔結果，9=成功；0=尚未轉檔；1~3重新轉檔次數"
+	},
+	{
+		"TableName": "FTCAFEXCELTO",
+		"ColName": "QLIST",
+		"DataType": "nvarchar",
+		"MaxLength": "500",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "品檢項目編號，多項用\",\"隔開"
+	},
+	{
+		"TableName": "FTCAFEXCELTO",
+		"ColName": "WAITINTERVAL",
+		"DataType": "int",
+		"MaxLength": null,
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "生產紀錄表最常等待品檢項目完成時間間格(小時)"
+	},
+	{
+		"TableName": "FTCEAPCHANNELLDEFINE",
+		"ColName": "CHANNELID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": "Channel編號"
+	},
+	{
+		"TableName": "FTCEAPCHANNELLDEFINE",
+		"ColName": "CHANNELTYPE",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "Channel類別,有以下介面，PI (連結 PI 介面)，OPC(連結 OPC 介面)。DB(連結 DB介面)"
+	},
+	{
+		"TableName": "FTCEAPCHANNELLDEFINE",
+		"ColName": "CHANNELIP",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "連結介面IP"
+	},
+	{
+		"TableName": "FTCEAPCHANNELLDEFINE",
+		"ColName": "SERVERNAME",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "連結介面 ServerName"
+	},
+	{
+		"TableName": "FTCEAPCHANNELLDEFINE",
+		"ColName": "CHANNELLOGINID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "連結介面登入帳號"
+	},
+	{
+		"TableName": "FTCEAPCHANNELLDEFINE",
+		"ColName": "CHANNELPW",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "連結介面登入密碼"
+	},
+	{
+		"TableName": "FTCEAPCHANNELLDEFINE",
+		"ColName": "MODIFYUSER",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "更新人員"
+	},
+	{
+		"TableName": "FTCEAPCHANNELLDEFINE",
+		"ColName": "MODIFYTIME",
+		"DataType": "datetime",
+		"MaxLength": null,
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "更新時間"
+	},
+	{
+		"TableName": "FTCEAPEDCTAG",
+		"ColName": "SYSID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": "(replace(replace(CONVERT([varchar],getdate(),(121)),'-',''),':',''))",
+		"isNullAble": "NO",
+		"Description": "系統唯一值"
+	},
+	{
+		"TableName": "FTCEAPEDCTAG",
+		"ColName": "COMPANYID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "公司編號，ex:南亞:2。"
+	},
+	{
+		"TableName": "FTCEAPEDCTAG",
+		"ColName": "FACTORYID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "工廠編號，ex:南亞銅箔一廠:8900。"
+	},
+	{
+		"TableName": "FTCEAPEDCTAG",
+		"ColName": "TAGID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "Tag編號，對應FTCEAPTAGDEFINE.TAGID"
+	},
+	{
+		"TableName": "FTCEAPEDCTAG",
+		"ColName": "EQPID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "對應機台編號，連結FTCEQP.EQPID"
+	},
+	{
+		"TableName": "FTCEAPEDCTAG",
+		"ColName": "EDCITEMID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "對應EDC編號，連結FTCMEDCITEM.ITEMID"
+	},
+	{
+		"TableName": "FTCEAPEDCTAG",
+		"ColName": "EDCITEMVALUETYPE",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "對應EDC對照類別，有以下類別，PV(CURRENT READ VALUE)，SV(CURRENT SET VALUE)，WV(WRITE VALUE)"
+	},
+	{
+		"TableName": "FTCEAPEDCTAG",
+		"ColName": "MODIFYUSER",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "更新人員"
+	},
+	{
+		"TableName": "FTCEAPEDCTAG",
+		"ColName": "MODIFYTIME",
+		"DataType": "datetime",
+		"MaxLength": null,
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "更新時間"
+	},
+	{
+		"TableName": "FTCEAPKEEPDEFINE",
+		"ColName": "SYSID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": "(replace(replace(CONVERT([varchar],getdate(),(121)),'-',''),':',''))",
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "FTCEAPKEEPDEFINE",
+		"ColName": "COMPANYID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": "公司編號，ex:南亞:2。"
+	},
+	{
+		"TableName": "FTCEAPKEEPDEFINE",
+		"ColName": "FACTORYID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": "工廠編號，ex:南亞銅箔一廠:8900。"
+	},
+	{
+		"TableName": "FTCEAPKEEPDEFINE",
+		"ColName": "EQPID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": "機台編號，對應FTCEQP.EQPID"
+	},
+	{
+		"TableName": "FTCEAPKEEPDEFINE",
+		"ColName": "KEEPID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": "定期保存工作編號"
+	},
+	{
+		"TableName": "FTCEAPKEEPDEFINE",
+		"ColName": "KEEPNAME",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": "定期保存工作編號"
+	},
+	{
+		"TableName": "FTCEAPKEEPDEFINE",
+		"ColName": "KEEPINTERVAL",
+		"DataType": "int",
+		"MaxLength": null,
+		"DefaultValue": "((0))",
+		"isNullAble": "NO",
+		"Description": "定期保存間隔，依照sql job的頻率*該設定。ex:sql job的頻率設定成1分鐘執行一次，ActiveInterval設定成60，表示該工作為每60分鐘執行一次"
+	},
+	{
+		"TableName": "FTCEAPKEEPDEFINE",
+		"ColName": "NEEDLOT",
+		"DataType": "nvarchar",
+		"MaxLength": "1",
+		"DefaultValue": "(N'N')",
+		"isNullAble": "NO",
+		"Description": "是否需要lot資訊，預設為N，N=不需要lot資訊，間格到了舊記錄，Y=顯檢查該時間區段如果有對應到lot資訊，才做記錄"
+	},
+	{
+		"TableName": "FTCEAPKEEPDEFINE",
+		"ColName": "TMPLID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": "定期保存套用範本編號，對應FTCMTMPLTYPE.TMPLID"
+	},
+	{
+		"TableName": "FTCEAPKEEPDEFINE",
+		"ColName": "CURRENTINTERVAL",
+		"DataType": "int",
+		"MaxLength": null,
+		"DefaultValue": "((0))",
+		"isNullAble": "NO",
+		"Description": "資料更新間隔次數，依照sql job的頻率*該設定。ex:sql job的頻率設定成1分鐘執行一次，表示暪分鐘會加1，直到該數值與ActiveInterval一致，則會開始執行資料同步，完成後會復歸成0"
+	},
+	{
+		"TableName": "FTCEAPKEEPDEFINE",
+		"ColName": "MODIFYUSER",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "更新人員"
+	},
+	{
+		"TableName": "FTCEAPKEEPDEFINE",
+		"ColName": "MODIFYTIME",
+		"DataType": "datetime",
+		"MaxLength": null,
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "更新時間"
+	},
+	{
+		"TableName": "FTCEAPKEEPTAG",
+		"ColName": "SYSID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "FTCEAPKEEPTAG",
+		"ColName": "CHANNELID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": "Channel編號，對應FTCEAPCHANNELLDEFINE.CHANNELID"
+	},
+	{
+		"TableName": "FTCEAPKEEPTAG",
+		"ColName": "KEEPID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": "定期保存工作編號，對應FTCEAPKEEPDEFINE.KEEPID"
+	},
+	{
+		"TableName": "FTCEAPKEEPTAG",
+		"ColName": "TAGID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": "Tag編號，對應FTCEAPTAGDEFINE.TAGID"
+	},
+	{
+		"TableName": "FTCEAPKEEPTAG",
+		"ColName": "MODIFYUSER",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "FTCEAPKEEPTAG",
+		"ColName": "MODIFYTIME",
+		"DataType": "datetime",
+		"MaxLength": null,
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "FTCEAPTAGDEFINE",
+		"ColName": "SYSID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "FTCEAPTAGDEFINE",
+		"ColName": "CHANNELID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": "Channel編號"
+	},
+	{
+		"TableName": "FTCEAPTAGDEFINE",
+		"ColName": "TAGID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": "Tag編號"
+	},
+	{
+		"TableName": "FTCEAPTAGDEFINE",
+		"ColName": "TAGNAME",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "Tag名稱"
+	},
+	{
+		"TableName": "FTCEAPTAGDEFINE",
+		"ColName": "ADDRESS",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "Tag 實際點位address"
+	},
+	{
+		"TableName": "FTCEAPTAGDEFINE",
+		"ColName": "ACTIONTYPE",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "動作模式，有以下模式R(CURRENT READ)，W(CURRENT WRITE)"
+	},
+	{
+		"TableName": "FTCEAPTAGDEFINE",
+		"ColName": "ACTIONFLAG",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "動作是否完成，0(尚未完成)，1(已完成)"
+	},
+	{
+		"TableName": "FTCEAPTAGDEFINE",
+		"ColName": "TAGVALUE",
+		"DataType": "nvarchar",
+		"MaxLength": "200",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "ACTIONTYPE=R，為讀到實際的值，ACTIONTYPE=W，為要寫入的值"
+	},
+	{
+		"TableName": "FTCEAPTAGDEFINE",
+		"ColName": "MODIFYUSER",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "更新人員"
+	},
+	{
+		"TableName": "FTCEAPTAGDEFINE",
+		"ColName": "MODIFYTIME",
+		"DataType": "datetime",
+		"MaxLength": null,
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "更新時間"
+	},
+	{
+		"TableName": "FTCEMP",
+		"ColName": "COMPANYID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "公司編號，ex:南亞:2。"
+	},
+	{
+		"TableName": "FTCEMP",
+		"ColName": "FACTORYID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "工廠編號，ex:南亞銅箔一廠:8900。"
+	},
+	{
+		"TableName": "FTCEMP",
+		"ColName": "EMPID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": "員工編號。ex:N0000xxxxx"
+	},
+	{
+		"TableName": "FTCEMP",
+		"ColName": "NM",
+		"DataType": "nvarchar",
+		"MaxLength": "18",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "員工姓名。"
+	},
+	{
+		"TableName": "FTCEMP",
+		"ColName": "DUTNM",
+		"DataType": "nvarchar",
+		"MaxLength": "30",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "職務名稱"
+	},
+	{
+		"TableName": "FTCEMP",
+		"ColName": "TEL",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "手機號碼"
+	},
+	{
+		"TableName": "FTCEMP",
+		"ColName": "LINE",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "Line編號"
+	},
+	{
+		"TableName": "FTCEMP",
+		"ColName": "MAIL",
+		"DataType": "nvarchar",
+		"MaxLength": "200",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "外部email"
+	},
+	{
+		"TableName": "FTCEMP",
+		"ColName": "WECHAT",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "微信編號"
+	},
+	{
+		"TableName": "FTCEMP",
+		"ColName": "ORG",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "AD 組織編號，暫不使用"
+	},
+	{
+		"TableName": "FTCEMP",
+		"ColName": "GRP",
+		"DataType": "nvarchar",
+		"MaxLength": "12",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "AD 群組編號，暫不使用"
+	},
+	{
+		"TableName": "FTCEMP",
+		"ColName": "CT",
+		"DataType": "datetime",
+		"MaxLength": null,
+		"DefaultValue": "(getdate())",
+		"isNullAble": "YES",
+		"Description": "異動時間"
+	},
+	{
+		"TableName": "FTCEMP",
+		"ColName": "STATE",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": "('A')",
+		"isNullAble": "YES",
+		"Description": "狀態"
+	},
+	{
+		"TableName": "FTCEMP",
+		"ColName": "FT",
+		"DataType": "datetime",
+		"MaxLength": null,
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "FTCEMP",
+		"ColName": "PTPRMK",
+		"DataType": "varchar",
+		"MaxLength": "2",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "備註"
+	},
+	{
+		"TableName": "FTCEMP",
+		"ColName": "MODIFYUSER",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "資料異動人員"
+	},
+	{
+		"TableName": "FTCEMP",
+		"ColName": "MODIFYTIME",
+		"DataType": "datetime",
+		"MaxLength": null,
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "資料異動時間"
+	},
+	{
+		"TableName": "FTCMISREPAIRDEFINE",
+		"ColName": "SysID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": "(newid())",
+		"isNullAble": "NO",
+		"Description": "唯一值"
+	},
+	{
+		"TableName": "FTCMISREPAIRDEFINE",
+		"ColName": "CompanyID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "公司編號，ex:南亞:2。"
+	},
+	{
+		"TableName": "FTCMISREPAIRDEFINE",
+		"ColName": "FactoryID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "工廠編號，ex:南亞銅箔一廠:8900。"
+	},
+	{
+		"TableName": "FTCMISREPAIRDEFINE",
+		"ColName": "Co",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "公司"
+	},
+	{
+		"TableName": "FTCMISREPAIRDEFINE",
+		"ColName": "PmFct",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "生產廠"
+	},
+	{
+		"TableName": "FTCMISREPAIRDEFINE",
+		"ColName": "MntCo",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "保養公司"
+	},
+	{
+		"TableName": "FTCMISREPAIRDEFINE",
+		"ColName": "MntFct",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "保養廠"
+	},
+	{
+		"TableName": "FTCMISREPAIRDEFINE",
+		"ColName": "MntSect",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "保養課"
+	},
+	{
+		"TableName": "FTCMISREPAIRDEFINE",
+		"ColName": "LisCo",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "開單公司"
+	},
+	{
+		"TableName": "FTCMISREPAIRDEFINE",
+		"ColName": "LisDp",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "開單部分"
+	},
+	{
+		"TableName": "FTCMISREPAIRDEFINE",
+		"ColName": "LisEmp",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "開單人員"
+	},
+	{
+		"TableName": "FTCMISREPAIRDEFINE",
+		"ColName": "MpZ",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "製成區"
+	},
+	{
+		"TableName": "FTCMISREPAIRDEFINE",
+		"ColName": "MpSys",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "製成系統"
+	},
+	{
+		"TableName": "FTCMISREPAIRDEFINE",
+		"ColName": "ModifyUser",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "修改人員"
+	},
+	{
+		"TableName": "FTCMISREPAIRDEFINE",
+		"ColName": "ModifyTime",
+		"DataType": "datetime",
+		"MaxLength": null,
+		"DefaultValue": "(getdate())",
+		"isNullAble": "YES",
+		"Description": "修改時間"
+	},
+	{
+		"TableName": "FTCSCHREPORT",
+		"ColName": "SYSID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": "系統唯一值"
+	},
+	{
+		"TableName": "FTCSCHREPORT",
+		"ColName": "COMPANYID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "公司編號，ex:南亞:2。"
+	},
+	{
+		"TableName": "FTCSCHREPORT",
+		"ColName": "FACTORYID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "工廠編號，ex:南亞銅箔一廠:8900。"
+	},
+	{
+		"TableName": "FTCSCHREPORT",
+		"ColName": "REPORTTYPE",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "報表類別，有以下類別。Day(日報)，Weekly(周報)，Month(月報)，Quarterly(季報)，Year(年報)"
+	},
+	{
+		"TableName": "FTCSCHREPORT",
+		"ColName": "SUBJECT",
+		"DataType": "nvarchar",
+		"MaxLength": "500",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "報表主旨"
+	},
+	{
+		"TableName": "FTCSCHREPORT",
+		"ColName": "BODY",
+		"DataType": "nvarchar",
+		"MaxLength": "2000",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "報表內容"
+	},
+	{
+		"TableName": "FTCSCHREPORT",
+		"ColName": "RUNINTERVAL",
+		"DataType": "nvarchar",
+		"MaxLength": "100",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "報表重整週期，REPORTTYPE=>Day:1,3 表示每週1,3，\r\nWeekly:1,3 表示每月第1周,第3周，Month:1,3,5 表示1月3月5月，Quarterly:1,3 表示第一季跟第三季，Year:2018表示2018年，如果為空值表示每個間格都會產生新的報表"
+	},
+	{
+		"TableName": "FTCSCHREPORT",
+		"ColName": "RUNTIME",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "報表起算時間，ex:08:00，表示8點開始計算，Day:昨天08:00~今天08:00"
+	},
+	{
+		"TableName": "FTCSCHREPORT",
+		"ColName": "REPORTURL",
+		"DataType": "nvarchar",
+		"MaxLength": "500",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "報表生成URL路徑"
+	},
+	{
+		"TableName": "FTCSCHREPORT",
+		"ColName": "XLSFILEPATH",
+		"DataType": "nvarchar",
+		"MaxLength": "500",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "Xls檔案名稱"
+	},
+	{
+		"TableName": "FTCSCHREPORT",
+		"ColName": "FIELCREATETIME",
+		"DataType": "datetime",
+		"MaxLength": null,
+		"DefaultValue": "(getdate())",
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "FTCSCHREPORT",
+		"ColName": "MODIFYUSER",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "更新人員"
+	},
+	{
+		"TableName": "FTCSCHREPORT",
+		"ColName": "MODIFYTIME",
+		"DataType": "datetime",
+		"MaxLength": null,
+		"DefaultValue": "(getdate())",
+		"isNullAble": "YES",
+		"Description": "更新時間"
+	},
+	{
+		"TableName": "FTCSCHREPORT",
+		"ColName": "SENDFLAG",
+		"DataType": "nvarchar",
+		"MaxLength": "1",
+		"DefaultValue": "(N'N')",
+		"isNullAble": "YES",
+		"Description": "是否已經傳送，Y=已傳送，N=未傳送"
+	},
+	{
+		"TableName": "FTCSCHREPORTGROUP",
+		"ColName": "SYSID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "FTCSCHREPORTGROUP",
+		"ColName": "COMPANYID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "FTCSCHREPORTGROUP",
+		"ColName": "FACTORYID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "FTCSCHREPORTGROUP",
+		"ColName": "REPORTID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "FTCSCHREPORTGROUP",
+		"ColName": "GROUPID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "FTCSCHREPORTGROUP",
+		"ColName": "MODIFYUSER",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "FTCSCHREPORTGROUP",
+		"ColName": "MODIFYTIME",
+		"DataType": "datetime",
+		"MaxLength": null,
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "FTCSENDMESSAGE",
+		"ColName": "SYSID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": "系統唯一值"
+	},
+	{
+		"TableName": "FTCSENDMESSAGE",
+		"ColName": "COMPANYID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "公司編號，ex:南亞:2。"
+	},
+	{
+		"TableName": "FTCSENDMESSAGE",
+		"ColName": "FACTORYID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "工廠編號，ex:南亞銅箔一廠:8900。"
+	},
+	{
+		"TableName": "FTCSENDMESSAGE",
+		"ColName": "CHANNETYPE",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "傳送管道類別，目前有以下類別，NOTES/MAIL/SMS/LINE/FB/WECHAT"
+	},
+	{
+		"TableName": "FTCSENDMESSAGE",
+		"ColName": "SUBJECT",
+		"DataType": "nvarchar",
+		"MaxLength": "500",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "傳送主旨，只有NOTES/MAIL需要填寫"
+	},
+	{
+		"TableName": "FTCSENDMESSAGE",
+		"ColName": "BODY",
+		"DataType": "nvarchar",
+		"MaxLength": "-1",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "傳送內容"
+	},
+	{
+		"TableName": "FTCSENDMESSAGE",
+		"ColName": "FROMNAME",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "傳送人員名稱"
+	},
+	{
+		"TableName": "FTCSENDMESSAGE",
+		"ColName": "TOLIST",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "收件人員列表ID，連結FTCSENDTOLIST.SYSID"
+	},
+	{
+		"TableName": "FTCSENDMESSAGE",
+		"ColName": "ATTACHMENT",
+		"DataType": "nvarchar",
+		"MaxLength": "500",
+		"DefaultValue": "('')",
+		"isNullAble": "YES",
+		"Description": "傳送附件連結URL"
+	},
+	{
+		"TableName": "FTCSENDMESSAGE",
+		"ColName": "SENDTIME",
+		"DataType": "datetime",
+		"MaxLength": null,
+		"DefaultValue": "(getdate())",
+		"isNullAble": "YES",
+		"Description": "傳送時間，可預約傳送"
+	},
+	{
+		"TableName": "FTCSENDMESSAGE",
+		"ColName": "SENDRESULT",
+		"DataType": "int",
+		"MaxLength": null,
+		"DefaultValue": "((0))",
+		"isNullAble": "YES",
+		"Description": "傳送結果 0~3(傳送次數，最多3次)，9表示傳送成功"
+	},
+	{
+		"TableName": "FTCSENDMESSAGE",
+		"ColName": "PAYMODE",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "傳送管道付款方式，目前簡訊有有 CHT(中華電信) 及 KOTSMS(簡訊王)"
+	},
+	{
+		"TableName": "FTCSENDMESSAGE",
+		"ColName": "MODIFYUSER",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "更新人員"
+	},
+	{
+		"TableName": "FTCSENDMESSAGE",
+		"ColName": "MODIFYTIME",
+		"DataType": "datetime",
+		"MaxLength": null,
+		"DefaultValue": "(getdate())",
+		"isNullAble": "YES",
+		"Description": "更新時間"
+	},
+	{
+		"TableName": "FTCSENDMESSAGEGROUP",
+		"ColName": "SYSID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": "系統唯一值"
+	},
+	{
+		"TableName": "FTCSENDMESSAGEGROUP",
+		"ColName": "COMPANYID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "公司編號，ex:南亞:2。"
+	},
+	{
+		"TableName": "FTCSENDMESSAGEGROUP",
+		"ColName": "FACTORYID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "工廠編號，ex:南亞銅箔一廠:8900。"
+	},
+	{
+		"TableName": "FTCSENDMESSAGEGROUP",
+		"ColName": "GROUPTYPE",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "群組類別，目前有以下類別:ALL,NOTES, MAIL, SMS, LINE, WECHAT"
+	},
+	{
+		"TableName": "FTCSENDMESSAGEGROUP",
+		"ColName": "GROUPNAME",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "群組名稱"
+	},
+	{
+		"TableName": "FTCSENDMESSAGEGROUP",
+		"ColName": "EMPID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "員工編號。連接 FTCEMP.EMPID"
+	},
+	{
+		"TableName": "FTCSENDMESSAGEGROUP",
+		"ColName": "MODIFYUSER",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "資料異動人員"
+	},
+	{
+		"TableName": "FTCSENDMESSAGEGROUP",
+		"ColName": "MODIFYTIME",
+		"DataType": "datetime",
+		"MaxLength": null,
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "資料異動時間"
+	},
+	{
+		"TableName": "FTCSENDTOLIST",
+		"ColName": "SYSID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": "傳送編號， 連結FTCSENDMESSAGE.SYSID"
+	},
+	{
+		"TableName": "FTCSENDTOLIST",
+		"ColName": "TOUSERID",
+		"DataType": "nvarchar",
+		"MaxLength": "200",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": "收件人員，CHANNETYPE=NOTES，填寫NotesID加上@fpg，ex:N0000XXXX@fpg,MAIL，填寫mail，SMS，填寫手機號碼，LINE，填寫LINEID，FB，填寫FBID，WECHAT，填寫WECHATID"
+	},
+	{
+		"TableName": "FTCSENDTOLIST",
+		"ColName": "SENDRESULT",
+		"DataType": "int",
+		"MaxLength": null,
+		"DefaultValue": "((0))",
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "LanguageDefine",
+		"ColName": "LanguageName",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "LanguageDefine",
+		"ColName": "LanguageValue",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "LanguageDefine",
+		"ColName": "Defalut",
+		"DataType": "bit",
+		"MaxLength": null,
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "LineGroupDefine",
+		"ColName": "SysID",
+		"DataType": "int",
+		"MaxLength": null,
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "LineGroupDefine",
+		"ColName": "CompanyID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": "公司編號"
+	},
+	{
+		"TableName": "LineGroupDefine",
+		"ColName": "FactoryID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": "工廠編號"
+	},
+	{
+		"TableName": "LineGroupDefine",
+		"ColName": "LineGroupName",
+		"DataType": "nvarchar",
+		"MaxLength": "100",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": "Line群組ID"
+	},
+	{
+		"TableName": "LineGroupDefine",
+		"ColName": "LineGroupToken",
+		"DataType": "nvarchar",
+		"MaxLength": "200",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": "Line群組權杖"
+	},
+	{
+		"TableName": "LineGroupDefine",
+		"ColName": "MidifyUser",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "修改人員"
+	},
+	{
+		"TableName": "LineGroupDefine",
+		"ColName": "MidifyTime",
+		"DataType": "datetime",
+		"MaxLength": null,
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "修改時間"
+	},
+	{
+		"TableName": "MesApHostDb",
+		"ColName": "CompanyID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "公司編號，ex:南亞:2。"
+	},
+	{
+		"TableName": "MesApHostDb",
+		"ColName": "FactoryID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "工廠編號，ex:南亞銅箔一廠:8900。"
+	},
+	{
+		"TableName": "MesApHostDb",
+		"ColName": "ApHostIP",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "應用系統主機 IP"
+	},
+	{
+		"TableName": "MesApHostDb",
+		"ColName": "ApDbPort",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "應用資料庫 Port No"
+	},
+	{
+		"TableName": "MesApHostDb",
+		"ColName": "ApDbName",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "應用資料庫名稱"
+	},
+	{
+		"TableName": "MesApHostDb",
+		"ColName": "ApDbUser",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "應用資料庫帳號"
+	},
+	{
+		"TableName": "MesApHostDb",
+		"ColName": "ApDbPswd",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "應用資料庫密碼"
+	},
+	{
+		"TableName": "MesApHostDb",
+		"ColName": "AFServer",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "AF系統主機 IP"
+	},
+	{
+		"TableName": "MesApHostDb",
+		"ColName": "AFDB",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "AF系統DB Name"
+	},
+	{
+		"TableName": "MesApHostDb",
+		"ColName": "PIServer",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "PI系統主機 IP"
+	},
+	{
+		"TableName": "MesApHostDb",
+		"ColName": "AFUser",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "AF系統登入帳號"
+	},
+	{
+		"TableName": "MesApHostDb",
+		"ColName": "AFPswd",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "AF系統登入密碼"
+	},
+	{
+		"TableName": "MesApHostDb",
+		"ColName": "AFAlarmElementName",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "AF 抓取的root ElementName"
+	},
+	{
+		"TableName": "MesApHostDb",
+		"ColName": "QMSFactoryID",
+		"DataType": "nvarchar",
+		"MaxLength": "50",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": "QMS FactoryID，Null或是空值表示不啟用QMS功能"
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "Co",
+		"DataType": "varchar",
+		"MaxLength": "2",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "PmFct",
+		"DataType": "varchar",
+		"MaxLength": "2",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "EqNo",
+		"DataType": "varchar",
+		"MaxLength": "40",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "TrninSys",
+		"DataType": "varchar",
+		"MaxLength": "20",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "TrninDat",
+		"DataType": "varchar",
+		"MaxLength": "7",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "TrninTm",
+		"DataType": "varchar",
+		"MaxLength": "4",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "RvsNo",
+		"DataType": "varchar",
+		"MaxLength": "9",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "TrnResu",
+		"DataType": "varchar",
+		"MaxLength": "6",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "PsTm",
+		"DataType": "varchar",
+		"MaxLength": "13",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "MntCo",
+		"DataType": "varchar",
+		"MaxLength": "2",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "MntFct",
+		"DataType": "varchar",
+		"MaxLength": "2",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "MntSect",
+		"DataType": "varchar",
+		"MaxLength": "4",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "MsMntDat",
+		"DataType": "varchar",
+		"MaxLength": "7",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "LisCo",
+		"DataType": "varchar",
+		"MaxLength": "2",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "LisDp",
+		"DataType": "varchar",
+		"MaxLength": "4",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "LisEmp",
+		"DataType": "varchar",
+		"MaxLength": "10",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "Henddat",
+		"DataType": "varchar",
+		"MaxLength": "7",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "MpZ",
+		"DataType": "varchar",
+		"MaxLength": "10",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "MpSys",
+		"DataType": "varchar",
+		"MaxLength": "6",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "ChlSys",
+		"DataType": "varchar",
+		"MaxLength": "3",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "Assp",
+		"DataType": "varchar",
+		"MaxLength": "3",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "AsspLoc",
+		"DataType": "varchar",
+		"MaxLength": "60",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "RvokKd",
+		"DataType": "varchar",
+		"MaxLength": "4",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "MOC",
+		"DataType": "varchar",
+		"MaxLength": "1",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "DocNo",
+		"DataType": "varchar",
+		"MaxLength": "20",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "DwnNon",
+		"DataType": "varchar",
+		"MaxLength": "1",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "YDwnRs",
+		"DataType": "varchar",
+		"MaxLength": "1",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "DwnRs",
+		"DataType": "varchar",
+		"MaxLength": "4",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "DwnDat",
+		"DataType": "varchar",
+		"MaxLength": "7",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "DwnTm",
+		"DataType": "varchar",
+		"MaxLength": "4",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "Strbak",
+		"DataType": "varchar",
+		"MaxLength": "1",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "Mchsel",
+		"DataType": "varchar",
+		"MaxLength": "10",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "Strdat",
+		"DataType": "varchar",
+		"MaxLength": "7",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "StrTim",
+		"DataType": "varchar",
+		"MaxLength": "4",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "Comt",
+		"DataType": "varchar",
+		"MaxLength": "300",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "InsvAf",
+		"DataType": "varchar",
+		"MaxLength": "4",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "OpAf",
+		"DataType": "varchar",
+		"MaxLength": "4",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "DmgAf",
+		"DataType": "varchar",
+		"MaxLength": "4",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "VOC",
+		"DataType": "varchar",
+		"MaxLength": "1",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "IspVal",
+		"DataType": "decimal",
+		"MaxLength": null,
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "AbModel",
+		"DataType": "varchar",
+		"MaxLength": "4",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "LeakFlKd",
+		"DataType": "varchar",
+		"MaxLength": "1",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "LeakFlNm",
+		"DataType": "varchar",
+		"MaxLength": "90",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "NonPreMk",
+		"DataType": "varchar",
+		"MaxLength": "1",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "EqTy",
+		"DataType": "varchar",
+		"MaxLength": "1",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "EqLoc",
+		"DataType": "varchar",
+		"MaxLength": "1",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "Prno",
+		"DataType": "varchar",
+		"MaxLength": "10",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "UR",
+		"DataType": "varchar",
+		"MaxLength": "10",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "MK",
+		"DataType": "varchar",
+		"MaxLength": "1",
+		"DefaultValue": "('N')",
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "T0NKPM2N",
+		"ColName": "TransDate",
+		"DataType": "datetime",
+		"MaxLength": null,
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "CO",
+		"DataType": "nvarchar",
+		"MaxLength": "2",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "PMFCT",
+		"DataType": "nvarchar",
+		"MaxLength": "4",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "RVSNO",
+		"DataType": "nvarchar",
+		"MaxLength": "9",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "ORGPMFCT",
+		"DataType": "nvarchar",
+		"MaxLength": "6",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "MNTCO",
+		"DataType": "nvarchar",
+		"MaxLength": "2",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "MNTFCT",
+		"DataType": "nvarchar",
+		"MaxLength": "4",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "MNTSECT",
+		"DataType": "nvarchar",
+		"MaxLength": "4",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "MNTDAT",
+		"DataType": "nvarchar",
+		"MaxLength": "7",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "MK",
+		"DataType": "nvarchar",
+		"MaxLength": "1",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "XEND",
+		"DataType": "nvarchar",
+		"MaxLength": "1",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "ENDDAT",
+		"DataType": "nvarchar",
+		"MaxLength": "7",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "MPZ",
+		"DataType": "nvarchar",
+		"MaxLength": "10",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "MPSYS",
+		"DataType": "nvarchar",
+		"MaxLength": "6",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "EQNO",
+		"DataType": "nvarchar",
+		"MaxLength": "40",
+		"DefaultValue": null,
+		"isNullAble": "NO",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "CHLSYS",
+		"DataType": "nvarchar",
+		"MaxLength": "3",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "ASSP",
+		"DataType": "nvarchar",
+		"MaxLength": "3",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "ASSPLOC",
+		"DataType": "nvarchar",
+		"MaxLength": "60",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "RBIMK",
+		"DataType": "nvarchar",
+		"MaxLength": "1",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "RVOKKD",
+		"DataType": "nvarchar",
+		"MaxLength": "4",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "DWNNON",
+		"DataType": "nvarchar",
+		"MaxLength": "1",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "YDWNRS",
+		"DataType": "nvarchar",
+		"MaxLength": "1",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "DWNRS",
+		"DataType": "nvarchar",
+		"MaxLength": "4",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "DWNDAT",
+		"DataType": "nvarchar",
+		"MaxLength": "7",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "DWNTM",
+		"DataType": "nvarchar",
+		"MaxLength": "4",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "STRBAK",
+		"DataType": "nvarchar",
+		"MaxLength": "1",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "MCHSEL",
+		"DataType": "nvarchar",
+		"MaxLength": "10",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "STRDAT",
+		"DataType": "nvarchar",
+		"MaxLength": "7",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "STRTIM",
+		"DataType": "nvarchar",
+		"MaxLength": "4",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "INSVAF",
+		"DataType": "nvarchar",
+		"MaxLength": "4",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "OPAF",
+		"DataType": "nvarchar",
+		"MaxLength": "4",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "DMGAF",
+		"DataType": "nvarchar",
+		"MaxLength": "4",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "RVOKDATFR",
+		"DataType": "nvarchar",
+		"MaxLength": "7",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "RVOKTMFR",
+		"DataType": "nvarchar",
+		"MaxLength": "4",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "RVOKDATTO",
+		"DataType": "nvarchar",
+		"MaxLength": "7",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "RVOKTMTO",
+		"DataType": "nvarchar",
+		"MaxLength": "4",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "AFPMHRS",
+		"DataType": "numeric",
+		"MaxLength": null,
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "THR",
+		"DataType": "numeric",
+		"MaxLength": null,
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "DLYRS",
+		"DataType": "nvarchar",
+		"MaxLength": "4",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "DLYHR",
+		"DataType": "numeric",
+		"MaxLength": null,
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "INSVGD",
+		"DataType": "nvarchar",
+		"MaxLength": "4",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "ENVPTGD",
+		"DataType": "nvarchar",
+		"MaxLength": "4",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "PMLSGD",
+		"DataType": "nvarchar",
+		"MaxLength": "4",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "LSPD",
+		"DataType": "nvarchar",
+		"MaxLength": "20",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "LSTON",
+		"DataType": "numeric",
+		"MaxLength": null,
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "EVETONPRF",
+		"DataType": "numeric",
+		"MaxLength": null,
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "PMLSAMT",
+		"DataType": "numeric",
+		"MaxLength": null,
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "RVOKFGD",
+		"DataType": "nvarchar",
+		"MaxLength": "4",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "RVOKFAMT",
+		"DataType": "numeric",
+		"MaxLength": null,
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "VERYEMP",
+		"DataType": "nvarchar",
+		"MaxLength": "12",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "VERYDAT",
+		"DataType": "nvarchar",
+		"MaxLength": "7",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	},
+	{
+		"TableName": "V33KPM24",
+		"ColName": "VERYEMPID",
+		"DataType": "nvarchar",
+		"MaxLength": "10",
+		"DefaultValue": null,
+		"isNullAble": "YES",
+		"Description": null
+	}
+]

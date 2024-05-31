@@ -1,0 +1,28 @@
+{
+  "FtcCommon": {
+    "Operator": "nhân viên thao tác",
+    "OperatorName": "tên nhân viên thao tác",
+    "Lotid": "số thẻ quy trình",
+    "Machine": "mã số máy",
+    "Step": "dừng ",
+    "Orderno": "mã số đơn hàng của khách",
+    "Lno": "số lô",
+    "CompanyID": "公司編號mã số ",
+    "FactoryID": "工廠編號mã số ",
+    "MODIFYUSER": "修改人員mã số ",
+    "LOTID": "工單編號mã số ",
+    "EQPID": "機台編號mã số "
+  },
+  "ButtonCommon": {
+    "DownloadPic": "tải bản vẽ",
+    "Start": "bắt đầu đăng nhập",
+    "End": "đăng nhập hoàn thành",
+    "Back": "quay lại quy trình trước",
+    "Save": "lưu lại",
+    "Add": "新增lưu",
+    "Modify": "修改lưu",
+    "Delete": "刪除lưu",
+    "Refresh": "更新lưu",
+    "Detail": "細項資料lưu"
+  }
+}

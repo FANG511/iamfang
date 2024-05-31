@@ -1,0 +1,114 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutForMESNoMenu.cshtml";
+}
+<style>
+    div.k-spreadsheet-formula-bar,
+    div.k-spreadsheet-row-header,
+    div.k-spreadsheet-column-header,
+    div.k-spreadsheet-top-corner {
+        display: none;
+    }
+</style>
+<div class="form-horizontal">
+    <div class="form-group">
+        <a class="btn btn_secondary auth-export" id="btnExportXls"><i class="fa fa-file-excel fa-fw mr-1"></i><span data-i18n="ButtonCommon.Excel"></span></a>
+        <div class="col-xs-12">
+            <div id="spreadsheet" style="width:100%;height:450px"></div>
+        </div>
+    </div>
+    <div class="form-group" style="display:none">
+        <div class="col-xs-12">
+            <input type="file" id="Uploadfile" />
+        </div>
+    </div>
+</div>
+
+<script>
+    var sFileName = 'test.xlsx';
+    var crudServiceBaseUrl = siteRoot + "/../api/ReportApi";//"/Report";//
+    var spreadsheet;
+    var FileUplad;
+    var btnExportXls;
+    $(document).ready(function () {
+        QueryString.Initial();
+        sFileName = QueryString.GetValue("FileName") == "undefined" ? "" : QueryString.GetValue("FileName") == "" ? "" : QueryString.GetValue("FileName");
+
+        $("#spreadsheet").kendoSpreadsheet(
+            {
+                sheetsbar: true, toolbar: false,
+                headerHeight: 0,
+                headerWidth: 0
+            },
+        );
+        spreadsheet = $("#spreadsheet").data("kendoSpreadsheet");
+        FileUplad = $('#Uploadfile');
+        btnExportXls = $('#btnExportXls');
+        //Query();
+        downloadXLS();
+    });
+
+    function Query() {
+        $.ajax({
+            url: crudServiceBaseUrl + "/getExcelTemplate",
+            method: 'Get',
+            //dataType: 'binary', // 設定回傳的資料類型為二進位制
+            //processData: false, // 不處理回傳的資料
+            data: {
+                ReportXlsFile: sFileName
+            },
+            async: false,
+            responseType: 'blob',
+            success: function (data) {
+                debugger
+                //application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+                var blob = new Blob([data], { type: 'application/octet-stream' });
+                //創建一個新的 File 物件
+                var file = new File([blob], sFileName, { type: blob.type });
+                const dataTransfer = new DataTransfer();
+                dataTransfer.items.add(file);
+                FileUplad[0].files = dataTransfer.files;
+
+                var url = window.URL.createObjectURL(blob);
+                var link = document.createElement('a');
+                link.href = url;
+                link.download = sFileName;
+                link.click();
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                //debugger
+                kendo.alert('資料量太大，請減少選取項目');
+            }
+        })
+    }
+    function downloadXLS() {
+        //debugger
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', crudServiceBaseUrl + "/getExcelTemplate", true);
+        xhr.responseType = 'blob';
+        var params = "ReportXlsFile=" + sFileName; // 參數格式為 key=value，多個參數用 & 連接
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.setRequestHeader("Content-Length", params.length);
+
+        xhr.onload = function (e) {
+            if (this.status == 200) {
+                debugger
+                //application/octet-stream
+                //application/vnd.ms-excel
+                var blob = new Blob([this.response], { type: 'application/octet-stream' });
+                var url = window.URL.createObjectURL(blob);
+              
+                var file = new File([blob], sFileName, { type: blob.type });
+                const dataTransfer = new DataTransfer();
+                dataTransfer.items.add(file);
+                FileUplad[0].files = dataTransfer.files;
+                spreadsheet.fromFile(FileUplad[0].files[0]);
+                btnExportXls.attr('href', url);
+                btnExportXls.attr('download', sFileName);
+            }
+        };
+        xhr.send(params);
+    }
+    function ExportXls() {
+        spreadsheet.saveAsExcel();
+    }
+</script>

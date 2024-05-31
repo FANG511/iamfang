@@ -1,0 +1,83 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutForMES.cshtml";
+}
+
+<div>
+    <div id="grid" style="width: 100%;"></div>
+    <input type="button" id="btnRefresh" />
+    <script>
+        $(document).ready(function () {
+
+            var crudServiceBaseUrl = siteRoot+ "/api/Values",
+                dataSource = new kendo.data.DataSource({
+                    transport: {
+                        read: {
+                            url: crudServiceBaseUrl + "/GetEqpList",
+                            type: "Post",
+                            dataType: "json"
+                        },
+                        update: {
+                            url: crudServiceBaseUrl + "/UpdateEqpList",
+                            type: "Post",
+                            dataType: "json",
+                            contentType: "application/json; charset=utf-8"
+                        },
+                        destroy: {
+                            url: crudServiceBaseUrl + "/DeleteEqpList",
+                            type: "Post",
+                            dataType: "json",
+                            contentType: "application/json; charset=utf-8"
+                        },
+                        create: {
+                            url: crudServiceBaseUrl + "/CreateEqpList",
+                            type: "Post",
+                            dataType: "json",
+                            contentType: "application/json; charset=utf-8"
+                        },
+                        parameterMap: function (options, operation) {
+                            if (operation !== "read" && options.models) {
+                                return kendo.stringify(options.models);
+                            }
+                            else {
+                                var values = {};
+                                values["EQPGroupID"] = "33";
+                                values["EQPGroupName"] = "55";
+                                return values;
+                            }
+                        }
+                    },
+                    batch: true,
+                    pageSize: 20,
+                    schema: {
+                        model: {
+                            id: "EQPGroupID",
+                            fields: {
+                                EQPGroupID: { validation: { required: true } },
+                                EQPGroupName: { validation: { required: true } }
+                            }
+                        }
+                    }
+                });
+            
+            $("#grid").kendoGrid({
+                dataSource: dataSource,
+                pageable: true,
+                height: 550,
+                autoBind: false,
+                toolbar: ["create", "save", "cancel"],
+                columns: [
+                    { field: "EQPGroupID", title: "EQPGroupID", width: "120px" },
+                    { field: "EQPGroupName", title: "EQPGroupName", width: "120px" },
+                    { command: ["edit","destroy"], title: "&nbsp;", width: 150 }],
+                editable: "popup"
+                //editable: true
+            });
+            $('#btnRefresh').click(function () {
+                dataSource.read();
+                //dataSource.page(1);
+            });
+        });
+
+
+    </script>
+</div>

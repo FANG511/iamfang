@@ -1,0 +1,89 @@
+﻿
+@{
+    ViewBag.Title = "PersonData";
+    Layout = "~/Views/Shared/_LayoutForMESNoMenu.cshtml";
+}
+
+<style>
+    /*過濾控件*/
+    .FilterLabel {
+        /*width: 90px;*/
+    }
+
+    .FilterControl {
+        width: 100%;
+    }
+</style>
+
+
+<link rel="stylesheet" href="@Url.Content("~/Content/personLocation/PersonLocation.css")" />
+
+<!-- 編輯直接從 body 開始進行 -->
+<!-- 工具列，使用form-group -->
+<a class="btn btn_primary auth-query" onclick="gridRefresh()"><i class="fa fa-search fa-fw mr-1"></i><span data-i18n="ButtonCommon.Query"></span></a>  <!--文字的顏色部分需更新-->
+<a class="btn btn_primary auth-add" onclick="gridAdd()"><i class="fa fa-plus fa-fw mr-1"></i><span data-i18n="ButtonCommon.Add"></span></a>
+<a class="btn btn_secondary auth-export" onclick="ExportXls()"><i class="fa fa-file-excel fa-fw mr-1"></i><span data-i18n="ButtonCommon.Excel"></span></a>
+<div class="form-horiziotal">
+    <!-- 查詢列 -->
+    <div class="form-group" id="divQueryParameter">
+        <div id="FilterArea" class="box box-warning box-solid" style="border-color:lightgrey;">
+            <div class="box-header with-border">
+                <h3 class="box-title" data-i18n="UserManage.Text.Filter"></h3>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                        <i class="fa fa-minus"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="FilterBody" class="box-body row form-group">
+                <div class="col-md-3">
+                    <div class="col-md-5 k-info-colored" for="filter_PersonId">
+                        <label class="FilterLabel">NotesID :</label>
+                    </div>
+                    <div class="col-md-7">
+                        <input id="txtPersonId" class="k-textbox FilterControl" type="text" data-bind="value: PersonId" />
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="col-md-5 k-info-colored" for="filter_Name">
+                        <label class="FilterLabel">姓名 :</label>
+                    </div>
+                    <div class="col-md-7">
+                        <input id="txtName" class="k-textbox FilterControl" type="text" data-bind="value: Name" />
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="col-md-5 k-info-colored" for="filter_Name">
+                        <label class="FilterLabel">性別 :</label>
+                    </div>
+                    <div class="col-md-7">
+                        <input id="txtGender" class="k-textbox FilterControl" type="text" data-bind="value: Gender" />
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="col-md-5 k-info-colored" for="filter_Name">
+                        <label class="FilterLabel">公司名稱 :</label>
+                    </div>
+                    <div class="col-md-7">
+                        <input id="txtCompanyID" class="k-textbox FilterControl" type="text" data-bind="value: CompanyId" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- 表格 -->
+
+    <div class="form-group">
+        <div id="grid" style="width:100%;"></div>
+    </div>
+    <div class="form-group">
+        <div id="grid1" style="width:100%;"></div>
+    </div>
+</div>
+
+<script src="@Url.Content("~/Scripts/personLocation/personData.js")"></script>
+
+

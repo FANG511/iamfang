@@ -1,0 +1,525 @@
+﻿.map-content {
+    position: absolute;
+    width: 100vw;
+    max-height: 100%;
+    top: 0px;
+    left: 0px;
+    padding: 10px;
+    z-index: 400;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    font-family: "Noto Sans CJK TC", "Microsoft JhengHei", PingFang, STHeiti, sans-serif, serif;
+}
+
+html,
+body,
+#map {
+    height: 95vh;
+    position: relative;
+}
+
+
+.info-panel {
+    margin: 2rem 0.5rem;
+    font-size: 16px;
+}
+
+.icon-show {
+    display: flex;
+    flex-direction: column;
+    width: 60px;
+    align-items: center;
+}
+
+    .icon-show .marker-label {
+        background-color: rgba(255, 255, 255, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 20px;
+        font-size: 16px;
+    }
+
+.edit-feature {
+    position: absolute;
+    right: 100px;
+    top: 30px;
+    z-index: 1000;
+    background-color: #04aa6d;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+    opacity: 0.9;
+}
+
+.nodata {
+    display: none;
+}
+
+/* Full-width input fields */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+    /* Add a background color when the inputs get focus */
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+        background-color: #ddd;
+        outline: none;
+    }
+
+/* Set a style for all buttons */
+/*button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+
+  button:hover {
+    opacity: 1;
+  }*/
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn,
+.signupbtn {
+    float: left;
+    width: 40%;
+}
+
+/* Add padding to container elements */
+.container {
+    padding: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 500;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgba(71, 78, 93, 0.5);
+    padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto;
+    /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #f1f1f1;
+}
+
+label {
+    font-size: 16px;
+}
+
+.close:hover,
+.close:focus {
+    color: #f44336;
+    cursor: pointer;
+}
+
+.clearfix {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    /* Clear floats */
+    .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    .clearfix button {
+        margin: 1rem;
+    }
+
+#area-count .dropdown {
+    position: relative;
+    background-color: #f1f1f1;
+    display: block;
+    margin-top: 0.5em;
+    padding: 0;
+}
+
+    /* This is the native select, we're making everything the text invisible so we can see the button styles in the wrapper */
+    #area-count .dropdown select {
+        width: 100%;
+        margin: 0;
+        background: none;
+        border: 1px solid transparent;
+        outline: none;
+        /* Prefixed box-sizing rules necessary for older browsers */
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        /* Remove select styling */
+        appearance: none;
+        -webkit-appearance: none;
+        /* Magic font size number to prevent iOS text zoom */
+        font-size: 1.25em;
+        /* General select styles: change as needed */
+        /* font-weight: bold; */
+        color: #444;
+        padding: 0.6em 1.9em 0.5em 0.8em;
+        line-height: 1.3;
+    }
+
+/* Style the buttons that are used to open and close the accordion panel */
+#area-count .accordion {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fdd45f;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    text-align: left;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+#area-count .active,
+.accordion:hover {
+    background-color: #ffffff;
+    border: 2px solid #fdd45f;
+}
+
+
+.person-list-panel.enable {
+    display: none;
+}
+/* Style the accordion panel. Note: hidden by default */
+#area-count .panel {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+}
+
+#area-count .panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+#area-count .accordion:after {
+    content: "\02795";
+    /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+
+.area-btn {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#area-count .active:after {
+    content: "\2796";
+    /* Unicode character for "minus" sign (-) */
+}
+
+#area-count ul {
+    list-style-type: none;
+    /* Remove bullets */
+    padding: 0;
+    /* Remove padding */
+    margin: 0;
+    /* Remove margins */
+}
+
+    #area-count ul li {
+        border: 1px solid #ddd;
+        /* Add a thin border to each list item */
+        margin-top: -1px;
+        /* Prevent double borders */
+        background-color: #f6f6f6;
+        /* Add a grey background color */
+        padding: 12px;
+        /* Add some padding */
+    }
+
+.area-list {
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid #7b7b7b;
+    padding: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+    background-color: #ffeebd;
+    margin: 0.4rem 0.5rem;
+}
+
+#people-count li {
+    list-style: none;
+    border: 1px solid #7b7b7b;
+    margin-top: 0.4rem;
+    background-color: #72f6fd;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    box-shadow: 1px 1px 1px;
+}
+
+    #people-count li .area-list-name {
+        display: flex;
+        justify-content: center;
+        height: 20px;
+        align-items: center;
+    }
+
+    #people-count li .area-list-location {
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        flex-direction: column;
+    }
+
+.area-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.alarm-title {
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    width: 90px;
+}
+
+.alarm-list-location {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    flex-direction: column;
+}
+
+.location-text {
+    font-size: 12px;
+}
+
+.location-text-area {
+    font-size: 16px;
+}
+
+.history-form {
+    display: flex;
+    flex-direction: column;
+}
+
+    .history-form input {
+        margin: 0;
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        height: 40px;
+        background-color: #eee;
+        border: none;
+    }
+
+/* 警報列表 */
+.alarm-list-item-each {
+    display: flex;
+    border: 2px solid var(--error_primary);
+    list-style: none;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    color: var(--blue-m-9);
+    background-color: var(--crud_delete_normal);
+}
+
+
+.btn-popup {
+    padding: 0.5rem;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+    .btn-popup:hover {
+        background-color: #72f6fd;
+        border-color: #777;
+    }
+
+    .btn-popup .actived {
+        background-color: #72f6fd;
+    }
+
+
+
+/* 隱藏區塊 */
+#area-count .enable {
+    display: none;
+}
+
+.person-list-panel ul li {
+    margin: 0.25rem 1rem;
+    padding: 0.1rem;
+}
+
+/* leaflet popup 的顯示*/
+.leaflet-popup-content-wrapper {
+    width: 550px;
+    height: 550px;
+}
+
+.leaflet-popup-content {
+}
+
+
+/* 客製化彈跳窗的樣式 */
+.popup-container {
+    width: 500px;
+    height: 500px;
+  }
+  
+  .popup-nav {
+    margin-top: 1rem;
+    display: flex;
+    gap:0.3rem;
+    justify-content: center;
+  }
+  
+  .popup-nav-btn {
+    padding:  0.6rem 1rem;
+    border: none;
+    border: 3px 3px 0px 0px;
+    color: #0078A8;
+  }
+  
+  .nav-active {
+    color: #333;
+    background-color: #eee;
+    border: #000;
+  }
+  .popup-nav-btn:hover {
+    color: #333;
+    background-color: #eee;
+    border: #000;
+    transition: background-color 500ms linear;
+  }
+  
+  .popup-content {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #333;
+    height: 500px;
+  }
+  
+  .popup-content-tab {
+    display: block;
+    text-align:center;
+    width:100%;
+    height: 100%;
+    padding: 1rem;
+  } 
+  .popup-hidden {
+    display: none;
+    transition: display 500ms linear;
+  }
+  .tab-img {
+    padding-top: 2rem;
+    width: 450px;
+}
+
+.list-item-enter {
+    background-color: #04aa6d;
+}
+
+.list-item-out {
+    background-color: #f44336;
+}
+
+.list-item-error {
+    background-color: #fdd45f;
+}
+
+/* SOS content */
+.sos-content {
+    position: fixed;
+    display: none;
+    top: 41%;
+    left: 0px;
+    width: 100%;
+    height: 18%;
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    background-color: white;
+    border-top: 10px solid red;
+    border-bottom: 10px solid red;
+}
+
+.sos-icon {
+    color: red;
+    margin: 0 3rem;
+}

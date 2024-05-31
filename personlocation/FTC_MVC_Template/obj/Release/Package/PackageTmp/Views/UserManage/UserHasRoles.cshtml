@@ -1,0 +1,678 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutForMESNoMenu.cshtml";
+}
+<h4>@ViewBag.Title</h4>
+<style>
+    /*.MyKendoPopupLayout{
+        width:700px;
+    }*/
+    .Validate {
+        /*        opacity: 0.5;*/
+        /*background-color: palevioletred;
+        border-radius: 2.0rem;*/
+        color: red;
+    }
+    .k-edit-label{
+        text-align:left;
+    }
+    .k-edit-field {
+        width: 600px;
+    }
+</style>
+<div class="form-horizontal">
+    <div class="form-group">
+        <div class="col-md-12">
+            <a class="btn btn_primary" onclick="Query();"><i class="fa fa-search fa-fw mr-1"></i><span data-i18n="ButtonCommon.Query"></span></a>
+            <a class="btn btn_primary" onclick="gridSingleAdd();"><i class="fa fa-plus fa-fw mr-1"></i><span data-i18n="ButtonCommon.Add"></span></a>
+            <a class="btn btn_primary" onclick="gridAdd();"><i class="fa fa-pencil fa-fw mr-1"></i><span data-i18n="ButtonCommon.Modify"></span></a>
+
+            @*<a class="k-button" onclick="gridRefresh();"><i class="fa fa-search fa-fw mr-1"></i>查詢</a>
+                <a class="k-button" onclick="gridSave();"><i class="fa fa-save fa-fw mr-1"></i>儲存</a>
+                <a class="k-button" onclick="gridCancel();"><i class="fa fa-ban fa-fw mr-1"></i>取消</a>
+                <a class="k-button" onclick="gridDelete();"><i class="fa fa-trash-alt fa-fw mr-1"></i>刪除</a>
+                <a class="k-button" onclick="ExportXls();"><i class="fa fa-file-excel fa-fw mr-1"></i>匯出xls</a>*@
+        </div>
+    </div>
+    <div class="box box-warning box-solid" style="border-color:lightgrey;">
+        <div class="box-header with-border">
+            <h3 class="box-title" data-i18n="UserManage.Text.Filter"></h3>
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                    <i class="fa fa-minus"></i>
+                </button>
+            </div>
+            <!-- /.box-tools -->
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+            <div class="row">
+                <div class="col-sm-2 text-right">
+                    <label for="ddlPlant" data-i18n="UserManage.Text.ROLE_NAME"></label>
+                </div>
+                <div class="col-sm-2 text-left">
+                    <input id="ddlRoles" style="width: 100%" />
+                </div>
+
+                <div class="col-sm-2 text-right">
+                    <label for="ddlPlant" data-i18n="UserManage.Text.USER_NAME"></label>
+                </div>
+                <div class="col-sm-2 text-left">
+                    <input id="ddlUsers" style="width: 100%" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-12">
+            <div id="grid" style="width: 100%;"></div>
+        </div>
+    </div> 
+
+    <div id="KW_Add">
+        <div style="margin-left: 20px">
+            <div class="form-group row">
+                <label data-i18n="UserManage.Text.ROLE_NAME"></label>
+                <div>
+                    <input id="KW_ddl_ROLE_NAME" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label data-i18n="UserManage.Text.USER_NAME"></label>
+                <div>
+                    <input id="KW_ddl_USER_NAME" />
+                </div>
+            </div>
+            <div class="form-group my_text row col-sm-8">
+                <button id="KW_Confirm" class="btn btn_secondary" onclick="KW_Confirm_Click();">
+                    <i class="fa fa-check"></i>
+                    <span data-i18n="ButtonCommon.Save"></span>
+                </button>
+            </div>
+        </div>        
+    </div>
+    @*初始化區 *@
+    <script>
+        const vi18n_Name = 'UserManage.Text';
+        const vi18n_BackEnd = 'UserManage.BackEnd';
+        var oi18nLanguAuto;
+        //var dataSource;
+        //var dsRoles,
+        //    dsUsers;
+        //var fkRoles = [],
+        //    fkUsers = [];
+        var oDataModels = {};
+        var now = new Date();
+        var crudServiceBaseUrl = "../api/UserManageApi";
+        //var Roles;
+        var grid;
+
+        var vObj;
+        $(document).ready(function () {
+            QueryString.Initial();
+
+            vObj = new getObj()            
+            vObj.Initial();
+
+            oi18nLanguAuto = new i18nLanguAuto();
+            oi18nLanguAuto.Initial();
+
+            oDataModels["COMM_USER_HAS_ROLES"] = "";
+            
+            DefineInitial();
+            DefineGrid();
+        });
+
+    </script>
+
+    @*API區 Ajax有關*@
+    <script>
+        function getObj() {
+            var User = [];
+            var Role = [];            
+            var UserHasRole = [];
+
+            this.Initial = function () {
+                
+                $.ajax({
+                    url: crudServiceBaseUrl + "/getUser",
+                    type: 'Post',
+                    dataType: 'json',
+                    async: false,                    
+                    success: function success(ResultData) {
+                        ResultData.forEach(function (e) {                            
+                            //製作 
+                            e["UserDetailName"] = e.USERID + "_" + e.USER_NAME;
+                        });
+                        User = ResultData;
+                    },
+                    error: function error(e) {
+                        alert(ResultData.ReturnMessage);
+                    }
+                });
+                
+                $.ajax({
+                    url: crudServiceBaseUrl + "/getRoles",
+                    type: 'Post',
+                    dataType: 'json',
+                    async: false,                    
+                    success: function success(ResultData) {                        
+                        Role = ResultData;
+                    },
+                    error: function error(e) {
+                        alert(ResultData.ReturnMessage);
+                    }
+                });
+
+                $.ajax({
+                    url: crudServiceBaseUrl + "/getUserHasRoles",
+                    type: 'Post',
+                    dataType: 'json',
+                    async: false,
+                    data: {
+                        USERID:''
+                    },
+                    success: function success(ResultData) {
+                        ResultData.forEach(function (e) {
+                            //製作 
+                            e["UserDetailName"] = e.USERID + "_" + e.USER_NAME;
+                        });                        
+                        UserHasRole = ResultData;
+                    },
+                    error: function error(e) {
+                        alert(ResultData.ReturnMessage);
+                    }
+                });
+            };
+
+            //取得
+            this.getUser = function () {
+                if (User.length > 0)
+                    return User;
+                else
+                    return [];
+            }
+
+            //取得
+            this.getRole = function () {
+                if (Role.length > 0)
+                    return Role;
+                else
+                    return [];
+            }
+
+            //取得
+            this.getUserHasRole = function () {
+                if (UserHasRole.length > 0)
+                    return UserHasRole;
+                else
+                    return [];
+            }
+        }
+
+        //function getUserAndRole() {
+        //    dsUsers = new kendo.data.DataSource({
+        //        autoSync: true,
+        //        transport: {
+        //            read: {
+        //                url: crudServiceBaseUrl + "/getUser",
+        //                type: "Post",
+        //                async: false,
+        //                dataType: "json"
+        //            }
+        //        },
+        //        requestEnd: function (e) {
+        //            //e.response.push({ USERID: '', USER_NAME: '請選擇' });
+        //        },
+        //    });
+        //    dsUsers.read();
+
+        //    dsRoles = new kendo.data.DataSource({
+        //        autoSync: true,
+        //        transport: {
+        //            read: {
+        //                url: crudServiceBaseUrl + "/getRoles",
+        //                type: "Post",
+        //                async: false,
+        //                dataType: "json"
+        //            }
+        //        }
+        //    });
+        //    dsRoles.read();
+
+        //    //給Grid的Role欄位使用FK
+        //    dsRoles._data.forEach(function (e) {
+        //        //原本寫法在IE11會出現問題
+        //        //var value = e.ROLEID,
+        //        //    text = e.ROLE_NAME;
+        //        //var role = { value, text };
+        //        //fkRoles.push(role);
+        //        fkRoles.push({ "value": e.ROLEID, "text": e.ROLE_NAME });
+        //    });
+        //    //console.log(dsUsers);
+        //    dsUsers._data.forEach(function (e) {
+        //        //var value = e.USERID,
+        //        //    text = e.USER_NAME;
+        //        //var role = { value, text };
+        //        //fkUsers.push(role);
+        //        fkUsers.push({ "value": e.USERID, "text": e.USER_NAME });
+        //    });
+        //}
+
+        function gridDS(){
+            var ds = new kendo.data.DataSource({
+                transport: {
+                    read: {
+                        url: crudServiceBaseUrl + "/getUserHasRoles",
+                        type: "Post",
+                        async: false,
+                        dataType: "json"
+                    },
+                    update: {
+                        url: crudServiceBaseUrl + "/updateUserHasRoles",
+                        type: "Post",
+                        dataType: "json"
+                    },
+                    destroy: {
+                        url: crudServiceBaseUrl + "/deleteUserHasRoles",
+                        type: "Post",
+                        dataType: "json"
+                    },
+                    //create: {
+                    //    url: crudServiceBaseUrl + "/addUserHasRoles",
+                    //    type: "Post",
+                    //    dataType: "json"
+                    //},
+                    create: {
+                        url: crudServiceBaseUrl + "/UC_UserHasRoles",
+                        type: "Post",
+                        dataType: "json"
+                    },
+                    parameterMap: function (options, operation) {
+                        if (operation !== "read" && operation != 'create' && options.models) {
+                            BlockUI();
+                            return options.models[0];
+                        }
+                        else if (operation == 'create') {
+                            BlockUI();
+                            options.models[0]["sJson"] = JSON.stringify(options.models[0]["BATCHUSER"]);                            
+                            return options.models[0];
+                        }
+                        else {
+                            return oDataModels;
+                        }
+                    }
+                },
+                requestEnd: function (e) {
+                    if (e.type != 'read') {
+
+                        alert(oi18nLanguAuto.translate(e.response.ReturnMessage, vi18n_BackEnd));
+
+                        Query();
+                        $.unblockUI();
+                    }                    
+
+                },
+                batch: true,
+                pageSize: 10,
+                schema: {
+                    model: {
+                        id: "USERID",
+                        fields: {
+                            USERID: { validation: { required: true } },
+                            ROLEID: { validation: { required: true } },
+                            TXN_USERID: {},                            
+                            TXN_TIMESTAMP: { defaultValue: now.getFullYear() + "-" + now.getMonth() + "-" + now.getDate() + " 00:00:00" },
+                            BATCHUSER: {},
+                        }
+                    }
+                }
+            });
+
+            return ds;
+        }
+
+        //代入資料
+        function KW_Confirm_Click() {
+            if ($('#KW_ddl_USER_NAME').data('kendoDropDownList').value() == "" || $('#KW_ddl_ROLE_NAME').data('kendoDropDownList').value() == "") {
+                alert(i18n.t(vi18n_Name + ".CannotNull"));
+            }
+            else {                
+                $.ajax({
+                    url: crudServiceBaseUrl + "/addUserHasRoles",
+                    type: 'Post',
+                    dataType: 'json',
+                    data: {
+                        USERID: $('#KW_ddl_USER_NAME').data('kendoDropDownList').value(),                        
+                        ROLEID: $('#KW_ddl_ROLE_NAME').data('kendoDropDownList').value(),
+                    },
+                    async: false,
+                    success: function success(ResultData) {
+                        alert(oi18nLanguAuto.translate(ResultData.ReturnMessage, vi18n_BackEnd));
+                    },
+                    error: function error(e) {
+                        alert(ResultData.ReturnMessage);
+                    }
+                });
+                $('#KW_Add').data('kendoWindow').close();
+                Query();
+            }
+            
+        }
+    </script>
+
+    @*邏輯區*@
+    <script>
+        $('#btnQuery').click(function () {
+            Query();
+        });
+
+        function Query() {
+            //oDataModels["CompanyID"] = $("#txtCompanyID").val();
+            //oDataModels["FactoryID"] = $("#txtFactoryID").val();
+            $('#grid').data('kendoGrid').dataSource.read();
+            vObj.Initial();
+        }
+
+        function onDataBound(e) {
+            ////自動調整寬度
+            //for (var i = 0; i < this.columns.length; i++) {
+            //    this.autoFitColumn(i);
+            //}
+        }
+
+        function gridSingleAdd() {
+            $('#KW_ddl_ROLE_NAME').data('kendoDropDownList').value($('#ddlRoles').data('kendoDropDownList').value());
+            $('#KW_Add').data('kendoWindow').open();
+        }
+
+        function gridAdd() {
+            grid.addRow();
+        }
+        function gridSave() {
+            grid.saveChanges();
+        }
+        function gridCancel() {
+            grid.cancelChanges();
+        }
+        function ExportXls() {
+            grid.saveAsExcel();
+        }
+        function gridEdit() {
+            grid.gridEdit();
+        }
+    </script>
+
+    @*定義區 Kendo物件等*@
+    <script>
+        function DefineInitial() {
+            $("#ddlRoles").kendoDropDownList({
+                autoWidth: true,
+                dataTextField: "ROLE_NAME",
+                dataValueField: "ROLEID",
+                filter: "contains",
+                optionLabel: i18n.t(vi18n_Name + '.ChooseDDL'),
+                dataSource: vObj.getRole()
+            });
+
+            $('#ddlRoles').on('change', function () {
+                oDataModels["ROLEID"] = $(this).val();
+                Query();
+            });
+
+            $("#ddlUsers").kendoDropDownList({
+                autoWidth: true,
+                dataTextField: "USER_NAME",
+                dataValueField: "USERID",
+                filter: "contains",
+                optionLabel: i18n.t(vi18n_Name + '.ChooseDDL'),
+                dataSource: vObj.getUser()
+            });
+
+            $('#ddlUsers').on('change', function () {
+                oDataModels["USERID"] = $(this).val();
+                Query();
+            });
+
+            $('#KW_Add').kendoWindow({
+                width: "300px",
+                height: "250px",
+                title: "",
+                position: {
+                    top: "20px", // or "100px"
+                    left: "25%"
+                },
+                content: "",
+                iframe: true,
+                visible: false,
+                modal: true,
+                actions: ["Close"],
+            });
+            
+            $("#KW_ddl_USER_NAME").kendoDropDownList({
+                autoWidth: true,
+                dataTextField: "USER_NAME",
+                dataValueField: "USERID",
+                filter: "contains",
+                optionLabel: i18n.t(vi18n_Name + '.ChooseDDL'),
+                dataSource: vObj.getUser()
+            });
+
+            $("#KW_ddl_ROLE_NAME").kendoDropDownList({
+                autoWidth: true,
+                dataTextField: "ROLE_NAME",
+                dataValueField: "ROLEID",
+                filter: "contains",
+                optionLabel: i18n.t(vi18n_Name + '.ChooseDDL'),
+                dataSource: vObj.getRole()
+            });
+        }
+
+        function DefineGrid() {            
+            $("#grid").kendoGrid({
+                dataSource: gridDS(),
+                filterable: true,
+                pageable: {
+                    refresh: true,
+                    pageSize: 10,
+                    buttonCount: 5
+                },
+                save: function (e) {
+                    //ROEID不能為空
+                    var sMsg = "";
+
+                    //檢查資料 不能為空
+                    if (e.container.find("input[name=ROLEID]").val() == '') {
+                        e.container.find("label[for='ROLEID']").parent('div').addClass('Validate');
+                        sMsg += i18n.t(vi18n_Name + '.ROLEID') + ' ' + i18n.t(vi18n_Name + ".CannotNull") + "\r\n";
+                    }
+
+                    if (sMsg != "") {
+                        alert(sMsg);
+                        e.preventDefault();
+                    };
+
+                    //將資料塞進去model
+                    var data = e.container.find('#ListBox_BATCHUSER_Target').data('kendoListBox').dataItems();
+                    console.log(data);
+                    console.log(e);
+                    e.model["BATCHUSER"] = data;
+                },
+                edit: function (e) {
+                    e.container.find("label[for=USER_NAME]").parent('div').hide();
+                    e.container.find("div[data-container-for='USER_NAME']").hide();
+
+                    e.container.find("label[for=ROLE_NAME]").parent('div').hide();
+                    e.container.find("div[data-container-for='ROLE_NAME']").hide();
+
+                    e.container.find("div[data-container-for='USERID']").hide(); e.container.find("label[for=USERID]").parent('div').hide();
+
+                    //不開啟，藉由外部條件選擇
+                    //e.container.find("input[name=ROLEID]").data('kendoDropDownList').enable(false);
+
+                    KendoGridMultipleLayoutForm(1, 5);
+
+                    if (e.model.isNew() && !e.model.dirty) {
+                        var RoleVal = $('#ddlRoles').data('kendoDropDownList').value();
+                        e.model.set("ROLEID", RoleVal);
+                        
+                        //已經存在的
+                        var TargetData = vObj.getUserHasRole().filter(x => x.ROLEID == RoleVal);
+
+                        //不能包含，已經在TargetData的
+                        var Oridata = vObj.getUser().filter(x =>
+                            TargetData.filter(z => z.USERID == x.USERID ).length == 0
+                        );
+                        
+                        e.container.find('#ListBox_BATCHUSER_Target').data('kendoListBox').setDataSource(TargetData);
+                        e.container.find('#ListBox_BATCHUSER_Source').data('kendoListBox').setDataSource(Oridata);
+                        //e.container.find("input[name=ROLEID]").data('kendoDropDownList').trigger('select');
+                    }
+                    else {
+                        
+                    }
+                },
+                height: 500,
+                dataBound: onDataBound,
+                autoBind: true,
+                //toolbar: ["create"],
+                noRecords: {
+                    template: i18n.t('UserManage.NoData')
+                },
+                columns: [
+                    {
+                        command: [
+                            //{ name: "edit", template: "<a class='crud crud_edit k-grid-edit'><i class='fa fa-pencil'></i></a>&nbsp", text: { edit: "", update: "儲存", cancel: "取消" } },
+                            { name: "destroy", template: "<a class='crud crud_delete k-grid-delete'><i class='fa fa-trash'></i></a>" },
+                        ], title: "&nbsp;", width: "40px"
+                    },
+                    { field: "USER_NAME", title: i18n.t(vi18n_Name + '.USER_NAME'), width: "120px" },
+                    { field: "USERID", title: i18n.t(vi18n_Name + '.USERID'), editor: FkEditor, width: "120px" },                    
+                    { field: "ROLE_NAME", title: i18n.t(vi18n_Name + '.ROLE_NAME'), width: "120px" },
+                    { field: "ROLEID", title: i18n.t(vi18n_Name + '.ROLEID'), editor: RuleEditor, width: "220px" },
+                    { field: "FILTER", hidden: true, title: i18n.t(vi18n_Name + '.Filter'), editor: ListFilterEditor, width: "120px" },
+                    { field: "BATCHUSER", hidden: true, title: ' ', editor: ListBoxEditor, width: "120px" },
+
+                ],
+                editable: {
+                    mode: "popup",
+                    window: {
+                        position: {
+                            top: '20px',
+                            left: "5%"
+                        }
+                    }
+                },
+            });
+
+            grid = $("#grid").data("kendoGrid");
+        }
+
+        //
+        function FkEditor(container, options) {
+            $('<input name ="' + options.field + '" data-bind="value:' + options.field + '" type="text"/>')
+                .appendTo(container)
+                .kendoDropDownList({
+                    suggest: true,
+                    autoWidth: true,
+                    filter: "contains",
+                    dataSource: vObj.getUser(),
+                    dataTextField: "USER_NAME",
+                    dataValueField: "USERID",
+                    select: function (e) {
+
+                    },
+                    optionLabel: i18n.t(vi18n_Name + '.ChooseDDL'),
+                });
+        }
+
+        function ListFilterEditor(container, options) {
+            $('<input name ="' + options.field + '" class="k-textbox" data-bind="value:' + options.field + '" type="text"/>')
+                .keyup(function () {
+                    debugger
+                    //已經存在的                    
+                    var TargetData = container.parent().find('#ListBox_BATCHUSER_Target').data('kendoListBox').dataSource.data();
+
+                    //不能包含，已經在TargetData的
+                    var Oridata = vObj.getUser().filter(x =>
+                        TargetData.filter(z => z.USERID == x.USERID).length == 0
+                    );
+
+                    //找相似的
+                    var Oridata = Oridata.filter(x => x.UserDetailName.includes($(this).val()));
+                    
+                    //過濾ListBox資料
+                    container.parent().find('#ListBox_BATCHUSER_Source').data('kendoListBox').setDataSource(Oridata);
+                })
+                .appendTo(container);
+                
+        }
+
+        function RuleEditor(container, options) {
+            $('<input name ="' + options.field + '" data-bind="value:' + options.field + '" type="text"/>')
+                .appendTo(container)
+                .kendoDropDownList({
+                    suggest: true,
+                    autoWidth: true,
+                    filter: "contains",
+                    dataSource: vObj.getRole(),
+                    dataTextField: "ROLE_NAME",
+                    dataValueField: "ROLEID",
+                    select: function (e) {                        
+                        //已經存在的
+                        var TargetData = vObj.getUserHasRole().filter(x => x.ROLEID == e.dataItem["ROLEID"]);
+
+                        //不能包含，已經在TargetData的
+                        var Oridata = vObj.getUser().filter(x =>
+                            TargetData.filter(z => z.USERID == x.USERID).length == 0
+                        );
+                        //將ListBox ds更新
+                        container.parent().find('#ListBox_BATCHUSER_Source').data('kendoListBox').setDataSource(Oridata);
+                        container.parent().find('#ListBox_BATCHUSER_Target').data('kendoListBox').setDataSource(TargetData);
+                        
+                    },
+                    optionLabel: i18n.t(vi18n_Name + '.ChooseDDL'),
+                });
+        }
+
+        //設定資料
+        function ListBoxEditor(container, options) {
+            $('<select id ="ListBox_' + options.field + '_Source' + '" style="width:300px;height:350px;"/>')
+                .appendTo(container)
+                .kendoListBox({
+                    connectWith: 'ListBox_' + options.field + '_Target',
+                    dataSource: vObj.getUser(),
+                    selectable: "multiple",
+                    //draggable: true,
+                    //navigatable: true,
+                    dataTextField: 'UserDetailName',
+                    dataValueField: 'USERID',                    
+                    toolbar: {
+                        tools: ["transferTo", "transferFrom", "transferAllTo", "transferAllFrom"]
+                    }
+                });
+
+            $('<select id ="ListBox_' + options.field + '_Target' + '" style="width:250px;height:350px;"/>')
+                .appendTo(container)
+                .kendoListBox({
+                    connectWith: 'ListBox_' + options.field + '_Source',
+                    selectable: "multiple",
+                    //draggable: true,
+                    //navigatable: true,
+                    //dataSource: [{ USER_NAME: 'test', USERID:'test'}],
+                    dataTextField: 'UserDetailName',
+                    dataValueField: 'USERID',
+                    add: function (e) {
+                        //重複的不能塞入
+                        console.log(e);                        
+                        debugger;
+                        var aInsert = e.dataItems;
+                        var aDs = e.sender.dataSource.options.data;
+                        var aRemain = aDs.filter(x => aInsert.filter(z => z.USERID == x.USERID).length > 0);
+                        e.dataItems = aRemain;
+
+                    },
+                });
+        }
+    </script>
+</div>

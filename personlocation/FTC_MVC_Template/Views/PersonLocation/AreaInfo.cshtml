@@ -1,0 +1,224 @@
+﻿
+@{
+    ViewBag.Title = "AreaInfo";
+    Layout = "~/Views/Shared/_LayoutForMESNoMenu.cshtml";
+}
+
+<style>
+    /*過濾控件*/
+    .FilterLabel {
+        /*width: 90px;*/
+    }
+
+    .FilterControl {
+        width: 100%;
+    }
+</style>
+
+<!-- 工具列，使用form-group -->
+<a class="btn btn_primary auth-query" onclick="gridRefresh()"><i class="fa fa-search fa-fw mr-1"></i><span data-i18n="ButtonCommon.Query"></span></a>  <!--文字的顏色部分需更新-->
+<a class="btn btn_primary auth-add" onclick="gridAdd()"><i class="fa fa-plus fa-fw mr-1"></i><span data-i18n="ButtonCommon.Add"></span></a>
+<a class="btn btn_secondary auth-export" onclick="ExportXls()"><i class="fa fa-file-excel fa-fw mr-1"></i><span data-i18n="ButtonCommon.Excel"></span></a>
+<div class="form-horiziotal">
+    <!-- 查詢列 -->
+    <div class="form-group" id="divQueryParameter">
+        <div id="FilterArea" class="box box-warning box-solid" style="border-color:lightgrey;">
+            <div class="box-header with-border">
+                <h3 class="box-title" data-i18n="UserManage.Text.Filter"></h3>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                        <i class="fa fa-minus"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="FilterBody" class="box-body row form-group">
+                <div class="col-md-3">
+                    <div class="col-md-5 k-info-colored" for="filter_AreaID">
+                        <label class="FilterLabel">區域名稱 :</label>
+                    </div>
+                    <div class="col-md-7">
+                        <input id="txtAreaName" class="k-textbox FilterControl" type="text" data-bind="value: AreaName" />
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="col-md-5 k-info-colored" for="filter_Category">
+                        <label class="FilterLabel">類別 :</label>
+                    </div>
+                    <div class="col-md-7">
+                        <input id="txtCategory" class="k-textbox FilterControl" type="text" data-bind="value: Category" />
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+
+    </div>
+    <!-- 表格 -->
+
+    <div class="form-group">
+        <div id="grid" style="width:100%;"></div>
+    </div>
+</div>
+
+<script>
+    // 基礎定義
+    var oQueryPara = {
+        AreaName: "",
+        Category: ""
+    };
+    var viewModel;
+    var dsAreaInfo;
+    var gridAreaInfo;
+    var fkCategory;
+    var personLocationUrl = "/api/apiPersonLocation";
+
+    $(document).ready(function () {
+        QueryString.Initial();
+
+        viewModel = kendo.observable({
+            AreaName: "",
+            Category: "",
+            AreaCapUp: 0,
+            AreaCapBot: 0,
+            AreaRole: ""
+        });
+        kendo.bind($('#divQueryParameter'), viewModel);
+
+        // 定義 DataSource
+        dsAreaInfo = new kendo.data.DataSource({
+            transport: {
+                read: {
+                    url: personLocationUrl + "/GetArea",
+                    type: "Post",
+                    dataType: "json"
+                },
+                update: {
+                    url: personLocationUrl + "/UpdateArea",
+                    type: "Post",
+                    dataType: "json"
+                },
+                destroy: {
+                    url: personLocationUrl + "/DeleteArea",
+                    type: "Post",
+                    dataType: "json"
+                },
+                create: {
+                    url: personLocationUrl + "/AddArea",
+                    type: "Post",
+                    dataType: "json"
+                },
+                parameterMap: function (options, operation) {
+                    if (operation !== "read" && options.models) {
+                        const newItem = options.models
+                        return newItem[0]
+                    } else {
+                        return oQueryPara;
+                    }
+                }
+            },
+            batch: true,
+            requestEnd: function (e) {
+                var type = e.type;
+                if (type != 'read') {
+                    if (e.response.ReturnCode != 0) {
+                        alert(e.response.ReturnMessage);
+                    }
+                    gridRefresh();
+                }
+            },
+            schema: {
+                model: {
+                    id: "AreaID",
+                    fields: {
+                        AreaName: { validation: { required: true } },
+                        Category: { validation: { required: true } },
+                        AreaCapUp: { type: "number", validation: { required: false } },
+                        AreaCapBot: { type: "number", validation: { required: false } },
+                        AreaRole: { validation: { required: false } }
+                    }
+                }
+            },
+            pageSize: 10,
+        })
+
+
+        // 定義 Grid
+        $("#grid").kendoGrid({
+            dataSource: dsAreaInfo,
+            autoBind: true,
+            editable: {
+                mode: "popup",
+                window: {
+                    title: "新增"
+                }
+            },
+            height: 500,
+            resizable: true,
+            columnMenu: true,
+            sortable: true,
+            filterable: { extra: false },
+            scrollable: true,
+            selectable: "row",
+            pageable: {
+                refresh: true,
+                pageSizes: true,
+                buttonCount: 5
+            },
+            excel: {
+                fileName: "AreaInfo.xlsx",
+                allPages: true
+            },
+            toolbar: ["create"],
+            edit: function (e) {
+                if (!e.model.isNew()) {
+                    var nameField = e.container.find("input[name=name]");
+                    var name = nameField.val();
+                    e.container.data("kendoWindow").title("修改");
+                }
+            },
+            persistSelection: true,
+            columns: [
+                {
+                    command: [
+                        { name: "edit", text: { edit: "", update: "儲存", cancel: "取消" } },
+                        { name: "destroy", text: "" }
+                    ], title: " ", width: "80px"
+                },
+                { field: "AreaID", title: "區域ID", width: "100px" },
+                { field: "AreaName", title: "區域名稱", width: "80px" },
+                { field: "Category", title: "類別", width: "100px", values: fkCategory },
+                { field: "AreaCapUp", title: "區域負載上限", width: "100px" },
+                { field: "AreaCapBot", title: "區域負載下限", width: "100px" },
+                { field: "AreaRole", title: "綁定群組", width: "100px" },
+            ]
+        });
+        gridUserInfo = $("#grid").data("kendoGrid");
+
+    })
+
+
+    // 更新 Grid 資料
+    function gridRefresh() {
+        //oQueryPara["AreaID"] = viewModel.AreaID;
+        oQueryPara["AreaName"] = viewModel.AreaName;
+        oQueryPara["Category"] = viewModel.Category;
+        dsAreaInfo.read();
+    }
+
+    // 新增一個項目
+    function gridAdd() {
+        gridAreaInfo.addRow();
+    }
+
+    // 匯出為 Excel
+    function ExportXls() {
+        gridAreaInfo.saveAsExcel();
+    }
+
+    function isEditable(e) {
+        return e.AreaID == "";
+    }
+
+</script>
+

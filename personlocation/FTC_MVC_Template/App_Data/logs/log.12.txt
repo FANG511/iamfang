@@ -1,0 +1,192 @@
+2024-03-06 09:08:51.0942 | [8] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/PersonData/PersonData","status":"LogOff"}
+2024-03-06 09:08:51.9322 | [8] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.8514199
+2024-03-06 09:09:22.3631 | [6] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"model":{"UserId":"admin","Password":"123456","ComFacID":"台化油品部儲運處-台北-","RememberMe":false,"Language":null},"returnUrl":"/PersonData/PersonData"}
+2024-03-06 09:09:22.9287 | [6] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.565642
+2024-03-06 09:09:22.9447 | [8] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-03-06 09:09:22.9525 | [8] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0114539
+2024-03-06 09:09:23.1358 | [8] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-03-06 09:09:23.2623 | [8] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.1281308
+2024-03-06 09:09:23.3125 | [8] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-03-06 09:09:23.3125 | [8] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0061106
+2024-03-06 09:09:24.4386 | [6] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-03-06 09:09:24.4386 | [6] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0035577
+2024-03-06 09:09:25.9121 | [12] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-03-06 09:09:25.9618 | [12] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0502706
+2024-03-06 09:09:26.2211 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-03-06 09:09:26.2211 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0544703
+2024-03-06 09:11:04.2676 | [7] | INFO | FuctionName=PersonData.PersonData | Start | IP=::1 | parametersInfo={}
+2024-03-06 09:11:04.2676 | [7] | INFO | FuctionName=PersonData.PersonData | End | IP=::1 | ExpendTime=0.0041661
+2024-03-06 09:11:10.9247 | [17] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-03-06 09:11:10.9247 | [17] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0593949
+2024-03-06 09:11:11.2546 | [7] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=
+2024-03-06 09:11:11.2992 | [7] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.0443736
+2024-03-06 09:11:46.1750 | [7] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=
+2024-03-06 09:11:46.1750 | [7] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.0533857
+2024-03-06 09:11:51.4310 | [7] | INFO | FuctionName=apiPersonData.AddPersonData | Message=PersonID=d&Name=d&Gender=s&Phone=s&CompanyID=s
+2024-03-06 09:11:51.4477 | [7] | INFO | FuctionName=apiPersonData.AddPersonData | Message=ExpendTime=0.0699322
+2024-03-06 09:11:51.4666 | [6] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=
+2024-03-06 09:11:51.4706 | [6] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.0744884
+2024-03-06 09:11:53.2179 | [7] | INFO | FuctionName=apiPersonData.DeletePersonData | Message=PersonID=d&Name=d&Gender=s&Phone=s&CompanyID=s
+2024-03-06 09:11:53.2179 | [7] | INFO | FuctionName=apiPersonData.DeletePersonData | Message=ExpendTime=0.0862073
+2024-03-06 09:11:53.2483 | [8] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=
+2024-03-06 09:11:53.2523 | [8] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.0905201
+2024-03-06 09:11:59.6800 | [7] | INFO | FuctionName=apiPersonData.UpdatePersonData | Message=PersonID=N000183084&Name=%E9%99%B3%E5%85%B6&Gender=%E7%94%B7&Phone=400-78&CompanyID=X
+2024-03-06 09:11:59.6889 | [7] | INFO | FuctionName=apiPersonData.UpdatePersonData | Message=ExpendTime=0.0991035
+2024-03-06 09:11:59.7039 | [7] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=
+2024-03-06 09:11:59.7039 | [7] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.1032643
+2024-03-06 09:12:02.9373 | [6] | INFO | FuctionName=apiPersonData.DeletePersonData | Message=PersonID=SSS&Name=S&Gender=S&Phone=S&CompanyID=S
+2024-03-06 09:12:02.9373 | [6] | INFO | FuctionName=apiPersonData.DeletePersonData | Message=ExpendTime=0.108261
+2024-03-06 09:12:02.9579 | [6] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=
+2024-03-06 09:12:02.9579 | [6] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.1114315
+2024-03-06 09:12:04.1479 | [8] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=
+2024-03-06 09:12:04.1669 | [8] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.1295024
+2024-03-06 09:12:06.5870 | [6] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=s
+2024-03-06 09:12:06.5942 | [6] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.1367706
+2024-03-06 09:12:09.2001 | [25] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=n
+2024-03-06 09:12:09.2051 | [25] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.1409916
+2024-03-06 09:12:11.4451 | [8] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=
+2024-03-06 09:12:11.4451 | [8] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.1456222
+2024-03-06 09:12:15.5679 | [8] | INFO | FuctionName=apiPersonData.AddPersonData | Message=PersonID=t&Name=t&Gender=t&Phone=t&CompanyID=t
+2024-03-06 09:12:15.5679 | [8] | INFO | FuctionName=apiPersonData.AddPersonData | Message=ExpendTime=0.1529977
+2024-03-06 09:12:15.5880 | [7] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=
+2024-03-06 09:12:15.5880 | [7] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.1562936
+2024-03-06 09:12:17.0722 | [6] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=
+2024-03-06 09:12:17.0782 | [6] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.1622884
+2024-03-06 09:12:18.5997 | [8] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=t
+2024-03-06 09:12:18.5997 | [8] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.1666395
+2024-03-06 09:12:20.4964 | [6] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=
+2024-03-06 09:12:20.5012 | [6] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.1705799
+2024-03-06 09:12:27.1130 | [6] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=T
+2024-03-06 09:12:27.1130 | [6] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.1761818
+2024-03-06 09:12:30.1625 | [8] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=
+2024-03-06 09:12:30.1625 | [8] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.1807085
+2024-03-06 09:14:04.4656 | [8] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=E
+2024-03-06 09:14:04.4746 | [8] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.1896703
+2024-03-06 09:25:52.6780 | [8] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/PersonData/PersonData","status":"LogOff"}
+2024-03-06 09:25:53.0110 | [8] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.3385249
+2024-03-06 09:26:12.7720 | [7] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"model":{"UserId":"admin","Password":"123456","ComFacID":"台化油品部儲運處-台北-","RememberMe":false,"Language":null},"returnUrl":"/PersonData/PersonData"}
+2024-03-06 09:26:13.0641 | [7] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.2963448
+2024-03-06 09:26:13.0926 | [8] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-03-06 09:26:13.1101 | [8] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0197461
+2024-03-06 09:26:17.0599 | [8] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-03-06 09:26:17.1279 | [8] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.0565657
+2024-03-06 09:26:17.1943 | [8] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-03-06 09:26:17.2072 | [8] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0112068
+2024-03-06 09:26:17.4850 | [8] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-03-06 09:26:17.4978 | [8] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0137456
+2024-03-06 09:26:17.4978 | [8] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-03-06 09:26:17.5125 | [8] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.0085806
+2024-03-06 09:26:17.5125 | [8] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-03-06 09:26:17.5263 | [8] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0076344
+2024-03-06 09:26:18.4585 | [9] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-03-06 09:26:18.4655 | [9] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0086718
+2024-03-06 09:26:21.0084 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-03-06 09:26:21.0641 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0575488
+2024-03-06 09:26:21.2201 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-03-06 09:26:21.2281 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0649799
+2024-03-06 09:26:55.9244 | [6] | INFO | FuctionName=PersonData.PersonData | Start | IP=::1 | parametersInfo={}
+2024-03-06 09:26:55.9430 | [6] | INFO | FuctionName=PersonData.PersonData | End | IP=::1 | ExpendTime=0.0108305
+2024-03-06 09:27:01.8129 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-03-06 09:27:01.8217 | [6] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0739064
+2024-03-06 09:27:25.2664 | [6] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=
+2024-03-06 09:27:25.3240 | [6] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.0572473
+2024-03-06 09:46:40.1050 | [8] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/PersonData/PersonData","status":"LogOff"}
+2024-03-06 09:46:40.2867 | [8] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.1889908
+2024-03-06 10:08:54.6248 | [42] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"model":{"UserId":"admin","Password":"123456","ComFacID":"台化油品部儲運處-台北-","RememberMe":false,"Language":null},"returnUrl":"/PersonData/PersonData"}
+2024-03-06 10:08:54.6866 | [42] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.0675251
+2024-03-06 10:08:54.7042 | [51] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-03-06 10:08:54.7190 | [51] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0149023
+2024-03-06 10:08:54.7984 | [51] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-03-06 10:08:54.8157 | [51] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.0258965
+2024-03-06 10:08:54.8620 | [51] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-03-06 10:08:54.8680 | [51] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0073577
+2024-03-06 10:08:57.0099 | [42] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-03-06 10:08:57.0099 | [42] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0062286
+2024-03-06 10:08:58.5468 | [53] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-03-06 10:08:58.5899 | [53] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0442568
+2024-03-06 10:08:58.8041 | [41] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-03-06 10:08:58.8041 | [41] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0544814
+2024-03-06 10:09:00.3099 | [42] | INFO | FuctionName=PersonData.PersonData | Start | IP=::1 | parametersInfo={}
+2024-03-06 10:09:00.3237 | [42] | INFO | FuctionName=PersonData.PersonData | End | IP=::1 | ExpendTime=0.005852
+2024-03-06 10:09:06.3571 | [51] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-03-06 10:09:06.3571 | [51] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.0623751
+2024-03-06 10:09:06.5367 | [51] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=
+2024-03-06 10:09:06.5901 | [51] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.0529799
+2024-03-06 10:09:12.7510 | [42] | INFO | FuctionName=apiPersonData.AddPersonData | Message=PersonID=S&Name=S&Gender=S&Phone=S&CompanyID=S
+2024-03-06 10:09:12.7693 | [42] | INFO | FuctionName=apiPersonData.AddPersonData | Message=ExpendTime=0.0718462
+2024-03-06 10:09:12.7904 | [41] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=
+2024-03-06 10:09:12.7904 | [41] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.0785301
+2024-03-06 10:09:15.8687 | [42] | INFO | FuctionName=apiPersonData.DeletePersonData | Message=PersonID=S&Name=S&Gender=S&Phone=S&CompanyID=S
+2024-03-06 10:09:15.8687 | [42] | INFO | FuctionName=apiPersonData.DeletePersonData | Message=ExpendTime=0.0905149
+2024-03-06 10:09:15.9045 | [42] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=
+2024-03-06 10:09:15.9045 | [42] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.0973312
+2024-03-06 10:09:19.2305 | [41] | INFO | FuctionName=apiPersonData.DeletePersonData | Message=PersonID=t&Name=t&Gender=t&Phone=t&CompanyID=t
+2024-03-06 10:09:19.2305 | [41] | INFO | FuctionName=apiPersonData.DeletePersonData | Message=ExpendTime=0.1058502
+2024-03-06 10:09:19.2578 | [42] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=
+2024-03-06 10:09:19.2578 | [42] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.1115377
+2024-03-06 10:09:36.0387 | [42] | INFO | FuctionName=apiPersonData.UpdatePersonData | Message=PersonID=N000183084&Name=%E9%99%B3%E5%85%B6%E4%BA%94&Gender=%E7%94%B7&Phone=400-7844&CompanyID=XQ
+2024-03-06 10:09:36.0387 | [42] | INFO | FuctionName=apiPersonData.UpdatePersonData | Message=ExpendTime=0.1225978
+2024-03-06 10:09:36.0665 | [42] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=
+2024-03-06 10:09:36.0738 | [42] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.1293542
+2024-03-06 10:09:38.3190 | [41] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=
+2024-03-06 10:09:38.3190 | [41] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.1386816
+2024-03-06 14:03:01.8406 | [10] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/PersonData/PersonData","status":"LogOff"}
+2024-03-06 14:03:02.5999 | [10] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.7989319
+2024-03-06 14:03:18.2734 | [5] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"model":{"UserId":"admin","Password":"123456","ComFacID":"台化油品部儲運處-台北-","RememberMe":false,"Language":null},"returnUrl":"/PersonData/PersonData"}
+2024-03-06 14:03:18.7348 | [5] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.4640276
+2024-03-06 14:03:18.8003 | [10] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-03-06 14:03:18.8585 | [10] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0614644
+2024-03-06 14:03:19.0157 | [10] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-03-06 14:03:19.1843 | [10] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.1626826
+2024-03-06 14:03:19.3019 | [10] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-03-06 14:03:19.3247 | [10] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0219556
+2024-03-06 14:03:21.2791 | [12] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-03-06 14:03:21.2918 | [12] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0159349
+2024-03-06 14:03:24.0064 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-03-06 14:03:24.1983 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.1957925
+2024-03-06 14:03:24.6123 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-03-06 14:03:24.7096 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.292822
+2024-03-06 14:03:27.0087 | [8] | INFO | FuctionName=PersonData.PersonData | Start | IP=::1 | parametersInfo={}
+2024-03-06 14:03:27.0333 | [8] | INFO | FuctionName=PersonData.PersonData | End | IP=::1 | ExpendTime=0.0301029
+2024-03-06 14:03:43.1034 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-03-06 14:03:43.1316 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.3208535
+2024-03-06 14:03:43.4821 | [10] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=
+2024-03-06 14:03:43.5712 | [10] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.0900429
+2024-03-06 14:04:14.4276 | [8] | INFO | FuctionName=apiPersonData.AddPersonData | Message=PersonID=N000191304&Name=%E8%A8%B1&Gender=%E5%A5%B3&Phone=400-3220&CompanyID=EE
+2024-03-06 14:04:14.4786 | [8] | INFO | FuctionName=apiPersonData.AddPersonData | Message=ExpendTime=0.1384972
+2024-03-06 14:04:14.5253 | [10] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=
+2024-03-06 14:04:14.5410 | [10] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.1546387
+2024-03-06 14:04:43.1564 | [8] | INFO | FuctionName=apiPersonData.UpdatePersonData | Message=PersonID=N000191304&Name=%E8%A8%B1%E8%8A%B3%E8%8A%B3&Gender=%E7%94%B7&Phone=400-3219&CompanyID=CC
+2024-03-06 14:04:43.3877 | [8] | INFO | FuctionName=apiPersonData.UpdatePersonData | Message=ExpendTime=0.3805732
+2024-03-06 14:04:43.4585 | [10] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=
+2024-03-06 14:04:43.4890 | [10] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.4096272
+2024-03-06 14:05:05.0880 | [5] | INFO | FuctionName=apiPersonData.AddPersonData | Message=PersonID=VVVV&Name=%E8%A8%B1&Gender=%E5%A5%B3&Phone=400-3220&CompanyID=DD
+2024-03-06 14:05:05.1055 | [5] | INFO | FuctionName=apiPersonData.AddPersonData | Message=ExpendTime=0.4277952
+2024-03-06 14:05:05.1605 | [10] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=
+2024-03-06 14:05:05.1684 | [10] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.4434614
+2024-03-06 14:05:17.4103 | [16] | INFO | FuctionName=apiPersonData.DeletePersonData | Message=PersonID=VVVV&Name=%E8%A8%B1&Gender=%E5%A5%B3&Phone=400-3220&CompanyID=DD
+2024-03-06 14:05:17.4229 | [16] | INFO | FuctionName=apiPersonData.DeletePersonData | Message=ExpendTime=0.4565538
+2024-03-06 14:05:17.4680 | [8] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=
+2024-03-06 14:05:17.4800 | [8] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.4688446
+2024-03-06 14:08:50.3085 | [5] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-03-06 14:08:50.3085 | [5] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0170869
+2024-03-06 14:08:53.1280 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-03-06 14:08:53.1709 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.363935
+2024-03-06 14:08:53.5142 | [10] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-03-06 14:08:53.5417 | [10] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.3915977
+2024-03-06 14:26:48.5673 | [54] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=
+2024-03-06 14:26:51.0471 | [54] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=2.9457633
+2024-03-06 14:27:15.1587 | [43] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-03-06 14:27:15.2119 | [43] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0545286
+2024-03-06 14:27:15.2316 | [43] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-03-06 14:27:15.2942 | [43] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.0649759
+2024-03-06 14:27:15.3107 | [43] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-03-06 14:27:15.3187 | [43] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0100845
+2024-03-06 14:27:18.6270 | [43] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-03-06 14:27:18.6270 | [43] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0121835
+2024-03-06 14:27:21.1785 | [42] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-03-06 14:27:21.1965 | [42] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.4084357
+2024-03-06 14:27:21.5987 | [42] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-03-06 14:27:21.6270 | [42] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.4368288
+2024-03-06 14:30:26.3230 | [43] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-03-06 14:30:26.3353 | [43] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.4495503

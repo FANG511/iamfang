@@ -1,0 +1,199 @@
+﻿@{bool bRef = false;
+    //Ref表示外部參考，如果此參數為1，表示不需要Layout，只須單純顯示該Url功能
+    if (Request.QueryString["Ref"] != null)
+    {
+        bRef = Request.QueryString["Ref"].ToString() == "1" ? true : false;
+    }
+
+    if (System.Configuration.ConfigurationManager.AppSettings["Iframe"] == "true"
+        //未設分頁模式，且URL有帶Ref=1，表示外部參考連結，須套此頁讀取CSS以及JS
+        || (System.Configuration.ConfigurationManager.AppSettings["Iframe"] == "false" && bRef))
+    {
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            @Styles.Render("~/Content/css")
+            @Styles.Render("~/Content/kendo/Css")
+            @Scripts.Render("~/bundles/jquery")
+            @Scripts.Render("~/bundles/bootstrap")
+            @Scripts.Render("~/bundles/kendo/Script")
+            @{ var culture = Session["Language"] != null ? Session["Language"].ToString() : "zh-TW"; }
+            <script src="@Url.Content("/Scripts/kendo/cultures/kendo.culture." + culture + ".min.js")"></script>
+            <script src="@Url.Content("/Scripts/kendo/messages/kendo.messages." + culture + ".min.js")"></script>
+            <script type="text/javascript">
+                var NodeId = "";
+                var CompanyID = "";
+                var FactoryID = "";
+                var MODIFYUSER = "";
+                var LOTID = "";
+                var EQPID = "";
+                var Lng = "";
+                var siteRoot = "..";
+                var oDataModels = {};
+                //多國語系
+
+                //get value from url
+                QueryString = {
+                    data: {},
+                    Initial: function () {
+                        var aPairs, aTmp;
+                        var queryString = new String(window.location.search);
+                        queryString = queryString.substr(1, queryString.length);
+                        aPairs = queryString.split("&");
+                        for (var i = 0; i < aPairs.length; i++) {
+                            aTmp = aPairs[i].split("=");
+                            this.data[aTmp[0]] = aTmp[1];
+                        }
+                        //GetDefaultValue
+                        CompanyID = QueryString.GetValue('CompanyID');
+                        FactoryID = QueryString.GetValue('FactoryID');
+                        MODIFYUSER = QueryString.GetValue('MODIFYUSER');
+                        LOTID = QueryString.GetValue('LOTID');
+                        EQPID = QueryString.GetValue('EQPID');
+                        Lng = QueryString.GetValue('Lng');
+                        NodeId = QueryString.GetValue('NodeId');
+                        if (CompanyID == "undefined") {
+                            CompanyID = "";
+                        }
+                        if (FactoryID == "undefined") {
+                            FactoryID =  "";
+                        }
+                        if (MODIFYUSER == "undefined") {
+                            MODIFYUSER = "@User.Identity.Name";
+                        }
+                        if (LOTID == "undefined") {
+                            LOTID = "";
+                        }
+                        if (EQPID == "undefined") {
+                            EQPID = "";
+                        }
+                        if (Lng == "undefined") {
+                            Lng = "zh-TW";
+                        }
+                        oDataModels["CompanyID"] = CompanyID;
+                        oDataModels["FactoryID"] = FactoryID;
+                        oDataModels["MODIFYUSER"] = MODIFYUSER;
+                        oDataModels["LOTID"] = LOTID;
+                        oDataModels["EQPID"] = EQPID;
+
+                        i18n.init({
+                            resGetPath: '../Content/language/translation.__lng__.json',
+                            getAsync: false,//是否异步调用语言包
+                            lng: Lng,
+                            fallbackLng: Lng
+                        }, function (t) {
+                            // i18n est maintenant initialisé
+                            $('body').i18n();
+                        });
+                        kendo.culture(Lng);
+                    },
+                    GetValue: function (key) {
+                        return decodeURIComponent(this.data[key]);
+                    }
+                };
+                function DispatchLot(CompanyID, FactoryID, LOTID, EQPID, MODIFYUSER, PassRule) {
+                    if (PassRule == null) {
+                        PassRule = "";
+                    }
+                    $.ajax({
+                        url: siteRoot + "/api/MESApiWip/DispatchLot",
+                        type: 'Post',
+                        dataType: 'json',
+                        data: {
+                            CompanyID: CompanyID,
+                            FactoryID: FactoryID,
+                            LOTID: LOTID,
+                            EQPID: EQPID,
+                            MODIFYUSER: MODIFYUSER,
+                            PassRule: PassRule
+                        },
+                        beforeSend: function () {
+                        },
+                        complete: function () {
+                        },
+                        success: function (ResultData) {
+                            alert(ResultData.ReturnMessage);
+                            $("#btnQuery").trigger("click");
+                        },
+                        error: function (e) {
+                            alert('資料量太大，請減少選取項目');
+                        }
+                    })
+                }
+                function PassRule() {
+                    if (LOTID != null) {
+                        DispatchLot(CompanyID, FactoryID, LOTID, EQPID, MODIFYUSER, "Y");
+                    }
+                    else {
+                        alert("請選擇批號");
+                    }
+                }
+                $(document).ajaxStart(function () {
+                    $.blockUI({ message: '處理中，請稍候!!' });
+                }).ajaxStop($.unblockUI);
+                function escapeHtml(string) {
+                    var entityMap = {
+                        "&": "&amp;",
+                        "<": "&lt;",
+                        ">": "&gt;",
+                        '"': '&quot;',
+                        "'": '&#39;',
+                        "/": '&#x2F;'
+                    };
+                    return String(string).replace(/[&<>"'\/]/g, function (s) {
+                        return entityMap[s];
+                    });
+                }
+            </script>
+            @*<script src="@Url.Content("~/signalr/hubs")"></script>*@
+
+            <script>
+                var Url;
+                $(document).ready(function () {
+                });
+                //顯示訊息字幕
+                function ToastHint(sType, sTitle, sWords, iDelay) {
+                    Lobibox.notify(sType, {
+                        title: sTitle,
+                        msg: sWords,
+                        delay: iDelay || 5000,
+                        sound: false,
+                    });
+                }
+
+                //管控畫面上的按鈕權限
+                function ControlAuth() {
+                    //Url = new URL(window.location.href);
+                    //NodeId = Url.searchParams.get('NodeId');
+                    console.log(NodeId);
+                    $.ajax({
+                        type: 'Get',
+                        url: "../Base/GetPageControl",
+                        contentType: 'application/json; charset=utf-8',
+                        dataType: 'json',
+                        data: { sNodeId: NodeId },
+                        success: function (data) {
+                            for (var i = 0; i < data.length; i++) {
+                                //console.log(data[i].IsVisible);
+                                if (!data[i].IsVisible) {
+                                    //console.log(data[i].OBJECTCLASS);
+                                    $(data[i].OBJECTCLASS).hide();
+                                    //$(data[i].DESCRIPTION).attr("style", "display:none");
+                                }
+                            }
+                        },
+                        error: function (e) {
+                            alert(e.responseText);
+                        }
+                    })
+                }
+            </script>
+        </head>
+    </html>
+}
+}
+

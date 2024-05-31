@@ -1,0 +1,214 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutForMESNoMenu.cshtml";
+}
+<h4>@ViewBag.Title</h4>
+<style>
+    /*.MyKendoPopupLayout{
+        width:700px;
+    }*/
+    .Validate {
+        /*        opacity: 0.5;*/
+        /*background-color: palevioletred;
+        border-radius: 2.0rem;*/
+        color: red;
+    }
+    .k-edit-label{
+        text-align:left;
+    }
+    .k-edit-field {
+        width: 600px;
+    }
+</style>
+<div class="form-horizontal">
+    <div class="form-group">
+        <div class="col-md-12">
+            <a class="btn btn_primary auth-add" onclick="Query();"><i class="fa fa-search fa-fw mr-1"></i><span data-i18n="ButtonCommon.Query"></span></a>
+            <a class="btn btn_primary auth-edit" target='_blank' href="ReportForKeyValue?Ref=Y&DATAID="><i class="fa fa-plus fa-fw mr-1"></i><span data-i18n="ButtonCommon.Add"></span></a>
+        </div>
+    </div>
+    <div class="box box-warning box-solid" style="border-color:lightgrey;">
+        <div class="box-header with-border">
+            <h3 class="box-title" data-i18n="UserManage.Text.Filter"></h3>
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                    <i class="fa fa-minus"></i>
+                </button>
+            </div>
+            <!-- /.box-tools -->
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+            <div class="row">
+                <table width="100%">
+                    <tr>
+                        <td align="center" width="10%">
+                            <label for="lblReortName">報表名稱</label>
+                        </td>
+                        <td width="30%">
+                            <input id="ddlReortName" style="width: 100%" />
+                        </td>
+                        <td align="center" width="10%">
+                            <label for="lblStartTime">起訖時間</label>
+                        </td>
+                        <td width="20%">
+                            <input id="dpDateRangeStart" style="width: 90%" />
+                        </td>
+                        <td align="left" width="2%">~
+                        </td>
+                        <td width="20%"><input id="dpDateRangeEnd" style="width: 90%" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-12">
+            <div id="grid" style="width: 100%;"></div>
+        </div>
+    </div> 
+    @*初始化區 *@
+    <script>
+        const vi18n_Name = 'UserManage.Text';
+        const vi18n_BackEnd = 'UserManage.BackEnd';
+        var oi18nLanguAuto;
+        var oDataModels = {};
+        var crudServiceBaseUrl = "../api/ReportApi";
+        var grid;
+        var gridDs;
+        var vObj;
+        var DefaultDate = new Date();
+        $(document).ready(function () {
+            //初始週期為一月
+            DefaultDate.setMonth(DefaultDate.getMonth() - 1);
+            QueryString.Initial();
+
+            vObj = new getObj()            
+            vObj.Initial();
+
+            oi18nLanguAuto = new i18nLanguAuto();
+            oi18nLanguAuto.Initial();
+
+            oDataModels["TEMPLATENAME"] = "";
+            
+            DefineInitial();
+            DefineGrid();
+            //啟用按鈕權限控制功能
+            //ControlAuth();
+        });
+
+    </script>
+
+    @*API區 Ajax有關*@
+    <script>
+        function getObj() {
+            var ReportForExcelTemplate = [];
+            this.Initial = function () {
+                $.ajax({
+                    url: crudServiceBaseUrl + "/getReportForExcelTemplate",
+                    type: 'Post',
+                    dataType: 'json',
+                    async: false,                    
+                    success: function success(ResultData) {
+                        ReportForExcelTemplate = ResultData;
+                    }
+                });
+            };
+            //取得
+            this.getReportForExcelTemplate = function () {
+                if (ReportForExcelTemplate.length > 0)
+                    return ReportForExcelTemplate;
+                else
+                    return [];
+            }
+        }
+    </script>
+
+    @*邏輯區*@
+    <script>
+        $('#btnQuery').click(function () {
+            Query();
+        });
+        function Query() {
+            gridDs.read();
+            gridDs.page(0);
+        }
+    </script>
+
+    @*定義區 Kendo物件等*@
+    <script>
+        function DefineInitial() {
+            $("#ddlReortName").kendoDropDownList({
+                autoWidth: true,
+                dataTextField: "RPTNAME",
+                dataValueField: "TEMPLATENAME",
+                filter: "contains",
+                dataSource: vObj.getReportForExcelTemplate()
+            });
+
+            $('#ddlReortName').on('change', function () {
+                oDataModels["TEMPLATENAME"] = $(this).val();
+                Query();
+            });
+
+            $("#dpDateRangeStart").kendoDatePicker({
+                value: DefaultDate,
+                format: "yyyy/MM/dd",
+                dateInput: true
+            });
+
+            $("#dpDateRangeEnd").kendoDatePicker({
+                value: new Date(),
+                format: "yyyy/MM/dd",
+                dateInput: true
+            });
+        }
+        gridDs = new kendo.data.DataSource({
+            transport: {
+                read: {
+                    url: crudServiceBaseUrl + "/getReportForExcel",
+                    //async: false,
+                    dataType: "json",
+                    type: "Post"
+                },
+                parameterMap: function (options, operation) {
+                    debugger
+                    oDataModels["ReportXlsFile"] = $("#ddlReortName").val();
+                    oDataModels["StartTime"] = $("#dpDateRangeStart").val();
+                    oDataModels["EndTime"] = $("#dpDateRangeEnd").val();
+                    return oDataModels;
+                },
+            }
+        });
+        function DefineGrid() {            
+            $("#grid").kendoGrid({
+                dataSource: gridDs,
+                filterable: false,
+                pageable: {
+                    refresh: true,
+                    pageSize: 10,
+                    buttonCount: 5
+                },
+                height: 500,
+                autoBind: false,
+                columns: [
+                    { field: "DATAID", title: " ", width: "30px", template: '#=ShowDetail(DATAID)#', filterable: false},
+                    { field: "RPTNAME", title: "報表名稱", width: "120px", filterable: false},
+                    { field: "MODIFYUSER", title: "填表人員", width: "120px" },
+                    { field: "MODIFYTIME", title: "填表時間", width: "120px", filterable: false, template:'#= kendo.toString(new Date(MODIFYTIME), "yyyy/MM/dd HH:mm:ss") #' },
+                ],
+            });
+            grid = $("#grid").data("kendoGrid");
+        }
+        function ShowDetail(sDataID) {
+            try {
+                //return "<img  src='../../Content/images/File_edit.png' style='cursor: pointer;' onclick=\"OpenDetail('" + sLotID + "')\" /> ";
+                return "<a class='crud crud_edit k-grid-edit' target='_blank' href=\"ReportForKeyValue?Ref=Y&DATAID=" + sDataID + "\" '><i class='fa fa-book'></i></a>&nbsp";
+            }
+            catch (e) {
+                console.log(e);
+            }
+        }
+     
+    </script>
+</div>

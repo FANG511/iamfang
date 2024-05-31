@@ -1,0 +1,67 @@
+/*這裡會讓tab變成灰色*/
+/*#myTab > li {
+	height: 35px;
+	overflow: hidden;
+	margin-top: 5px;
+	background: #dedede;
+	background: rgba(0,0,0,0.05);
+	color: #777;
+}*/
+
+#myTab > li.active, #myTab > li:hover, #myTab > li:focus {
+    background-color: #fff;
+    border-bottom-color: transparent;
+    box-shadow: 0 -2px 3px 0 rgba(0,0,0,.15);
+}
+
+.navbar {
+    margin-bottom: 0px;
+}
+
+#myTab > li > a {
+    position: relative;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 8px 0px 8px 10px;
+    margin: 0 20px 0 0;
+    border-top: 0px;
+    box-shadow: none;
+    background: transparent;
+    line-height: 17px;
+    border: 0;
+    max-width: 108px;
+    color: #777;
+}
+
+#myTab > li.active {
+    border-top: 2px solid #2dc3e8;
+}
+
+.fa {
+    width: 15px
+}
+
+#myTab li [class*=" fa-times"], #myTab li [class^="fa-times"] {
+    vertical-align: middle;
+    margin-left: 0px;
+    position: absolute;
+    right: 2px;
+    margin-top: 10px;
+}
+
+#tab-iframe {
+    background: none;
+    padding: 30px, 20px, 20px, 20px;
+    /*padding-top: 30px;*/
+    position: relative;
+}
+
+    #tab-iframe > div {
+        display: none;
+    }
+
+        #tab-iframe > div.active {
+            display: block;
+        }
+

@@ -1,0 +1,16 @@
+{
+  "FtcCommon": {
+    "CompanyID": "CompanyID",
+    "FactoryID": "FactoryID",
+    "MODIFYUSER": "ModifyUser",
+    "LOTID": "LotID",
+    "EQPID": "EqpID"
+  },
+  "ButtonCommon": {
+    "Add": "Add",
+    "Modify": "Modify",
+    "Delete": "Delete",
+    "Refresh": "Refresh",
+    "Detail": "Detail"
+  }
+}

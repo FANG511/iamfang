@@ -1,0 +1,73 @@
+2024-03-07 09:21:20.1385 | [8] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/","status":"LogOff"}
+2024-03-07 09:21:20.7041 | [8] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.5764716
+2024-03-07 09:21:35.4423 | [5] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"model":{"UserId":"admin","Password":"123456","ComFacID":"台化油品部儲運處-台北-","RememberMe":false,"Language":null},"returnUrl":"/"}
+2024-03-07 09:21:36.0539 | [5] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.6169463
+2024-03-07 09:21:36.0783 | [11] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-03-07 09:21:36.1624 | [11] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.085822
+2024-03-07 09:21:36.3058 | [11] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-03-07 09:21:36.6142 | [11] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.310139
+2024-03-07 09:21:36.6461 | [11] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-03-07 09:21:36.6461 | [11] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0061978
+2024-03-07 09:21:38.5949 | [5] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-03-07 09:21:38.5949 | [5] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0054316
+2024-03-07 09:21:39.4733 | [11] | INFO | FuctionName=apiPersonData.AddPersonData | Message={     "PersonID": "N000191304",        "Name": "許方方",        "Gender": "女",        "Phone": "400-511",        "CompanyID": "NJ"}
+2024-03-07 09:21:39.7017 | [11] | ERROR | FuctionName=AddPerson | Error=System.Data.SqlClient.SqlException (0x80131904): 違反 PRIMARY KEY 條件約束 'PK__tmp_ms_x__AA2FFB8537145978'。無法在物件 'dbo.PersonData' 中插入重複的索引鍵。重複的索引鍵值是 (N000191304)。陳述式已經結束。   於 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)   於 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)   於 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)   於 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)   於 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)   於 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)   於 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)   於 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)   於 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()   於 Dapper.SqlMapper.ExecuteCommand(IDbConnection cnn, CommandDefinition& command, Action`2 paramReader)   於 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)   於 Dapper.SqlMapper.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)   於 FTC_MES_MVC.Models.DAL.dalPersonData.dalPersonData.AddPerson(PersonData p_oAdd) 於 C:\Users\N000191304\Documents\方\開發環境\personLocation-master\personlocation\FTC_MVC_Template\Models\PersonData\Dal\dalPersonData.cs: 行 145ClientConnectionId:04295181-f37f-42bb-b52a-b30ceaa4ab73Error Number:2627,State:1,Class:14
+2024-03-07 09:21:39.8633 | [11] | INFO | FuctionName=apiPersonData.AddPersonData | Message=ExpendTime=0.3908497
+2024-03-07 09:21:41.2629 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-03-07 09:21:41.7425 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.4795898
+2024-03-07 09:21:42.0201 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-03-07 09:21:42.0320 | [5] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.4918461
+2024-03-07 09:21:54.8868 | [5] | INFO | FuctionName=apiPersonData.AddPersonData | Message={     "PersonID": "N000191302",        "Name": "許方方",        "Gender": "女",        "Phone": "400-511",        "CompanyID": "NJ"}
+2024-03-07 09:21:54.9037 | [5] | INFO | FuctionName=apiPersonData.AddPersonData | Message=ExpendTime=0.4076375
+2024-03-07 09:28:03.4522 | [11] | INFO | FuctionName=apiPersonData.DeletePersonData | Message={     "PersonID": "N000191304",}
+2024-03-07 09:28:03.4792 | [11] | INFO | FuctionName=apiPersonData.DeletePersonData | Message=ExpendTime=0.434587
+2024-03-07 10:31:45.8310 | [83] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":"/PersonData/PersonData?NodeId=N303&CompanyID=%E5%8F%B0%E5%8C%96%E6%B2%B9%E5%93%81%E9%83%A8%E5%84%B2%E9%81%8B%E8%99%95&FactoryID=%E5%8F%B0%E5%8C%97&MODIFYUSER=ADMIN&Lng=","status":"LogOff"}
+2024-03-07 10:31:45.8563 | [83] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.0269327
+2024-03-07 10:31:47.8763 | [80] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"returnUrl":null,"status":null}
+2024-03-07 10:31:48.0477 | [80] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.1905077
+2024-03-07 10:37:50.8122 | [80] | INFO | FuctionName=Account.Login | Start | IP=::1 | parametersInfo={"model":{"UserId":"admin","Password":"123456","ComFacID":"台化油品部儲運處-台北-","RememberMe":false,"Language":null},"returnUrl":null}
+2024-03-07 10:37:51.0337 | [80] | INFO | FuctionName=Account.Login | End | IP=::1 | ExpendTime=0.2267468
+2024-03-07 10:37:51.0836 | [84] | INFO | FuctionName=Home.Index | Start | IP=::1 | parametersInfo={}
+2024-03-07 10:37:51.1306 | [84] | INFO | FuctionName=Home.Index | End | IP=::1 | ExpendTime=0.0487929
+2024-03-07 10:37:51.1487 | [84] | INFO | FuctionName=Home._Menu | Start | IP=::1 | parametersInfo={}
+2024-03-07 10:37:51.1943 | [84] | INFO | FuctionName=Home._Menu | End | IP=::1 | ExpendTime=0.0474759
+2024-03-07 10:37:51.1943 | [84] | INFO | FuctionName=Home._ChangePassword | Start | IP=::1 | parametersInfo={}
+2024-03-07 10:37:51.2121 | [84] | INFO | FuctionName=Home._ChangePassword | End | IP=::1 | ExpendTime=0.0079623
+2024-03-07 10:37:52.2683 | [86] | INFO | FuctionName=UserManage.CommUser | Start | IP=::1 | parametersInfo={}
+2024-03-07 10:37:52.2783 | [86] | INFO | FuctionName=UserManage.CommUser | End | IP=::1 | ExpendTime=0.0113689
+2024-03-07 10:37:53.7354 | [80] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-03-07 10:37:53.7444 | [80] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.5007898
+2024-03-07 10:37:53.8631 | [79] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-03-07 10:37:53.8631 | [79] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.5096855
+2024-03-07 10:38:57.0679 | [79] | INFO | FuctionName=PersonData.PersonData | Start | IP=::1 | parametersInfo={}
+2024-03-07 10:38:57.0679 | [79] | INFO | FuctionName=PersonData.PersonData | End | IP=::1 | ExpendTime=0.0055216
+2024-03-07 10:38:58.4915 | [80] | INFO | FuctionName=UserManageApi.getUser | Message=
+2024-03-07 10:38:58.5184 | [80] | INFO | FuctionName=UserManageApi.getUser | Message=ExpendTime=0.5364999
+2024-03-07 10:38:58.7807 | [84] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=
+2024-03-07 10:38:58.7987 | [84] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.4526226
+2024-03-07 10:39:34.7052 | [87] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=
+2024-03-07 10:39:34.7142 | [87] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.4613818
+2024-03-07 10:39:39.2745 | [80] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=%09N000191302
+2024-03-07 10:39:39.2745 | [80] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.4670355
+2024-03-07 10:39:41.7369 | [80] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=N000191302
+2024-03-07 10:39:41.7419 | [80] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.4723128
+2024-03-07 10:40:03.1876 | [84] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=B
+2024-03-07 10:40:03.1938 | [84] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.4786926
+2024-03-07 10:42:05.4221 | [84] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=
+2024-03-07 10:42:05.4221 | [84] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.4863615
+2024-03-07 10:42:39.5822 | [79] | INFO | FuctionName=apiPersonData.UpdatePersonData | Message=PersonID=N000183084&Name=%E9%99%B3%E5%85%B6&Gender=%E7%94%B7&Phone=400-7844&CompanyID=XQ
+2024-03-07 10:42:39.6016 | [79] | INFO | FuctionName=apiPersonData.UpdatePersonData | Message=ExpendTime=0.505965
+2024-03-07 10:42:39.6216 | [79] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=
+2024-03-07 10:42:39.6216 | [79] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.5134344
+2024-03-07 11:09:03.2167 | [77] | INFO | FuctionName=apiPersonData.AddPersonData | Message=PersonID=D&Name=D&Gender=D&Phone=&CompanyID=D
+2024-03-07 11:09:03.2337 | [77] | INFO | FuctionName=apiPersonData.AddPersonData | Message=ExpendTime=0.5305272
+2024-03-07 11:09:03.2546 | [88] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=
+2024-03-07 11:09:03.2636 | [88] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.5392437
+2024-03-07 11:09:15.7243 | [88] | INFO | FuctionName=apiPersonData.DeletePersonData | Message=PersonID=D&Name=D&Gender=D&Phone=&CompanyID=D
+2024-03-07 11:09:15.7293 | [88] | INFO | FuctionName=apiPersonData.DeletePersonData | Message=ExpendTime=0.5441866
+2024-03-07 11:09:15.7493 | [88] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=
+2024-03-07 11:09:15.7493 | [88] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.5495398
+2024-03-07 11:09:21.4744 | [87] | INFO | FuctionName=apiPersonData.UpdatePersonData | Message=PersonID=N000191302&Name=%E8%A8%B1%E6%96%B9%E6%96%B9&Gender=%E5%A5%B3&Phone=&CompanyID=NJ
+2024-03-07 11:09:21.4804 | [87] | INFO | FuctionName=apiPersonData.UpdatePersonData | Message=ExpendTime=0.5554982
+2024-03-07 11:09:21.4956 | [87] | INFO | FuctionName=apiPersonData.GetPersonData | Message=PersonID=
+2024-03-07 11:09:21.4956 | [87] | INFO | FuctionName=apiPersonData.GetPersonData | Message=ExpendTime=0.560974

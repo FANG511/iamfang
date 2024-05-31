@@ -1,0 +1,1172 @@
+﻿@{
+    ViewBag.Title = "人員監控";
+    Layout = "~/Views/Shared/_LayoutForMESNoMenu.cshtml";
+}
+
+
+<link rel="stylesheet" href="~/Content/personLocation/leaflet-sidebar.css" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"></script>
+
+
+
+<div class="map-content">
+    <div id="map">
+
+    </div>
+
+    
+    <div id="sidebar" class="sidebar collapsed">
+        <!-- Nav tabs -->
+        <div class="sidebar-tabs">
+            <ul role="tablist" class="sidebar-click">
+                <li class="side-item-people" data-id="area">
+                    <a href="#home" role="tab" data-id="area">
+                        <i class="fa fa-layer-group"></i>
+                    </a>
+                </li>
+                <li class="side-item-people" data-id="people">
+                    <a href="#profile" role="tab" data-id="people">
+                        <i class="fa fa-user"></i>
+                    </a>
+                </li>
+                <li class="side-item-people" data-id="alarm">
+                    <a href="#messages" role="tab" data-id="alarm">
+                        <i class="fa fa-bell"></i>
+                    </a>
+                </li>
+                <li class="side-item-people" data-id="history">
+                    <a href="#history" role="tab" data-id="history">
+
+                        <i class="fa-solid fa-location-arrow"></i>
+
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+
+        <!-- Tab panes -->
+        <div class="sidebar-content">
+            <div class="sidebar-pane" id="home">
+                <h1 class="sidebar-header">
+                    區域人員監測
+                    <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
+                </h1>
+
+                <div class="info-panel" id="area-count">
+
+                </div>
+            </div>
+
+            <div class="sidebar-pane" id="profile">
+                <h1 class="sidebar-header">人員即時監測<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+
+                <div class="info-panel" id="people-count">
+
+                </div>
+            </div>
+
+            <div class="sidebar-pane" id="messages">
+                <h1 class="sidebar-header">警報紀錄<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+                <div class="info-panel" id="alarm-list">
+                </div>
+            </div>
+
+            <div class="sidebar-pane" id="history">
+                <h1 class="sidebar-header">歷史軌跡查詢<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+                <div class="info-panel" id="perple-history">
+                    <form class="history-form">
+                        <p>請填入圖徵名稱與對應的區域</p>
+                        <hr>
+                        <label for="polygonName"><b>人員名稱</b></label>
+                        <input type="text" placeholder="請輸入要查詢的人員" name="PersonName" required>
+
+                        <label for="AreaID"><b>查詢時間</b></label>
+                        <input type="date" placeholder="請輸入查詢日期" name="SearchDate" required>
+
+                        <div class="clearfix">
+                            <button type="button" class="signupbtn" id="search-history-path">查詢</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="sos-content">
+      <i class="fa fa-warning sos-icon"></i>
+      王曉明 求救 ! 
+    </div>
+
+</div>
+
+
+
+@*引用區*@
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+      integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+        integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
+<script src="https://unpkg.com/leaflet-rotate@0.2.2/dist/leaflet-rotate-src.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.10/leaflet.draw-src.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/iso8601-js-period@0.2.1/iso8601.min.js"></script>
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/leaflet-timedimension@1.1.1/dist/leaflet.timedimension.min.js"></script>
+
+
+@*axios*@
+<script type="text/javascript" src="https://unpkg.com/axios@1.2.1/dist/axios.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wicket/1.3.8/wicket.js"></script>
+<script src="~/Scripts/PersonLocation/leaflet-sidebar.js"></script>
+
+<link rel="stylesheet" href="@Url.Content("~/Content/personLocation/MonitorMap.css")">
+<link rel="stylesheet" href="@Url.Content("~/Content/personLocation/leaflet_timeDimension.css")" />
+
+
+<script>
+  /**
+     * 定義初始參數
+     * */
+  const result_panel = document.getElementById("result_panel")
+  const workAreaList = document.getElementById("workAreaList")
+  const warningAreaList = document.getElementById("warningAreaList")
+  const otherAreaList = document.getElementById("otherAreaList")
+
+  let personLocationUrl = "/api/apiPersonLocation"
+  var map;
+  var workArea;
+  let fkDeviceCurrent = [], fkPerson = [], fkAreaPersonList = []
+  // 存取資料
+  const urlSelect = {
+    yellow: "@Url.Content("~/Content/images/helmet-safity.png")",
+    blue: "@Url.Content("~/Content/images/helmet-medium.png")",
+    red: "@Url.Content("~/Content/images/helmet-warning.png")",
+    alarm: "@Url.Content("~/Content/images/alarm.png")"
+  }
+
+  /**
+   * ----------------------------------------------------------------------
+   * ----------------------//     初始化地圖     //------------------------
+   * ----------------------------------------------------------------------
+   */
+  map = L.map('map', {
+    zoom: 17,
+    rotate: true,
+    rotateControl: false,
+    zoomControl: false,
+    bearing: 0,
+    fullscreenControl: true,
+    timeDimensionControl: true,
+    timeDimensionControlOptions: {
+      timeSliderDragUpdate: true,
+      loopButton: true,
+      autoPlay: true,
+      playerOptions: {
+        transitionTime: 1000,
+        loop: true
+      }
+    },
+    timeDimension: true,
+    center: [25.05747, 121.55099],
+  });
+
+  // 執行
+  $(document).ready(function () {
+    QueryString.Initial();
+
+    // 初始化地圖
+    getAreaList()
+    getPerson();
+  })
+  // 設定底圖
+  var mapLayers = {
+    '中文': L.tileLayer('https://wmts.nlsc.gov.tw/wmts/EMAP98/default/GoogleMapsCompatible/{z}/{y}/{x}', {
+      attribution: '&copy; <a href="https://www.tgos.tw/tgos/web/tgos_home.aspx">TGOS</a>'
+    }),
+    '英文': L.tileLayer('https://wmts.nlsc.gov.tw/wmts/EMAP97/default/GoogleMapsCompatible/{z}/{y}/{x}', {
+      attribution: '&copy; <a href="https://www.tgos.tw/tgos/web/tgos_home.aspx">TGOS</a>'
+    }),
+    '衛星': L.tileLayer('https://wmts.nlsc.gov.tw/wmts/PHOTO_MIX/default/GoogleMapsCompatible/{z}/{y}/{x}', {
+      attribution: '&copy; <a href="https://www.tgos.tw/tgos/web/tgos_home.aspx">TGOS</a>'
+    }),
+    'OSM': L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    })
+  };
+  //mapLayers['OSM'].addTo(map); // 使用中文地圖作為預設
+
+  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'pk.eyJ1IjoibWFraWZpIiwiYSI6ImNrb2xtaThiODAwMzQydHBvODF2eGF3b2gifQ.R0Ps3-ylf29uGUoKkfsMKw' // 換成你自己的 Mapbox Access Token
+  }).addTo(map);
+
+  L.control.layers(mapLayers).addTo(map); // 加入地圖切換控制項
+  // 旋轉控制
+  var rotateOptions = {
+    closeOnZeroBearing: false,
+    position: 'topright',
+  }
+  var rotate = L.control.rotate(rotateOptions);
+  rotate.addTo(map)
+
+  // zoom control options
+  var zoomOptions = {
+    zoomInText: '+',
+    zoomOutText: '-',
+    position: "topright"
+  };
+  var zoom = L.control.zoom(zoomOptions);   // Creating zoom control
+  zoom.addTo(map);   // Adding zoom control to the map
+
+  //side bar control
+  var sidebar = L.control.sidebar('sidebar').addTo(map);
+
+  // scale
+  var scale = L.control.scale({
+    position: "bottomright"
+  }); // Creating scale control
+  scale.addTo(map); // Adding scale control to the map
+
+  // 初始化圖層
+  var workArea = L.geoJSON();
+  var warningArea = L.geoJSON();
+  var otherArea = L.geoJSON();
+  var featureGroup = L.featureGroup([workArea, warningArea, otherArea])
+    .addTo(map);
+
+  // promise
+
+
+  getMap();
+
+  // 預設打開
+  const sidebarA = document.getElementById("sidebar")
+  const homeA = document.getElementById("home")
+  sidebarA.classList.remove("collapsed")
+  homeA.classList.add("active")
+
+
+  function onClear() {
+    //featureGroup.removeLayer(myLayer)
+  }
+
+
+  async function getPerson() {
+    axios.post(`${personLocationUrl}/GetPersonData`, {})
+      .then((res) => {
+        if (res.status === 200 && res.data.length !== 0) {
+          fkPerson = []
+          // 有資料進行處理
+          const data = res.data
+          data.forEach(el => {
+            fkPerson.push(el)
+          })
+          getDeviceCurrent()
+            // 各區域清單
+          getAreaListA()
+        }
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
+
+  // 取得地圖
+  function getMap() {
+    axios.post(`${personLocationUrl}/GetPolygon`, {
+
+    }).then((res) => {
+      if (res.status === 200 && res.data.length !== 0) {
+        // 成功連線
+        workArea.clearLayers();
+        const data = res.data
+        data.forEach(el => {
+          const ID = el.PolygonID;
+          const Name = el.PolygonName;
+          const AreaID = el.AreaID;
+          const wkt_geom = el.WKTGeometry;
+
+          try {
+            var wkt = new Wkt.Wkt();
+            wkt.read(wkt_geom);
+            const feature = {
+              "type": "Feature",
+              "properties": {
+                "polygonID": ID,
+                "polygonName": Name,
+                "AreaID": AreaID
+              },
+              "geometry": wkt.toJson()
+            };
+            workArea.addData(feature);
+          } catch (error) {
+            console.log(error);
+          }
+        })
+      }
+    }).catch(() => {
+      console.error()
+    });
+  }
+  // 取得區域名稱
+  var fkArea = []
+
+  // 載入區域列表
+  function getAreaList() {
+    axios.post(`${personLocationUrl}/GetArea`, {
+    }).then((res) => {
+      if (res.status === 200 && res.data.length !== 0) {
+        // 成功連線
+        fkArea = []
+        const data = res.data
+        data.forEach(el => {
+          fkArea.push({ id: el.AreaID, name: el.AreaName, category: el.Category })
+        })
+      }
+    }).catch(() => {
+      console.error()
+    });
+  }
+
+
+  // 產生類別清單
+  const areaCount = document.getElementById('area-count');
+  const Category = [{ id: "workArea", name: '施工區' }, { id: 'warningArea', name: '危險區域' }, { id: 'other', name: '其他區域' }]
+  Category.forEach(el => {
+    const item = document.createElement('div')
+    item.classList.add(el.id)
+    item.innerHTML = `<button class="accordion"><div class="area-btn"><div>${el.name}</div><div data-name=${el.id}>人數:0人</div></button>
+                        <div class="${el.id}-panel enable" >
+                            <ul class="${el.id}-list">
+                            </ul>
+                        </div>`
+    areaCount.appendChild(item)
+  })
+
+
+
+  // 下拉清單的部分
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function () {
+      /* Toggle between adding and removing the "active" class,
+      to highlight the button that controls the panel */
+      this.classList.toggle("active");
+
+      /* Toggle between hiding and showing the active panel */
+      var panel = this.nextElementSibling;
+      if (panel.classList.contains("enable")) {
+        panel.classList.remove("enable")
+      } else {
+        panel.classList.add("enable")
+      }
+    });
+  }
+  let areaList = []
+
+  function getAreaListA() {
+    axios.post(`${personLocationUrl}/getAreaPeopleCount`, {
+    }).then((res) => {
+      if (res.status === 200 && res.data.length !== 0) {
+        // 成功連線
+        areaList = []
+        console.log(res.data)
+        resetList();
+        fkAreaPersonList = res.data
+        fkAreaPersonList.forEach(el => {
+          const id = el.AreaID
+          const ca_name = el.Category
+          // 建立人員列表
+          const personList = el.PersonList
+          let newContent = ""
+          if (personList.length > 0 ) {
+            personList.forEach(el=> {
+              const person = fkPerson.find((item) => {
+                return item.PersonID === el
+              })
+              const personName = typeof person !== "undefined" ? person.Name : ""
+              // 確認身分別
+              const content =`
+              <li class="area-person-li" data-id=${el}>${personName}</li>
+              `
+              newContent += content
+            })
+          }
+          const target = document.querySelector(`.${ca_name}-panel`)
+          if (target !== null) {
+            try {
+              const item = `<div class="area-list-panel">
+                          <li class="area-list" data-id=${el.AreaID}  onclick="findAreaMap(${el.AreaID})"><span>${el.AreaName}</span> <span>人數:${el.Count}</span>
+                          </li>
+                          <div class="person-list-panel enable" data-id=${el.AreaID}>
+                              <ul>
+                                ${newContent}
+                              </ul>
+                            </div>
+                          </div>`
+              target.innerHTML += item
+            } catch (err) {
+              console.error(err)
+
+            }
+          } else {
+            const other = document.querySelector('.other-panel')
+            const item = `<div class="area-list-panel">
+                            <li class="area-list" data-id=${el.AreaID}  onclick="findAreaMap(${el.AreaID})">
+                              <span>${el.AreaName}</span>
+                              <span>人數:${el.Count}</span>
+                            </li>
+                            <div class="person-list-panel enable" data-id=${el.AreaID}>
+                              <ul>
+                                ${newContent}
+                              </ul>
+                            </div>
+                          </div>`
+            other.innerHTML += item
+          }
+          areaList.push(el)
+        })
+        CountArea(fkAreaPersonList);
+        updateListTime();
+
+      }
+    }).catch((error) => {
+      console.error(error)
+    });
+  }
+
+  // 查看區域內人員明細
+  function getAreaPersonList(id) {
+  const AreaList = Array.from(document.querySelectorAll(".person-list-panel"));
+  const aa =  AreaList.map(item => {
+    if (item.dataset.id === String(id)) {
+      if (item.classList.contains("enable")) {
+        item.classList.remove("enable")
+      } else {
+        item.classList.add("enable")
+      }
+    } else {
+      item.classList.add("enable");
+    }
+    return item;
+  });
+}
+// 更新最後更新時間
+function updateListTime() {
+  const AreaList = Array.from(document.querySelectorAll(".area-person-li"));
+  const currentTime = new Date();
+  fkDeviceCurrent.forEach(el => {
+    const personid = el.PersonID
+    const person = fkPerson.find((el) => {
+      return el.PersonID === personid
+    })
+    // 計算時間
+    const creatTime = el.CreateTime
+    const postTime = new Date(creatTime)
+    const diffTime = currentTime - postTime
+    const diffSecond = Math.floor(diffTime / (1000));
+    const text = getPeriodText(diffSecond)
+    if (personid !== null) {
+      const updateTime =  AreaList.map(item => {
+    if (item.dataset.id === String(personid)) {
+      let content = item.innerHTML;
+      content = content.split(" ")[0]
+      item.innerHTML = content + " " + text
+    }
+    return item;
+  });
+    }}
+  )
+}
+
+function getPeriodText(second) {
+  const time = Number(second)
+  if (time < 60) {
+    return `最後更新時間 ${time}秒前`
+  } else if (time < 3600) {
+    const minute = Math.floor(time / 60)
+    return `最後更新時間 ${minute}分鐘前`
+  } else if (time < 86400) {
+    const hour = Math.floor(time / 3600)
+    return `最後更新時間 ${hour}小時前`
+  } else {
+    const day = Math.floor(time / 86400)
+    return `最後更新時間 ${day}天前`
+  }
+}
+
+
+  function getDeviceCurrent() {
+    axios.post(`${personLocationUrl}/GetDeviceCurrent`, {
+    }).then((res) => {
+      if (res.status === 200 && res.data.length !== 0) {
+        // 成功連線
+        areaList = []
+        const data = res.data
+        data.forEach(el => {
+          fkDeviceCurrent.push(el)
+        })
+        try {
+          showDeviceCurrent()
+        } catch (error) {
+          console.log(error)
+        }
+      }
+    }).catch(() => {
+      console.error()
+    });
+  }
+
+
+  var deviceCurrent = L.geoJSON();
+  var featureGroupDevice
+
+  initialMap();
+  function initialMap() {
+    featureGroupDevice = L.featureGroup([deviceCurrent])
+      .bindPopup(function (layer) {
+        const feature = layer.feature
+        const properties = feature.properties
+        let content = `
+        <div class="popup-container">
+  <div class="popup-nav">
+    <div class="popup-nav-btn nav-active" id="nav-baseInfo" onClick="onLeafletClick(this)">基本資料</div>
+    <div class="popup-nav-btn" id="nav-enrtyRecord" onClick="onLeafletClick(this)">進出紀錄</div>
+    <div class="popup-nav-btn" id="nav-errorMessage" onClick="onLeafletClick(this)">異常紀錄</div>
+  </div>
+  <div class="popup-content">
+    <div class="popup-content-tab" id="baseInfo">
+       <p class="px-2 py-1">姓名: <span>測試機</span></p>
+        <p class="px-2 py-1">員工編號: <span>${properties.user === "" ? properties.userId: "-"}</span></p>
+        <p class="px-2 py-1">性別: <span>${properties.userName === "" ? properties.userName : "-"}</span></p>
+        <p class="px-2 py-1">電話: <span>${properties.userName === "" ? properties.userName : "-"}</span></p>
+        <p class="px-2 py-1">公司: <span>${properties.userName === "" ? properties.userName : "-"}</span></p>
+        <p class="px-2 py-1">所在位置: <span>${properties.userName === "" ? properties.userName : "-"}</span></p>
+        <p class="px-2 py-1">所在區域: <span>${properties.userName === "" ? properties.userName : "-"}</span></p>
+        <p class="px-2 py-1">心律: <span>${properties.userName === "" ? properties.userName : "-"}</span></p>
+        <div class="d-flex justify-content-end"><button data-id="${properties.userId}" onclick="onHistoryPath(this)">歷史軌跡查詢</button></div>
+    </div>
+    <div class="popup-content-tab popup-hidden" id="enrtyRecord">
+    <ul class="list-group g-2">
+      <li class="list-group-item list-item-enter" aria-disabled="true">區域四: <span>進入</span>   <small>2023/05/06 10:00:02</small></li>
+      <li class="list-group-item list-item-out">區域三: <span>離開</span>   <small>2023/05/05 17:10:02</small></li>
+  <li class="list-group-item list-item-enter">區域三: <span>進入</span>   <small>2023/05/05 14:27:02</small></li>
+  <li class="list-group-item list-item-out">區域三: <span>離開</span>   <small>2023/05/05 14:10:42</small></li>
+  <li class="list-group-item list-item-enter">區域三: <span>進入</span>   <small>2023/05/05 13:54:02</small></li>
+</ul>
+    </div>
+    <div class="popup-content-tab popup-hidden" id="errorMessage">
+    <ul class="list-group g-2">
+      <li class="list-group-item list-item-error">闖入報警: <span>進入區域四</span>   <small>2023/05/06 10:10:02</small></li>
+      <li class="list-group-item list-item-error">越界報警: <span>離開區域三</span>   <small>2023/05/05 17:10:02</small></li>
+      <li class="list-group-item list-item-error">滯留報警: <span>於區域三滯留過久</span>   <small>2023/05/05 17:10:02</small></li>
+    </ul>
+    </div>
+  </div>
+</div>
+</div>                        
+                          ` 
+        onClickPopupHandler();
+        return content
+      }).addTo(map)
+  }
+
+
+
+  function showDeviceCurrent() {
+    try {
+      if (fkDeviceCurrent.length > 0) {
+
+        fkDeviceCurrent.forEach(el => {
+          const deviceID = el.DeviceID
+          const deviceName = el.DeviceName
+          const personid = el.PersonID
+          const person = fkPerson.find((el) => {
+            return el.PersonID === personid
+          })
+          // 計算時間
+          const creatTime = el.CreateTime
+          if (personid !== null) {
+             updateListTime(personid, creatTime)
+          }
+
+          const personName = typeof person !== "undefined" ? person.Name : ""
+          // 確認身分別
+          const companyID = typeof person !== "undefined" ? person.CompanyID : ""
+          const split = el.GPSLocation.substring(1, el.GPSLocation.length - 1).split(',')
+          const item = [Number(split[1]), Number(split[0])]
+          const geoitem = {
+            type: "Point",
+            coordinates: item
+          }
+          var feature = { 'type': 'Feature', 'properties': { 'userId': personid, 'deviceId': deviceID, 'userName': personName, 'deviceName': deviceName, 'category': 'personPoint' }, "geometry": geoitem };
+          var myStyle = {
+            "color": "#ff7800",
+            "weight": 5,
+            "opacity": 0.65
+          };
+          var iconurl = ''
+          switch (companyID) {
+            case 'NJ':
+              iconurl = urlSelect.yellow
+              break
+            case 'XD':
+              iconurl = urlSelect.blue
+              break
+            case '2':
+              iconurl = urlSelect.red
+              break
+            default:
+              iconurl = urlSelect.yellow
+              break
+          }
+          const greenIcon = L.icon({
+            iconUrl: iconurl,
+            iconSize: [30, 30], // size of the icon
+            iconAnchor: [15, 30], // point of the icon which will correspond to marker's location
+            popupAnchor: [0, -30] // point from which the popup should open relative to the iconAnchor
+          });
+
+          L.geoJSON(feature, {
+            style: myStyle,
+            pointToLayer: function (feature, latlng) {
+              return L.marker(latlng, {
+                //icon: greenIcon
+                icon: L.divIcon({
+                  className: 'custom-div-icon',
+                  html: `<div class="icon-show"><img src="${iconurl}"><div class='marker-label'><p>${personName}</p></div></div>`,
+                  iconSize: [10, 10],
+                  iconAnchor: [30, 30]
+                })
+              }) // greenIcon
+            }
+          }).addTo(featureGroupDevice)
+          var coord = feature.geometry.coordinates
+        })
+
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  // 呈現一個icon
+  showBuildMaker();
+  function showBuildMaker() {
+    // Create a marker
+    var marker = L.marker([25.05664, 121.09696]).addTo(map);
+
+    const tab1f = "@Url.Content("~/Content/images/1f.png")"
+    const tab2f = "@Url.Content("~/Content/images/2f.png")"
+    const tab3f = "@Url.Content("~/Content/images/3f.png")"
+    const tab4f = "@Url.Content("~/Content/images/4f.png")"
+    const tabb1 = "@Url.Content("~/Content/images/b1.png")"
+    // Create a popup
+    //<img class="tab-img" src="${tabb1}"/>        <p class="tab-name">地下一樓平面圖</p>
+    var popupContent = 
+    `
+    <div class="popup-container">
+  <div class="popup-nav">
+    <div class="popup-nav-btn" id="nav-b1">地下一樓</div>
+    <div class="popup-nav-btn nav-active" id="nav-1f">一樓</div>
+    <div class="popup-nav-btn" id="nav-2f">二樓</div>
+    <div class="popup-nav-btn" id="nav-3f">三樓</div>
+    <div class="popup-nav-btn" id="nav-4f">四樓</div>
+  </div>
+  <div class="popup-content">
+    <div class="popup-content-tab popup-hidden" id="b1"><img class="tab-img" src="${tabb1}"/><p class="tab-name">地下一樓平面圖</p></div>
+    <div class="popup-content-tab" id="1f"><img class="tab-img" src="${tab1f}"/><p class="tab-name">一樓平面圖</p></div>
+    <div class="popup-content-tab popup-hidden" id="2f"><img class="tab-img" src="${tab2f}"/><p class="tab-name">二樓平面圖</p></div>
+    <div class="popup-content-tab popup-hidden" id="3f"><img class="tab-img" src="${tab3f}"/><p class="tab-name">三樓平面圖</p></div>
+    <div class="popup-content-tab popup-hidden" id="4f"><img class="tab-img" src="${tab4f}"/><p class="tab-name">四樓平面圖</p></div>
+  </div>
+</div>
+    `;
+
+    marker.bindPopup(popupContent).openPopup();
+    map.flyTo([25.05664, 121.09696],17)
+        const popup = document.querySelector(".leaflet-popup-content")
+    popup.style.width = "500px"
+    popup.style.height= "500px"
+
+  }
+  onClickPopupHandler();
+  // 新增監聽事件
+  function onClickPopupHandler() {
+    const navBtn = document.querySelectorAll(".popup-nav-btn")
+    const tab = document.querySelectorAll(".popup-content-tab")
+    navBtn.forEach(el => {
+      el.addEventListener("click", (e) => {
+        const id = e.target.id
+        navBtn.forEach(el => {
+          el.classList.remove("nav-active")
+        })
+        tab.forEach(el => {
+          el.classList.add("popup-hidden")
+        })
+        e.target.classList.add("nav-active")
+        const tabId = id.replace("nav-", "")
+        const tabContent = document.getElementById(tabId)
+        tabContent.classList.remove("popup-hidden")
+      })
+    })
+  }
+
+  function onLeafletClick(e) {
+    const navBtn = document.querySelectorAll(".popup-nav-btn")
+    let targetId = e.getAttribute("id");
+    navBtn.forEach(item => {
+      const navId = item.getAttribute("id");
+      if (navId === targetId) {
+        item.classList.add("nav-active")
+      } else {
+        item.classList.remove("nav-active")
+      }
+    })
+    targetId = targetId.replace("nav-", "")
+    const tab = document.querySelectorAll(".popup-content-tab")
+    tab.forEach(el => {
+      const tabId = el.getAttribute("id");
+      if (targetId === tabId) {
+        el.classList.remove("popup-hidden")
+      } else {
+        el.classList.add("popup-hidden")
+      }
+    })
+  }
+
+
+  // 取得人員所在區域
+  function showPeopleInArea() {
+    const peopleCount = document.getElementById("people-count")
+    axios.post(`${personLocationUrl}/getPeopleArea`, {
+    }).then((res) => {
+      if (res.status === 200 && res.data.length !== 0) {
+        // 成功連線
+        peopleCount.innerHTML = "<h3>人員</h3>";
+        const data = res.data
+        data.forEach(el => {
+          item = `<li class="area-list" data-id=${el.PersonID} onclick="findPersonLocat(this)">
+                    <div class="area-list-name"><p class="area-title">${el.PersonName}</p></div>
+                    <div class="area-list-location">
+                      <p class="location-text">所在區域</p>
+                      <p class="location-text-area">${el.AreaName}</p>
+                    </div>
+                  </li>`
+          peopleCount.innerHTML += item
+        })
+      }
+    }).catch(() => {
+      console.error()
+    });
+  }
+
+  // 計算區域總人數
+  function CountArea(data) {
+    const AreaList = document.getElementById("area-count").childNodes
+    let areaArray = []
+    AreaList.forEach(el => typeof el.tagName !== 'undefined'? areaArray.push({name: el.classList[0], count: 0}) : "")
+    data.forEach(el => {
+      areaArray.forEach(item => {
+        if (el.Category === item.name) {
+          item.count = item.count + el.Count
+        }
+      })
+    })
+    areaArray.forEach(el => {
+      console.log("areaArray")
+      console.log(el)
+      const area = el.name;
+      const count = el.count;
+      const buttonGroup = document.querySelectorAll(`.accordion`)
+      buttonGroup.forEach(el => {
+        const nodes = el.firstElementChild.childNodes
+        const name = nodes[1].dataset.name
+        if (name === area) {
+          let text = nodes[1].innerHTML
+          text = parseInt(text.substring(3, text.length - 1))
+          nodes[1].innerHTML = `人數:${count }人`
+        }
+
+      })
+    })
+
+  }
+
+  // 找到對應的圖層
+  function findAreaMap(id) {
+    getAreaPersonList(id)
+    workArea.eachLayer(layer => {
+      const feature = layer.feature
+      const areaId = feature.properties.AreaID
+      const n = id.toString()
+      if (areaId === n) {
+        map.fitBounds(layer.getBounds())
+        layer.openPopup()
+      }
+    })
+  }
+
+  // 找到對應的人
+  function findPersonLocat(e) {
+    const id = e.dataset.id
+    featureGroupDevice.eachLayer(layer => {
+      layer.eachLayer(item => {
+        const userid = item.feature.properties.userId
+        if (userid === id) {
+          const coord = item.feature.geometry.coordinates
+          map.flyTo([coord[1], coord[0]], 16)
+          item.bindPopup(showBindPopup("N000183926"))
+          item.openPopup()
+        }
+      })
+
+    })
+  }
+
+  // 呈現要出現的東西
+  function showBindPopup(id) {
+    const content = 
+      `
+      <div class="popup-container">
+        <div class="popup-nav">
+          <div class="popup-nav-btn nav-active" id="nav-baseInfo" onClick="onLeafletClick(this)">基本資料</div>
+          <div class="popup-nav-btn" id="nav-enrtyRecord" onClick="onLeafletClick(this)">進出紀錄</div>
+          <div class="popup-nav-btn" id="nav-errorMessage" onClick="onLeafletClick(this)">異常紀錄</div>
+        </div>
+        <div class="popup-content">
+          <div class="popup-content-tab" id="baseInfo">
+            <p class="px-2 py-1">姓名: <span>測試機</span></p>
+            <p class="px-2 py-1">員工編號: <span>N000183926</span></p>
+            <p class="px-2 py-1">性別: <span>男</span></p>
+            <p class="px-2 py-1">電話: <span>400-7292</span></p>
+            <p class="px-2 py-1">公司: <span>台塑網科技</span></p>
+            <p class="px-2 py-1">所在位置: <span>120.2124443 25.353553</span></p>
+            <p class="px-2 py-1">所在區域: <span>區域一</span></p>
+            <p class="px-2 py-1">心律: <span>84</span></p>
+            <div class="d-flex justify-content-end"><button data-id="N000183926" onclick="onHistoryPath(this)">歷史軌跡查詢</button></div>
+          </div>
+          <div class="popup-content-tab popup-hidden" id="enrtyRecord">
+            <ul class="list-group g-2">
+              <li class="list-group-item list-item-enter" aria-disabled="true">區域四: <span>進入</span>   <small>2023/05/06 10:00:02</small></li>
+              <li class="list-group-item list-item-out">區域三: <span>離開</span>   <small>2023/05/05 17:10:02</small></li>
+              <li class="list-group-item list-item-enter">區域三: <span>進入</span>   <small>2023/05/05 14:27:02</small></li>
+              <li class="list-group-item list-item-out">區域三: <span>離開</span>   <small>2023/05/05 14:10:42</small></li>
+              <li class="list-group-item list-item-enter">區域三: <span>進入</span>   <small>2023/05/05 13:54:02</small></li>
+            </ul>
+          </div>
+          <div class="popup-content-tab popup-hidden" id="errorMessage">
+            <ul class="list-group g-2">
+               <li class="list-group-item list-item-error">闖入報警: <span>進入區域四</span>   <small>2023/05/06 10:10:02</small></li>
+               <li class="list-group-item list-item-error">越界報警: <span>離開區域三</span>   <small>2023/05/05 17:10:02</small></li>
+               <li class="list-group-item list-item-error">滯留報警: <span>於區域三滯留過久</span>   <small>2023/05/05 17:10:02</small></li>
+            </ul>
+          </div>
+        </div>
+      </div>             
+      `
+    return content;
+  }
+
+  // 點擊側邊執行對應警報
+  const sidebarClick = document.querySelector(".sidebar-click");
+  const historyBar = document.querySelector(".leaflet-bar-timecontrol")
+  historyBar.style.display = "none";
+  sidebarClick.addEventListener("click", e => {
+    const tagName = e.target.tagName.toLowerCase();
+
+    let id = '';
+    if (tagName === 'a') {
+      id = e.target.dataset.id;
+    } else if (tagName === 'i') {
+      id = e.target.parentElement.dataset.id;
+    }
+    if (id !== "") {
+      console.log(id)
+      switch (id) {
+        case 'alarm':
+          // 警報
+          getAlarmList();
+          historyBar.style.display = "none";
+          clearTimeLayers();
+          break;
+        case 'people':
+          showPeopleInArea();
+          historyBar.style.display = "none";
+          clearTimeLayers();
+          // 人員
+          break;
+        case 'area':
+          // 區域
+          historyBar.style.display = "none";
+          clearTimeLayers();
+          break;
+        case 'history':
+          // 歷史
+          queryHistory()
+          break;
+        default:
+          break;
+      }
+    }
+  })
+
+
+  // 取得警報資料
+  function getAlarmList() {
+    const alarmList = document.querySelector("#alarm-list")
+    axios.post(`${personLocationUrl}/Getalarmmsg`, {})
+      .then((res) => {
+        if (res.status === 200 && res.data.length > 0) {
+          // 執行警報
+          const data = res.data;
+          alarmList.innerHTML = ""
+          const alarmListItem = document.createElement('ul')
+          alarmListItem.classList.add('alarm-list-item')
+          data.forEach(el => {
+            const person = fkPerson.find(x => x.PersonID === el.PersonID)
+            const personName = typeof person === 'undefined' ? "" : person.Name; //.Name
+            const item = `<li class="alarm-list-item-each" data-id=${el.PersonID} onclick="findPersonLocat(this)">
+                            <div class="alarm-title">
+                              <p class="alarm-title-name">${personName}</p>
+                            </div>
+                            <div class="alarm-list-location">
+                              <p class="location-text">警報時間</p>
+                              <p class="location-text-area">${el.EventTime}</p>
+                            </div>
+              `
+            alarmListItem.innerHTML += item
+          })
+          alarmList.appendChild(alarmListItem);
+        }
+      })
+  }
+
+  // 進行查詢
+  function queryHistory() {
+    historyBar.style.display = "block";
+    const searchBtn = document.querySelector("#search-history-path");
+    searchBtn.addEventListener("click", e => {
+      e.preventDefault();
+      const form = document.querySelectorAll(".history-form input")
+      let personId = "", searchDate = "";
+      form.forEach(el => {
+        if (el.value !== "") {
+          if (el.name === "PersonName") {
+            personId = el.value;
+          } else if (el.name === "SearchDate") {
+            searchDate = el.value;
+          }
+        }
+
+      })
+      if (personId !== "") {
+        getPointPath(personId, `${searchDate} 00:00:00`, `${searchDate} 23:59:59`);
+      }
+    })
+
+  }
+
+  // 取得歷史點位
+  function getPointPath(personId, startTime = null, endTime = null) {
+    axios.post(`${personLocationUrl}/GetPathRecord`, {
+      PersonID: personId,
+      StartTime: startTime,
+      EndTime: endTime
+    }).then((res) => {
+      if (res.status === 200) {
+        // 重製圖層
+        onClear();
+        initialMap();
+        // 成功連線
+        if (res.data.length === 0) {
+        } else {
+          let list = res.data[0]
+          getPath(list)
+        }
+      } else {
+        console.log("連線失敗")
+      }
+    })
+  }
+
+  // 建立線段
+  function getPath(data) {
+    const arrayList = [];
+    data.Coords.forEach(element => {
+      const newStr = element.substring(1, element.length - 1)
+      const split = newStr.split(',')
+      const item = [parseFloat(split[1]), parseFloat(split[0])]
+      arrayList.push(item)
+    });
+    let pathinfo = {
+      userId: data.DeviceID,
+      deviceId: data.PersonID,
+      array: arrayList,
+      timeArray: data.TimeSeries
+    }
+    let geoitem = {
+      type: "LineString",
+      coordinates: pathinfo.array
+    }
+    var feature = { 'type': 'Feature', 'properties': { 'userId': pathinfo.userId, 'deviceId': pathinfo.deviceId, 'times': pathinfo.timeArray }, "geometry": geoitem };
+    var myStyle = {
+      "color": "#ff7800",
+      "weight": 5,
+      "opacity": 0.65
+    };
+    try {
+      addGeoJSONLayer(featureGroup, feature)
+    } catch (e) {
+      console.log(e)
+    }
+  }
+
+  // 其他範例程式
+  var emptyGeoJSON = {
+    "type": "FeatureCollection",
+    "features": []
+  };
+  var icon = L.icon({
+    iconUrl: 'https://cdn-icons-png.flaticon.com/512/196/196792.png',
+    iconSize: [22, 22],
+    iconAnchor: [11, 11]
+  });
+
+  geoJSONLayer = L.geoJSON(emptyGeoJSON, {
+    pointToLayer: function (feature, latLng) {
+      if (feature.properties.hasOwnProperty('last')) {
+        return new L.Marker(latLng, {
+          icon: icon
+        });
+      }
+      return L.circleMarker(latLng);
+    }
+  });
+  // Creating an empty GeoJSON object
+  var emptyGeoJSON = {
+    "type": "FeatureCollection",
+    "features": []
+  };
+
+  geoJSONLayer = L.geoJSON(emptyGeoJSON, {
+    pointToLayer: function (feature, latLng) {
+      if (feature.properties.hasOwnProperty('last')) {
+        return new L.Marker(latLng, {
+          icon: icon
+        });
+      }
+      return L.circleMarker(latLng);
+    }
+  });
+  function addGeoJSONLayer(map, data) {
+    geoJSONLayer.addData(data)
+
+    geoJSONTDLayer = L.timeDimension.layer.geoJson(geoJSONLayer, {
+      updateTimeDimension: true,
+      duration: 'PT2M',
+      updateTimeDimensionMode: 'replace',
+      addlastPoint: true
+    });
+
+    // Show both layers: the geoJSON layer to show the whole track
+    // and the timedimension layer to show the movement of the bus
+    geoJSONLayer.addTo(map);
+    geoJSONTDLayer.addTo(map);
+  }
+
+  // 清除圖層
+  function clearTimeLayers() {
+    try {
+      // Clear the layers
+      // Clear the GeoJSON layer
+      geoJSONLayer.clearLayers();
+
+      // Also clear the TimeDimension layer
+      geoJSONTDLayer._baseLayer.clearLayers();
+    } catch (e) {
+    }
+  }
+
+  // 點擊進行軌跡查詢
+  function onHistoryPath(e) {
+    const personId = e.dataset.id
+    const tabList = document.querySelectorAll(".side-item-people")
+    const sidebarPane = document.querySelectorAll(".sidebar-pane")
+    tabList.forEach(el => {
+      if (el.dataset.id === 'history') {
+        el.classList.add('active')
+      } else {
+        el.classList.remove('active')
+      }
+    })
+    sidebarPane.forEach(el => {
+      if (el.id === "history") {
+        el.classList.add('active')
+      } else {
+        el.classList.remove('active')
+      }
+    })
+    queryHistory()
+    getPointPath(personId);
+  }
+
+  // 點擊進行個人軌跡追蹤
+  function onPersonMoinitor(e) {
+    console.log(e)
+  }
+
+
+  // 設定執行時間
+  const interval = setInterval(() => {
+    getPerson();
+    waitTime();
+  }, 10000);
+
+  const waitTime = () => {
+    const date = new Date();
+    const hour = date.getHours();
+    const min = date.getMinutes();
+    const sec = date.getSeconds();
+    const timeText = `${hour}:${min}:${sec}`
+    console.log(timeText)
+  }
+
+  // 重置列表
+  function resetList() {
+    try {
+      const workAreaPanel = document.querySelector(".workArea-panel")
+      const warningAreaPanel = document.querySelector(".warningArea-panel")
+      const otherPanel = document.querySelector(".other-panel")
+      workAreaPanel.innerHTML = ""
+      warningAreaPanel.innerHTML = ""
+      otherPanel.innerHTML = ""
+    } catch (err) {
+      console.err(err)
+    }
+    
+  }
+
+  // 呈現sos
+  setTimeout(() => {
+    const content = document.querySelector(".sos-content");
+    content.style.display = "flex";
+  }, 3000);
+  setInterval(() => {
+    const content = document.querySelector(".sos-content");
+    content.style.display = "none";
+  }, 8000);
+  
+</script>

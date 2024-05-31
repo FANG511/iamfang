@@ -1,0 +1,367 @@
+﻿
+@{
+    ViewBag.Title = "OrderDetail";
+    Layout = "~/Views/Shared/_LayoutForMESNoMenu.cshtml";
+}
+<html>
+    <head>
+
+        <style>
+            .highcharts-figure,
+            .highcharts-data-table table {
+                min-width: 400px;
+                max-width: 800px;
+                margin: 1em auto;
+            }
+
+            #container {
+             
+                height: 500px;
+            }
+
+            .highcharts-data-table table {
+                font-family: Verdana, sans-serif;
+                border-collapse: collapse;
+                border: 1px solid #ebebeb;
+                margin: 10px auto;
+                text-align: center;
+                width: 100%;
+                max-width: 500px;
+            }
+
+            .highcharts-data-table caption {
+                padding: 1em 0;
+                font-size: 1.2em;
+                color: #555;
+            }
+
+            .highcharts-data-table th {
+                font-weight: 600;
+                padding: 0.5em;
+            }
+
+            .highcharts-data-table td,
+            .highcharts-data-table th,
+            .highcharts-data-table caption {
+                padding: 0.5em;
+            }
+
+            .highcharts-data-table thead tr,
+            .highcharts-data-table tr:nth-child(even) {
+                background: #f8f8f8;
+            }
+
+            .highcharts-data-table tr:hover {
+                background: #f1f7ff;
+            }
+        </style>
+    </head>
+
+
+    <body>
+        <div class="form-horizontal">
+            <br />
+            <!--篩選條件格式-->
+            <div id="FilterArea" class="box box-warning box-solid" style="border-color:lightgrey;">
+                <div class="box-header with-border">
+                    <h3 class="box-title">篩選條件</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                <!--篩選條件內標籤-->
+                <div id="FilterBody" class="box-body row form-group">
+                    <div class="col-md-5">
+                        <div class="col-md-3 k-info-colored" for="filter_User">
+                            <label class="FilterLabel">開始日期</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input id="start_datetimepicker" />
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="col-md-3 k-info-colored" for="filter_User">
+                            <label class="FilterLabel">結束日期</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input id="end_datetimepicker" />
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <a class="btn btn_primary " onclick="Query();"><i class="fa fa-search"></i>查詢</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <script src="https://code.highcharts.com/modules/export-data.js"></script>
+        <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+        <script src="https://code.highcharts.com/themes/brand-light.js"></script>
+       
+        <figure class="highcharts-figure">
+            <div id="container"></div>
+        </figure>
+
+
+        <script>
+            var ResultLineData;
+            var ResultBarData;
+            var selectLineOrderDate = [];
+            var selectLineTotalprice = [];
+            var dateOrderArrays = [];
+            $(document).ready(function () {
+                $("#start_datetimepicker").kendoDateTimePicker({
+                    format: "yyyy/MM/dd",
+                    //預設日期
+                    value: new Date(1996, 06, 04),
+                    //限制日期選擇範圍為一個月
+                    change: function (e) {
+                        var selectedDate = this.value();
+                        if (selectedDate) {
+                            var maxDate = new Date(selectedDate);
+                            maxDate.setMonth(maxDate.getMonth() + 1);
+                            $("#end_datetimepicker").data("kendoDateTimePicker").value(selectedDate);
+                            $("#end_datetimepicker").data("kendoDateTimePicker").max(maxDate);
+                            $("#end_datetimepicker").data("kendoDateTimePicker").min(new Date(selectedDate));
+                        }
+
+                    }
+                });
+
+                $("#end_datetimepicker").kendoDateTimePicker({
+                    format: "yyyy/MM/dd",
+                    value: new Date(1996, 06, 04),
+                });
+                $("#end_datetimepicker").data("kendoDateTimePicker").max(new Date(1996, 07, 04));
+                $("#end_datetimepicker").data("kendoDateTimePicker").min(new Date(1996, 06, 04));
+
+            });
+
+            function Query() {
+                var select_startDate = $("#start_datetimepicker").val();
+                var select_endDate = $("#end_datetimepicker").val();
+                var select_fStartDate = select_startDate.split('/').join('-');
+                var select_fEndDate = select_endDate.split('/').join('-');
+
+                $.ajax({
+                    url: "../api/apiOrderDetail/GetOrderDetail",
+                    type: 'Post',
+                    dataType: 'json',
+                    data: {
+                        sStartDate: select_fStartDate,
+                        sEndDate: select_fEndDate
+                    },
+                    async: false,
+                    //Ajax請求成功時要執行的函式
+                    //ResultData:成功回傳的資料
+                    success: function success(ResultData) {
+
+                        //try沒執行成功
+                        if (ResultData.length != 3) {
+                            //執行失敗
+                            if (ResultData[ResultData.length - 1].ReturnCode != 0) {
+                                window.alert(ResultData[ResultData.length - 1].ReturnMessage);
+                                return [];
+                            }
+                        }
+                        //ResultData有資料+oApiReturnMessage
+                        else {
+                            //執行失敗
+                            if (ResultData[2].ReturnCode != 0) {
+                                window.alert(ResultData[2].ReturnMessage);
+                                return [];
+                            }
+                            //執行成功
+                            else {
+                                ResultLineData = ResultData[0];
+                                ResultBarData = ResultData[1];
+                                selectLineOrderDate = [];
+                                selectLineTotalprice = [];
+                                selectBarOrderDate = [];
+
+                                for (var i = 0; i < ResultLineData.length; i++) {
+
+                                    selectLineOrderDate.push(ResultLineData[i].OrderDate);
+                                    selectLineTotalprice.push(ResultLineData[i].Total_price);
+
+                                }
+                                var selectLineTotalprice = selectLineTotalprice.map(function (price) {
+                                    return parseInt(price);
+                                });
+                             
+
+                                for (var i = 0; i < ResultBarData.length; i++) {
+                                    selectBarOrderDate.push(ResultBarData[i].OrderDate);
+                                }
+
+                                //取得所選日期(x軸)內訂單最大筆數
+                                var countMap = {};
+                                var maxOrderCount = 0;
+                                for (var i = 0; i < selectBarOrderDate.length; i++) {
+                                    var item = selectBarOrderDate[i];
+                                    countMap[item] = (countMap[item] || 0) + 1;
+                                    if (countMap[item] > maxOrderCount) {
+                                        maxOrderCount = countMap[item];
+                                    }
+                                }
+                               
+                              
+
+                                //將每日訂單數量存成陣列
+                                dateOrderArrays = [];
+                                for (var i = 0; i < selectLineOrderDate.length; i++) {
+                                    const filteredItems = ResultBarData.filter(item => item.OrderDate === selectLineOrderDate[i]);
+                                    var temp = [];
+                                    for (var j = 0; j < maxOrderCount; j++) {
+                                        if (filteredItems.length > j) {
+                                            temp.push(filteredItems[j].Total_quantity);
+                                        }
+                                        else {
+                                            temp.push(0);
+                                        }
+                                    }
+                                    dateOrderArrays.push(temp);
+                                }
+                            
+                                console.log(dateOrderArrays);
+                               
+                              
+                                const seriesData = [];
+                                for (var i = 0; i < dateOrderArrays[0].length; i++) {
+                                    const dataPoint = [];
+                                    //矩陣列交換
+                                    for (var j = 0; j < dateOrderArrays.length; j++) {
+                                        dataPoint.push(dateOrderArrays[j][i]);
+                                    }
+                                    seriesData.push({
+                                        name: `第${i + 1}筆訂單`,
+                                        type: 'column',
+                                        data: dataPoint,
+                                        tooltip: {
+                                            valueSuffix: '個'
+                                        },
+                                        yAxis: 1,
+                                    });
+                                }
+                          
+
+                                Highcharts.chart('container', {
+                                    chart: {
+                                        zoomType: 'xy'
+                                    },
+                                    title: {
+                                        text: '銷售報表',
+                                        align: 'center',
+                                        style: {
+                                            fontSize: '20px'
+                                        }
+                                    },
+                                    subtitle: {
+                                        text: '年份:1996~1998',
+                                        align: 'left',
+                                        style: {
+                                            fontSize: '12px'
+                                        }
+                                    },
+                                    xAxis: [{
+                                        categories: selectLineOrderDate,
+                                        crosshair: true,
+
+                                    }],
+                                    yAxis: [{
+                                        //第一個y軸
+                                        labels: {
+                                            format: '{value}',
+                                            style: {
+                                                color: '#000000',
+                                                fontSize: '14px'
+                                            }
+                                        },
+                                        title: {
+                                            text: '銷售額(元)',
+                                            style: {
+                                                color: '#000000',
+                                                fontSize: '14px'
+                                            }
+                                        }
+                                    },
+                                    {
+                                        //第二個y軸
+                                        title: {
+                                            text: '銷售數量(個)',
+                                            style: {
+                                                color: '#000000',
+                                                fontSize: '14px'
+                                            }
+                                        },
+                                        labels: {
+                                            format: '{value}',
+                                            style: {
+                                                color: '#000000',
+                                                fontSize: '14px'
+                                            }
+                                        },
+                                        opposite: true
+                                    }
+                                    ],
+                                    tooltip: {
+                                        headerFormat: '<b>{point.x}</b><br/>',
+                                        pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
+                                    },
+                                   
+
+                                    legend: {
+                                        align: 'left',
+                                        x: 80,
+                                        verticalAlign: 'top',
+                                        y: 60,
+                                        floating: true,
+                                        backgroundColor:
+                                            Highcharts.defaultOptions.legend.backgroundColor || // theme
+                                            'rgba(255,255,255,0.25)'
+                                    },
+                                    plotOptions: {
+                                        column: {
+                                            stacking: 'normal',
+                                            dataLabels: {
+                                                enabled: true
+                                            },
+                                        },
+                                        spline: {
+                                            color: '#646C76',
+
+                                            marker: {
+                                                enabled: true
+                                            }
+                                        }
+                                    },
+
+                                    series: [
+                                        ...seriesData,
+                                        {
+                                            name: '銷售額',
+                                            type: 'spline',
+                                            data: selectLineTotalprice,
+                                            tooltip: {
+                                                valueSuffix: '元'
+                                            },
+                                            yAxis: 0,                      
+                                        }]
+                                });
+                            }
+                        }
+                    }
+                });
+
+
+
+            }
+        </script>
+
+
+    </body>
+</html>

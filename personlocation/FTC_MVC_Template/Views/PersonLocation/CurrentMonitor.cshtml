@@ -1,0 +1,233 @@
+﻿
+@{
+    ViewBag.Title = "即時數值監控";
+    Layout = "~/Views/Shared/_LayoutForMESNoMenu.cshtml";
+}
+
+<style>
+    /*過濾控件*/
+    .FilterLabel {
+        /*width: 90px;*/
+    }
+
+    .FilterControl {
+        width: 100%;
+    }
+</style>
+
+<a class="btn btn_primary auth-query" onclick="gridRefresh()"><i class="fa fa-search fa-fw mr-1"></i><span data-i18n="ButtonCommon.Query"></span></a>  <!--文字的顏色部分需更新-->
+<a class="btn btn_primary auth-add" onclick="gridAdd()"><i class="fa fa-plus fa-fw mr-1"></i><span data-i18n="ButtonCommon.Add"></span></a>
+<a class="btn btn_secondary auth-export" onclick="ExportXls()"><i class="fa fa-file-excel fa-fw mr-1"></i><span data-i18n="ButtonCommon.Excel"></span></a>
+<div class="form-horiziotal">
+    <!-- 查詢列 -->
+    <div class="form-group" id="divQueryParameter">
+        <div id="FilterArea" class="box box-warning box-solid" style="border-color:lightgrey;">
+            <div class="box-header with-border">
+                <h3 class="box-title" data-i18n="UserManage.Text.Filter"></h3>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                        <i class="fa fa-minus"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="FilterBody" class="box-body row form-group">
+                <div class="col-md-3">
+                    <div class="col-md-5 k-info-colored" for="filter_PersonId">
+                        <label class="FilterLabel">人員名稱: </label>
+                    </div>
+                    <div class="col-md-7">
+                        <input id="txtPersonId" class="k-textbox FilterControl" type="text" data-bind="value: PersonId" />
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="col-md-5 k-info-colored" for="filter_Name">
+                        <label class="FilterLabel">公司名稱: </label>
+                    </div>
+                    <div class="col-md-7">
+                        <input id="txtName" class="k-textbox FilterControl" type="text" data-bind="value: Name" />
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="col-md-5 k-info-colored" for="filter_Name">
+                        <label class="FilterLabel">性別 :</label>
+                    </div>
+                    <div class="col-md-7">
+                        <input id="txtGender" class="k-textbox FilterControl" type="text" data-bind="value: Gender" />
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="col-md-5 k-info-colored" for="filter_Name">
+                        <label class="FilterLabel">公司名稱 :</label>
+                    </div>
+                    <div class="col-md-7">
+                        <input id="txtCompanyID" class="k-textbox FilterControl" type="text" data-bind="value: CompanyId" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- 表格 -->
+
+    <div class="form-group">
+        <div id="grid" style="width:100%;"></div>
+    </div>
+</div>
+
+
+<script>
+    /* 變數定義區 */
+    var oQueryPara = {}
+    var oUpdataPara = { "ModifyUser": "admin", "PersonId": "" };
+    var dsDevice;
+    var gridDevcieCurrent;
+    var fkPerson = [];
+    var viewModel;
+    var personLocationUrl = "/api/apiPersonLocation";
+
+    /* 初始化 */
+    $(document).ready(function () {
+        QueryString.Initial();
+
+        viewModel = kendo.observable({
+
+        })
+        kendo.bind($("#divQueryParameter"), viewModel);
+
+        // 定義 DataSource
+        // 定義 DataSource
+        dsDevice = new kendo.data.DataSource({
+            transport: {
+                read: {
+                    url: personLocationUrl + "/GetDeviceCurrent",
+                    type: "Post",
+                    dataType: "json"
+                },
+                update: {
+                    url: personLocationUrl + "/UpdateDeviceValue",
+                    type: "Post",
+                    dataType: "json"
+                },
+               
+    
+    
+    
+    
+    : {
+                    url: personLocationUrl + "/DeleteDeviceValue",
+                    type: "Post",
+                    dataType: "json"
+                },
+                parameterMap: function (options, operation) {
+                    if (operation !== "read" && options.models) {
+                        let newItem = options.models
+                        console.log(newItem)
+                        return newItem[0];
+                    }
+                    else {
+                        oQueryPara = {
+                            DeviceID: "",
+                            DeviceName: "",
+                            Status: "開機"
+                        }
+                        return oQueryPara;
+                    }
+                }
+            },
+            batch: true,
+            requestEnd: function (e) {
+                var type = e.type;
+                if (type != 'read') {
+                    if (e.response.ReturnCode != 0) {
+                        alert(e.response.ReturnMessage);
+                    }
+                    gridRefresh();
+                }
+            },
+            schema: {
+                model: {
+                    id: "DeviceID",
+                    fields: {
+                        DeviceID: { validation: { required: true } },
+                        DeviceName: { validation: { required: true } },
+                        Status: { validation: {required: true}},
+                        GPSLocation: { validation: { required: true } },
+                        Altitude: { validation: { required: true } },
+                        HeartRate: { validation: { required: true } },
+                        BloodPressure: { validation: { required: true } },
+                        Temperature: { validation: { required: true } },
+                        SignalStrength: { validation: { required: true } },
+                        CreateTime: { validation: { required: true } },
+                        BatteryInfo: { validation: { required: true } },
+                    }
+                }
+            },
+            pageSize: 10,
+        });
+
+        createGrid();
+    })
+
+    // 建立即時
+    function createGrid() {
+        console.log(dsDevice)
+        $("#grid").kendoGrid({
+            dataSource: dsDevice,
+            autoBind: true,
+            height: 500,
+            resizable: true, // 可調整欄寬
+            scrollable: true, // 可滾動
+            selectable: "row",
+            dataBound: onDataBound, // 資料綁定後的事件
+            pageable: { // 啟用分頁功能
+                refresh: true, // 啟用自動更新工具
+                pageSizes: true, // 啟用可選擇頁數選單
+                buttonCount: 5 // 分頁按鈕數量
+            },
+            excel: { // 設定匯出excel的選項
+                fileName: "AlarmRecord.xlsx",
+                allPages: true // 匯出所有頁面資料
+            },
+            // 修改彈跳視窗抬頭顯示文字(修改)
+            edit: function (e) {
+                if (!e.model.isNew()) {
+                    // 編輯現有資料時，將id欄位的編輯器禁用
+                    var nameField = e.container.find("input[name=name]");
+                    var name = nameField.val();
+                    e.container.data("kendoWindow").title("修改");
+                }
+            },
+            persistSelection: true,
+            columns: [
+                { field: "DeviceID", title: "裝置名稱", width: "80px" },
+                { field: "DeviceName", title: "借用人員", width: "80px" },
+                { field: "Status", title: "裝置類型", width: "55px" },
+                { field: "PersonID", title: "異常數值", width: "80px" },
+                { field: "GPSLocation", title: "建立時間", width: "100px" },
+                { field: "Altitude", title: "建立時間", width: "55px" },
+                { field: "HeartRate", title: "建立時間", width: "55px" },
+                { field: "BloodPressure", title: "建立時間", width: "55px" },
+                { field: "Temperature", title: "建立時間", width: "55px" },
+                { field: "SignalStrength", title: "建立時間", width: "55px" },
+                { field: "CreateTime", title: "建立時間", width: "80px" },
+                { field: "BatteryInfo", title: "建立時間", width: "55px" },
+            ]
+        });
+    }
+
+    function onDataBound(e) {
+
+    }
+
+    function gridRefresh() {
+        const result1 = fkDevice.find(e => e.text === viewModel.DeviceID);
+        const result2 = fkUser.find(e => e.text === viewModel.UserID);
+        const result3 = viewModel.AlarmID;
+        oQueryPara["DeviceID"] = (result1 ? result1.value : "");
+        oQueryPara["UserID"] = (result2 ? result2.value : "");
+        oQueryPara["Status"] = (result3 ? result3.value : "");
+        dsAlarm.read();
+    }
+</script>

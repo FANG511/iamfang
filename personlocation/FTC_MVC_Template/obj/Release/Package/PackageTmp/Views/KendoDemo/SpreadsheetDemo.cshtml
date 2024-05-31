@@ -1,0 +1,49 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutForMES.cshtml";
+}
+<div>
+    <input type="button" class="k-button download" data-extension=".json" value="Save as JSON" />
+    <input type="text" id="download-data" name="data" />
+    <input type="text" id="download-extension" name="extension" />
+    <div id="spreadsheet" style="width: 100%;"></div>
+    <div class="console"></div>
+    <script>
+        function onChange(arg) {
+            alert("Spreadsheet change. New value: " + arg.range.value() + ",Tagname=" + arg.range.verticalAlign());
+        }
+        $(function () {
+            $("#spreadsheet").kendoSpreadsheet({
+                change: onChange
+            });
+            var spreadsheet = $("#spreadsheet").data("kendoSpreadsheet");
+            $(".download").click(function () {
+                var JSONData = JSON.stringify(spreadsheet.toJSON());
+                $("#download-data").val(JSONData);
+                $("#download-extension").val($(this).data("extension"));
+                if (!JSONData == "") {
+                    var data = new FormData();
+                    data.append("UploadedXls", JSONData);
+                    $.ajax({
+                        url: "UploadedXlsJSONData",
+                        type: 'Post',
+                        dataType: 'json',
+                        processData: false,
+                        contentType: false,
+                        enctype:"multipart/form-data",
+                        beforeSend: function () {
+                        },
+                        complete: function () {
+                        },
+                        data: data,
+                        success: function (ResultData) {
+                            alert(ResultData);
+                        },
+                        error: function (e) {
+                            //alert('資料量太大，請減少選取項目');
+                        }
+                    })
+                }
+            });
+        });
+    </script>
+</div>

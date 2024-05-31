@@ -1,0 +1,316 @@
+﻿@{
+    ViewBag.Title = "歷史警報";
+    Layout = "~/Views/Shared/_LayoutForMESNoMenu.cshtml";
+}
+
+
+<style>
+    /*過濾控件*/
+    .FilterLabel {
+        /*width: 90px;*/
+    }
+
+    .FilterControl {
+        width: 100%;
+    }
+</style>
+
+@*<link href="~/Content/kendo/kendo.ftc.min.css" rel="stylesheet" />*@
+<link rel="stylesheet" href="@Url.Content("~/Content/kendo/kendo.ftc.min.css")" />
+<link rel="stylesheet" href="@Url.Content("~/Content/personLocation/PersonLocation.css")" />
+
+<p class="h4">@ViewBag.Title</p>
+<!-- 工具列，使用form-group -->
+<a class="btn btn_primary auth-query" onclick="gridRefresh()"><i class="fa fa-search fa-fw mr-1"></i>查詢</a>
+<!--文字的顏色部分需更新-->
+<a class="btn btn_secondary auth-export" onclick="ExportXls()"><i class="fa fa-file-excel fa-fw mr-1"></i>匯出</a>
+<div class="row d-flex justify-content-between flex-wrap flex-md-nowrap pt-1 pb-1 mb-3 border">
+    <div class="col-12">
+        <div class="form-group" id="divQueryParameter">
+            <div id="FilterArea" class="box box-warning box-solid" style="border-color:lightgrey;">
+                <div class="box-header with-border">
+                    <h3 class="box-title" data-i18n="UserManage.Text.Filter"></h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="FilterBody" class="box-body row form-group">
+                    <div class="col-md-4">
+                        <div class="col-md-5 k-info-colored" for="filter_DeviceName">
+                            <label class="FilterLabel">裝置名稱</label>
+                        </div>
+                        <div class="col-md-7">
+                            <input id="txtDeviceID" class="k-textbox FilterControl" type="text"
+                                   data-bind="value: DeviceID" />
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="col-md-5 k-info-colored" for="filter_PersonName">
+                            <label class="FilterLabel">借用人員</label>
+                        </div>
+                        <div class="col-md-7">
+                            <input id="txtUserID" class="k-textbox FilterControl" type="text"
+                                   data-bind="value: UserID" />
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="col-md-5 k-info-colored" for="filter_AlarmID">
+                            <label class="FilterLabel">警報類別</label>
+                        </div>
+                        <div class="col-md-7">
+                            <input id="txtAlarmID" class="k-textbox FilterControl" type="text"
+                                   data-bind="value: AlarmID" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="grid" style="100%"></div>
+
+        </div>
+    </div>
+</div>
+
+<div id="example">
+    <div id="dialog">
+    </div>
+</div>
+
+<style>
+    .vertical .list-group {
+        max-height: 220px;
+        margin-bottom: 10px;
+        overflow: scroll;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    #location-device > div {
+        padding: 0.75em;
+    }
+
+    #body-device > div {
+        padding: 0.75em;
+    }
+</style>
+@*axios*@
+<script type="text/javascript" src="https://unpkg.com/axios@1.2.1/dist/axios.min.js"></script>
+
+<script>
+    let { oQueryPara = {}, oQueryParaDevice = {}, oUpdataPara = {}, oBindDevice = {} } = {};
+    let {
+        dsPerson,
+        dsDevice,
+        dsAlarm,
+        fkUser = [],
+        fkDevice = [],
+        fkCategory = [{ "value": "Person", "text": "人員健康" }, { "value": "Location", "text": "人員定位" }],
+        personLocationUrl = "/api/apiPersonLocation"
+    } = {};
+    oQueryPara["DeviceID"] = "";
+    oQueryPara["UserID"] = "";
+    oQueryPara["AlarmID"] = "";
+
+    // 初始化grid
+    $(document).ready(function () {
+
+        initialize()
+
+    })
+    function initialize() {
+        viewModel = kendo.observable({
+            DeviceID: "",
+            UserID: "",
+            AlarmID: ""
+        });
+        kendo.bind($("#divQueryParameter"), viewModel); // not used
+        getPersonData();
+        getDeviceData();
+        getAlarmRecord();
+        bindAutoComplete();
+        createGrid();
+    }
+    // 建立警報清單表格
+    function createGrid() {
+        $("#grid").kendoGrid({
+            dataSource: dsAlarm,
+            autoBind: true,
+            height: 500,
+            resizable: true, // 可調整欄寬
+            scrollable: true, // 可滾動
+            selectable: "row",
+            dataBound: onDataBound, // 資料綁定後的事件
+            pageable: { // 啟用分頁功能
+                refresh: true, // 啟用自動更新工具
+                pageSizes: true, // 啟用可選擇頁數選單
+                buttonCount: 5 // 分頁按鈕數量
+            },
+            excel: { // 設定匯出excel的選項
+                fileName: "AlarmRecord.xlsx",
+                allPages: true // 匯出所有頁面資料
+            },
+            // 修改彈跳視窗抬頭顯示文字(修改)
+            edit: function (e) {
+                if (!e.model.isNew()) {
+                    // 編輯現有資料時，將id欄位的編輯器禁用
+                    var nameField = e.container.find("input[name=name]");
+                    var name = nameField.val();
+                    e.container.data("kendoWindow").title("修改");
+                }
+            },
+            persistSelection: true,
+            columns: [
+                { field: "DeviceID", title: "裝置名稱", width: "80px", values: fkDevice },
+                { field: "PersonID", title: "借用人員", width: "80px", values: fkUser },
+                { field: "AlarmID", title: "裝置類型", width: "80px" },
+                { field: "AlarmValue", title: "異常數值", width: "80px" },
+                { field: "CreateTime", title: "建立時間", width: "120px" },
+            ]
+        });
+    }
+    function getPersonData() {
+        dsPerson = new kendo.data.DataSource({
+            transport: {
+                read: {
+                    url: personLocationUrl + "/GetPersonData",
+                    type: "Post",
+                    async: false,
+                    dataType: "json"
+                }
+            }
+        })
+        dsPerson.read(); // 觸發取得資料
+        dsPerson._data.forEach(e => {
+            fkUser.push({ "value": e.PersonID, "text": e.Name })
+        });
+    }
+    function getDeviceData() {
+        dsDevice = new kendo.data.DataSource({
+            transport: {
+                read: {
+                    url: personLocationUrl + "/GetDeviceInfo",
+                    type: "Post",
+                    async: false,
+                    dataType: "json"
+                }
+            }
+        })
+        dsDevice.read();
+        dsDevice._data.forEach(e => {
+            fkDevice.push({ "value": e.DeviceId, "text": e.DeviceName })
+        });
+    }
+    // 綁定自動完成控制項
+    function bindAutoComplete() {
+        // 綁定裝置名稱自動完成控制項
+        $('#txtDeviceID').kendoAutoComplete({
+            dataTextField: "text",
+            dataValueField: "value",
+            dataSource: fkDevice,
+            select: function (e) {
+                var dataId = e.dataItem.value;
+            }
+        })
+        // 綁定借用人員自動完成控制項
+        $('#txtUserID').kendoAutoComplete({
+            dataTextField: "text",
+            dataValueField: "value",
+            dataSource: fkUser,
+            select: function (e) {
+                var dataId = e.dataItem.value;
+
+            }
+        })
+        // 綁定裝置類型自動完成控制項
+        $('#txtCategory').kendoAutoComplete({
+            dataTextField: "text",
+            dataValueField: "value",
+            dataSource: fkCategory,
+            select: function (e) {
+                var dataId = e.dataItem.value;
+
+            }
+        })
+    }
+    function getAlarmRecord() {
+        dsAlarm = new kendo.data.DataSource({
+            transport: {
+                read: {
+                    url: personLocationUrl + "/GetAlarmRecord",
+                    type: "Post",
+                    dataType: "json"
+                },
+                parameterMap: function (options, operation) {
+                    if (operation !== "read" && operation.models) {
+                        //oUpadaaPara["Bind"] = options.models;
+                        return options.models;
+                    }
+                    else {
+                        return oQueryPara;
+                    }
+                }
+            },
+            batch: true,
+            requestEnd: e => {
+                let type = e.type;
+                if (type !== "read") {
+                    if (e.response.ReturnCode !== 0) {
+                        alert(e.response.ReturnMessage);
+                    }
+                    gridRefresh();
+                }
+            },
+            schema: {
+                model: {
+                    id: "ID",
+                    field: {
+                        DeviceID: { validation: { required: true } },
+                        PersonID: { validation: { required: true } },
+                        AlarmID: { validation: { required: true } },
+                        AlarmValue: { validation: { required: true } },
+                        CrateTime: { validation: { required: true } }
+                    }
+                }
+            },
+            pageSize: 12
+        });
+    }
+
+    function gridRefresh() {
+        const result1 = fkDevice.find(e => e.text === viewModel.DeviceID);
+        const result2 = fkUser.find(e => e.text === viewModel.UserID);
+        const result3 = viewModel.AlarmID;
+        oQueryPara["DeviceID"] = (result1 ? result1.value : "");
+        oQueryPara["UserID"] = (result2 ? result2.value : "");
+        oQueryPara["Category"] = (result3 ? result3.value : "");
+        dsAlarm.read();
+    }
+
+    // Grid點擊事件
+    function onDataBound(e) {
+
+    }
+
+    // 取得時間
+    function getDateTime() {
+        let date = new Date();
+        let month = date.getMonth() + 1
+        let days = date.getDay() + 1
+        if (month.length > 1) {
+            month = month
+        } else {
+            month = "0" + month
+        }
+        if (days.length > 1) {
+            days = days
+        } else {
+            days = "0" + days
+        }
+        let newDate = `${date.getFullYear()}-${month}-${days} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+        return newDate;
+    }
+
+
+</script>

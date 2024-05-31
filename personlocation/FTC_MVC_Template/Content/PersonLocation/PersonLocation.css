@@ -1,0 +1,30 @@
+﻿body {
+    font-family: 'Microsoft JhengHei', sans-serif;
+}
+
+/*過濾控件*/
+.FilterLabel {
+    width: 90px;
+}
+
+.FilterControl {
+    width: 100%;
+}
+
+#toolbox-button .k-button {
+    min-width: 2.25rem;
+    min-height: 2.25rem;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 0.875;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: #009ada;
+}
+
+    #toolbox-button .k-button:hover {
+        background-color: #0ba5e5;
+    }

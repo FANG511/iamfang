@@ -1,0 +1,70 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_LayoutForMES.cshtml";
+}
+<div>
+    <input type="button" class="k-button download" data-extension=".json" value="Save as JSON" />
+    <input type="text" id="download-data" name="data" />
+    <input type="text" id="download-extension" name="extension" />
+    <input type="text" id="txtUpdateValue" />
+    <div id="spreadsheet" style="width: 100%;"></div>
+    <input type="button" class="k-button download"  value="Update" onclick="UpdateValue();" />
+    <script>
+
+        function onChange(arg) {
+            //alert("Spreadsheet change. New value: " + arg.range.value() + ",TagName=" + arg.range.verticalAlign());
+            var TagName = arg.range.verticalAlign();
+            var TagValue = arg.range.value();
+            var UpdateValue = $('#txtUpdateValue').val();
+            UpdateValue = UpdateValue + ";" + TagName + "=" + TagValue;
+            $('#txtUpdateValue').val(UpdateValue);
+        }
+        $("#spreadsheet").kendoSpreadsheet({ change: onChange });
+        var spreadsheet = $("#spreadsheet").data("kendoSpreadsheet");
+        $(document).ready(function () {
+            $.ajax({
+                url: siteRoot + "/api/Values/FTCMTMPLTYPE",
+                type: 'Post',
+                dataType: 'json',
+                beforeSend: function () {
+                },
+                complete: function () {
+                },
+                data: {
+                    TMPLID: "Extruder"
+                },
+                success: function (ResultData) {
+                    spreadsheet.fromJSON(ResultData);
+                },
+                error: function (e) {
+                    alert('資料量太大，請減少選取項目');
+                }
+            })
+        });
+
+        function UpdateValue() {
+            var UpdateValue = $('#txtUpdateValue').val().trim();
+            if (!UpdateValue == "") {
+                $.ajax({
+                    url: siteRoot + "/api/Values/UpdateValue",
+                    type: 'Post',
+                    dataType: 'json',
+                    beforeSend: function () {
+                    },
+                    complete: function () {
+                    },
+                    data: {
+                        ValueList: UpdateValue
+                    },
+                    success: function (ResultData) {
+                        alert(ResultData);
+                    },
+                    error: function (e) {
+                        alert('資料量太大，請減少選取項目');
+                    }
+                })
+            }
+           
+        }
+    </script>
+</div>

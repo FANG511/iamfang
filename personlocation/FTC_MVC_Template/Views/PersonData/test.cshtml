@@ -1,0 +1,265 @@
+﻿
+@{
+    ViewBag.Title = "PersonData";
+    Layout = "~/Views/Shared/_LayoutForMESNoMenu.cshtml";
+}
+
+<!--水平頁面設計-->
+<div class="form-horizontal">
+    <!-- 表單元素容器-->
+    <div class="form-group">
+        <div class="col-md-12">
+
+            <!--onclick點擊此按鈕會呼叫Query()-->
+            <!-- i:FontAwesome 圖標-->
+            <a class="btn btn_primary auth-query" onclick="Query();"><i class="fa fa-search fa-fw mr-1"></i><span data-i18n="ButtonCommon.Query"></span></a>
+            <a class="btn btn_primary auth-add" onclick="gridAdd();"><i class="fa fa-plus fa-fw mr-1"></i><span data-i18n="ButtonCommon.Add"></span></a>
+        </div>
+    </div>
+
+    <!-- 表單元素容器-->
+    <div class="form-group">
+
+        <!--篩選條件格式-->
+        <div id="FilterArea" class="box box-warning box-solid" style="border-color:lightgrey;">
+            <div class="box-header with-border">
+                <h3 class="box-title" data-i18n="UserManage.Text.Filter"></h3>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                        <i class="fa fa-minus"></i>
+                    </button>
+                </div>
+            </div>
+            <!--篩選條件內標籤-->
+            <div id="FilterBody" class="box-body row form-group">
+                <div class="col-md-3">
+                    <div class="col-md-5 k-info-colored" for="filter_User">
+                        <label class="FilterLabel" data-i18n="UserManage.Text.USERID"></label>
+                    </div>
+                    <div class="col-md-7">
+                        <input id="PersonID" class="k-textbox FilterControl" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--資料呈現-->
+        <div id="grid" style="width: 100%;"></div>
+
+    </div>
+    <script>
+
+        const vi18n_Name = 'PersonData.Text';
+        const vi18n_BackEnd = 'UserManage.BackEnd';
+        var dataSource;
+        var crudServiceBaseUrl = "../api/apiPersonData";
+        var oi18nLanguAuto;
+        var grid;
+
+        //$(document).ready()是jQuery 提供的一個方法
+        //在文檔完全加載並準備好之後執行
+        $(document).ready(function () {
+            QueryString.Initial();
+
+            oi18nLanguAuto = new i18nLanguAuto();
+            oi18nLanguAuto.Initial();
+
+
+            //Kendo UI中kendo.data.DataSource類別用來設定資料來源
+            //初始化dataSource
+            dataSource = new kendo.data.DataSource({
+                // transport:與遠端資料源通訊的方式
+                transport: {
+                    //read:如何從遠端資料源讀取資料
+                    read: {
+                        url: crudServiceBaseUrl + "/GetPersonData",
+                        // type:指定HTTP請求的類型
+                        type: "Post",
+                        //async: false資料讀取同步(程式會等資料讀取完後再繼續執行後續的程式碼)
+                        async: false,
+                        //dataType:服務器傳送的資料類型
+                        dataType: "json",
+                        //data: function () {
+                        //    return {
+                        //        //回傳到GetPersonDataz方法的參數類型為PersonID
+                        //        PersonID: $('#PersonID').val()
+                        //    };
+                        //}
+                    },
+                    destroy: {
+                        url: crudServiceBaseUrl + "/DeletePersonData",
+                        type: "Post",
+                        async: false,
+                        dataType: "json",
+                        //data: function () {
+                        //    return {
+                        //        //回傳到DeletePersonData方法的參數類型為PersonID
+                        //       PersonID: data_del
+                        //    };
+                        //}
+                    },
+                    update: {
+                        url: crudServiceBaseUrl + "/UpdatePersonData",
+                        type: "Post",
+                        dataType: "json",
+                        //data: function () {
+                        //    return {
+                        //        PersonID: data_edit
+                        //    };
+                        //        //回傳到UpdatePersonData方法的參數類型為PersonID
+
+
+                        //}
+                    },
+                    create: {
+                        url: crudServiceBaseUrl + "/AddPersonData",
+                        type: "Post",
+                        dataType: "json",
+                    },
+
+                    //parameterMap將(新增、更新或刪除）中的資料轉換為符合後端預期格式的資料
+                    parameterMap: function (options, operation) {
+                        if (operation !== "read") {
+                            return options;
+                        }
+                        if (operation == "read") {
+                            return {
+                                PersonID: $('#PersonID').val()
+                            };
+
+                        }
+
+
+
+                    }
+                },
+
+                //資料請求完成後觸發
+                requestEnd: function (e) {
+                    //只有在非搜尋操作時才執行下面的程式碼
+                    if (e.type != 'read') {
+                        $("#grid").data("kendoGrid").dataSource.read();
+                    }
+
+
+                },
+                //每頁顯示的資料數量為10
+                pageSize: 10,
+
+                //schema定義資料來源的結構
+                schema: {
+                    //model定義資料模型
+                    model: {
+                        //id屬性指定了數據模型中的一個字段，用於唯一標識每一條記錄
+                        //透過此id可辨識要刪除或更新的row
+                        id: "PersonID",
+
+                        //fields驗證規則
+                        fields: {
+                            PersonID: { validation: { required: true } },
+                            Name: { validation: { required: true } },
+                            Gender: { validation: { required: true } },
+                            Phone: {},
+                            CompanyID: { validation: { required: true } }
+                        }
+                    }
+                }
+            });
+
+            //grid容納Kendo UI Grid網格
+            //初始化Kendo UI Grid
+            $("#grid").kendoGrid({
+                //指定grid內數據來源
+                dataSource: dataSource,
+                //配置分頁
+                pageable: {
+                    //刷新按鈕
+                    refresh: true,
+                    //分頁欄中最多顯示 5 個頁碼按鈕
+                    buttonCount: 5
+                },
+                //grid高度
+                height: 420,
+                //autoBind: true:初始化後頁面即顯示資料
+                autoBind: true,
+                //滑動
+                scrollable: true,
+
+                //欄位名稱
+                columns: [
+                    {
+                        //每列顯示按鈕
+                        //編輯按鈕、刪除按鈕
+                        //template範本 &nbsp空格
+                        command: [
+                            { name: "edit", template: "<a class='crud crud_edit k-grid-edit'><i class='fa fa-pencil'></i></a>&nbsp&nbsp", text: { update: "儲存", cancel: "取消" } },
+                            { name: "destroy", template: "<a class='crud crud_delete k-grid-delete'><i class='fa fa-trash'></i></a>" },
+                        ],
+                        //列寬
+                        width: "70px"
+                    },
+
+                    {
+                        field: "PersonID",
+                        title: i18n.t(vi18n_Name + '.PersonID'),
+                        width: "100px",
+                        editable: function (dataItem) {
+                            return dataItem.PersonID === "";
+                        }
+                    },
+                    { field: "Name", title: i18n.t(vi18n_Name + '.Name'), width: "100px" },
+                    { field: "Gender", title: i18n.t(vi18n_Name + '.Gender'), width: "100px" },
+                    { field: "Phone", title: i18n.t(vi18n_Name + '.Phone'), width: "180px" },
+                    { field: "CompanyID", title: i18n.t(vi18n_Name + '.CompanyId'), width: "100px" },
+                ],
+
+                //按下edit按鈕後可編輯資料
+                editable: "inline",
+
+                // 判斷編輯模式或是新增模式
+                // 決定PersonID 欄位是否能編輯
+                //edit: function (e) {
+                //    if (e.model.isNew()) { // 新增模式下
+                //        //尋找PersonID 欄位
+                //        //更改該input欄位的readonly屬性
+                //        e.container.find("input[name=PersonID]").attr("readonly", false);
+                //    } else { // 編輯模式下
+                //        // 禁用 PersonID 欄位的編輯能力
+                //        e.container.find("input[name=PersonID]").attr("readonly", true);
+                //    }
+                //},
+
+
+                //查無資料時回傳的字串
+                noRecords: {
+                    //template屬性可以為元件中的特定部分指定一個 HTML 字符串或一個 JavaScript 函式
+                    template: i18n.t('UserManage.NoData')
+                },
+
+            });
+
+            grid = $("#grid").data("kendoGrid");
+        });
+
+
+
+        //查詢按鈕觸發的事件
+        function Query() {
+            //.read()是dataSource的方法
+            //向後端服務器發送一個讀取請求，以獲取最新的數據
+            $("#grid").data("kendoGrid").dataSource.read();
+        }
+
+        //新增按鈕觸發的事件
+        function gridAdd() {
+            //addRow方法可新增列表
+            grid.addRow();
+
+        }
+
+
+
+    </script>
+</div>
+
+

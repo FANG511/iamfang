@@ -1,0 +1,153 @@
+/*
+ * Skin: Blue
+ * ----------/----------/----------
+ */
+.uxui-blue .main-header .navbar { /* top */
+    background-color: #ffffff;
+}
+.uxui-blue .main-header .navbar .nav > li > a { /* top */
+    color: #000000;
+}
+.uxui-blue .main-header .navbar .nav > li > a:hover, 
+.uxui-blue .main-header .navbar .nav > li > a:active, 
+.uxui-blue .main-header .navbar .nav > li > a:focus, 
+.uxui-blue .main-header .navbar .nav .open > a, 
+.uxui-blue .main-header .navbar .nav .open > a:hover, 
+.uxui-blue .main-header .navbar .nav .open > a:focus, 
+.uxui-blue .main-header .navbar .nav > .active > a { /* top user right */
+    background: #ececec;
+    color: #000000;
+}
+.uxui-blue .main-header .navbar .sidebar-toggle {
+    color: #ffffff;
+}
+.uxui-blue .main-header .navbar .sidebar-toggle:hover {
+    color: #f6f6f6;
+    background: rgba(0, 0, 0, 0.1);
+}
+.uxui-blue .main-header .navbar .sidebar-toggle { /* sidebar top right */
+    color: rgba(0, 0, 0, 0.7);
+}
+.uxui-blue .main-header .navbar .sidebar-toggle:hover { /* sidebar top right */
+    background-color: #ececec;
+    color: #000000;
+}
+@media (max-width: 767px) {
+    .uxui-blue .main-header .navbar .dropdown-menu li.divider {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    .uxui-blue .main-header .navbar .dropdown-menu li a {
+        color: #fff;
+    }
+    .uxui-blue .main-header .navbar .dropdown-menu li a:hover {
+        background: #367fa9;
+    }
+}
+.uxui-blue .main-header .logo { /* sidebar top */
+    background-color: #ececec;
+    color: rgba(0, 0, 0, 0.7);
+    border-bottom: 0 solid transparent;
+}
+.uxui-blue .main-header .logo:hover { /* sidebar top */
+    background-color: #1f4364;
+    color: #ffc820;
+}
+.uxui-blue .main-header li.user-header { /* top user right */
+    background-color: #e6e6e6;
+}
+.uxui-blue .main-header li.user-header p.user-text { /* top user right text */
+    color: #000000;
+}
+.uxui-blue .content-header {
+    background: transparent;
+}
+.uxui-blue .wrapper,
+.uxui-blue .main-sidebar,
+.uxui-blue .left-side { /* sidebar left all background */
+    background-color: #396a92;
+}
+.uxui-blue .user-panel > .info,
+.uxui-blue .user-panel > .info > a {
+    color: #fff;
+}
+.uxui-blue .sidebar-menu > li.header {
+    color: rgba(255, 255, 255, 0.35);
+    background: #396a92;
+}
+.uxui-blue .sidebar-menu > li > a {
+    border-left: 3px solid transparent;
+}
+.uxui-blue .sidebar-menu > li:hover > a { /* sidebar left main-menu hover */
+    color: #ffc820;
+    background: #5b87af;
+    border-left-color: #ffc820;
+}
+.uxui-blue .sidebar-menu > li.active > a { /* sidebar left main-menu selected */
+    color: #ffc820;
+    background: #1f4364;
+    border-left-color: #ffc820;
+}
+.uxui-blue .sidebar-menu > li > .treeview-menu { /* sidebar left main-menu selected below */
+    margin: 0 1px;
+    background: #1f4364;
+    color: #ffffff;
+}
+.uxui-blue .sidebar a { /* sidebar left all color */
+    color: #FFFFFF;
+}
+.uxui-blue .sidebar a:hover {
+    text-decoration: none;
+}
+.uxui-blue .treeview-menu > li > a { /* sidebar left main-menu selected button */
+    color: #ffffff;
+    background-color: #1f4364;
+}
+.uxui-blue .treeview-menu > li.active > a, 
+.uxui-blue .treeview-menu > li > a:hover { /* sidebar left main-menu selected button */
+    color: #ffc820;
+}
+.uxui-blue .sidebar-form {
+    border-radius: 3px;
+    border: 1px solid #374850;
+    margin: 10px 10px;
+}
+.uxui-blue .sidebar-form input[type="text"], 
+.uxui-blue .sidebar-form .btn {
+    box-shadow: none;
+    background-color: #374850;
+    border: 1px solid transparent;
+    height: 35px;
+}
+.uxui-blue .sidebar-form input[type="text"] {
+    color: #666;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 2px
+}
+.uxui-blue .sidebar-form input[type="text"]:focus, 
+.uxui-blue .sidebar-form input[type="text"]:focus + .input-group-btn .btn {
+    background-color: #fff;
+    color: #666;
+}
+.uxui-blue .sidebar-form input[type="text"]:focus + .input-group-btn .btn {
+    border-left-color: #fff;
+}
+.uxui-blue .sidebar-form .btn {
+    color: #999;
+    border-top-left-radius: 0;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 0;
+}
+.uxui-blue.layout-top-nav .main-header > .logo {
+    background-color: #3c8dbc;
+    color: #ffffff;
+    border-bottom: 0 solid transparent;
+}
+.uxui-blue.layout-top-nav .main-header > .logo:hover {
+    background-color: #3b8ab8;
+}
+.box.box-solid.box-warning > .box-header {
+    background-color: #1f4364;
+}

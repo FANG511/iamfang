@@ -1,0 +1,224 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutForMESNoMenu.cshtml";
+}
+<style>
+    /*過濾控件*/
+    .FilterLabel {
+        /*width: 90px;*/
+    }
+
+    .FilterControl {
+        width: 100%;
+    }
+</style>
+<h4>@ViewBag.Title</h4>
+<div class="form-horizontal">
+    <div class="form-group">        
+    </div>    
+    <div class="form-group">
+        <div id="FilterArea" class="box box-warning box-solid" style="border-color:lightgrey;">
+            <div class="box-header with-border">
+                <h3 class="box-title" data-i18n="UserManage.Text.Filter"></h3>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                        <i class="fa fa-minus"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="FilterBody" class="box-body row form-group">
+                <div class="col-md-3">
+                    <div class="col-md-5 k-info-colored" for="filter_User">
+                        <label class="FilterLabel" data-i18n="UserManage.Text.USERID"></label>
+                    </div>
+                    <div class="col-md-7">
+                        <input id="filter_User" class="k-textbox FilterControl" />
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="col-md-5 k-info-colored" for="filter_USER_NAME">
+                        <label class="FilterLabel" data-i18n="UserManage.Text.USER_NAME"></label>
+                    </div>
+                    <div class="col-md-7">
+                        <input id="filter_USER_NAME" class="k-textbox FilterControl" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="grid" style="width: 100%;"></div>        
+    </div>
+    <script>
+        const vi18n_Name = 'UserManage.Text';
+        const vi18n_BackEnd = 'UserManage.BackEnd';
+        var oi18nLanguAuto;
+        var dataSource;
+        var oDataModels = {};
+        var now = new Date();
+        var crudServiceBaseUrl = "../api/UserManageApi";
+
+        $(document).ready(function () {
+            QueryString.Initial();
+
+            oi18nLanguAuto = new i18nLanguAuto();
+            oi18nLanguAuto.Initial();
+
+            dataSource = new kendo.data.DataSource({
+                transport: {
+                    read: {
+                        url: crudServiceBaseUrl + "/getUser",
+                        type: "Post",
+                        async: false,
+                        dataType: "json"
+                    },
+                    update: {
+                        url: crudServiceBaseUrl + "/updateUser",
+                        type: "Post",
+                        dataType: "json"
+                    },
+                    destroy: {
+                        url: crudServiceBaseUrl + "/deleteUser",
+                        type: "Post",
+                        dataType: "json"
+                    },
+                    create: {
+                        url: crudServiceBaseUrl + "/addUser",
+                        type: "Post",
+                        dataType: "json"
+                    },
+                    parameterMap: function (options, operation) {
+                        if (operation !== "read" && options.models) {
+                            return options.models[0];
+                        }
+                    }
+                },
+                requestEnd: function (e) {
+                    if (e.type != 'read') {
+                        alert(oi18nLanguAuto.translate(e.response.ReturnMessage, vi18n_BackEnd));
+                        $("#grid").data("kendoGrid").dataSource.read();
+                    }
+                },
+                pageSize: 10,
+                batch: true,
+                schema: {
+                    model: {
+                        id: "USERID",
+                        fields: {
+                            USERID: { validation: { required: true } },
+                            USER_NAME: { validation: { required: true } },
+                            USER_DEPT: { validation: { required: true } }, //可能config開啟部門認證，若空值會錯誤
+                            USER_DESC: {},
+                            MAIL: {},
+                            PHONE: {},
+                            PWD: { validation: { required: true } },
+                            TXN_USERID: {},
+                            TXN_TIMESTAMP: { defaultValue: now.getFullYear() + "-" + now.getMonth() + "-" + now.getDate() + " 00:00:00" }
+                        }
+                    }
+                }
+            });
+            $("#grid").kendoGrid({
+                dataSource: dataSource,
+                pageable: {
+                    refresh: true,
+                    pageSize: 10,
+                    buttonCount: 5
+                },
+                filterable: true,
+                height: 650,
+                autoBind: true,
+                dataBound: onDataBound,
+                scrollable: true,
+                excel: {
+                    fileName: "使用者清單.xlsx"
+                },
+                toolbar: [
+                    {
+                        name: 'btnQuery',
+                        text: i18n.t('ButtonCommon.Query'),
+                        className: 'btn btn_primary',
+                        iconClass: 'fa fa-search'
+                    },
+                    {
+                        name: 'create',
+                        text: i18n.t('ButtonCommon' + ".Add"),
+                    },
+                    {
+                        name: 'excel',
+                        text: i18n.t('ButtonCommon' + ".Excel"),
+                    }
+                ],
+                columns: [
+                    {
+                        command: [
+                            { name: "edit", template: "<a class='crud crud_edit k-grid-edit'><i class='fa fa-pencil'></i></a>&nbsp", text: { edit: "", update: "儲存", cancel: "取消" } },
+                            { name: "destroy", template: "<a class='crud crud_delete k-grid-delete'><i class='fa fa-trash'></i></a>" },
+                        ], title: "&nbsp;", width: "100px"
+                    },
+                    { field: "USERID", title: i18n.t(vi18n_Name + '.USERID'), width: "100px" },
+                    { field: "USER_NAME", title: i18n.t(vi18n_Name + '.USER_NAME'), width: "100px" },
+                    { field: "USER_DEPT", title: i18n.t(vi18n_Name + '.USER_DEPT'), width: "100px" },
+                    { field: "USER_DESC", title: i18n.t(vi18n_Name + '.USER_DESC'), width: "180px" },
+                    { field: "EXT01", title: i18n.t(vi18n_Name + '.EXT01'), width: "100px" },
+                    { field: "EXT02", title: i18n.t(vi18n_Name + '.EXT02'), width: "100px" },
+                    { field: "PWD", title: i18n.t(vi18n_Name + '.PWD'), width: "100px", hidden: true, editor: PWEditor },
+                    { field: "MAIL", title: i18n.t(vi18n_Name + '.MAIL'), width: "200px" },
+                    { field: "PHONE", title: i18n.t(vi18n_Name + '.PHONE'), width: "150px" },
+                ],
+                noRecords: {
+                    template: i18n.t('UserManage.NoData')
+                },
+                editable: {
+                    mode: "popup",
+                    window: {
+                        position: {
+                            top: '20px',
+                            left: "30%"
+                        }
+                    }
+                },
+            });            
+
+            DefineGridButton();
+        });
+
+        function onDataBound(e) {
+            var grid = this;
+            var trs = this.tbody.find('tr').each(function () {
+                var item = grid.dataItem($(this));
+                if (item.USERID == "Admin") {
+                    $(this).find('.k-grid-delete').hide();
+                }
+            })
+
+            ////自動調整寬度
+            //for (var i = 0; i < this.columns.length; i++) {
+            //    this.autoFitColumn(i);
+            //}
+            //ControlAuth();
+        }
+
+        function Query() {
+            var FilterArray = [];
+
+            if ($('#filter_User').val() != '')
+                FilterArray.push({ field: 'USERID', operator: "contains", value: $('#filter_User').val() })
+            if ($('#filter_USER_NAME').val() != '')
+                FilterArray.push({ field: 'USER_NAME', operator: "contains", value: $('#filter_USER_NAME').val() })            
+
+            if (FilterArray.length > 0)
+                $("#grid").data("kendoGrid").dataSource.filter(FilterArray);
+            else
+                $("#grid").data("kendoGrid").dataSource.filter({});
+
+            $("#grid").data("kendoGrid").dataSource.read();
+        }
+        //編輯連動密碼欄位
+        function PWEditor(container, options) {
+            $('<input class="k-textbox" type="password" data-bind="value:' + options.field + '"/>')
+                .appendTo(container);
+        }
+
+        function DefineGridButton() {
+            $('.k-grid-btnQuery').click(Query);
+        }
+    </script>
+</div>
